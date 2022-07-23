@@ -699,3 +699,6 @@ form .btn input[type="submit"] {
 .btn-close a i{
   font-size: 1.125rem;
 }
+.modal-food.open{
+  display: block;
+}
