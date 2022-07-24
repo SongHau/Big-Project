@@ -20,3 +20,14 @@ window.addEventListener("scroll", function scrollFunction() {
 backToTopButton.addEventListener("click", function backToTop() {
   window.scrollTo(0, 0);
 });
+
+/* SCROLL DOWN */
+const newsTitle = document.querySelector("#scroll-down");
+const newsLatest = document.querySelector(".list-news-latest");
+newsTitle.addEventListener("click", function clickScrollDown() {
+  if (newsLatest.style.display != "none") {
+    newsLatest.style.display = "none";
+  } else {
+    newsLatest.style.display = "block";
+  }
+});
