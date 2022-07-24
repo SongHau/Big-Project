@@ -222,6 +222,11 @@ a:hover,
   background-color: #c47135;
 }
 
+.blog .blog-more .more-button:hover {
+  background-color: #cb7d46;
+  color: #000;
+}
+
 .more-button::before,
 .more-button::after {
   content: "";
