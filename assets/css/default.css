@@ -28,14 +28,22 @@ html
   position: fixed;
   bottom: 2%;
   right: 1%;
-  font-size: 1.625rem;
+  font-size: 1.4rem;
   width: 50px;
   height: 50px;
-  background: #e3e5ec;
+  background: rgba(0, 0, 0, 0.3);
   color: #000;
   cursor: pointer;
-  border: 3px solid #000;
   border-radius: 50%;
+  border: none;
+  transition: all 0.5s ease;
+  z-index: 1;
+}
+
+#back-to-top:hover
+{
+  color: #fff;
+  background: #ed3324 !important;
 }
 
 .inButton
@@ -50,13 +58,13 @@ html
   from
   {
     opacity: 0;
-    transform: translateY(100%);
+    transform: translateX(100%);
   }
 
   to
   {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
   }
 }
 
@@ -77,12 +85,13 @@ html
   to
   {
     opacity: 0;
-    transform: translateY(100%);
+    transform: translateX(100%);
   }
 }
 
 /* Header */
-header{
+header
+{
   z-index: 9;
   position: fixed;
   top: 0;
@@ -91,27 +100,39 @@ header{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 100px;
+  padding: 10px 10px;
   transition: all 0.6s ease-in-out;
 }
-header .logo-shop a img{
+
+header .logo-shop a img
+{
   width: 120px;
   transition: all 0.6s ease-in-out;
 }
-header.sticky .name-shop{
+
+header.sticky .name-shop
+{
   color: #fff;
 }
-header.sticky{
-  padding: 5px 100px;
+
+header.sticky
+{
+  padding: 4px 10px;
   background: rgba(0, 0, 0, 0.5);
 }
-header.sticky .logo-shop a img{
+
+header.sticky .logo-shop a img
+{
   width: 70px;
 }
-header.sticky .menu a{
+
+header.sticky .menu a
+{
   color: #fff;
 }
-header .name-shop{
+
+header .name-shop
+{
   color: #000;
   font-size: 2.5rem;
   font-weight: 400;
@@ -122,13 +143,17 @@ header .name-shop{
   transition: all 0.6s ease-in-out;
   margin-left: -220px;
 }
-header .menu{
+
+header .menu
+{
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-header .menu a{
+
+header .menu a
+{
   position: relative;
   margin: 0 15px;
   text-decoration: none;
@@ -138,10 +163,14 @@ header .menu a{
   transition: 0.6s;
   font-size: 1.2rem;
 }
-header .menu a:hover{
+
+header .menu a:hover
+{
   color: orangered;
 }
-header .menu a::after{
+
+header .menu a::after
+{
   content: "";
   display: block;
   background: orangered;
@@ -151,15 +180,26 @@ header .menu a::after{
   margin: auto;
   margin-top: 2px;
 }
-header .menu a:hover:after{
+
+header .menu a:hover:after
+{
   width: 100%;
 }
-header .btn-mobile{
+
+header .btn-mobile
+{
   color: #000;
   font-size: 1.563rem;
   cursor: pointer;
   display: none;
+  transition: color 1s ease;
 }
+
+header.sticky .btn-mobile
+{
+  color: #fff;
+}
+
 /* Footer */
 .footer
 {

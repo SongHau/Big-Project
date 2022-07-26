@@ -7,11 +7,6 @@
 }
 
 /* PROMOTIONAL */
-img
-{
-  width: 100%;
-}
-
 a
 {
   text-decoration: none;
@@ -33,11 +28,20 @@ p::selection
   background-color: #fcc755;
 }
 
+.main-body
+{
+  width: 100%;
+}
+
 .main-body .row-mb
 {
   display: flex;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin: 10px 10px;
+}
+
+.row-mb img
+{
+  width: 100%;
 }
 
 .main-body .topbar
@@ -47,6 +51,7 @@ p::selection
   margin-top: 0;
   align-items: center;
   display: flex;
+  padding: 2px 0;
 }
 
 .topbar .col-tb-6
@@ -126,28 +131,27 @@ p::selection
 
 .main-body .crossbar
 {
-  height: 25px;
-  margin-top: 100px;
+  height: 29px;
+  margin-top: 80px;
   background: #e3e5ec;
 }
 
 .main-body .col-blog-3
 {
   width: 25%;
-  margin: 10px 10px 0;
+  margin-right: 10px;
 }
 
 .main-body .col-blog-9
 {
   width: 75%;
-  margin: 10px 0 0 10px;
 }
 
 .main-body .news-latest
 {
   border: 1px solid #e3e5ec;
   padding: 10px;
-  /* margin-bottom: 30px; */
+  margin-bottom: 20px;
 }
 
 .news-latest .news-latest-title h2
@@ -176,8 +180,8 @@ p::selection
 
 .list-news-latest .item-article
 {
-  padding: 15px 0;
   display: flex;
+  padding: 15px 0;
   border-bottom: 1px #efefef dotted;
 }
 
@@ -188,12 +192,12 @@ p::selection
 
 .list-news-latest .post-image
 {
-  width: 30%;
+  width: 40%;
 }
 
 .list-news-latest .post-content
 {
-  width: 70%;
+  width: 60%;
   padding-left: 10px;
 }
 
@@ -213,14 +217,15 @@ p::selection
 .author,
 .date
 {
-  font-size: 0.9rem;
+  font-style: italic;
+  font-size: 0.8rem;
   opacity: 0.7;
 }
 
-.main-body .blog
+.main-body .blog-container
 {
-  border-right: none;
   border: 1px solid #e3e5ec;
+  /* border-right: none; */
   padding: 20px 10px;
 }
 
@@ -237,6 +242,7 @@ p::selection
 {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .blog-content .blog-post
@@ -266,6 +272,21 @@ p::selection
   }
 }
 
+.blog-post .blog-image
+{
+  overflow: hidden;
+}
+
+.blog-post .blog-image img
+{
+  transition: transform 1s ease;
+}
+
+.blog-post .blog-image img:hover
+{
+  transform: scale(1.2);
+}
+
 .blog-post .blog-post-title
 {
   font-size: 1rem;
@@ -288,6 +309,7 @@ p::selection
   margin-top: 10px;
   line-height: 21px;
 }
+
 
 .blog-container .btn
 {

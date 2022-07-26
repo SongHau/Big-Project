@@ -1,8 +1,8 @@
 /* Heading Scroll */
-window.addEventListener("scroll",function(){
+window.addEventListener("scroll", function () {
   var header = document.querySelector("header");
-  header.classList.toggle('sticky', window.scrollY>10);
-})
+  header.classList.toggle("sticky", window.scrollY > 10);
+});
 /* Open Modal */
 const lgBtns = document.querySelectorAll(".js-login");
 const modal = document.querySelector(".modal");
@@ -46,9 +46,9 @@ signupLink.onclick = () => {
 var menu = document.querySelector(".menu");
 var menuBtn = document.querySelector(".menu-btn");
 var closeBtn = document.querySelector("header .menu .btn-mobile .close-btn");
-menuBtn.addEventListener("click",() => {
-  menu.classList.add('active');
+menuBtn.addEventListener("click", () => {
+  menu.classList.add("active");
 });
-closeBtn.addEventListener("click", () =>{
-  menu.classList.remove('active');
+closeBtn.addEventListener("click", () => {
+  menu.classList.remove("active");
 });
