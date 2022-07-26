@@ -13,10 +13,11 @@
       margin-bottom: 12px;
    }
 
-    .wrapper {  
-        width: 90%;
-        height: 65%; 
-    }
+   .wrapper
+   {
+      width: 90%;
+      height: 65%;
+   }
 
    header .menu
    {
