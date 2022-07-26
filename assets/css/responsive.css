@@ -122,5 +122,20 @@
 
 
 /* RESPONSIVE FOR PROMOTION PAGE */
+@media screen and (max-width: 768px)
+{
+   .main-body .row-mb
+   {
+      display: block;
+   }
 
+   .main-body .col-blog-3
+   {
+      width: 100%;
+   }
 
+   .main-body .col-blog-9
+   {
+      width: 100%;
+   }
+}

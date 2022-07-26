@@ -47,10 +47,10 @@ btn_scrollDown.addEventListener("click", function dropDown() {
 
 /* MORE BUTTON */
 const moreBtn = document.getElementById("js-btn-more");
-const moreBlog = document.querySelectorAll(".row-mb.more-blog");
+const moreBlog = document.querySelectorAll(".blog-more");
 var countMore = 0;
 
 moreBtn.addEventListener("click", function showMore() {
-  moreBlog[countMore++].style.display = "flex"
+  for (let i = 0; i < 4; i++) moreBlog[countMore++].style.display = "block";
   if (countMore == moreBlog.length) moreBtn.style.display = "none";
 });

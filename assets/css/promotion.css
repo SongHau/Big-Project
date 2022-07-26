@@ -44,17 +44,18 @@ p::selection
 {
   background: #e3e5ec;
   font-size: 0.8rem;
-  padding: 5px 100px;
   margin-top: 0;
   align-items: center;
+  display: flex;
 }
 
 .topbar .col-tb-6
 {
+  padding: 5px 100px;
   width: 50%;
 }
 
-.topbar .tb-content p
+.topbar .tb-content
 {
   font-style: italic;
   font-weight: 300;
@@ -220,107 +221,31 @@ p::selection
 {
   border-right: none;
   border: 1px solid #e3e5ec;
-  padding: 10px 10px 20px 30px;
+  padding: 20px 10px;
 }
 
-.blog .blog-heading h1
+.blog-container .blog-heading h1
 {
   font-size: 1.875rem;
-  font-weight: 700;
+  font-weight: 400;
   text-align: center;
   margin-bottom: 40px;
   text-transform: uppercase;
 }
 
+.blog-container .blog-content
+{
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .blog-content .blog-post
 {
-  width: 25%;
-  margin-right: 20px;
-  margin-bottom: 20px;
+  width: 255px;
+  margin: 10px;
 }
 
-.blog-content .blog-post-title
-{
-  font-size: 1rem;
-  margin-bottom: 10px;
-}
-
-.blog-content span::after
-{
-  content: "/";
-  padding-left: 4px;
-}
-
-.blog-content span:last-child:after
-{
-  content: "";
-}
-
-.blog-content .entry-content
-{
-  margin-top: 10px;
-  line-height: 21px;
-}
-
-.blog .blog-more
-{
-  text-align: center;
-}
-
-.blog #js-btn-more
-{
-  border: none;
-  color: #fff;
-  font-size: 1rem;
-  cursor: pointer;
-  position: relative;
-  padding: 12px 44px;
-  text-transform: uppercase;
-  background-color: #c47135;
-}
-
-.blog #js-btn-more:hover
-{
-  color: #000;
-  opacity: 0.9;
-}
-
-.blog #js-btn-more::before,
-.blog #js-btn-more::after
-{
-  content: "";
-  display: block;
-  position: absolute;
-  width: 24px;
-  height: 24px;
-  transition: all 0.25s;
-  border: 0 solid #c47135;
-}
-
-.blog #js-btn-more::before
-{
-  top: -4px;
-  left: -4px;
-  border-left-width: 2px;
-  border-top-width: 2px;
-}
-
-.blog #js-btn-more::after
-{
-  right: -4px;
-  bottom: -4px;
-  border-bottom-width: 2px;
-  border-right-width: 2px;
-}
-
-.blog #js-btn-more:hover::before,
-.blog #js-btn-more:hover::after
-{
-  width: 100%;
-  height: 100%;
-}
-
-.row-mb.more-blog
+.blog-content .blog-post.blog-more
 {
   display: none;
   animation: moreBlogFadeIn 1s ease;
@@ -339,6 +264,89 @@ p::selection
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.blog-post .blog-post-title
+{
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.blog-post span::after
+{
+  content: "/";
+  padding-left: 4px;
+}
+
+.blog-post span:last-child:after
+{
+  content: "";
+}
+
+.blog-post .entry-content
+{
+  margin-top: 10px;
+  line-height: 21px;
+}
+
+.blog-container .btn
+{
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.blog-container #js-btn-more
+{
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  position: relative;
+  padding: 12px 44px;
+  text-transform: uppercase;
+  background-color: #c47135;
+}
+
+.blog-container #js-btn-more:hover
+{
+  color: #000;
+  opacity: 0.9;
+}
+
+.blog-container #js-btn-more::before,
+.blog-container #js-btn-more::after
+{
+  content: "";
+  display: block;
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  transition: all 0.25s;
+  border: 0 solid #c47135;
+}
+
+.blog-container #js-btn-more::before
+{
+  top: -4px;
+  left: -4px;
+  border-left-width: 2px;
+  border-top-width: 2px;
+}
+
+.blog-container #js-btn-more::after
+{
+  right: -4px;
+  bottom: -4px;
+  border-bottom-width: 2px;
+  border-right-width: 2px;
+}
+
+.blog-container #js-btn-more:hover::before,
+.blog-container #js-btn-more:hover::after
+{
+  width: 100%;
+  height: 100%;
 }
 
 .modal-blog
