@@ -13,10 +13,10 @@
       margin-bottom: 12px;
    }
 
-   header .menu a
-   {
-      color: #fff;
-   }
+    .wrapper {  
+        width: 90%;
+        height: 65%; 
+    }
 
    header .menu
    {
