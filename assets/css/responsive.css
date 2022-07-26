@@ -2,152 +2,117 @@
 /* Responsive header for tablet and mobile */
 @media (max-width:64.938rem)
 {
-   header .name-shop
-   {
-      display: none;
-   }
+    header .name-shop{
+        display: none;  
+    }
+    header .btn-mobile{
+        display: block;
+        margin-bottom: 12px;
+    }
+    header .menu a{
+        color: #fff;
+    } 
+ 
+    header .menu{
+        position: fixed;
+        background: rgba(0, 0, 0, 1);
+        flex-direction: column; 
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        right: -1000px;
+        padding: 80px 50px;
+        transition: all 0.6s ease-in-out;
+    }
+    header .menu.active{
+        right: 0;
+    }
+    header .menu .btn-mobile .close-btn{
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 25px;
+        color: #fff;
+    }
+    header .menu a{
+        display: block;
+        font-size: 1.25rem;
+        margin: 20px;
+        padding: 0 15px;
+    }
 
-   header .btn-mobile
-   {
-      display: block;
-      margin-bottom: 12px;
-   }
+    .modal {
+        z-index: 19999;
+    }
 
     .wrapper {  
         width: 90%;
         height: 65%; 
     }
 
-   header .menu
-   {
-      position: fixed;
-      background: rgba(0, 0, 0, 1);
-      flex-direction: column;
-      width: 100%;
-      height: 100vh;
-      top: 0;
-      right: -1000px;
-      padding: 80px 50px;
-      transition: all 0.6s ease-in-out;
-   }
-
-   header .menu.active
-   {
-      right: 0;
-   }
-
-   header .menu .btn-mobile .close-btn
-   {
-      position: absolute;
-      top: 0;
-      left: 0;
-      margin: 25px;
-      color: #fff;
-   }
-
-   header .menu a
-   {
-      display: block;
-      font-size: 1.25rem;
-      margin: 20px;
-      padding: 0 15px;
-   }
-
-   .modal
-   {
-      z-index: 19999;
-   }
-
-   .wrapper
-   {
-      width: 80%;
-      height: 70%;
-   }
-
-   .footer-col
-   {
-      width: 50%;
-      margin-bottom: 30px;
-   }
+    .footer-col{
+        width: 50%;
+        margin-bottom: 30px;
+    }
 }
-
 /* PC */
 @media(min-width:64rem)
-{}
-
-/* Tablet */
-@media (min-width:46.25rem) and (max-width:63.938rem)
-{}
-
-/* Mobile */
-@media (max-width:46.188rem)
 {
 
-   header.sticky,
-   header
-   {
-      padding: 4px 30px;
-      text-align: center;
-   }
-
-   header .btn-mobile
-   {}
-
-   .introduce
-   {
-      flex-wrap: wrap;
-      padding: 20px;
-   }
-
-   .introduce .introduce-list
-   {
-      width: 50%;
-      padding: 18px;
-   }
-
-   .introduce .introduce-list .introduce-sup,
-   .introduce .introduce-list .introduce-des .introduce-main
-   {
-      font-size: 0.813rem;
-   }
-
-   .food .food-text
-   {
-      margin: 15px;
-   }
-
-   .food .food-list
-   {
-      flex-wrap: wrap;
-   }
-
-   .food .food-list .food-item
-   {
-      width: 50%;
-   }
-
-   .food .food-list .food-item .food-item-name
-   {
-      font-size: 1rem;
-   }
-
-   .food-more
-   {
-      font-size: 1.188rem;
-   }
-
-   .button
-   {
-      text-align: center;
-      margin: 18px 0px 40px;
-   }
-
-   header .logo-shop a img
-   {
-      width: 80px;
-   }
 }
+/* Tablet */
+@media (min-width:46.25rem) and (max-width:63.938rem)
+{
+   
+}
+/* Mobile */
+@media (max-width:46.188rem)
+{   
+    header.sticky,
+    header {
+        padding: 4px 30px;
+        text-align: center;
+    }
 
+    header .btn-mobile {
+
+    }
+
+    .introduce{
+        flex-wrap: wrap;
+        padding: 20px;
+    }
+    .introduce .introduce-list{
+        width: 50%;
+        padding: 18px;
+    }
+    .introduce .introduce-list .introduce-sup,
+    .introduce .introduce-list .introduce-des .introduce-main{
+        font-size: 0.813rem;
+    }
+    .food .food-text{
+        margin: 15px;
+    }
+    .food .food-list{
+        flex-wrap: wrap;
+    }
+    .food .food-list .food-item{
+        width: 50%;
+    }
+    .food .food-list .food-item .food-item-name{
+        font-size: 1rem;
+    }
+    .food-more{
+        font-size: 1.188rem;
+    }
+    .button {
+        text-align: center;
+        margin: 18px 0px 40px;
+    }
+    header .logo-shop a img{
+        width: 80px;
+    }
+}
 /* RESPONSIVE FOR INTRODUCE PAGE */
 
 
@@ -170,11 +135,6 @@
    }
 
    .main-body .col-blog-9
-   {
-      width: 100%;
-   }
-
-   .blog-content .blog-post
    {
       width: 100%;
    }
