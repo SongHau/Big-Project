@@ -1,14 +1,18 @@
-* {
+*
+{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
 }
 
-body {
+body
+{
   min-height: 100vh;
 }
-.banner {
+
+.banner
+{
   position: relative;
   width: 100%;
   background: url(../img/Chicken.jpg);
@@ -18,28 +22,39 @@ body {
 }
 
 /* Introduce */
-.introduce {
+.introduce
+{
   display: flex;
   justify-content: space-around;
   margin-top: 6px;
   padding: 40px;
 }
 
+<<<<<<< HEAD
 .introduce .introduce-list {
+=======
+.introduce .introduce-list
+{
+  margin: 24px;
+  padding: 24px;
+>>>>>>> bb62f9869f9be4bc18faa25c5f9b12c8ca1569b5
   width: 25%;
 }
 
-.introduce .introduce-list .introduce-img {
+.introduce .introduce-list .introduce-img
+{
   text-align: center;
   max-width: 100%;
   animation: 1.5s ease-in-out 0s normal none infinite running move;
 }
 
-.introduce .introduce-list .introduce-des {
+.introduce .introduce-list .introduce-des
+{
   margin-top: 10px;
 }
 
-.introduce .introduce-list .introduce-des .introduce-main {
+.introduce .introduce-list .introduce-des .introduce-main
+{
   color: #383838;
   font-size: 18px;
   font-weight: 500;
@@ -48,7 +63,8 @@ body {
   text-align: center;
 }
 
-.introduce .introduce-list .introduce-sup {
+.introduce .introduce-list .introduce-sup
+{
   color: #636363;
   font-size: 15px;
   margin: 0;
@@ -56,69 +72,83 @@ body {
   margin-top: 6px;
 }
 
-@keyframes move {
-  0% {
+@keyframes move
+{
+  0%
+  {
     transform: rotate(0deg) scale(1) skew(1deg);
   }
 
-  10% {
+  10%
+  {
     transform: rotate(-25deg) scale(1) skew(1deg);
   }
 
-  20% {
+  20%
+  {
     transform: rotate(25deg) scale(1) skew(1deg);
   }
 
-  30% {
+  30%
+  {
     transform: rotate(-25deg) scale(1) skew(1deg);
   }
 
-  40% {
+  40%
+  {
     transform: rotate(25deg) scale(1) skew(1deg);
   }
 
-  50% {
+  50%
+  {
     transform: rotate(0deg) scale(1) skew(1deg);
   }
 
-  100% {
+  100%
+  {
     transform: rotate(0deg) scale(1) skew(1deg);
   }
 }
 
 /* Food List */
-.food .food-text {
+.food .food-text
+{
   text-align: center;
   font-size: 2rem;
   margin: 50px;
   text-transform: uppercase;
 }
 
-.food .food-list {
+.food .food-list
+{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
-.food .food-list .food-item {
+.food .food-list .food-item
+{
   width: 20%;
   padding: 0 10px;
   margin: 8px 0;
   transition: all 0.25s ease-in;
 }
 
-.food .food-list .food-item:hover {
+.food .food-list .food-item:hover
+{
   transform: translateY(-5px);
 }
 
-.food .food-list .food-item .food-item-img a img {
+.food .food-list .food-item .food-item-img a img
+{
   width: 100%;
   border-radius: 2px;
   border: 1px solid #ccc;
   box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.1);
 }
 
-.food .food-list .food-item .food-item-name {
+.food .food-list .food-item .food-item-name
+{
   text-decoration: none;
   color: orangered;
   font-size: 1.2rem;
@@ -126,25 +156,29 @@ body {
   color: orangered;
 }
 
-.food .food-list .food-item .food-item-price {
+.food .food-list .food-item .food-item-price
+{
   font-size: 0.8rem;
   margin-top: 1px;
   color: orangered;
 }
 
 /* Button */
-.button {
+.button
+{
   text-align: center;
   margin: 40px 0px 100px 0;
 }
 
-.food-more a {
+.food-more a
+{
   text-decoration: none;
   color: #fff;
   display: inline-block;
 }
 
-.food-more {
+.food-more
+{
   background-color: #c47135;
   border: none;
   color: #ffffff;
@@ -162,7 +196,8 @@ body {
 }
 
 .food-more:before,
-.food-more:after {
+.food-more:after
+{
   border-color: transparent;
   -webkit-transition: all 0.25s;
   transition: all 0.25s;
@@ -174,7 +209,8 @@ body {
   width: 24px;
 }
 
-.food-more:before {
+.food-more:before
+{
   border-color: #c47135;
   border-left-width: 2px;
   border-top-width: 2px;
@@ -182,7 +218,8 @@ body {
   top: -5px;
 }
 
-.food-more:after {
+.food-more:after
+{
   border-bottom-width: 2px;
   border-color: #c47135;
   border-right-width: 2px;
@@ -191,19 +228,22 @@ body {
 }
 
 .food-more:hover,
-.food-more.hover {
+.food-more.hover
+{
   background-color: #c47135;
 }
 
 .food-more:hover:before,
 .food-more .hover:before,
 .food-more:hover:after,
-.food-more .hover:after {
+.food-more .hover:after
+{
   height: 100%;
   width: 100%;
 }
 
 /* Map */
-.map img {
+.map img
+{
   width: 100%;
 }

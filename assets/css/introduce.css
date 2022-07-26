@@ -1,4 +1,5 @@
-* {
+*
+{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -6,29 +7,30 @@
 }
 
 /* Introduce */
-:root {
+:root
+{
   --color-boxText: #f4e3c5;
   --color-h2: #f78427;
-  --color-background: linear-gradient(
-    60deg,
-    #f79533,
-    #f37055,
-    #ef4e7b,
-    #a166ab,
-    #5073b8,
-    #1098ad,
-    #07b39b,
-    #6fba82
-  );
+  --color-background: linear-gradient(60deg,
+      #f79533,
+      #f37055,
+      #ef4e7b,
+      #a166ab,
+      #5073b8,
+      #1098ad,
+      #07b39b,
+      #6fba82);
 }
 
-.introduce {
+.introduce
+{
   background: var(--color-background);
   padding-bottom: 20px;
   width: 100%;
 }
 
-div.intro-col12 {
+div.intro-col12
+{
   width: 90%;
   margin: auto;
   border: 2px solid gray;
@@ -37,19 +39,18 @@ div.intro-col12 {
   box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.3);
 }
 
-div.intro-head h1 {
+div.intro-head h1
+{
   text-align: center;
   margin-top: 10px;
   font-size: 3rem;
   color: orangered;
   -webkit-text-stroke: 1px rgb(243, 142, 34);
-  background-image: linear-gradient(
-    -225deg,
-    #231557 0%,
-    #44107a 29%,
-    #ff1361 67%,
-    #fff800 100%
-  );
+  background-image: linear-gradient(-225deg,
+      #231557 0%,
+      #44107a 29%,
+      #ff1361 67%,
+      #fff800 100%);
   background-size: 200%;
   background-clip: text;
   -webkit-background-clip: text;
@@ -57,29 +58,35 @@ div.intro-head h1 {
   animation: textColor 2s linear infinite;
 }
 
-@keyframes textColor {
-  to {
+@keyframes textColor
+{
+  to
+  {
     background-position: 200% center;
   }
 }
 
-div.intro-head h1::selection,
-header a::selection {
+div.intro-head h1::selection
+{
   background-color: transparent;
 }
 
-div.intro-text p::selection,
-div.intro-text h2::selection {
+p::selection,
+h2::selection,
+a::selection
+{
   background-color: #fcc755;
 }
 
-div.row-intro {
+div.row-intro
+{
   width: 100%;
   align-items: center;
   display: flex;
 }
 
-div.intro-col8 {
+div.intro-col8
+{
   width: 66.6667%;
   background-color: var(--color-boxText);
   margin: 10px;
@@ -87,30 +94,36 @@ div.intro-col8 {
   border: 2px solid orange;
 }
 
-div.intro-col4 {
+div.intro-col4
+{
   width: 33.3333%;
   margin: 10px;
   border-radius: 10px;
 }
 
-div.intro-text {
+div.intro-text
+{
   width: 100%;
   padding: 20px;
+  text-align: justify;
 }
 
-div.intro-text h2 {
+div.intro-text h2
+{
   color: var(--color-h2);
   text-decoration: underline;
   -webkit-text-stroke: 1px orangered;
 }
 
-div.intro-text p {
+div.intro-text p
+{
   padding: 10px 0;
   font-size: 1.5rem;
   -webkit-text-stroke: 0.5px orange;
 }
 
-div.intro-img {
+div.intro-img
+{
   position: relative;
   display: flex;
   align-items: center;
@@ -118,7 +131,8 @@ div.intro-img {
   border-radius: 10px;
 }
 
-div.intro-img::after {
+div.intro-img::after
+{
   content: "";
   width: 100%;
   height: 100%;
@@ -129,23 +143,28 @@ div.intro-img::after {
   animation: borderRotate 1s ease alternate infinite;
 }
 
-div.intro-img img {
+div.intro-img img
+{
   width: 100%;
   padding: 7px;
   border-radius: 10px;
   z-index: 1;
 }
 
-@keyframes borderRotate {
-  0% {
+@keyframes borderRotate
+{
+  0%
+  {
     background-position: 0% 50%;
   }
 
-  50% {
+  50%
+  {
     background-position: 100% 50%;
   }
 
-  100% {
+  100%
+  {
     background-position: 0% 50%;
   }
 }

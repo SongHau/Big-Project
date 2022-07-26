@@ -1,24 +1,29 @@
 /* SCROLLBAR */
-::-webkit-scrollbar {
+::-webkit-scrollbar
+{
   width: 10px;
 }
 
-::-webkit-scrollbar-track {
+::-webkit-scrollbar-track
+{
   box-shadow: inset 0 0 6px black;
 }
 
-::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb
+{
   background: lightgray;
   border-radius: 10px;
   box-shadow: inset 0 0 6px black;
 }
 
 /* BUTTON BACK TO TOP */
-html {
+html
+{
   scroll-behavior: smooth;
 }
 
-#back-to-top {
+#back-to-top
+{
   display: none;
   position: fixed;
   bottom: 2%;
@@ -26,54 +31,59 @@ html {
   font-size: 1.625rem;
   width: 50px;
   height: 50px;
-  background: transparent;
+  background: #e3e5ec;
   color: #000;
   cursor: pointer;
   border: 3px solid #000;
   border-radius: 50%;
 }
 
-#back-to-top:hover {
-  color: #333;
-  border: 3px solid #333;
-}
-
-.inButton {
+.inButton
+{
   animation-name: inButton;
   animation-duration: 0.5s;
   animation-fill-mode: both;
 }
 
-@keyframes inButton {
-  from {
+@keyframes inButton
+{
+  from
+  {
     opacity: 0;
     transform: translateY(100%);
   }
 
-  to {
+  to
+  {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-.outButton {
+.outButton
+{
   animation-name: outButton;
   animation-duration: 0.25s;
   animation-fill-mode: both;
 }
 
-@keyframes outButton {
-  from {
+@keyframes outButton
+{
+  from
+  {
     opacity: 1;
   }
 
-  to {
+  to
+  {
     opacity: 0;
     transform: translateY(100%);
   }
 }
-/*Header
-header {
+
+/* Header */
+header
+{
   position: fixed;
   top: 0;
   left: 0;
@@ -87,27 +97,32 @@ header {
   transition: all 0.6s ease-in-out;
 }
 
-header .img-logo {
+header .img-logo
+{
   display: flex;
   align-items: center;
 }
 
-header .img-logo a img {
+header .img-logo a img
+{
   width: 120px;
   margin-right: 15px;
   transition: width 1s ease;
 }
 
-header.sticky {
+header.sticky
+{
   padding: 5px 100px;
   background: rgba(0, 0, 0, 0.5);
 }
 
-header.sticky .img-logo img {
+header.sticky .img-logo img
+{
   width: 70px;
 }
 
-header .logo {
+header .logo
+{
   position: relative;
   font-weight: 200px;
   color: #000;
@@ -119,19 +134,22 @@ header .logo {
   text-shadow: 0 2px rgba(0, 0, 0, 0.2);
 }
 
-header ul {
+header ul
+{
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-header ul li {
+header ul li
+{
   position: relative;
   list-style: none;
 }
 
-header ul li::after {
+header ul li::after
+{
   content: "";
   display: block;
   background: orangered;
@@ -142,11 +160,13 @@ header ul li::after {
   margin-top: 2px;
 }
 
-header ul li:hover::after {
+header ul li:hover::after
+{
   width: 80%;
 }
 
-header ul li a {
+header ul li a
+{
   position: relative;
   margin: 0 15px;
   text-decoration: none;
@@ -157,16 +177,19 @@ header ul li a {
   font-size: 1.2rem;
 }
 
-header ul li:hover a {
+header ul li:hover a
+{
   color: orangered;
 }
 
 header.sticky .logo,
-header.sticky ul li a {
+header.sticky ul li a
+{
   color: #fff;
 }
 
-header.sticky ul li:hover a {
+header.sticky ul li:hover a
+{
   color: orangered;
 }*/
 header{
@@ -248,31 +271,37 @@ header .btn-mobile{
   display: none;
 }
 /* Footer */
-.footer {
+.footer
+{
   background-color: #24262b;
   padding: 70px 0;
 }
 
-.footer .container {
+.footer .container
+{
   max-width: 1170px;
   margin: auto;
 }
 
-.footer .container .row ul {
+.footer .container .row ul
+{
   list-style: none;
 }
 
-.footer .container .row {
+.footer .container .row
+{
   display: flex;
   flex-wrap: wrap;
 }
 
-.footer-col {
+.footer-col
+{
   width: 25%;
   padding: 0 15px;
 }
 
-.footer-col h4 {
+.footer-col h4
+{
   font-size: 1.125rem;
   color: #ffff;
   text-transform: capitalize;
@@ -281,7 +310,8 @@ header .btn-mobile{
   position: relative;
 }
 
-.footer-col h4::after {
+.footer-col h4::after
+{
   content: "";
   position: absolute;
   left: 0;
@@ -291,11 +321,13 @@ header .btn-mobile{
   width: 50px;
 }
 
-.footer-col ul li:not(:last-child) {
+.footer-col ul li:not(:last-child)
+{
   margin-bottom: 10px;
 }
 
-.footer ul li a {
+.footer ul li a
+{
   font-size: 1rem;
   text-transform: capitalize;
   counter-reset: #fff;
@@ -306,12 +338,14 @@ header .btn-mobile{
   transition: all 0.3s ease;
 }
 
-.footer-col ul li a:hover {
+.footer-col ul li a:hover
+{
   color: #fff;
   padding-left: 10px;
 }
 
-.footer-col .social-links a {
+.footer-col .social-links a
+{
   display: inline-block;
   height: 40px;
   width: 40px;
@@ -324,13 +358,15 @@ header .btn-mobile{
   transition: all 0.5s ease;
 }
 
-.footer-col .social-links a:hover {
+.footer-col .social-links a:hover
+{
   color: #24262b;
   background-color: #fff;
 }
 
 /* Copy Right */
-.copyright {
+.copyright
+{
   text-align: center;
   width: 100%;
   height: 30px;
@@ -338,17 +374,20 @@ header .btn-mobile{
   border-top: 2px solid #000;
 }
 
-.copyright p {
+.copyright p
+{
   font-size: 1 rem;
   line-height: 30px;
 }
 
 /* Modal */
-.modal.js-modal.open {
+.modal.js-modal.open
+{
   display: block;
 }
 
-.modal {
+.modal
+{
   position: fixed;
   top: 0;
   right: 0;
@@ -359,7 +398,8 @@ header .btn-mobile{
   display: none;
 }
 
-.wrapper {
+.wrapper
+{
   overflow: hidden;
   max-width: 390px;
   background: #fff;
@@ -372,12 +412,14 @@ header .btn-mobile{
   transform: translate(-50%, -50%);
 }
 
-.wrapper .title-text {
+.wrapper .title-text
+{
   display: flex;
   width: 200%;
 }
 
-.wrapper .title {
+.wrapper .title
+{
   width: 50%;
   font-size: 35px;
   font-weight: 600;
@@ -385,7 +427,8 @@ header .btn-mobile{
   transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-.wrapper .slide-controls {
+.wrapper .slide-controls
+{
   position: relative;
   display: flex;
   height: 50px;
@@ -397,7 +440,8 @@ header .btn-mobile{
   border-radius: 5px;
 }
 
-.slide-controls .slide {
+.slide-controls .slide
+{
   height: 100%;
   width: 100%;
   color: #fff;
@@ -410,11 +454,13 @@ header .btn-mobile{
   transition: all 0.6s ease;
 }
 
-.slide-controls label.signup {
+.slide-controls label.signup
+{
   color: #000;
 }
 
-.slide-controls .slider-tab {
+.slide-controls .slider-tab
+{
   position: absolute;
   height: 100%;
   width: 50%;
@@ -425,55 +471,66 @@ header .btn-mobile{
   transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-input[type="radio"] {
+input[type="radio"]
+{
   display: none;
 }
 
-#signup:checked ~ .slider-tab {
+#signup:checked~.slider-tab
+{
   left: 50%;
 }
 
-#signup:checked ~ label.signup {
+#signup:checked~label.signup
+{
   color: #fff;
   cursor: default;
   user-select: none;
 }
 
-#signup:checked ~ label.login {
+#signup:checked~label.login
+{
   color: #000;
 }
 
-#login:checked ~ label.signup {
+#login:checked~label.signup
+{
   color: #000;
 }
 
-#login:checked ~ label.login {
+#login:checked~label.login
+{
   cursor: default;
   user-select: none;
 }
 
-.wrapper .form-container {
+.wrapper .form-container
+{
   width: 100%;
   overflow: hidden;
 }
 
-.form-container .form-inner {
+.form-container .form-inner
+{
   display: flex;
   width: 200%;
 }
 
-.form-container .form-inner form {
+.form-container .form-inner form
+{
   width: 50%;
   transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-.form-inner form .field {
+.form-inner form .field
+{
   height: 50px;
   width: 100%;
   margin-top: 20px;
 }
 
-.form-inner form .field input {
+.form-inner form .field input
+{
   height: 100%;
   width: 100%;
   outline: none;
@@ -485,41 +542,49 @@ input[type="radio"] {
   transition: all 0.3s ease;
 }
 
-.form-inner form .field input:focus {
+.form-inner form .field input:focus
+{
   border-color: #fc83bb;
   /* box-shadow: inset 0 0 3px #fb6aae; */
 }
 
-.form-inner form .field input::placeholder {
+.form-inner form .field input::placeholder
+{
   color: #999;
   transition: all 0.3s ease;
 }
 
-form .field input:focus::placeholder {
+form .field input:focus::placeholder
+{
   color: #b3b3b3;
 }
 
-.form-inner form .pass-link {
+.form-inner form .pass-link
+{
   margin-top: 5px;
 }
 
-.form-inner form .signup-link {
+.form-inner form .signup-link
+{
   text-align: center;
   margin-top: 30px;
 }
 
 .form-inner form .pass-link a,
-.form-inner form .signup-link a {
+.form-inner form .signup-link a
+{
   color: orangered;
   text-decoration: none;
 }
 
 .form-inner form .pass-link a:hover,
-.form-inner form .signup-link a:hover {
+.form-inner form .signup-link a:hover
+{
   text-decoration: underline;
 }
 
-form .btn {
+form .btn
+{
   height: 50px;
   width: 100%;
   border-radius: 5px;
@@ -527,27 +592,28 @@ form .btn {
   overflow: hidden;
 }
 
-form .btn .btn-layer {
+form .btn .btn-layer
+{
   height: 100%;
   width: 300%;
   position: absolute;
   left: -100%;
-  background: -webkit-linear-gradient(
-    right,
-    orange,
-    orange,
-    orangered,
-    orangered
-  );
+  background: -webkit-linear-gradient(right,
+      orange,
+      orange,
+      orangered,
+      orangered);
   border-radius: 5px;
   transition: all 0.4s ease;
 }
 
-form .btn:hover .btn-layer {
+form .btn:hover .btn-layer
+{
   left: 0;
 }
 
-form .btn input[type="submit"] {
+form .btn input[type="submit"]
+{
   height: 100%;
   width: 100%;
   z-index: 1;
