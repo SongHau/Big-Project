@@ -72,8 +72,7 @@ html {
     transform: translateY(100%);
   }
 }
-
-/* Header */
+/*Header
 header {
   position: fixed;
   top: 0;
@@ -169,8 +168,85 @@ header.sticky ul li a {
 
 header.sticky ul li:hover a {
   color: orangered;
+}*/
+header{
+  z-index: 9;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 100px;
+  transition: all 0.6s ease-in-out;
 }
-
+header .logo-shop a img{
+  width: 120px;
+  transition: all 0.6s ease-in-out;
+}
+header.sticky .name-shop{
+  color: #fff;
+}
+header.sticky{
+  padding: 5px 100px;
+  background: rgba(0, 0, 0, 0.5);
+}
+header.sticky .logo-shop a img{
+  width: 70px;
+}
+header.sticky .menu a{
+  color: #fff;
+}
+header .name-shop{
+  color: #000;
+  font-size: 2.5rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 2px;
+  margin-left: -1;
+  transition: all 0.6s ease-in-out;
+  margin-left: -220px;
+}
+header .menu{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .menu a{
+  position: relative;
+  margin: 0 15px;
+  text-decoration: none;
+  color: #000;
+  letter-spacing: 1px;
+  font-weight: 500px;
+  transition: 0.6s;
+  font-size: 1.2rem;
+}
+header .menu a:hover{
+  color: orangered;
+}
+header .menu a::after{
+  content: "";
+  display: block;
+  background: orangered;
+  width: 0;
+  height: 2px;
+  transition: width 1s;
+  margin: auto;
+  margin-top: 2px;
+}
+header .menu a:hover:after{
+  width: 100%;
+}
+header .btn-mobile{
+  color: #000;
+  font-size: 1.563rem;
+  cursor: pointer;
+  display: none;
+}
 /* Footer */
 .footer {
   background-color: #24262b;
