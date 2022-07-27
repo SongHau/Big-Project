@@ -14,14 +14,12 @@ for (const lgBtn of lgBtns) {
   lgBtn.addEventListener("click", showLogin);
 }
 /* Close modal */
-window.addEventListener("click", function (e) {
-  if (document.getElementById("wrapper").contains(e.target)) {
-    // Clicked in box
-  } else {
-    if (e.target.className !== "js-login") {
-      modal.classList.remove("open");
-    }
-  }
+const modalContainer = document.querySelector(".wrapper");
+modal.addEventListener("click", function () {
+  modal.classList.remove("open");
+});
+modalContainer.addEventListener("click", function (event) {
+  event.stopPropagation();
 });
 /* Login and Register */
 const loginText = document.querySelector(".title-text .login");

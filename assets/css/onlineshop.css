@@ -768,6 +768,7 @@ form .btn input[type="submit"]
   position: relative;
   padding-left: 24px;
   margin-bottom: 12px;
+  margin-left: 10px;
   cursor: pointer;
   font-size: 16px;
   -webkit-user-select: none;
@@ -799,12 +800,12 @@ form .btn input[type="submit"]
   background-color: #ccc;
 }
 
-.container input:checked~.checkmark
+.container-radio input:checked~.checkmark
 {
   background-color: orangered;
 }
 
-.container input:checked~.checkmark:after
+.container-radio input:checked~.checkmark:after
 {
   display: block;
 }
@@ -866,14 +867,14 @@ form .btn input[type="submit"]
   display: block;
 }
 
-.btn-close
+#btn-close
 {
   position: absolute;
   top: 0;
   right: 0;
 }
 
-.btn-close a
+#btn-close a
 {
   display: block;
   text-decoration: none;
@@ -892,12 +893,11 @@ form .btn input[type="submit"]
   cursor: pointer;
 }
 
-.btn-close a i
+#btn-close a i
 {
   font-size: 1.125rem;
 }
 
-.modal-food.open
-{
+.modal-food.open {
   display: block;
 }

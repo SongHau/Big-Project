@@ -809,7 +809,7 @@
    </div>
 
    <div class="modal-food">
-      <div class="modal-body">
+      <div id=wrapper-1 class="modal-body">
          <div class="row-grid">
             <div class="col-6">
                <div class="modal-food-img">
@@ -832,18 +832,6 @@
 
                   <label class="container-radio">
                      <input type="radio" name="radio">
-                     <span>Sốt tỏi</span>
-                     <span class="checkmark"></span>
-                  </label>
-
-                  <label class="container-radio">
-                     <input type="radio" name="radio">
-                     <span>Sốt cay</span>
-                     <span class="checkmark"></span>
-                  </label>
-
-                  <label class="container-radio">
-                     <input type="radio" name="radio">
                      <span>Sốt mè đen</span>
                      <span class="checkmark"></span>
                   </label>
@@ -853,15 +841,27 @@
                      <span>Sốt phô mai</span>
                      <span class="checkmark"></span>
                   </label>
+
+                  <label class="container-radio">
+                     <input type="radio" name="radio">
+                     <span>Sốt tỏi</span>
+                     <span class="checkmark"></span>
+                  </label>
+
+                  <label class="container-radio">
+                     <input type="radio" name="radio">
+                     <span>Sốt cay</span>
+                     <span class="checkmark"></span>
+                  </label>
                </div>
 
                <div class="number">
                   <p>Số lượng:</p>
-                  <a href="" class="minus">
+                  <a href="" id="minus">
                      <i class="fa-solid fa-minus"></i>
                   </a>
                   <p class="number-var">1</p>
-                  <a href="" class="plus">
+                  <a href="" id="plus">
                      <i class="fa-solid fa-plus plus"></i>
                   </a>
                </div>
@@ -882,7 +882,7 @@
             </a>
          </div>
 
-         <div class="btn-close">
+         <div id="btn-close">
             <a href="">
                <i class="fa-solid fa-xmark"></i>
             </a>
