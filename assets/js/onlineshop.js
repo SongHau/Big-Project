@@ -59,7 +59,7 @@ for (const lgBtn of lgBtns) {
 }
 /* Close modal */
 window.addEventListener("click", function (e) {
-  const wrapper = document.getElementById("wrapper");
+  const wrapper = document.getElementById("wrapper-1");
   if (wrapper && wrapper.contains(e.target)) {
     // Clicked in box
   } else {
