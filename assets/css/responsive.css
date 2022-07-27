@@ -98,20 +98,20 @@
    header .btn-mobile
    {}
 
-   div.introduce
+   .introduce
    {
       flex-wrap: wrap;
       padding: 20px;
    }
 
-   div.introduce .introduce-list
+   .introduce .introduce-list
    {
       width: 50%;
       padding: 18px;
    }
 
-   div.introduce .introduce-list .introduce-sup,
-   div.introduce .introduce-list .introduce-des .introduce-main
+   .introduce .introduce-list .introduce-sup,
+   .introduce .introduce-list .introduce-des .introduce-main
    {
       font-size: 0.813rem;
    }
@@ -158,14 +158,52 @@
 /* Moblie */
 @media screen and (max-width: 46.188rem)
 {
-   .introduce .intro-col12
+   .main-body .intro-col12
    {
-      margin: 50px auto 0;
+      margin-top: 40px;
    }
 
-   .introduce .row-intro
+   .intro-col12 .intro-head
+   {
+      font-size: 0.6rem;
+   }
+
+   .main-body .row-intro
    {
       display: block;
+      padding: 0 10px;
+   }
+
+   .row-intro .intro-col8
+   {
+      width: 100%;
+      margin: 10px 0;
+   }
+
+   .row-intro .intro-col4
+   {
+      width: 100%;
+      margin: 10px 0;
+   }
+
+   .main-body .row-intro:nth-child(odd)
+   {
+      padding-bottom: 1px;
+   }
+
+   .main-body .row-intro:nth-child(odd) .intro-col4
+   {
+      display: none;
+   }
+
+   .row-intro .intro-text
+   {
+      padding: 16px;
+   }
+
+   .row-intro .intro-text p
+   {
+      font-size: 1rem;
    }
 }
 

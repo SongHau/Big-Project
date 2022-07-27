@@ -22,14 +22,14 @@
       #6fba82);
 }
 
-.introduce
+.main-body
 {
   background: var(--color-background);
   padding-bottom: 20px;
   width: 100%;
 }
 
-.introduce .intro-col12
+.main-body .intro-col12
 {
   width: 90%;
   margin: auto;
@@ -39,11 +39,11 @@
   box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.3);
 }
 
-.intro-col12 .intro-head h1
+.intro-col12 .intro-head
 {
   text-align: center;
   margin-top: 10px;
-  font-size: 3rem;
+  font-size: 2rem;
   color: orangered;
   -webkit-text-stroke: 1px rgb(243, 142, 34);
   background-image: linear-gradient(-225deg,
@@ -78,7 +78,7 @@ a::selection
   background-color: #fcc755;
 }
 
-.introduce .row-intro
+.main-body .row-intro
 {
   width: 100%;
   align-items: center;

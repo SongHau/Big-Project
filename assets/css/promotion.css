@@ -7,6 +7,20 @@
 }
 
 /* PROMOTIONAL */
+:root
+{
+  --color-background: linear-gradient(210deg,
+      /* #f79533, */
+      /* #f37055, */
+      #ef4e7b,
+      #a166ab,
+      #5073b8,
+      #1098ad,
+      #07b39b,
+      #6fba82);
+  --color-content: #d5d3cf;
+}
+
 a
 {
   text-decoration: none;
@@ -30,15 +44,7 @@ p::selection
 .main-body
 {
   width: 100%;
-  background: linear-gradient(210deg,
-      /* #f79533, */
-      /* #f37055, */
-      #ef4e7b,
-      #a166ab,
-      #5073b8,
-      #1098ad,
-      #07b39b,
-      #6fba82);
+  background: var(--color-background);
 }
 
 .main-body .row-mb
@@ -148,7 +154,7 @@ p::selection
 .main-body .crossbar
 {
   height: 29px;
-  background: #ccc;
+  background: var(--color-content);
 }
 
 .main-body .col-blog-3
@@ -170,7 +176,7 @@ p::selection
   padding: 10px;
   margin-bottom: 20px;
   border: 1px solid #000;
-  background: whitesmoke;
+  background: var(--color-content);
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
 }
 
@@ -249,8 +255,7 @@ p::selection
   margin-bottom: 10px;
   padding: 20px 10px;
   margin-right: 5px;
-  background: whitesmoke;
-  box-sizing: border-box;
+  background: var(--color-content);
 }
 
 .blog-container .blog-heading h1
@@ -273,7 +278,7 @@ p::selection
 .blog-content .blog-post
 {
   width: 250px;
-  margin: 0 10px 20px;
+  margin: 0 5px 20px;
   padding: 10px;
   line-height: 1.4;
   text-align: justify;
@@ -352,7 +357,7 @@ p::selection
   margin-bottom: 10px;
 }
 
-.blog-container #js-btn-more
+.blog-container .btn-more
 {
   border: none;
   color: #fff;
@@ -364,14 +369,14 @@ p::selection
   background-color: #c47135;
 }
 
-.blog-container #js-btn-more:hover
+.blog-container .btn-more:hover
 {
   color: #000;
   opacity: 0.9;
 }
 
-.blog-container #js-btn-more::before,
-.blog-container #js-btn-more::after
+.blog-container .btn-more::before,
+.blog-container .btn-more::after
 {
   content: "";
   display: block;
@@ -382,7 +387,7 @@ p::selection
   border: 0 solid #c47135;
 }
 
-.blog-container #js-btn-more::before
+.blog-container .btn-more::before
 {
   top: -4px;
   left: -4px;
@@ -390,7 +395,7 @@ p::selection
   border-top-width: 2px;
 }
 
-.blog-container #js-btn-more::after
+.blog-container .btn-more::after
 {
   right: -4px;
   bottom: -4px;
@@ -398,14 +403,14 @@ p::selection
   border-right-width: 2px;
 }
 
-.blog-container #js-btn-more:hover::before,
-.blog-container #js-btn-more:hover::after
+.blog-container .btn-more:hover::before,
+.blog-container .btn-more:hover::after
 {
   width: 100%;
   height: 100%;
 }
 
-.modal-blog
+/* .modal-blog
 {
   position: fixed;
   top: 0;
@@ -414,4 +419,4 @@ p::selection
   left: 0;
   display: none;
   background-color: rgba(0, 0, 0, 0.4);
-}
+} */
