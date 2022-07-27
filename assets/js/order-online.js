@@ -1,4 +1,4 @@
-/* Open Modal add food*/
+menuBtn/* Open Modal Add Food */
 const btnAdds = document.querySelectorAll(".food-add");
 const modalFood = document.querySelector(".modal-food");
 const btnMinus = document.querySelectorAll(".btn-minus");
@@ -59,7 +59,7 @@ function showLogin(e) {
 for (const lgBtn of lgBtns) {
   lgBtn.addEventListener("click", showLogin);
 }
-/* Close modal */
+/* Close Modal Add Food */
 window.addEventListener("click", function (e) {
   const wrapper = document.getElementById("wrapper-1");
   modalFood.addEventListener("click", function () {
