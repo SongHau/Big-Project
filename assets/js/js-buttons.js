@@ -1,6 +1,5 @@
 /* BUTTON BACK TO TOP */
 const backToTopButton = document.querySelector("#back-to-top");
-
 window.addEventListener("scroll", function scrollFunction() {
   if (window.pageYOffset > 300) {
     if (!backToTopButton.classList.contains("inButton")) {
@@ -18,7 +17,6 @@ window.addEventListener("scroll", function scrollFunction() {
     }
   }
 });
-
 backToTopButton.addEventListener("click", function backToTop() {
   window.scrollTo(0, 0);
 });
@@ -27,11 +25,10 @@ backToTopButton.addEventListener("click", function backToTop() {
 const articles = document.getElementsByClassName("item-article");
 const btn_scrollDown = document.querySelector(".news-latest-title");
 const newsList = document.querySelector(".list-news-latest");
-
+const newsLatest = document.querySelector(".news-latest");
 var heightOfNewsList = 0;
 var deg = 0;
 for (const article of articles) heightOfNewsList += article.offsetHeight;
-
 btn_scrollDown.addEventListener("click", function dropDown() {
   btn_scrollDown.classList.toggle("openMenu");
   newsList.classList.toggle("openMenu");
@@ -40,8 +37,10 @@ btn_scrollDown.addEventListener("click", function dropDown() {
   arrow.style.transform = "rotate(" + deg + "deg)";
   if (newsList.classList.contains("openMenu")) {
     newsList.style.height = heightOfNewsList + "px";
+    newsLatest.style.position = 'static';
   } else {
     newsList.style.height = 0 + "px";
+    newsLatest.style.position = "sticky";
   }
 });
 
@@ -49,7 +48,6 @@ btn_scrollDown.addEventListener("click", function dropDown() {
 const moreBtn = document.getElementById("js-btn-more");
 const moreBlog = document.querySelectorAll(".blog-more");
 var countMore = 0;
-
 moreBtn.addEventListener("click", function showMore() {
   for (let i = 0; i < 4; i++) moreBlog[countMore++].style.display = "block";
   if (countMore == moreBlog.length) moreBtn.style.display = "none";

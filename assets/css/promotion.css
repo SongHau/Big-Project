@@ -30,9 +30,9 @@ p::selection
 .main-body
 {
   width: 100%;
-  background: linear-gradient(60deg,
-      #f79533,
-      #f37055,
+  background: linear-gradient(210deg,
+      /* #f79533, */
+      /* #f37055, */
       #ef4e7b,
       #a166ab,
       #5073b8,
@@ -45,7 +45,7 @@ p::selection
 {
   position: relative;
   display: flex;
-  margin: 20px 10px;
+  margin: 20px 20px;
 }
 
 .row-mb img
@@ -155,7 +155,7 @@ p::selection
 {
   position: sticky;
   width: 25%;
-  margin-right: 30px;
+  margin-right: 10px;
 }
 
 .main-body .col-blog-9
@@ -170,20 +170,20 @@ p::selection
   padding: 10px;
   margin-bottom: 20px;
   border: 1px solid #000;
-  box-shadow: 0 0 20px 8px rgba(0, 0, 0, 0.5);
-  ;
+  background: whitesmoke;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
 }
 
 .news-latest .news-latest-title h2
 {
   text-transform: uppercase;
-  border-bottom: 2px solid #000;
   text-align: center;
   font-size: 1.125rem;
   font-weight: 400;
-  margin-bottom: 20px;
-  padding: 10px;
   cursor: pointer;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #000;
 }
 
 .news-latest-title .arrow
@@ -244,17 +244,21 @@ p::selection
 
 .main-body .blog-container
 {
-  box-shadow: 0 0 20px 8px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
   border: 1px solid #000;
   margin-bottom: 10px;
   padding: 20px 10px;
+  margin-right: 5px;
+  background: whitesmoke;
+  box-sizing: border-box;
 }
 
 .blog-container .blog-heading h1
 {
-  font-size: 1.875rem;
+  font-size: 2.5rem;
   font-weight: 400;
   text-align: center;
+  text-shadow: 3px 3px 5px orangered;
   margin-bottom: 40px;
   text-transform: uppercase;
 }
@@ -272,14 +276,13 @@ p::selection
   margin: 0 10px 20px;
   padding: 10px;
   line-height: 1.4;
-  letter-spacing: 0.5px;
   text-align: justify;
   transition: transform 0.5s ease;
 }
 
 .blog-content .blog-post:hover
 {
-  box-shadow: 0 0 10px #ccc;
+  box-shadow: 0 0 10px #000;
   transform: translateY(-10px);
 }
 
@@ -376,7 +379,7 @@ p::selection
   width: 24px;
   height: 24px;
   transition: all 0.25s;
-  border: 0 solid #ccc;
+  border: 0 solid #c47135;
 }
 
 .blog-container #js-btn-more::before

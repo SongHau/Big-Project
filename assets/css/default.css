@@ -43,7 +43,7 @@ html
 #back-to-top:hover
 {
   color: #fff;
-  background: #ed3324 !important;
+  background: orangered !important;
 }
 
 .inButton
@@ -117,7 +117,7 @@ header.sticky .name-shop
 
 header.sticky
 {
-  padding: 4px 10px;
+  padding: 4px 100px;
   background: rgba(0, 0, 0, 0.5);
 }
 
