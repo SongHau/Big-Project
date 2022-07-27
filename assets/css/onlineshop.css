@@ -307,11 +307,6 @@ header ul li::after
   display: flex;
 }
 
-.food-lits:hover
-{
-  transform: translateY(-5px);
-}
-
 .food-list .food-img
 {
   width: 160px;
@@ -361,8 +356,8 @@ header ul li::after
 {
   align-self: flex-end;
   display: block;
-  padding: 4px 6px;
-  border: 1px solid orangered;
+  padding: 4px 5px;
+  border: 2px solid orange;
   border-radius: 50%;
   margin-bottom: 5px;
   margin-right: 5px;
@@ -370,7 +365,7 @@ header ul li::after
 
 .food-list .food-add .add
 {
-  color: orangered;
+  color: orange;
   font-size: 1.4rem;
 }
 
@@ -383,9 +378,7 @@ header ul li::after
 
 .cart .cart-top
 {
-  padding: 15px;
   text-align: center;
-  border-bottom: 1px dotted #ccc;
 }
 
 .cart .cart-top a
@@ -399,13 +392,51 @@ header ul li::after
   padding: 8px;
   border-radius: 2px;
 }
-
+.cart .shopping-cart{
+  display: flex;
+  max-height: 70vh;
+  padding: 20px
+}
+.cart .shopping-cart .shopping-cart-img img{
+  width: 100%;
+  border-radius: 5px;
+}
+.cart .shopping-cart .shopping-cart-img{
+  width: 70px;
+}
+.cart .shopping-cart .shopping-cart-content{
+  flex: 1;
+  margin-left: 15px;
+}
+.cart .shopping-cart .shopping-cart-content .shopping-cart-left h4{
+  font-size: 1.1rem;
+  color: #5c5c5c;
+}
+.cart .shopping-cart .shopping-cart-content .shopping-cart-left p{
+  font-size: 0.9rem;
+  color: #5c5c5c;
+  margin-top: 10px;
+}
+.cart .shopping-cart-right p{
+  color: orangered
+}
+.cart .shopping-cart-right a{
+  display: block;
+  text-align: right;
+  text-decoration: none;
+  color: #5c5c5c;
+  margin-top: 10px;
+}
+.cart .cart-top,
+.cart .cart-bottom{
+  padding: 20px;
+}
 .cart .cart-bottom
 {
   display: flex;
   justify-content: space-between;
-  padding: 15px;
   align-items: center;
+  border-top: 1px dotted #ccc;
 }
 
 .cart .cart-bottom .all
@@ -696,7 +727,6 @@ input[type="radio"]
 .form-inner form .field input:focus
 {
   border-color: #fc83bb;
-  /* box-shadow: inset 0 0 3px #fb6aae; */
 }
 
 .form-inner form .field input::placeholder
@@ -869,7 +899,7 @@ form .btn input[type="submit"]
 
 .container-radio input:checked~.checkmark
 {
-  background-color: orangered;
+  background-color: orange;
 }
 
 .container-radio input:checked~.checkmark:after
@@ -918,7 +948,27 @@ form .btn input[type="submit"]
   font-size: 1rem;
   margin-left: 8px;
 }
-
+.number{
+  display: flex;
+  margin: 5px 0 0 0;
+  align-items: center;
+}
+.number p{
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #5c5c5c;
+}
+.number a{
+  border: 2px solid orange;
+  padding: 4px 7px;
+  border-radius: 50%;
+  margin: 0px 8px;
+  color: orange;
+}
+.number a:hover{
+  background-color: orange;
+  color: #fff;
+}
 .add-to-cart
 {
   background-color: orange;
