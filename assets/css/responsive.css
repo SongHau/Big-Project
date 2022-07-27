@@ -22,7 +22,7 @@
       position: fixed;
       background: rgba(0, 0, 0, 0.9);
       flex-direction: column;
-      width: 50%;
+      width: 60%;
       height: 100vh;
       top: 0;
       right: -1000px;
@@ -73,7 +73,9 @@
 /* RESPONSIVE FOR HOME PAGE */
 /* PC */
 @media(min-width:64rem)
-{}
+{
+
+}
 
 /* Tablet */
 @media (min-width:46.25rem) and (max-width:63.938rem)
@@ -83,20 +85,12 @@
 @media (max-width:46.188rem)
 {
 
-   header
-   {
-      padding: 30px 10px;
-   }
-
    header.sticky,
    header
    {
-      /* padding: 30px 30px; */
+      padding: 0px 10px 0px 0px;
       text-align: center;
    }
-
-   header .btn-mobile
-   {}
 
    div.introduce
    {
