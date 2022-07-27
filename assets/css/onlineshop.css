@@ -16,6 +16,7 @@ html
 {
   scroll-behavior: smooth;
 }
+
 #back-to-top
 {
   display: none;
@@ -834,6 +835,7 @@ form .btn input[type="submit"]
   position: relative;
   padding-left: 24px;
   margin-bottom: 12px;
+  margin-left: 10px;
   cursor: pointer;
   font-size: 16px;
   -webkit-user-select: none;
@@ -865,12 +867,12 @@ form .btn input[type="submit"]
   background-color: #ccc;
 }
 
-.container input:checked~.checkmark
+.container-radio input:checked~.checkmark
 {
   background-color: orangered;
 }
 
-.container input:checked~.checkmark:after
+.container-radio input:checked~.checkmark:after
 {
   display: block;
 }

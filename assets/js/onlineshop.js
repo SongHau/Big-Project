@@ -14,6 +14,7 @@ function showAddfood(e) {
   let priceFood = parentElement.querySelector(
     ".food-text .food-price"
   ).innerHTML;
+  modalFood.querySelector(".number-var").innerHTML = 1;
   modalFood.querySelector(".modal-food-img").innerHTML = imgFood;
   modalFood.querySelector(".modal-food-name").innerHTML = titleFood;
   modalFood.querySelector(".modal-food-price").innerHTML = priceFood;
@@ -60,14 +61,11 @@ for (const lgBtn of lgBtns) {
 /* Close modal */
 window.addEventListener("click", function (e) {
   const wrapper = document.getElementById("wrapper-1");
-  if (wrapper && wrapper.contains(e.target)) {
-    // Clicked in box
-  } else {
-    if (modal && e.target.className !== "js-login") {
-      modal.classList.remove("open");
-    }
-    if (modalFood && e.target.className !== "food-add") {
-      modalFood.classList.remove("open");
-    }
-  }
+  modalFood.addEventListener("click", function (e) {
+    e.preventDefault();
+    modalFood.classList.remove("open");
+  });
+  wrapper.addEventListener("click", function (event) {
+    event.stopPropagation();
+  });
 });
