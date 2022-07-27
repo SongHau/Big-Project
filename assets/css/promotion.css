@@ -7,21 +7,15 @@
 }
 
 /* PROMOTIONAL */
-img
-{
-  width: 100%;
-}
-
 a
 {
   text-decoration: none;
   color: #252a2b;
 }
 
-a:hover,
-.blog-heading h1:hover
+a:hover
 {
-  color: #c47135;
+  color: #e00000;
 }
 
 h1::selection,
@@ -33,20 +27,40 @@ p::selection
   background-color: #fcc755;
 }
 
+.main-body
+{
+  width: 100%;
+  background: linear-gradient(60deg,
+      #f79533,
+      #f37055,
+      #ef4e7b,
+      #a166ab,
+      #5073b8,
+      #1098ad,
+      #07b39b,
+      #6fba82);
+}
+
 .main-body .row-mb
 {
+  position: relative;
   display: flex;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin: 20px 10px;
+}
+
+.row-mb img
+{
+  width: 100%;
 }
 
 .main-body .topbar
 {
-  background: #e3e5ec;
+  background: #ccc;
   font-size: 0.8rem;
   margin-top: 0;
   align-items: center;
   display: flex;
+  padding: 2px 0;
 }
 
 .topbar .col-tb-6
@@ -124,30 +138,40 @@ p::selection
   margin-left: 5px;
 }
 
+.main-body .box
+{
+  width: 100%;
+  height: 90px;
+  background: #a1a3aa;
+}
+
 .main-body .crossbar
 {
-  height: 25px;
-  margin-top: 100px;
-  background: #e3e5ec;
+  height: 29px;
+  background: #ccc;
 }
 
 .main-body .col-blog-3
 {
+  position: sticky;
   width: 25%;
-  margin: 10px 10px 0;
+  margin-right: 30px;
 }
 
 .main-body .col-blog-9
 {
   width: 75%;
-  margin: 10px 0 0 10px;
 }
 
 .main-body .news-latest
 {
-  border: 1px solid #e3e5ec;
+  position: sticky;
+  top: 100px;
   padding: 10px;
-  /* margin-bottom: 30px; */
+  margin-bottom: 20px;
+  border: 1px solid #000;
+  box-shadow: 0 0 20px 8px rgba(0, 0, 0, 0.5);
+  ;
 }
 
 .news-latest .news-latest-title h2
@@ -156,7 +180,7 @@ p::selection
   border-bottom: 2px solid #000;
   text-align: center;
   font-size: 1.125rem;
-  font-weight: 300;
+  font-weight: 400;
   margin-bottom: 20px;
   padding: 10px;
   cursor: pointer;
@@ -176,8 +200,8 @@ p::selection
 
 .list-news-latest .item-article
 {
-  padding: 15px 0;
   display: flex;
+  padding: 15px 0;
   border-bottom: 1px #efefef dotted;
 }
 
@@ -188,12 +212,12 @@ p::selection
 
 .list-news-latest .post-image
 {
-  width: 30%;
+  width: 40%;
 }
 
 .list-news-latest .post-content
 {
-  width: 70%;
+  width: 60%;
   padding-left: 10px;
 }
 
@@ -213,14 +237,16 @@ p::selection
 .author,
 .date
 {
-  font-size: 0.9rem;
+  font-style: italic;
+  font-size: 0.8rem;
   opacity: 0.7;
 }
 
-.main-body .blog
+.main-body .blog-container
 {
-  border-right: none;
-  border: 1px solid #e3e5ec;
+  box-shadow: 0 0 20px 8px rgba(0, 0, 0, 0.5);
+  border: 1px solid #000;
+  margin-bottom: 10px;
   padding: 20px 10px;
 }
 
@@ -237,12 +263,24 @@ p::selection
 {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .blog-content .blog-post
 {
-  width: 255px;
-  margin: 10px;
+  width: 250px;
+  margin: 0 10px 20px;
+  padding: 10px;
+  line-height: 1.4;
+  letter-spacing: 0.5px;
+  text-align: justify;
+  transition: transform 0.5s ease;
+}
+
+.blog-content .blog-post:hover
+{
+  box-shadow: 0 0 10px #ccc;
+  transform: translateY(-10px);
 }
 
 .blog-content .blog-post.blog-more
@@ -266,10 +304,25 @@ p::selection
   }
 }
 
+.blog-post .blog-image
+{
+  overflow: hidden;
+}
+
+.blog-post .blog-image img
+{
+  transition: transform 1s ease;
+}
+
+.blog-post .blog-image img:hover
+{
+  transform: scale(1.2);
+}
+
 .blog-post .blog-post-title
 {
   font-size: 1rem;
-  margin-bottom: 10px;
+  margin: 10px 0;
 }
 
 .blog-post span::after
@@ -286,8 +339,8 @@ p::selection
 .blog-post .entry-content
 {
   margin-top: 10px;
-  line-height: 21px;
 }
+
 
 .blog-container .btn
 {
@@ -323,7 +376,7 @@ p::selection
   width: 24px;
   height: 24px;
   transition: all 0.25s;
-  border: 0 solid #c47135;
+  border: 0 solid #ccc;
 }
 
 .blog-container #js-btn-more::before

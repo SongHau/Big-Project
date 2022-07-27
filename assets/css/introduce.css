@@ -29,7 +29,7 @@
   width: 100%;
 }
 
-div.intro-col12
+.introduce .intro-col12
 {
   width: 90%;
   margin: auto;
@@ -39,7 +39,7 @@ div.intro-col12
   box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.3);
 }
 
-div.intro-head h1
+.intro-col12 .intro-head h1
 {
   text-align: center;
   margin-top: 10px;
@@ -78,14 +78,15 @@ a::selection
   background-color: #fcc755;
 }
 
-div.row-intro
+.introduce .row-intro
 {
   width: 100%;
   align-items: center;
   display: flex;
+
 }
 
-div.intro-col8
+.row-intro .intro-col8
 {
   width: 66.6667%;
   background-color: var(--color-boxText);
@@ -94,35 +95,35 @@ div.intro-col8
   border: 2px solid orange;
 }
 
-div.intro-col4
+.row-intro .intro-col4
 {
   width: 33.3333%;
   margin: 10px;
   border-radius: 10px;
 }
 
-div.intro-text
+.row-intro .intro-text
 {
   width: 100%;
   padding: 20px;
   text-align: justify;
 }
 
-div.intro-text h2
+.row-intro .intro-text h2
 {
   color: var(--color-h2);
   text-decoration: underline;
   -webkit-text-stroke: 1px orangered;
 }
 
-div.intro-text p
+.row-intro .intro-text p
 {
   padding: 10px 0;
   font-size: 1.5rem;
   -webkit-text-stroke: 0.5px orange;
 }
 
-div.intro-img
+.row-intro .intro-img
 {
   position: relative;
   display: flex;
@@ -131,7 +132,7 @@ div.intro-img
   border-radius: 10px;
 }
 
-div.intro-img::after
+.row-intro .intro-img::after
 {
   content: "";
   width: 100%;
@@ -143,7 +144,7 @@ div.intro-img::after
   animation: borderRotate 1s ease alternate infinite;
 }
 
-div.intro-img img
+.row-intro .intro-img img
 {
   width: 100%;
   padding: 7px;
