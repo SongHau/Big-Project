@@ -51,7 +51,6 @@ const moreBlog = document.querySelectorAll(".blog-more");
 var countMore = 0;
 
 moreBtn.addEventListener("click", function showMore() {
-  for (let i = 0; i < 4; i++)
-    moreBlog[countMore++].style.display = "block";
+  for (let i = 0; i < 4; i++) moreBlog[countMore++].style.display = "block";
   if (countMore == moreBlog.length) moreBtn.style.display = "none";
 });
