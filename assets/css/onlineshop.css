@@ -934,14 +934,14 @@ form .btn input[type="submit"]
   display: block;
 }
 
-.btn-close
+#btn-close
 {
   position: absolute;
   top: 0;
   right: 0;
 }
 
-.btn-close a
+#btn-close a
 {
   display: block;
   text-decoration: none;
@@ -960,12 +960,11 @@ form .btn input[type="submit"]
   cursor: pointer;
 }
 
-.btn-close a i
+#btn-close a i
 {
   font-size: 1.125rem;
 }
 
-.modal-food.open
-{
+.modal-food.open {
   display: block;
 }

@@ -14,7 +14,7 @@ function showAddfood(e) {
   let priceFood = parentElement.querySelector(
     ".food-text .food-price"
   ).innerHTML;
-  modalFood.querySelector(".number-var").innerHTML = 1;
+  modalFood.querySelector('.number-var').innerHTML = 1;
   modalFood.querySelector(".modal-food-img").innerHTML = imgFood;
   modalFood.querySelector(".modal-food-name").innerHTML = titleFood;
   modalFood.querySelector(".modal-food-price").innerHTML = priceFood;
@@ -31,9 +31,7 @@ function removeFood(e) {
   if (parentElement.querySelector(".number-var").innerHTML > 1) {
     parentElement.querySelector(".number-var").innerHTML =
       parseInt(parentElement.querySelector(".number-var").innerHTML) - 1;
-  } else {
-    alert("Sống lượng tối thiểu là 1");
-  }
+  } 
 }
 function addFood(e) {
   e.preventDefault();
@@ -47,10 +45,15 @@ function closeModalfood(e) {
   e.preventDefault();
   modalFood.classList.remove("open");
 }
-btnMinus.addEventListener("click", removeFood);
-btnPlus.addEventListener("click", addFood);
-closeModal.addEventListener("click", closeModalfood);
-
+if (btnMinus){
+	btnMinus.addEventListener("click", removeFood);
+}
+if (btnPlus){
+	btnPlus.addEventListener("click", addFood);
+}
+if (closeModal){
+	closeModal.addEventListener("click", closeModalfood);
+}
 function showLogin(e) {
   e.preventDefault();
   modal.classList.add("open");
@@ -61,8 +64,7 @@ for (const lgBtn of lgBtns) {
 /* Close modal */
 window.addEventListener("click", function (e) {
   const wrapper = document.getElementById("wrapper-1");
-  modalFood.addEventListener("click", function (e) {
-    e.preventDefault();
+  modalFood.addEventListener("click", function () {
     modalFood.classList.remove("open");
   });
   wrapper.addEventListener("click", function (event) {
