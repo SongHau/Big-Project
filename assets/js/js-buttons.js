@@ -37,7 +37,7 @@ btn_scrollDown.addEventListener("click", function dropDown() {
   arrow.style.transform = "rotate(" + deg + "deg)";
   if (newsList.classList.contains("openMenu")) {
     newsList.style.height = heightOfNewsList + "px";
-    newsLatest.style.position = 'static';
+    newsLatest.style.position = "static";
   } else {
     newsList.style.height = 0 + "px";
     newsLatest.style.position = "sticky";

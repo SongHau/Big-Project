@@ -171,8 +171,8 @@ p::selection
 
 .main-body .news-latest
 {
-  position: sticky;
-  top: 100px;
+  /* position: sticky;
+  top: 100px; */
   padding: 10px;
   margin-bottom: 20px;
   border: 1px solid #000;
@@ -194,12 +194,11 @@ p::selection
 
 .news-latest-title .arrow
 {
-  transition: all .5s;
+  transition: all 0.5s;
 }
 
 .news-latest .list-news-latest
 {
-  height: 0;
   overflow: hidden;
   transition: all 1s;
 }

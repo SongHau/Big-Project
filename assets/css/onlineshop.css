@@ -956,6 +956,7 @@ form .btn input[type="submit"]
 .number p{
   font-size: 1.1rem;
   font-weight: bold;
+  padding: 0 10px;
   color: #5c5c5c;
 }
 .number a{

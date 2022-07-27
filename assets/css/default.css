@@ -294,43 +294,6 @@ header.sticky .btn-mobile
   background-color: #fff;
 }
 
-.switch-theme
-{
-  position: relative;
-}
-
-.switch-theme .switch-btn
-{
-  display: none;
-}
-
-.switch-theme .slide
-{
-  width: 100px;
-  margin-top: 26px;
-  padding: 8px;
-  border-radius: 30px;
-  text-align: center;
-  color: #fff;
-  font-size: 1rem;
-  background: #a7a9ac;
-  cursor: pointer;
-}
-
-.switch-theme .slide::before
-{
-  position: absolute;
-  content: '';
-  display: block;
-  width: 32px;
-  height: 32px;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  border-radius: 40px;
-  background: #0d6fde;
-}
-
 /* Copy Right */
 .copyright
 {
