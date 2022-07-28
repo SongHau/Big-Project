@@ -392,45 +392,64 @@ header ul li::after
   padding: 8px;
   border-radius: 2px;
 }
-.cart .shopping-cart{
+
+.cart .shopping-cart
+{
   display: flex;
   max-height: 70vh;
   padding: 20px
 }
-.cart .shopping-cart .shopping-cart-img img{
+
+.cart .shopping-cart .shopping-cart-img img
+{
   width: 100%;
   border-radius: 5px;
 }
-.cart .shopping-cart .shopping-cart-img{
+
+.cart .shopping-cart .shopping-cart-img
+{
   width: 70px;
 }
-.cart .shopping-cart .shopping-cart-content{
+
+.cart .shopping-cart .shopping-cart-content
+{
   flex: 1;
   margin-left: 15px;
 }
-.cart .shopping-cart .shopping-cart-content .shopping-cart-left h4{
+
+.cart .shopping-cart .shopping-cart-content .shopping-cart-left h4
+{
   font-size: 1.1rem;
   color: #5c5c5c;
 }
-.cart .shopping-cart .shopping-cart-content .shopping-cart-left p{
+
+.cart .shopping-cart .shopping-cart-content .shopping-cart-left p
+{
   font-size: 0.9rem;
   color: #5c5c5c;
   margin-top: 10px;
 }
-.cart .shopping-cart-right p{
+
+.cart .shopping-cart-right p
+{
   color: orangered
 }
-.cart .shopping-cart-right a{
+
+.cart .shopping-cart-right a
+{
   display: block;
   text-align: right;
   text-decoration: none;
   color: #5c5c5c;
   margin-top: 10px;
 }
+
 .cart .cart-top,
-.cart .cart-bottom{
+.cart .cart-bottom
+{
   padding: 20px;
 }
+
 .cart .cart-bottom
 {
   display: flex;
@@ -948,28 +967,37 @@ form .btn input[type="submit"]
   font-size: 1rem;
   margin-left: 8px;
 }
-.number{
+
+.number
+{
   display: flex;
   margin: 5px 0 0 0;
   align-items: center;
 }
-.number p{
+
+.number p
+{
   font-size: 1.1rem;
   font-weight: bold;
   padding: 0 10px;
   color: #5c5c5c;
 }
-.number a{
+
+.number a
+{
   border: 2px solid orange;
   padding: 4px 7px;
   border-radius: 50%;
   margin: 0px 8px;
   color: orange;
 }
-.number a:hover{
+
+.number a:hover
+{
   background-color: orange;
   color: #fff;
 }
+
 .add-to-cart
 {
   background-color: orange;
@@ -1016,6 +1044,7 @@ form .btn input[type="submit"]
   font-size: 1.125rem;
 }
 
-.modal-food.open {
+.modal-food.open
+{
   display: block;
 }

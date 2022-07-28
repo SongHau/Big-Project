@@ -22,7 +22,7 @@
       position: fixed;
       background: rgba(0, 0, 0, 0.9);
       flex-direction: column;
-      width: 60%;
+      width: 70%;
       height: 100vh;
       top: 0;
       right: -1000px;
@@ -73,9 +73,7 @@
 /* RESPONSIVE FOR HOME PAGE */
 /* PC */
 @media(min-width:64rem)
-{
-
-}
+{}
 
 /* Tablet */
 @media (min-width:46.25rem) and (max-width:63.938rem)
@@ -88,7 +86,7 @@
    header.sticky,
    header
    {
-      padding: 0px 10px 0px 0px;
+      padding: 32px 10px 0px 0px;
       text-align: center;
    }
 
@@ -204,7 +202,8 @@
       padding: 16px;
    }
 
-   .row-intro .intro-text p
+   .row-intro .intro-text p,
+   .row-intro .intro-text h2
    {
       font-size: 1rem;
    }
@@ -243,5 +242,11 @@
    .blog-content .blog-post
    {
       width: 100%;
+   }
+
+   .blog-container .blog-heading h1
+   {
+      font-size: 1rem;
+      margin-bottom: 4px;
    }
 }

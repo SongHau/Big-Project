@@ -9,11 +9,11 @@
 /* Introduce */
 :root
 {
-  --color-boxText: #f4e3c5;
+  --color-boxText: #fff;
   --color-h2: #f78427;
   --color-background: linear-gradient(60deg,
-      #f79533,
-      #f37055,
+      /* #f79533,
+      #f37055, */
       #ef4e7b,
       #a166ab,
       #5073b8,
@@ -22,19 +22,26 @@
       #6fba82);
 }
 
+p::selection,
+h2::selection,
+a::selection
+{
+  background-color: #fcc755;
+}
+
 .main-body
 {
   background: var(--color-background);
-  padding-bottom: 20px;
-  width: 100%;
+  padding-bottom: 30px;
 }
 
 .main-body .intro-col12
 {
-  width: 90%;
+  width: 95%;
   margin: auto;
+  padding: 5px;
   border: 2px solid gray;
-  background-color: black;
+  background-color: #d5d3cf;
   border-radius: 15px;
   box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.3);
 }
@@ -55,10 +62,10 @@
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: textColor 2s linear infinite;
+  animation: textColour 2s linear infinite;
 }
 
-@keyframes textColor
+@keyframes textColour
 {
   to
   {
@@ -66,24 +73,15 @@
   }
 }
 
-div.intro-head h1::selection
+.intro-head h1::selection
 {
   background-color: transparent;
 }
 
-p::selection,
-h2::selection,
-a::selection
-{
-  background-color: #fcc755;
-}
-
 .main-body .row-intro
 {
-  width: 100%;
   align-items: center;
   display: flex;
-
 }
 
 .row-intro .intro-col8
@@ -91,20 +89,18 @@ a::selection
   width: 66.6667%;
   background-color: var(--color-boxText);
   margin: 10px;
-  border-radius: 10px;
   border: 2px solid orange;
+  box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.3);
 }
 
 .row-intro .intro-col4
 {
   width: 33.3333%;
   margin: 10px;
-  border-radius: 10px;
 }
 
 .row-intro .intro-text
 {
-  width: 100%;
   padding: 20px;
   text-align: justify;
 }
@@ -120,7 +116,6 @@ a::selection
 {
   padding: 10px 0;
   font-size: 1.5rem;
-  -webkit-text-stroke: 0.5px orange;
 }
 
 .row-intro .intro-img
@@ -129,7 +124,6 @@ a::selection
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 10px;
 }
 
 .row-intro .intro-img::after
@@ -140,14 +134,13 @@ a::selection
   position: absolute;
   background: var(--color-background);
   background-size: 300% 300%;
-  border-radius: 10px;
   animation: borderRotate 1s ease alternate infinite;
 }
 
 .row-intro .intro-img img
 {
   width: 100%;
-  padding: 7px;
+  padding: 8px;
   border-radius: 10px;
   z-index: 1;
 }
