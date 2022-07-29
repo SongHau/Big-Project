@@ -1,9 +1,12 @@
-menuBtn/* Open Modal Add Food */
+/* Open Modal Add Food */
 const btnAdds = document.querySelectorAll(".food-add");
 const modalFood = document.querySelector(".modal-food");
 const btnMinus = document.querySelectorAll(".btn-minus");
 const btnPlus = document.querySelectorAll(".btn-plus");
 const closeModal = document.getElementById("btn-close");
+const btnAddItem = document.querySelectorAll(".add-to-cart a");
+const btnRemoveItem = document.querySelectorAll(".shopping-carts .removeItem");
+const shoppingCarts = document.getElementById("shopping-carts");
 function showAddfood(e) {
   e.preventDefault();
   let parentElement = e.currentTarget.parentNode;
@@ -69,3 +72,83 @@ window.addEventListener("click", function (e) {
     event.stopPropagation();
   });
 });
+const radios = document.getElementsByName('radio');
+
+
+function addItemFood(e) {
+      e.preventDefault();
+	  let itemType = '';
+	  for (let i = 0, length = radios.length; i < length; i++) {
+		if (radios[i].checked) {
+			itemType = radios[i].parentElement.textContent.trim();;
+			break;
+		}
+	  }
+      let itemImg = modalFood.querySelector('.modal-food-img').innerHTML;
+	  let itemTitle = modalFood.querySelector(".modal-food-name").innerHTML;
+	  let itemNumber = parseInt(modalFood.querySelector(".number-var").innerHTML);
+	  let itemPrice = modalFood.querySelector(".modal-food-price").innerHTML;
+let itemContent = '<div class="shopping-cart"  price="'+itemPrice.replace(/[^0-9]/g , '')+'" number="'+ itemNumber +'" data="'+itemTitle+'" type="'+itemType+'" > <div class="shopping-cart-img"> '+ itemImg +' </div> <div class="shopping-cart-content"> <div class="shopping-cart-left"> <h4>'+ itemTitle +'</h4> <p>'+ itemType +'</p> </div> <div class="number"> <a href="javascript:void(0)" onclick="removeFoodCart(this)" class="btn-minus"> <i class="fa-solid fa-minus"></i> </a> <p class="number-var">'+ itemNumber +'</p> <a href="javascript:void(0)" onclick="addFoodCart(this)" class="btn-plus"> <i class="fa-solid fa-plus plus"></i> </a> </div> </div> <div class="shopping-cart-right"> <p> '+ itemPrice +'</p> <a class="removeItem" href="javascript:void(0)" onclick="removeItemFood(this)" >Xóa</a> </div> </div>';
+	  
+	var children = shoppingCarts.children;
+	if (children.length > 0){
+		let add = true;
+		for (var i = 0; i < children.length; i++) {
+  var titleChild = children[i].getAttribute("data");
+  var typeChild = children[i].getAttribute("type").trim();
+   if (titleChild  == itemTitle && typeChild == itemType){
+	    children[i].querySelector(".number-var").innerHTML = parseInt(children[i].querySelector(".number-var").innerHTML) + itemNumber;
+		children[i].setAttribute("number", children[i].querySelector(".number-var").innerHTML );
+		
+		add = false;
+   }
+	}
+	if (add == true){
+		shoppingCarts.innerHTML += itemContent;
+	}
+	}else {
+		shoppingCarts.innerHTML += itemContent;
+		
+	}
+	updateInfoCart(shoppingCarts);	
+
+};
+function removeItemFood(e) {
+	 e.parentElement.parentElement.remove();
+	 updateInfoCart(shoppingCarts);
+		
+
+};
+if (btnAddItem){
+	for (const btn of btnAddItem) btn.addEventListener("click", addItemFood);
+}
+function removeFoodCart(e) {
+  if (e.parentElement.querySelector(".number-var").innerHTML > 1) {
+    e.parentElement.querySelector(".number-var").innerHTML =
+      parseInt(e.parentElement.querySelector(".number-var").innerHTML) - 1;
+	  e.parentElement.parentElement.parentElement.setAttribute("number", e.parentElement.querySelector(".number-var").innerHTML);
+ updateInfoCart(shoppingCarts);
+ }
+}
+function addFoodCart(e) {
+  if (e.parentElement.querySelector(".number-var").innerHTML > 0) {
+    e.parentElement.querySelector(".number-var").innerHTML =
+      parseInt(e.parentElement.querySelector(".number-var").innerHTML) + 1;
+	   e.parentElement.parentElement.parentElement.setAttribute("number", e.parentElement.querySelector(".number-var").innerHTML);
+  updateInfoCart(shoppingCarts);
+  }
+}
+function updateInfoCart(list) {
+  var children = shoppingCarts.children;
+  var number  = 0;
+  var tong  = 0;
+	if (children.length > 0){
+		for (var i = 0; i < children.length; i++) {
+			number = number + parseInt(children[i].getAttribute("number"));
+			tong = tong + (parseInt(children[i].getAttribute("number")) * parseInt(children[i].getAttribute("price")));
+  
+	}
+}
+document.getElementById("amount-food").innerHTML = number;
+	document.getElementById("sum-food").innerHTML = tong.toLocaleString();;
+}
