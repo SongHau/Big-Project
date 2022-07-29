@@ -43,6 +43,16 @@ signupLink.onclick = () => {
    return false;
 };
 
+/* SWITCH BUTTON */
+const checkbox = document.getElementById("checkbox");
+const switchBtns = document.querySelectorAll(
+   ".topbar, .crossbar, .main-body, .copyright, .box.dark, .item-col3, .blog-container, .label, .modal-container, .footer, .intro-col12, .intro-col8, .introduce-des, .food-text"
+);
+checkbox.addEventListener("change", function () {
+   for (const btn of switchBtns) btn.classList.toggle("dark");
+   document.body.classList.toggle("dark");
+});
+
 /* RESPONSIVE SLIDE BAR MENU */
 var menu = document.querySelector(".menu");
 var menuBtn = document.querySelector(".menu-btn");
@@ -78,23 +88,24 @@ backToTopButton.addEventListener("click", function backToTop() {
 });
 
 /* DROPDOWN MENU */
-// const btn_scrollDown = document.querySelector("h2");
-// const newsList = document.querySelector(".list-news-latest");
-// const articles = document.getElementsByClassName("item-article");
-// const arrow = document.querySelector(".row-of-c3-title .arrow");
-// var heightOfNewsList = 0;
-// var deg = 0;
-// for (const article of articles) heightOfNewsList += article.offsetHeight;
-// btn_scrollDown.addEventListener("click", function dropDown() {
-//    newsList.classList.toggle("openMenu");
-//    deg += 180;
-//    arrow.style.transform = "rotate(" + deg + "deg)";
-//    if (newsList.classList.contains("openMenu")) {
-//       newsList.style.height = heightOfNewsList + "px";
-//    } else {
-//       newsList.style.height = 0 + "px";
-//    }
-// });
+const btnMenus = document.querySelectorAll("h2");
+const lists = document.querySelectorAll(".list-items");
+const arrows = document.querySelectorAll(".sidebar-title .arrow");
+const articles = document.getElementsByClassName("item-article");
+var heightOfNewsList = 0;
+var deg = 0;
+for (const article of articles) heightOfNewsList += article.offsetHeight;
+for (let i = 0; i < btnMenus.length; i++)
+   btnMenus[i].addEventListener("click", function dropDown() {
+      deg += 180;
+      lists[i].classList.toggle("active");
+      arrows[i].style.transform = "rotate(" + deg + "deg)";
+      if (lists[i].classList.contains("active")) {
+         lists[i].style.height = heightOfNewsList + "px";
+      } else {
+         lists[i].style.height = 0 + "px";
+      }
+   });
 
 /* MORE BUTTON */
 const moreBtn = document.getElementById("js-btn-more");
@@ -107,7 +118,7 @@ moreBtn.addEventListener("click", function showMore() {
 
 /* OPEN MODAL BLOG */
 const blogs = document.querySelectorAll(".blog-post");
-const itemArticles = document.querySelectorAll(".item-article");
+const itemArticles = document.querySelectorAll("h3");
 const modalBlog = document.querySelector(".modal-blog");
 const modalContainerBlog = document.querySelector(".modal-container");
 for (const blog of blogs)
