@@ -25,6 +25,7 @@ body.dark,
 .intro-col8.dark
 {
   color: #fff;
+  opacity: 0.8;
   background: #5b3f0c !important;
   border: 2px solid #b37400 !important;
 }
@@ -39,6 +40,11 @@ body.dark,
 {
   color: #fff !important;
   opacity: 0.8;
+}
+
+#back-to-top.dark
+{
+  background: rgba(255, 255, 255, 0.3);
 }
 
 /* SCROLLBAR */
@@ -94,14 +100,14 @@ html
   background: orangered;
 }
 
-.inButton
+.fadeInRight
 {
-  animation-name: inButton;
+  animation-name: fadeInRight;
   animation-duration: 0.5s;
   animation-fill-mode: both;
 }
 
-@keyframes inButton
+@keyframes fadeInRight
 {
   from
   {
@@ -116,14 +122,14 @@ html
   }
 }
 
-.outButton
+.fadeOutRight
 {
-  animation-name: outButton;
+  animation-name: fadeOutRight;
   animation-duration: 0.25s;
   animation-fill-mode: both;
 }
 
-@keyframes outButton
+@keyframes fadeOutRight
 {
   from
   {

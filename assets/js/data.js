@@ -46,9 +46,9 @@ signupLink.onclick = () => {
 /* SWITCH BUTTON */
 const checkbox = document.getElementById("checkbox");
 const switchBtns = document.querySelectorAll(
-   ".topbar, .crossbar, .main-body, .copyright, .box.dark, .item-col3, .blog-container, .label, .modal-container, .footer, .intro-col12, .intro-col8, .introduce-des, .food-text"
+   ".topbar, .crossbar, .main-body, .copyright, .box.dark, .item-col3, .blog-container, .label, .modal-container, .footer, .intro-col12, .intro-col8, .introduce-des, .food-text, #back-to-top"
 );
-checkbox.addEventListener("change", function () {
+checkbox.addEventListener("click", function () {
    for (const btn of switchBtns) btn.classList.toggle("dark");
    document.body.classList.toggle("dark");
 });
@@ -68,15 +68,15 @@ closeBtn.addEventListener("click", () => {
 const backToTopButton = document.querySelector("#back-to-top");
 window.addEventListener("scroll", function scrollFunction() {
    if (window.pageYOffset > 300) {
-      if (!backToTopButton.classList.contains("inButton")) {
-         backToTopButton.classList.remove("outButton");
-         backToTopButton.classList.add("inButton");
+      if (!backToTopButton.classList.contains("fadeInRight")) {
+         backToTopButton.classList.remove("fadeOutRight");
+         backToTopButton.classList.add("fadeInRight");
          backToTopButton.style.display = "block";
       }
    } else {
-      if (backToTopButton.classList.contains("inButton")) {
-         backToTopButton.classList.remove("inButton");
-         backToTopButton.classList.add("outButton");
+      if (backToTopButton.classList.contains("fadeInRight")) {
+         backToTopButton.classList.remove("fadeInRight");
+         backToTopButton.classList.add("fadeOutRight");
          setTimeout(function () {
             backToTopButton.style.display = "none";
          }, 250);
