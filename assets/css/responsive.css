@@ -86,7 +86,7 @@
    header.sticky,
    header
    {
-      padding: 32px 10px 0px 0px;
+      padding: 0px 10px 0px 0px;
       text-align: center;
    }
 
@@ -164,9 +164,9 @@
       margin-top: 40px;
    }
 
-   .intro-col12 .intro-head
+   .intro-col12 .intro-head h1
    {
-      font-size: 0.6rem;
+      font-size: 1.5em;
    }
 
    .main-body .row-intro

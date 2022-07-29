@@ -1,164 +1,156 @@
 *
 {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+   font-family: "Roboto", sans-serif;
 }
 
 /* Introduce */
-:root
-{
-  --color-boxText: #fff;
-  --color-h2: #f78427;
-  --color-background: linear-gradient(60deg,
-      /* #f79533,
-      #f37055, */
-      #ef4e7b,
-      #a166ab,
-      #5073b8,
-      #1098ad,
-      #07b39b,
-      #6fba82);
-}
-
 p::selection,
 h2::selection,
 a::selection
 {
-  background-color: #fcc755;
+   background-color: #fcc755;
 }
 
 .main-body
 {
-  background: var(--color-background);
-  padding-bottom: 30px;
+   background: #d5d3cf;
+   padding-bottom: 30px;
+   transition: all 0.2s linear;
 }
 
 .main-body .intro-col12
 {
-  width: 95%;
-  margin: auto;
-  padding: 5px;
-  border: 2px solid gray;
-  background-color: #d5d3cf;
-  border-radius: 15px;
-  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.3);
+   width: 95%;
+   margin: auto;
+   background-color: #24262b;
+   border-radius: 30px;
+   overflow: hidden;
+   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3);
 }
 
-.intro-col12 .intro-head
+.intro-col12 .crossbar
 {
-  text-align: center;
-  margin-top: 10px;
-  font-size: 2rem;
-  color: orangered;
-  -webkit-text-stroke: 1px rgb(243, 142, 34);
-  background-image: linear-gradient(-225deg,
-      #231557 0%,
-      #44107a 29%,
-      #ff1361 67%,
-      #fff800 100%);
-  background-size: 200%;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: textColour 2s linear infinite;
+   padding: 16px 0;
+   background: #ccc;
+   color: transparent;
+}
+
+.intro-col12 .crossbar h1
+{
+   text-align: center;
+   font-size: 3rem;
+   color: orangered;
+   -webkit-text-stroke: 1px rgb(243, 142, 34);
+   background-image: linear-gradient(-225deg,
+         #231557 0%,
+         #44107a 29%,
+         #ff1361 67%,
+         #fff800 100%);
+   background-size: 200%;
+   background-clip: text;
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   animation: textColour 2s linear infinite;
 }
 
 @keyframes textColour
 {
-  to
-  {
-    background-position: 200% center;
-  }
+   to
+   {
+      background-position: 200% center;
+   }
 }
 
-.intro-head h1::selection
+.crossbar h1::selection
 {
-  background-color: transparent;
+   background-color: transparent;
 }
 
 .main-body .row-intro
 {
-  align-items: center;
-  display: flex;
+   align-items: center;
+   display: flex;
+   padding: 10px;
 }
 
 .row-intro .intro-col8
 {
-  width: 66.6667%;
-  background-color: var(--color-boxText);
-  margin: 10px;
-  border: 2px solid orange;
-  box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.3);
+   width: 66.6667%;
+   background-color: wheat;
+   margin: 10px;
+   border: 2px solid orange;
+   box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.3);
 }
 
 .row-intro .intro-col4
 {
-  width: 33.3333%;
-  margin: 10px;
+   width: 33.3333%;
+   margin: 10px;
 }
 
 .row-intro .intro-text
 {
-  padding: 20px;
-  text-align: justify;
+   padding: 20px;
+   text-align: justify;
 }
 
 .row-intro .intro-text h2
 {
-  color: var(--color-h2);
-  text-decoration: underline;
-  -webkit-text-stroke: 1px orangered;
+   color: #f78427;
+   text-decoration: underline;
+   -webkit-text-stroke: 1px orangered;
 }
 
 .row-intro .intro-text p
 {
-  padding: 10px 0;
-  font-size: 1.5rem;
+   padding: 10px 0;
+   font-size: 1.5rem;
 }
 
 .row-intro .intro-img
 {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+   position: relative;
+   display: flex;
+   align-items: center;
+   justify-content: center;
 }
 
 .row-intro .intro-img::after
 {
-  content: "";
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  background: var(--color-background);
-  background-size: 300% 300%;
-  animation: borderRotate 1s ease alternate infinite;
+   content: "";
+   width: 100%;
+   height: 100%;
+   position: absolute;
+   background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+   background-size: 300% 300%;
+   animation: borderRotate 1s ease alternate infinite;
 }
 
 .row-intro .intro-img img
 {
-  width: 100%;
-  padding: 8px;
-  border-radius: 10px;
-  z-index: 1;
+   width: 100%;
+   padding: 8px;
+   border-radius: 10px;
+   z-index: 1;
 }
 
 @keyframes borderRotate
 {
-  0%
-  {
-    background-position: 0% 50%;
-  }
+   0%
+   {
+      background-position: 0% 50%;
+   }
 
-  50%
-  {
-    background-position: 100% 50%;
-  }
+   50%
+   {
+      background-position: 100% 50%;
+   }
 
-  100%
-  {
-    background-position: 0% 50%;
-  }
+   100%
+   {
+      background-position: 0% 50%;
+   }
 }
