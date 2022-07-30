@@ -84,7 +84,7 @@ function addItemFood(e) {
 			break;
 		}
 	  }
-      let itemImg = modalFood.querySelector('.modal-food-img').innerHTML;
+    let itemImg = modalFood.querySelector('.modal-food-img').innerHTML;
 	  let itemTitle = modalFood.querySelector(".modal-food-name").innerHTML;
 	  let itemNumber = parseInt(modalFood.querySelector(".number-var").innerHTML);
 	  let itemPrice = modalFood.querySelector(".modal-food-price").innerHTML;
@@ -101,9 +101,11 @@ let itemContent = '<div class="shopping-cart"  price="'+itemPrice.replace(/[^0-9
 		children[i].setAttribute("number", children[i].querySelector(".number-var").innerHTML );
 		
 		add = false;
+    modalFood.classList.remove("open");
    }
 	}
-	if (add == true){
+	if (add == true)
+  {
 		shoppingCarts.innerHTML += itemContent;
 	}
 	}else {
@@ -111,7 +113,7 @@ let itemContent = '<div class="shopping-cart"  price="'+itemPrice.replace(/[^0-9
 		
 	}
 	updateInfoCart(shoppingCarts);	
-
+  modalFood.classList.remove("open")
 };
 function removeItemFood(e) {
 	 e.parentElement.parentElement.remove();
@@ -132,10 +134,10 @@ function removeFoodCart(e) {
 }
 function addFoodCart(e) {
   if (e.parentElement.querySelector(".number-var").innerHTML > 0) {
-    e.parentElement.querySelector(".number-var").innerHTML =
+      e.parentElement.querySelector(".number-var").innerHTML =
       parseInt(e.parentElement.querySelector(".number-var").innerHTML) + 1;
-	   e.parentElement.parentElement.parentElement.setAttribute("number", e.parentElement.querySelector(".number-var").innerHTML);
-  updateInfoCart(shoppingCarts);
+	    e.parentElement.parentElement.parentElement.setAttribute("number", e.parentElement.querySelector(".number-var").innerHTML);
+     updateInfoCart(shoppingCarts);
   }
 }
 function updateInfoCart(list) {
@@ -152,3 +154,10 @@ function updateInfoCart(list) {
 document.getElementById("amount-food").innerHTML = number;
 	document.getElementById("sum-food").innerHTML = tong.toLocaleString();;
 }
+/* Scrolling Element */
+// const movetoFood = document.getElementById("food");
+// function ScrollWin()
+// {
+//   window.scrollTo(0,200);
+// }
+// movetoFood.addEventListener("click",ScrollWin);

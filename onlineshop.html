@@ -6,6 +6,9 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>H&H Chicken - Đặt món online</title>
+   <link rel="apple-touch-icon" sizes="180x180" href="./assets/img/apple-touch-icon.png" />
+   <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon.ico" />
+   <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon-16x16.png" />
    <link rel="stylesheet" href="./assets/css/onlineshop.css">
    <link rel="stylesheet" href="./assets/css/responsive.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
@@ -17,7 +20,6 @@
 </head>
 
 <body>
-   <button id="back-to-top"><i class="fa-solid fa-arrow-up"></i></button>
    <header>
       <div class="img-logo">
          <a href="./index.html">
@@ -46,6 +48,14 @@
 
 
    <div class="container-food">
+      <div class="switch-btn">
+         <input type="checkbox" class="checkbox" id="checkbox" />
+         <label for="checkbox" class="label">
+            <i class="fa-solid fa-moon switch-icon" style="--clr: #8983f7"></i>
+            <i class="fa-solid fa-sun switch-icon" style="--clr: #ff8c00"></i>
+            <div class="switch"></div>
+         </label>
+      </div>
       <div class="grid">
          <div class="row-grid">
             <div class="col-3">
@@ -660,10 +670,10 @@
                   <div class="cart-top">
                      <a href="">Thanh toán</a>
                   </div>
-                  
+
                   <div id="shopping-carts" class="shopping-item">
-                     
-                  </div>  
+
+                  </div>
 
                   <div class="cart-bottom">
                      <div class="all">
@@ -671,15 +681,15 @@
                      </div>
 
                      <div class="price-cart">
-                        <p><span id="sum-food">0</span><sup>₫</sup></p>
+                        <p><span id="sum-food">0<sup>₫</sup></span></p>
                      </div>
-                  </div> 
+                  </div>
                </div>
-                  
-               </div>   
-            </div>  
+
+            </div>
          </div>
       </div>
+   </div>
    </div>
 
    <footer class="footer">
