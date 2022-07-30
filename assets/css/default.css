@@ -49,7 +49,7 @@ body.dark,
 /* SCROLLBAR */
 ::-webkit-scrollbar
 {
-  width: 10px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track
@@ -73,6 +73,8 @@ body.dark,
 html
 {
   scroll-behavior: smooth;
+  overflow: scroll;
+  overflow-x: hidden;
 }
 
 #back-to-top
@@ -363,7 +365,7 @@ header.sticky .btn-mobile
 
 .switch-icon
 {
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: var(--clr);
 }
 
@@ -402,7 +404,7 @@ header.sticky .btn-mobile
 .checkbox:checked+.label .switch
 {
   background: #8983f7;
-  transform: translateX(59px);
+  transform: translateX(61px);
 }
 
 /* Copy Right */
