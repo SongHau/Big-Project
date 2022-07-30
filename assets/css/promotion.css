@@ -50,6 +50,7 @@ p::selection
 .main-body
 {
   width: 100%;
+  padding-bottom: 30px;
   background: var(--clr-bar-bg);
   transition: all 0.2s linear;
 }
@@ -156,12 +157,6 @@ p::selection
   width: 100%;
   height: 90px;
   background: #24262b;
-}
-
-.main-body .crossbar
-{
-  height: 30px;
-  background: var(--color-bar-bg);
 }
 
 .main-body .col-blog-3
