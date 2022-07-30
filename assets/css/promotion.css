@@ -198,7 +198,7 @@ p::selection
 
 .item-col3 .list-items
 {
-  height: 0;
+  /* height: 0; */
   overflow: hidden;
   transition: all 1s;
 }
@@ -397,24 +397,4 @@ p::selection
 {
   width: 100%;
   height: 100%;
-}
-
-.modal-blog
-{
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  display: none;
-  z-index: 10;
-  background-color: rgba(0, 0, 0, 0.4);
-}
-
-.modal-blog .modal-container
-{
-  width: 60%;
-  height: 100%;
-  margin: auto;
-  background: var(--color-box-content);
 }

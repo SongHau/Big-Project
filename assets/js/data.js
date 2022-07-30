@@ -46,14 +46,12 @@ signupLink.onclick = () => {
 /* SWITCH BUTTON */
 const checkbox = document.getElementById("checkbox");
 const switchBtns = document.querySelectorAll(
-   ".crossbar, .modal-body, input, .search, .menu, .cart-bottom, .cart, .food-list, .container-food, .topbar, .main-body, .copyright, .box.dark, .item-col3, .blog-container, .modal-container, .footer, .intro-col12, .intro-col8, .introduce-des, .food-text, #back-to-top"
+   ".crossbar, .modal-body, input, .search, .menu-sidebar, .cart-bottom, .cart, .food-list, .container-food, .topbar, .main-body, .copyright, .box.dark, .item-col3, .blog-container, .modal-container, .footer, .intro-col12, .intro-col8, .introduce-des, .food-text, #back-to-top"
 );
 checkbox.addEventListener("change", function () {
    for (const btn of switchBtns) {
-      if (!btn.classList.contains("dark"))
-         btn.classList.add("dark");
-      else
-         btn.classList.remove("dark");
+      if (!btn.classList.contains("dark")) btn.classList.add("dark");
+      else btn.classList.remove("dark");
    }
    document.body.classList.toggle("dark");
 });
@@ -119,25 +117,4 @@ var countMore = 0;
 moreBtn.addEventListener("click", function showMore() {
    for (let i = 0; i < 3; i++) moreBlog[countMore++].style.display = "block";
    if (countMore == moreBlog.length) moreBtn.style.display = "none";
-});
-
-/* OPEN MODAL BLOG */
-const blogs = document.querySelectorAll(".blog-post");
-const itemArticles = document.querySelectorAll("h3");
-const modalBlog = document.querySelector(".modal-blog");
-const modalContainerBlog = document.querySelector(".modal-container");
-for (const blog of blogs)
-   blog.addEventListener("click", function () {
-      modalBlog.style.display = "block";
-   });
-for (const article of itemArticles)
-   article.addEventListener("click", function () {
-      modalBlog.style.display = "block";
-   });
-/* CLOSE MODAL BLOG */
-modalBlog.addEventListener("click", function () {
-   modalBlog.style.display = "none";
-});
-modalContainerBlog.addEventListener("click", function (event) {
-   event.stopPropagation();
 });
