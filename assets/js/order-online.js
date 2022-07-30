@@ -8,45 +8,45 @@ const btnAddItem = document.querySelectorAll(".add-to-cart a");
 const btnRemoveItem = document.querySelectorAll(".shopping-carts .removeItem");
 const shoppingCarts = document.getElementById("shopping-carts");
 function showAddfood(e) {
-  e.preventDefault();
-  let parentElement = e.currentTarget.parentNode;
-  let imgFood = parentElement.querySelector(".food-img").innerHTML;
-  let titleFood = parentElement.querySelector(
-    ".food-text .food-name"
-  ).innerHTML;
-  let priceFood = parentElement.querySelector(
-    ".food-text .food-price"
-  ).innerHTML;
-  modalFood.querySelector(".number-var").innerHTML = 1;
-  modalFood.querySelector(".modal-food-img").innerHTML = imgFood;
-  modalFood.querySelector(".modal-food-name").innerHTML = titleFood;
-  modalFood.querySelector(".modal-food-price").innerHTML = priceFood;
-  modalFood.classList.add("open");
+   e.preventDefault();
+   let parentElement = e.currentTarget.parentNode;
+   let imgFood = parentElement.querySelector(".food-img").innerHTML;
+   let titleFood = parentElement.querySelector(
+      ".food-text .food-name"
+   ).innerHTML;
+   let priceFood = parentElement.querySelector(
+      ".food-text .food-price"
+   ).innerHTML;
+   modalFood.querySelector(".number-var").innerHTML = 1;
+   modalFood.querySelector(".modal-food-img").innerHTML = imgFood;
+   modalFood.querySelector(".modal-food-name").innerHTML = titleFood;
+   modalFood.querySelector(".modal-food-price").innerHTML = priceFood;
+   modalFood.classList.add("open");
 }
 if (modalFood && btnAdds) {
-  for (const lgBtn of btnAdds) {
-    lgBtn.addEventListener("click", showAddfood);
-  }
+   for (const lgBtn of btnAdds) {
+      lgBtn.addEventListener("click", showAddfood);
+   }
 }
 function removeFood(e) {
-  e.preventDefault();
-  let parentElement = e.currentTarget.parentNode;
-  if (parentElement.querySelector(".number-var").innerHTML > 1) {
-    parentElement.querySelector(".number-var").innerHTML =
-      parseInt(parentElement.querySelector(".number-var").innerHTML) - 1;
-  }
+   e.preventDefault();
+   let parentElement = e.currentTarget.parentNode;
+   if (parentElement.querySelector(".number-var").innerHTML > 1) {
+      parentElement.querySelector(".number-var").innerHTML =
+         parseInt(parentElement.querySelector(".number-var").innerHTML) - 1;
+   }
 }
 function addFood(e) {
-  e.preventDefault();
-  let parentElement = e.currentTarget.parentNode;
-  if (parentElement.querySelector(".number-var").innerHTML > 0) {
-    parentElement.querySelector(".number-var").innerHTML =
-      parseInt(parentElement.querySelector(".number-var").innerHTML) + 1;
-  }
+   e.preventDefault();
+   let parentElement = e.currentTarget.parentNode;
+   if (parentElement.querySelector(".number-var").innerHTML > 0) {
+      parentElement.querySelector(".number-var").innerHTML =
+         parseInt(parentElement.querySelector(".number-var").innerHTML) + 1;
+   }
 }
 function closeModalfood(e) {
-  e.preventDefault();
-  modalFood.classList.remove("open");
+   e.preventDefault();
+   modalFood.classList.remove("open");
 }
 
 for (const btn of btnMinus) btn.addEventListener("click", removeFood);
@@ -56,24 +56,23 @@ for (const btn of btnPlus) btn.addEventListener("click", addFood);
 closeModal.addEventListener("click", closeModalfood);
 
 function showLogin(e) {
-  e.preventDefault();
-  modal.classList.add("open");
+   e.preventDefault();
+   modal.classList.add("open");
 }
 for (const lgBtn of lgBtns) {
-  lgBtn.addEventListener("click", showLogin);
+   lgBtn.addEventListener("click", showLogin);
 }
 /* Close Modal Add Food */
 window.addEventListener("click", function (e) {
-  const wrapper = document.getElementById("wrapper-1");
-  modalFood.addEventListener("click", function () {
-    modalFood.classList.remove("open");
-  });
-  wrapper.addEventListener("click", function (event) {
-    event.stopPropagation();
-  });
+   const wrapper = document.getElementById("wrapper-1");
+   modalFood.addEventListener("click", function () {
+      modalFood.classList.remove("open");
+   });
+   wrapper.addEventListener("click", function (event) {
+      event.stopPropagation();
+   });
 });
-const radios = document.getElementsByName('radio');
-
+const radios = document.getElementsByName("radio");
 
 function addItemFood(e) {
       e.preventDefault();
@@ -116,21 +115,22 @@ let itemContent = '<div class="shopping-cart"  price="'+itemPrice.replace(/[^0-9
   modalFood.classList.remove("open")
 };
 function removeItemFood(e) {
-	 e.parentElement.parentElement.remove();
-	 updateInfoCart(shoppingCarts);
-		
-
-};
-if (btnAddItem){
-	for (const btn of btnAddItem) btn.addEventListener("click", addItemFood);
+   e.parentElement.parentElement.remove();
+   updateInfoCart(shoppingCarts);
+}
+if (btnAddItem) {
+   for (const btn of btnAddItem) btn.addEventListener("click", addItemFood);
 }
 function removeFoodCart(e) {
-  if (e.parentElement.querySelector(".number-var").innerHTML > 1) {
-    e.parentElement.querySelector(".number-var").innerHTML =
-      parseInt(e.parentElement.querySelector(".number-var").innerHTML) - 1;
-	  e.parentElement.parentElement.parentElement.setAttribute("number", e.parentElement.querySelector(".number-var").innerHTML);
- updateInfoCart(shoppingCarts);
- }
+   if (e.parentElement.querySelector(".number-var").innerHTML > 1) {
+      e.parentElement.querySelector(".number-var").innerHTML =
+         parseInt(e.parentElement.querySelector(".number-var").innerHTML) - 1;
+      e.parentElement.parentElement.parentElement.setAttribute(
+         "number",
+         e.parentElement.querySelector(".number-var").innerHTML
+      );
+      updateInfoCart(shoppingCarts);
+   }
 }
 function addFoodCart(e) {
   if (e.parentElement.querySelector(".number-var").innerHTML > 0) {
@@ -141,18 +141,20 @@ function addFoodCart(e) {
   }
 }
 function updateInfoCart(list) {
-  var children = shoppingCarts.children;
-  var number  = 0;
-  var tong  = 0;
-	if (children.length > 0){
-		for (var i = 0; i < children.length; i++) {
-			number = number + parseInt(children[i].getAttribute("number"));
-			tong = tong + (parseInt(children[i].getAttribute("number")) * parseInt(children[i].getAttribute("price")));
-  
-	}
-}
-document.getElementById("amount-food").innerHTML = number;
-	document.getElementById("sum-food").innerHTML = tong.toLocaleString();;
+   var children = shoppingCarts.children;
+   var number = 0;
+   var tong = 0;
+   if (children.length > 0) {
+      for (var i = 0; i < children.length; i++) {
+         number = number + parseInt(children[i].getAttribute("number"));
+         tong =
+            tong +
+            parseInt(children[i].getAttribute("number")) *
+               parseInt(children[i].getAttribute("price"));
+      }
+   }
+   document.getElementById("amount-food").innerHTML = number;
+   document.getElementById("sum-food").innerHTML = tong.toLocaleString();
 }
 /* Scrolling Element */
 // const movetoFood = document.getElementById("food");

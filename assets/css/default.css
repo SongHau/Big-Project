@@ -11,12 +11,11 @@
 
 .copyright.dark,
 .copyright.dark p,
-.label.dark,
 body.dark,
 .topbar.dark,
 .topbar.dark p,
-.crossbar.dark,
-.main-body.dark
+.main-body.dark,
+.crossbar.dark
 {
   color: #fff;
   background: #313638;
@@ -258,7 +257,7 @@ header.sticky .btn-mobile
 .footer
 {
   background-color: #24262b;
-  padding: 70px 0 30px;
+  padding: 70px 0;
 }
 
 .footer .container
@@ -353,7 +352,8 @@ header.sticky .btn-mobile
 {
   display: flex;
   margin-top: 30px;
-  justify-content: center;
+  justify-content: right;
+  margin: 0 50px 10px 0;
 }
 
 .checkbox
@@ -363,7 +363,7 @@ header.sticky .btn-mobile
 
 .switch-icon
 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: var(--clr);
 }
 
@@ -371,32 +371,38 @@ header.sticky .btn-mobile
 {
   position: relative;
   display: flex;
-  width: 200px;
-  height: 52px;
+  width: 100px;
+  height: 39px;
   padding: 5px;
   margin-top: 20px;
   align-items: center;
   border-radius: 50px;
-  background: #ccc;
+  background: whitesmoke;
+  cursor: pointer;
   justify-content: space-between;
 }
 
 .switch
 {
   position: absolute;
-  top: 4px;
-  left: 4px;
-  width: 44px;
-  height: 44px;
+  top: 2px;
+  left: 2px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
-  background: #FF0080;
+  background: #ff8c00;
   transition: all 0.2s linear;
+}
+
+.checkbox:checked+.label
+{
+  background: #A3DAFB;
 }
 
 .checkbox:checked+.label .switch
 {
-  background: #A3DAFB;
-  transform: translateX(149px);
+  background: #8983f7;
+  transform: translateX(59px);
 }
 
 /* Copy Right */

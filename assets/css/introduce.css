@@ -26,8 +26,6 @@ a::selection
    width: 95%;
    margin: auto;
    background-color: #24262b;
-   border-radius: 30px;
-   overflow: hidden;
    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3);
 }
 
@@ -153,4 +151,23 @@ a::selection
    {
       background-position: 0% 50%;
    }
+}
+
+.modal-image
+{
+   position: fixed;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   z-index: 10;
+   display: none;
+   background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-image .modal-image-container
+{
+   width: 90%;
+   margin: auto;
+   display: flex;
 }
