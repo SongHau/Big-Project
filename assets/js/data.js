@@ -46,7 +46,7 @@ signupLink.onclick = () => {
 /* SWITCH BUTTON */
 const checkbox = document.getElementById("checkbox");
 const switchBtns = document.querySelectorAll(
-   ".modal-body, input, .search, .menu, .cart-bottom, .cart, .food-list, .container-food, .topbar, .main-body, .copyright, .box.dark, .item-col3, .blog-container, .modal-container, .footer, .intro-col12, .intro-col8, .introduce-des, .food-text, #back-to-top"
+   ".crossbar, .modal-body, input, .search, .menu, .cart-bottom, .cart, .food-list, .container-food, .topbar, .main-body, .copyright, .box.dark, .item-col3, .blog-container, .modal-container, .footer, .intro-col12, .intro-col8, .introduce-des, .food-text, #back-to-top"
 );
 checkbox.addEventListener("change", function () {
    for (const btn of switchBtns) btn.classList.toggle("dark");

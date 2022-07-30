@@ -14,7 +14,8 @@
 body.dark,
 .topbar.dark,
 .topbar.dark p,
-.main-body.dark
+.main-body.dark,
+.crossbar.dark
 {
   color: #fff;
   background: #313638;
