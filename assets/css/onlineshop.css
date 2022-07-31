@@ -1,449 +1,459 @@
 * {
-   padding: 0;
-   margin: 0;
-   box-sizing: border-box;
-   font-family: "Roboto", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
 }
 
 body {
-   min-height: 200vh;
-   background-color: #e5e5e5;
+  min-height: 200vh;
+  background-color: #e5e5e5;
 }
 
 /*Grid*/
 .grid {
-   width: 1400px;
-   max-width: 100%;
-   margin: 0 auto;
+  width: 1400px;
+  max-width: 100%;
+  margin: 0 auto;
 }
 
 .row-grid {
-   display: flex;
-   flex-wrap: wrap;
-   margin-left: -15px;
-   margin-right: -15px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -15px;
+  margin-right: -15px;
 }
 
 .col-3 {
-   width: 25%;
-   padding-left: 15px;
-   padding-right: 15px;
+  width: 25%;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .col-5 {
-   width: 41.6667%;
-   padding: 0 15px 40px;
+  width: 41.6667%;
+  padding: 0 15px 40px;
 }
 
 .col-4 {
-   width: 33.3333%;
-   padding-left: 15px;
-   padding-right: 15px;
+  width: 33.3333%;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .col-6 {
-   width: 50%;
-   padding-left: 15px;
-   padding-right: 15px;
+  width: 50%;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 /* Container */
 .container-food {
-   padding-top: 142px;
-   background: #e5e5e5;
-   transition: all 0.2s linear;
+  padding-top: 142px;
+  background: #e5e5e5;
+  transition: all 0.2s linear;
 }
 
 .menu-sidebar {
-   box-shadow: 3px 3px 6px 0 #e5e5e5;
-   position: sticky;
-   top: 100px;
+  box-shadow: 3px 3px 6px 0 #e5e5e5;
+  position: sticky;
+  top: 100px;
 }
 
 .menu-sidebar .menu-list li {
-   list-style: none;
-   padding: 15px;
-   background-color: #fff;
+  list-style: none;
+  padding: 15px;
+  background-color: #fff;
 }
 
-.menu-sidebar .menu-list li a {
-   text-decoration: none;
-   display: block;
-   color: #777;
-   text-transform: uppercase;
+.menu-sidebar .menu-list li h4 {
+  text-decoration: none;
+  display: block;
+  color: #777;
+  text-transform: uppercase;
 }
 
-.menu-sidebar .menu-list li a:hover {
-   color: orange;
+.menu-sidebar .menu-list li h4:hover {
+  color: orange;
+  cursor: pointer;
 }
 
 .search {
-   padding: 10px;
-   display: flex;
-   border: 1px solid #ccc;
-   background-color: #fff;
+  padding: 10px;
+  display: flex;
+  border: 1px solid #ccc;
+  background-color: #fff;
 }
 
 .search .search-btn {
-   font-size: 1.2rem;
-   color: #777;
+  font-size: 1.2rem;
+  color: #777;
 }
 
 .search input {
-   height: 100%;
-   width: 100%;
-   border: none;
-   outline: none;
-   font-size: 1rem;
-   padding: 0 8px;
-   margin-left: 8px;
+  height: 100%;
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  padding: 0 8px;
+  margin-left: 8px;
 }
 
 .food .food-text {
-   font-size: 1.3rem;
-   text-transform: uppercase;
-   color: #5c5c5c;
-   font-weight: 600px;
-   margin: 30px 0 10px 0;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  color: #5c5c5c;
+  font-weight: 600px;
+  margin: 30px 0 10px 0;
 }
 
 .food-list {
-   display: flex;
+  display: flex;
 }
 
 .food-list .food-img {
-   width: 160px;
-   overflow: hidden;
-   height: 100%;
+  width: 160px;
+  overflow: hidden;
+  height: 100%;
 }
 
 .food-list .food-img img {
-   width: 100%;
-   border-radius: 5px;
+  width: 100%;
+  border-radius: 5px;
 }
 
 .food-list {
-   padding: 12px;
-   background-color: #fff;
-   position: relative;
-   border-bottom: 1px dotted #ccc;
+  padding: 12px;
+  background-color: #fff;
+  position: relative;
+  border-bottom: 1px dotted #ccc;
 }
 
 .food-list .food-text {
-   margin-left: 12px;
-   flex: 1;
+  margin-left: 12px;
+  flex: 1;
 }
 
 .food-list .food-text .food-name {
-   font-size: 1.1rem;
-   color: #5c5c5c;
+  font-size: 1.1rem;
+  color: #5c5c5c;
 }
 
 .food-list .food-text .food-des {
-   font-size: 1rem;
-   color: #5c5c5c;
-   margin: 8px 0;
+  font-size: 1rem;
+  color: #5c5c5c;
+  margin: 8px 0;
 }
 
 .food-list .food-text .food-price {
-   color: orangered;
+  color: orangered;
 }
 
 .food-list .food-add {
-   align-self: flex-end;
-   display: block;
-   padding: 4px 5px;
-   border: 2px solid orange;
-   border-radius: 50%;
-   margin-bottom: 5px;
-   margin-right: 5px;
+  align-self: flex-end;
+  display: block;
+  padding: 4px 5px;
+  border: 2px solid orange;
+  border-radius: 50%;
+  margin-bottom: 5px;
+  margin-right: 5px;
 }
 
 .food-list .food-add .add {
-   color: orange;
-   font-size: 1.4rem;
+  color: orange;
+  font-size: 1.4rem;
 }
 
 .cart {
-   background-color: #fff;
-   position: sticky;
-   top: 100px;
+  background-color: #fff;
+  position: sticky;
+  top: 100px;
 }
 
 .cart .shopping-item {
-   height: 50vh;
-   overflow-y: auto;
+  max-height: 50vh;
+  overflow-y: auto;
 }
 
 .cart .cart-top {
-   text-align: center;
+  text-align: center;
 }
 
 .cart .cart-top a {
-   text-decoration: none;
-   background-color: #fabc60;
-   display: block;
-   color: #fff;
-   text-transform: uppercase;
-   font-size: 1.2rem;
-   padding: 8px;
-   border-radius: 2px;
+  text-decoration: none;
+  background-color: #fabc60;
+  display: block;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  padding: 8px;
+  border-radius: 2px;
+}
+
+.cart .cart-top a.disabled {
+  pointer-events: none;
+  cursor: default;
+}
+
+.cart .cart-top a :hover {
+  background-color: orange;
 }
 
 .cart .shopping-cart {
-   display: flex;
-   padding: 20px;
+  display: flex;
+  padding: 20px;
 }
 
 .cart .shopping-cart .shopping-cart-img img {
-   width: 100%;
-   border-radius: 5px;
+  width: 100%;
+  border-radius: 5px;
 }
 
 .cart .shopping-cart .shopping-cart-img {
-   width: 70px;
+  width: 70px;
 }
 
 .cart .shopping-cart .shopping-cart-content {
-   flex: 1;
-   margin-left: 15px;
+  flex: 1;
+  margin-left: 15px;
 }
 
 .cart .shopping-cart .shopping-cart-content .shopping-cart-left h4 {
-   font-size: 1.1rem;
-   color: #5c5c5c;
+  font-size: 1.1rem;
+  color: #5c5c5c;
 }
 
 .cart .shopping-cart .shopping-cart-content .shopping-cart-left p {
-   font-size: 0.9rem;
-   color: #5c5c5c;
-   margin-top: 10px;
+  font-size: 0.9rem;
+  color: #5c5c5c;
+  margin-top: 10px;
 }
 
 .cart .shopping-cart-right p {
-   color: orangered;
+  color: orangered;
 }
 
 .cart .shopping-cart-right a {
-   display: block;
-   text-align: right;
-   text-decoration: none;
-   color: #5c5c5c;
-   margin-top: 10px;
+  display: block;
+  text-align: right;
+  text-decoration: none;
+  color: #5c5c5c;
+  margin-top: 10px;
 }
 
 .cart .cart-top,
 .cart .cart-bottom {
-   padding: 20px;
+  padding: 20px;
 }
 
 .cart .cart-bottom {
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-   border-top: 1px dotted #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px dotted #ccc;
 }
 
 .cart .cart-bottom .all {
-   color: orange;
+  color: orange;
 }
 
 .cart .cart-bottom .price-cart {
-   color: #000;
-   font-weight: bold;
-   font-size: 1.25rem;
+  color: #000;
+  font-weight: bold;
+  font-size: 1.25rem;
 }
 
 /* Modal */
 .modal-food {
-   position: fixed;
-   top: 0;
-   left: 0;
-   bottom: 0;
-   right: 0;
-   background-color: rgba(0, 0, 0, 0.2);
-   z-index: 2;
-   display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 2;
+  display: none;
 }
 
 .modal-food .modal-body {
-   position: fixed;
-   top: 50%;
-   left: 50%;
-   transform: translate(-50%, -50%);
-   background-color: #fff;
-   padding: 15px;
-   border-radius: 5px;
-   max-width: 750px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 5px;
+  max-width: 750px;
 }
 
 .modal-food .modal-food-img img {
-   width: 100%;
-   border-radius: 5px;
+  width: 100%;
+  border-radius: 5px;
 }
 
 .modal-food-des .modal-food-name {
-   font-size: 1.25rem;
-   color: #805c5c;
+  font-size: 1.25rem;
+  color: #805c5c;
 }
 
 .modal-food-des .modal-food-price {
-   color: orangered;
-   margin: 8px 0;
+  color: orangered;
+  margin: 8px 0;
 }
 
 /* Radio */
 .group-radio {
-   display: flex;
-   flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .container-radio {
-   display: flex;
-   position: relative;
-   padding-left: 24px;
-   margin-bottom: 12px;
-   margin-left: 10px;
-   cursor: pointer;
-   font-size: 16px;
-   -webkit-user-select: none;
-   -moz-user-select: none;
-   -ms-user-select: none;
-   user-select: none;
+  display: flex;
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 12px;
+  margin-left: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .container input {
-   position: absolute;
-   opacity: 0;
-   cursor: pointer;
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
 }
 
 .checkmark {
-   position: absolute;
-   top: 0;
-   left: 0;
-   height: 15px;
-   width: 15px;
-   background-color: #eee;
-   border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 15px;
+  width: 15px;
+  background-color: #eee;
+  border-radius: 50%;
 }
 
-.container:hover input ~ .checkmark {
-   background-color: #ccc;
+.container:hover input~.checkmark {
+  background-color: #ccc;
 }
 
-.container-radio input:checked ~ .checkmark {
-   background-color: orange;
+.container-radio input:checked~.checkmark {
+  background-color: orange;
 }
 
-.container-radio input:checked ~ .checkmark:after {
-   display: block;
+.container-radio input:checked~.checkmark:after {
+  display: block;
 }
 
 .container .checkmark:after {
-   top: 9px;
-   left: 9px;
-   width: 8px;
-   height: 8px;
-   border-radius: 50%;
-   background: white;
+  top: 9px;
+  left: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
 }
 
 .note p {
-   font-size: 1rem;
-   color: #5c5c5c;
-   font-weight: bold;
-   margin: 5px 0;
+  font-size: 1rem;
+  color: #5c5c5c;
+  font-weight: bold;
+  margin: 5px 0;
 }
 
 .note .form-note {
-   width: 100%;
-   border: 1px dotted #ccc;
-   display: flex;
-   padding: 8px;
+  width: 100%;
+  border: 1px dotted #ccc;
+  display: flex;
+  padding: 8px;
 }
 
 .note .form-note i {
-   color: #5c5c5c;
-   font-size: 1.125rem;
+  color: #5c5c5c;
+  font-size: 1.125rem;
 }
 
 .note .form-note input {
-   width: 100%;
-   height: 100%;
-   border: none;
-   outline: none;
-   font-size: 1rem;
-   margin-left: 8px;
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  margin-left: 8px;
 }
 
 .number {
-   display: flex;
-   margin: 5px 0 0 0;
-   align-items: center;
+  display: flex;
+  margin: 5px 0 0 0;
+  align-items: center;
 }
 
 .number p {
-   font-size: 1.1rem;
-   font-weight: bold;
-   padding: 0 10px;
-   color: #5c5c5c;
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 0 10px;
+  color: #5c5c5c;
 }
 
 .number a {
-   border: 2px solid orange;
-   padding: 4px 7px;
-   border-radius: 50%;
-   margin: 0px 8px;
-   color: orange;
+  border: 2px solid orange;
+  padding: 4px 7px;
+  border-radius: 50%;
+  margin: 0px 8px;
+  color: orange;
 }
 
 .number a:hover {
-   background-color: orange;
-   color: #fff;
+  background-color: orange;
+  color: #fff;
 }
 
 .add-to-cart {
-   background-color: orange;
-   margin-top: 20px;
-   padding: 10px;
-   text-align: center;
+  background-color: orange;
+  margin-top: 20px;
+  padding: 10px;
+  text-align: center;
 }
 
 .add-to-cart a {
-   text-decoration: none;
-   color: #fff;
-   display: block;
+  text-decoration: none;
+  color: #fff;
+  display: block;
 }
 
 #btn-close {
-   position: absolute;
-   top: 0;
-   right: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 #btn-close a {
-   display: block;
-   text-decoration: none;
-   position: absolute;
-   width: 30px;
-   height: 30px;
-   right: -12px;
-   top: -12px;
-   text-align: center;
-   line-height: 25px;
-   background-color: #444;
-   color: #fff;
-   font-size: 1.2rem;
-   border-radius: 50%;
-   border: 2px solid #fff;
-   cursor: pointer;
+  display: block;
+  text-decoration: none;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  right: -12px;
+  top: -12px;
+  text-align: center;
+  line-height: 25px;
+  background-color: #444;
+  color: #fff;
+  font-size: 1.2rem;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  cursor: pointer;
 }
 
 #btn-close a i {
-   font-size: 1.125rem;
+  font-size: 1.125rem;
 }
 
 .modal-food.open {
-   display: block;
+  display: block;
 }

@@ -73,8 +73,8 @@ window.addEventListener("click", function (e) {
       event.stopPropagation();
    });
 });
+/* Add To Cart */
 const radios = document.getElementsByName("radio");
-
 function addItemFood(e) {
    e.preventDefault();
    let itemType = '';
@@ -156,7 +156,7 @@ function updateInfoCart(list) {
       }
       tong = tong / 1000 + ',000';
    }
-   if(tong == 0) aTag.classList.add("disabled");
+   if (tong == 0) aTag.classList.add("disabled");
    document.getElementById("amount-food").innerHTML = number;
    document.getElementById("sum-food").innerHTML = tong.toLocaleString() + '<sup>₫</sup>';
 }
@@ -172,8 +172,4 @@ moveToCombo.addEventListener("click", function () {
 const moveToAddFood = document.getElementById("moveaddfood");
 moveToAddFood.addEventListener("click", function () {
    window.scrollTo(0, 4400);
-})
-const moveToDrinks = document.getElementById("movedrinks");
-moveToDrinks.addEventListener("click", function () {
-   window.scrollTo(0, 6830);
 })
