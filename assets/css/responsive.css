@@ -175,7 +175,22 @@
       width: 100%;
       padding-left: 15px;
       padding-right: 15px;
-   }
+    }
+    .container-food{
+      padding-top: 180px;
+    }
+    .modal-food .modal-body{
+      width: 90%;   
+    }
+    .menu-sidebar .menu-list{
+      display: flex;
+    }
+    .menu-sidebar .menu-list li{
+      padding: 13px;
+    }
+    .number p{
+      padding: 0;
+    }
 }
 
 /* RESPONSIVE FOR NEWS PAGE */
