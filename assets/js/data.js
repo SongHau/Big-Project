@@ -166,7 +166,7 @@ window.addEventListener("load", function () {
    const repeater = function () {
       repeat = setInterval(function () {
          changeSlide("next");
-      }, 2000);
+      }, 4000);
    };
    repeater();
    slider.addEventListener("mouseover", function () {
@@ -183,20 +183,33 @@ const swiper = document.querySelector(".swiper");
 const swiperSlide = document.querySelectorAll(".swiper-slide");
 const prvBtn = document.querySelector(".mb-content .slider-prv");
 const nxtBtn = document.querySelector(".mb-content .slider-nxt");
+const last = document.getElementById("last");
 let numberOfSwiper = swiperSlide.length;
 let swiperNumber = 0;
 function changeSwiper(dir) {
    let swiperWidth = swiperSlide[0].offsetWidth;
-   if (dir === "next") {
+   if (dir === "1") {
       swiperNumber++;
-   } else if (dir === "previous") {
+      console.log(swiperNumber);
+      if (numberOfSwiper % 2 == 0 && swiperNumber > numberOfSwiper / 2) {
+         swiperNumber = numberOfSwiper / 2;
+         return;
+      }
+      if (
+         numberOfSwiper % 2 != 0 &&
+         swiperNumber >= parseInt(numberOfSwiper / 2) + 1
+      ) {
+         swiperNumber = parseInt(numberOfSwiper / 2);
+         return;
+      }
+   } else if (dir === "-1") {
       swiperNumber--;
    }
-   sliderMain.style = `transform: translateX(${-swiperWidth * swiperNumber}px)`;
+   swiper.style = `transform: translateX(${-swiperWidth * swiperNumber}px)`;
 }
 nxtBtn.addEventListener("click", function () {
-   changeSwiper("next");
+   changeSwiper("1");
 });
 prvBtn.addEventListener("click", function () {
-   changeSwiper("previous");
+   changeSwiper("-1");
 });
