@@ -80,12 +80,9 @@
       text-align: center;
    }
 
-   header .btn-mobile {
-   }
-
    .introduce {
       flex-wrap: wrap;
-      padding: 20px;
+      padding: 15px;
    }
 
    .introduce .introduce-list {
@@ -173,7 +170,14 @@
 }
 
 /* RESPONSIVE FOR ONLINE SHOP PAGE */
-
+@media (max-width: 46.188rem)
+{
+   .col-12{
+      width: 100%;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+}
 /* RESPONSIVE FOR PROMOTION PAGE */
 /* Tablet & Moblie */
 @media screen and (max-width: 63.938rem) {
