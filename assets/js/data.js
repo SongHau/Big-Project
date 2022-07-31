@@ -5,18 +5,15 @@ window.addEventListener("scroll", function () {
 });
 
 /* OPEN MODAL LOGIN */
-const lgBtns = document.querySelectorAll(".js-login");
+const modalContainer = document.querySelector(".wrapper");
+const lgBtn = document.querySelector(".js-login");
 const modal = document.querySelector(".js-modal");
-function showLogin(e) {
+lgBtn.addEventListener("click", function (e) {
    e.preventDefault();
    modal.classList.add("open");
-}
-for (const lgBtn of lgBtns) {
-   lgBtn.addEventListener("click", showLogin);
-}
+});
 
 /* CLOSE MODAL LOGIN */
-const modalContainer = document.querySelector(".wrapper");
 modal.addEventListener("click", function () {
    modal.classList.remove("open");
 });
@@ -24,7 +21,7 @@ modalContainer.addEventListener("click", function (event) {
    event.stopPropagation();
 });
 
-/* LOGIN AND REGISTEr */
+/* LOGIN AND REGISTER */
 const loginText = document.querySelector(".title-text .login");
 const loginForm = document.querySelector("form.login");
 const loginBtn = document.querySelector("label.login");
@@ -43,29 +40,33 @@ signupLink.onclick = () => {
    return false;
 };
 
-/* SWITCH BUTTON */
-const checkbox = document.getElementById("checkbox");
-const switchBtns = document.querySelectorAll(
-   ".crossbar, .modal-body, input, .search, .menu-sidebar, .cart-bottom, .cart, .food-list, .container-food, .topbar, .main-body, .copyright, .box.dark, .item-col3, .blog-container, .modal-container, .footer, .intro-col12, .intro-col8, .introduce-des, .food-text, #back-to-top"
-);
-checkbox.addEventListener("change", function () {
-   for (const btn of switchBtns) {
-      if (!btn.classList.contains("dark")) btn.classList.add("dark");
-      else btn.classList.remove("dark");
-   }
-   document.body.classList.toggle("dark");
-});
-
 /* RESPONSIVE SLIDE BAR MENU */
 var menu = document.querySelector(".menu");
 var menuBtn = document.querySelector(".menu-btn");
 var closeBtn = document.querySelector("header .menu .btn-mobile .close-btn");
-menuBtn.addEventListener("click", () => {
-   menu.classList.add("active");
-});
-closeBtn.addEventListener("click", () => {
-   menu.classList.remove("active");
-});
+if (menuBtn != null) {
+   menuBtn.addEventListener("click", () => {
+      menu.classList.add("active");
+   });
+   closeBtn.addEventListener("click", () => {
+      menu.classList.remove("active");
+   });
+}
+
+/* SWITCH BUTTON */
+const checkbox = document.getElementById("checkbox");
+const switchBtns = document.querySelectorAll(
+   ".crossbar, .modal-body, input, .search, .menu-sidebar, .cart-bottom, .cart, .food-list, .container-food, .topbar, .main-body, .copyright, .box.dark, .item-col3, .blog-container, .footer, .intro-col12, .intro-col8, .introduce-des, .food-text, #back-to-top"
+);
+if (checkbox != null) {
+   checkbox.addEventListener("change", function () {
+      for (const btn of switchBtns) {
+         if (!btn.classList.contains("dark")) btn.classList.add("dark");
+         else btn.classList.remove("dark");
+      }
+      document.body.classList.toggle("dark");
+   });
+}
 
 /* BACK TO TOP BUTTON */
 const backToTopButton = document.querySelector("#back-to-top");
@@ -100,13 +101,13 @@ var deg = 0;
 for (const article of articles) heightOfNewsList += article.offsetHeight;
 for (let i = 0; i < btnMenus.length; i++)
    btnMenus[i].addEventListener("click", function dropDown() {
-      deg += 180;
       lists[i].classList.toggle("active");
-      arrows[i].style.transform = "rotate(" + deg + "deg)";
-      if (lists[i].classList.contains("active")) {
-         lists[i].style.height = heightOfNewsList + "px";
-      } else {
+      deg += 180;
+      arrows[i].style = `transform: rotate(${deg}deg)`;
+      if (!lists[i].classList.contains("active")) {
          lists[i].style.height = 0 + "px";
+      } else {
+         lists[i].style.height = heightOfNewsList + "px";
       }
    });
 
@@ -114,7 +115,48 @@ for (let i = 0; i < btnMenus.length; i++)
 const moreBtn = document.getElementById("js-btn-more");
 const moreBlog = document.querySelectorAll(".blog-more");
 var countMore = 0;
-moreBtn.addEventListener("click", function showMore() {
-   for (let i = 0; i < 3; i++) moreBlog[countMore++].style.display = "block";
-   if (countMore == moreBlog.length) moreBtn.style.display = "none";
+if (moreBtn != null) {
+   moreBtn.addEventListener("click", function showMore() {
+      for (let i = 0; i < 3; i++) moreBlog[countMore++].style.display = "block";
+      if (countMore == moreBlog.length) moreBtn.style.display = "none";
+   });
+}
+
+/* SLIDER */
+window.addEventListener("load", function () {
+   const slider = document.querySelector(".slider");
+   const sliderMain = document.querySelector(".slider-main");
+   const sliderItems = document.querySelectorAll(".slider-item");
+   const prvBtn = document.querySelector(".slider-prv");
+   const nxtBtn = document.querySelector(".slider-nxt");
+   const dotItems = document.querySelectorAll(".dot-item");
+   const sliderWidth = sliderItems[0].offsetWidth;
+   let current = 0;
+   function activeDot(index) {
+      for (const dot of dotItems) dot.classList.remove("active");
+      dotItems[index].classList.add("active");
+   }
+   function changeSlide(dir) {
+      if (dir === "next") {
+         current++;
+         if (current >= sliderItems.length) current = 0;
+      } else if (dir === "previous") {
+         current--;
+         if (current < 0) current = sliderItems.length - 1;
+      } else current = dir;
+      sliderMain.style = `transform: translateX(${-sliderWidth * current}px)`;
+      activeDot(current);
+   }
+   nxtBtn.addEventListener("click", function () {
+      changeSlide("next");
+   });
+   prvBtn.addEventListener("click", function () {
+      changeSlide("previous");
+   });
+   for (let i = 0; i < dotItems.length; i++) {
+      dotItems[i].addEventListener("click", function () {
+         changeSlide(i);
+         activeDot(i);
+      });
+   }
 });

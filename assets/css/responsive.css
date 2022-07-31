@@ -1,24 +1,19 @@
 /* Responsive header for tablet and mobile */
-@media (max-width:64.938rem)
-{
-   header .name-shop
-   {
+@media (max-width: 64.938rem) {
+   header .name-shop {
       display: none;
    }
 
-   header .btn-mobile
-   {
+   header .btn-mobile {
       display: block;
       margin-bottom: 12px;
    }
 
-   header .menu a
-   {
+   header .menu a {
       color: #fff;
    }
 
-   header .menu
-   {
+   header .menu {
       position: fixed;
       background: rgba(0, 0, 0, 0.9);
       flex-direction: column;
@@ -30,13 +25,11 @@
       transition: all 0.6s ease-in-out;
    }
 
-   header .menu.active
-   {
+   header .menu.active {
       right: 0;
    }
 
-   header .menu .btn-mobile .close-btn
-   {
+   header .menu .btn-mobile .close-btn {
       position: absolute;
       top: 0;
       left: 0;
@@ -44,27 +37,23 @@
       color: #fff;
    }
 
-   header .menu a
-   {
+   header .menu a {
       display: block;
       font-size: 1.25rem;
       margin: 20px;
       padding: 0 15px;
    }
 
-   .modal
-   {
+   .modal {
       z-index: 19999;
    }
 
-   .wrapper
-   {
+   .wrapper {
       width: 90%;
       height: 65%;
    }
 
-   .footer-col
-   {
+   .footer-col {
       width: 50%;
       margin-bottom: 30px;
    }
@@ -72,184 +61,149 @@
 
 /* RESPONSIVE FOR HOME PAGE */
 /* PC */
-@media(min-width:64rem)
-{}
+@media (min-width: 64rem) {
+}
 
 /* Tablet */
-@media (min-width:46.25rem) and (max-width:63.938rem)
-{}
+@media (min-width: 46.25rem) and (max-width: 63.938rem) {
+}
 
 /* Mobile */
-@media (max-width:46.188rem)
-{
-   header
-   {
+@media (max-width: 46.188rem) {
+   header {
       padding: 0px 10px 0px 0px;
       text-align: center;
    }
 
-   header.sticky
-   {
+   header.sticky {
       padding: 0px 10px;
       text-align: center;
    }
 
-   header .btn-mobile
-   {}
+   header .btn-mobile {
+   }
 
-   .introduce
-   {
+   .introduce {
       flex-wrap: wrap;
       padding: 20px;
    }
 
-   .introduce .introduce-list
-   {
+   .introduce .introduce-list {
       width: 50%;
       padding: 18px;
    }
 
    .introduce .introduce-list .introduce-sup,
-   .introduce .introduce-list .introduce-des .introduce-main
-   {
+   .introduce .introduce-list .introduce-des .introduce-main {
       font-size: 0.813rem;
    }
 
-   .food .food-text
-   {
+   .food .food-text {
       margin: 15px;
    }
 
-   .food .food-list
-   {
+   .food .food-list {
       flex-wrap: wrap;
    }
 
-   .food .food-list .food-item
-   {
+   .food .food-list .food-item {
       width: 50%;
    }
 
-   .food .food-list .food-item .food-item-name
-   {
+   .food .food-list .food-item .food-item-name {
       font-size: 1rem;
    }
 
-   .food-more
-   {
+   .food-more {
       font-size: 1.188rem;
    }
 
-   .button
-   {
+   .button {
       text-align: center;
       margin: 18px 0px 40px;
    }
 
-   header .logo-shop a img
-   {
+   header .logo-shop a img {
       width: 80px;
    }
 }
 
 /* RESPONSIVE FOR INTRODUCE PAGE */
-/* Tablet */
-/* Moblie */
-@media screen and (max-width: 63.938rem)
-{
-   .main-body .intro-col12
-   {
+/* Tablet & Moblie */
+@media screen and (max-width: 63.938rem) {
+   .main-body .intro-col12 {
       margin-top: 40px;
    }
 
-   .intro-col12 .intro-head h1
-   {
+   .intro-col12 .intro-head h1 {
       font-size: 1.5em;
    }
 
-   .main-body .row-intro
-   {
+   .main-body .row-intro {
       display: block;
       padding: 0 10px;
    }
 
-   .row-intro .intro-col8
-   {
+   .row-intro .intro-col8 {
       width: 100%;
       margin: 10px 0;
    }
 
-   .row-intro .intro-col4
-   {
+   .row-intro .intro-col4 {
       width: 100%;
       margin: 10px 0;
    }
 
-   .main-body .row-intro:nth-child(odd)
-   {
+   .main-body .row-intro:nth-child(odd) {
       padding-bottom: 1px;
    }
 
-   .main-body .row-intro:nth-child(odd) .intro-col4
-   {
+   .main-body .row-intro:nth-child(odd) .intro-col4 {
       display: none;
    }
 
-   .row-intro .intro-text
-   {
+   .row-intro .intro-text {
       padding: 16px;
    }
 
    .row-intro .intro-text p,
-   .row-intro .intro-text h2
-   {
+   .row-intro .intro-text h2 {
       font-size: 1rem;
    }
 }
 
 /* RESPONSIVE FOR ONLINE SHOP PAGE */
 
-
-
 /* RESPONSIVE FOR PROMOTION PAGE */
-/* Tablet */
-/* Moblie */
-@media screen and (max-width: 63.938rem)
-{
-   .main-body .row-mb
-   {
+/* Tablet & Moblie */
+@media screen and (max-width: 63.938rem) {
+   .main-body .row-mb {
       display: block;
    }
 
-   .main-body .col-blog-3
-   {
+   .main-body .col-blog-3 {
       width: 100%;
    }
 
-   .main-body .col-blog-9
-   {
+   .main-body .col-blog-9 {
       width: 100%;
    }
 
-   .topbar .col-tb-6
-   {
+   .topbar .col-tb-6 {
       padding: 0;
       text-align: center;
    }
 
-   .blog-content .blog-post
-   {
+   .blog-content .blog-post {
       width: 100%;
    }
 
-   .blog-container .blog-heading h1
-   {
+   .blog-container .blog-heading h1 {
       font-size: 1rem;
       margin-bottom: 4px;
    }
 
-   .blog-post .blog-image img
-   {
+   .blog-post .blog-image img {
       height: auto;
    }
 }
