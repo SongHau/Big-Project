@@ -183,10 +183,10 @@ const swiper = document.querySelector(".swiper");
 const swiperSlide = document.querySelectorAll(".swiper-slide");
 const prvBtn = document.querySelector(".mb-content .slider-prv");
 const nxtBtn = document.querySelector(".mb-content .slider-nxt");
-const numberOfSwiper = swiperSlide.length;
+let numberOfSwiper = swiperSlide.length;
 let swiperNumber = 0;
 function changeSwiper(dir) {
-   const swiperWidth = swiperSlide[0].offsetWidth;
+   let swiperWidth = swiperSlide[0].offsetWidth;
    if (dir === "next") {
       swiperNumber++;
    } else if (dir === "previous") {
