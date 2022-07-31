@@ -1,5 +1,5 @@
 /* Responsive header for tablet and mobile */
-@media (max-width:64.938rem) {
+@media (max-width: 64.938rem) {
    header .name-shop {
       display: none;
    }
@@ -60,25 +60,28 @@
 }
 
 /* RESPONSIVE FOR HOME PAGE */
+/* PC */
+@media (min-width: 64rem) {
+}
 
 /* Tablet */
-@media (min-width:46.25rem) and (max-width:63.938rem) {}
+@media (min-width: 46.25rem) and (max-width: 63.938rem) {
+}
 
 /* Mobile */
-@media (max-width:46.188rem) {
-
-   header.sticky,
+@media (max-width: 46.188rem) {
    header {
       padding: 0px 10px 0px 0px;
       text-align: center;
    }
 
    header.sticky {
-      padding: 4px 10px;
+      padding: 0px 10px;
       text-align: center;
    }
 
-   header .btn-mobile {}
+   header .btn-mobile {
+   }
 
    .introduce {
       flex-wrap: wrap;
@@ -126,9 +129,8 @@
 }
 
 /* RESPONSIVE FOR INTRODUCE PAGE */
-/* Tablet */
-/* Moblie */
-@media screen and (max-width: 46.188rem) {
+/* Tablet & Moblie */
+@media screen and (max-width: 63.938rem) {
    .main-body .intro-col12 {
       margin-top: 40px;
    }
@@ -172,18 +174,9 @@
 
 /* RESPONSIVE FOR ONLINE SHOP PAGE */
 
-/*Mobile */
-@media (max-width:46.188rem)
-{
-   header .logo{
-      display: none;
-   }
-   
-}
 /* RESPONSIVE FOR PROMOTION PAGE */
-/* Tablet */
-/* Moblie */
-@media screen and (max-width: 46.188rem) {
+/* Tablet & Moblie */
+@media screen and (max-width: 63.938rem) {
    .main-body .row-mb {
       display: block;
    }
@@ -208,5 +201,9 @@
    .blog-container .blog-heading h1 {
       font-size: 1rem;
       margin-bottom: 4px;
+   }
+
+   .blog-post .blog-image img {
+      height: auto;
    }
 }

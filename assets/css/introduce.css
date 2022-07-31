@@ -1,5 +1,4 @@
-*
-{
+* {
    padding: 0;
    margin: 0;
    box-sizing: border-box;
@@ -9,44 +8,41 @@
 /* Introduce */
 p::selection,
 h2::selection,
-a::selection
-{
+a::selection {
    background-color: #fcc755;
 }
 
-.main-body
-{
+.main-body {
    background: #d5d3cf;
    padding-bottom: 30px;
    transition: all 0.2s linear;
 }
 
-.main-body .intro-col12
-{
+.main-body .intro-col12 {
    width: 95%;
    margin: auto;
    background-color: #24262b;
    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3);
 }
 
-.intro-col12 .crossbar
-{
+.intro-col12 .crossbar {
    padding: 16px 0;
    background: #ccc;
    color: transparent;
 }
 
-.intro-col12 .crossbar h1
-{
+.intro-col12 .crossbar h1 {
    text-align: center;
    font-size: 3rem;
    color: orangered;
    -webkit-text-stroke: 1px rgb(243, 142, 34);
-   background-image: linear-gradient(-225deg,
-         #231557 0%,
-         #44107a 29%,
-         #ff1361 67%,
-         #fff800 100%);
+   background-image: linear-gradient(
+      -225deg,
+      #231557 0%,
+      #44107a 29%,
+      #ff1361 67%,
+      #fff800 100%
+   );
    background-size: 200%;
    background-clip: text;
    -webkit-background-clip: text;
@@ -54,28 +50,23 @@ a::selection
    animation: textColour 2s linear infinite;
 }
 
-@keyframes textColour
-{
-   to
-   {
+@keyframes textColour {
+   to {
       background-position: 200% center;
    }
 }
 
-.crossbar h1::selection
-{
+.crossbar h1::selection {
    background-color: transparent;
 }
 
-.main-body .row-intro
-{
+.main-body .row-intro {
    align-items: center;
    display: flex;
    padding: 10px;
 }
 
-.row-intro .intro-col8
-{
+.row-intro .intro-col8 {
    width: 66.6667%;
    background-color: wheat;
    margin: 10px;
@@ -83,91 +74,71 @@ a::selection
    box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.3);
 }
 
-.row-intro .intro-col4
-{
+.row-intro .intro-col4 {
    width: 33.3333%;
    margin: 10px;
 }
 
-.row-intro .intro-text
-{
+.row-intro .intro-text {
    padding: 20px;
    text-align: justify;
 }
 
-.row-intro .intro-text h2
-{
+.row-intro .intro-text h2 {
    color: #f78427;
    text-decoration: underline;
    -webkit-text-stroke: 1px orangered;
 }
 
-.row-intro .intro-text p
-{
+.row-intro .intro-text p {
    padding: 10px 0;
    font-size: 1.5rem;
 }
 
-.row-intro .intro-img
-{
+.row-intro .intro-img {
    position: relative;
    display: flex;
    align-items: center;
    justify-content: center;
 }
 
-.row-intro .intro-img::after
-{
+.row-intro .intro-img::after {
    content: "";
    width: 100%;
    height: 100%;
    position: absolute;
-   background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+   background: linear-gradient(
+      60deg,
+      #f79533,
+      #f37055,
+      #ef4e7b,
+      #a166ab,
+      #5073b8,
+      #1098ad,
+      #07b39b,
+      #6fba82
+   );
    background-size: 300% 300%;
    animation: borderRotate 1s ease alternate infinite;
 }
 
-.row-intro .intro-img img
-{
+.row-intro .intro-img img {
    width: 100%;
    padding: 8px;
    border-radius: 10px;
    z-index: 1;
 }
 
-@keyframes borderRotate
-{
-   0%
-   {
+@keyframes borderRotate {
+   0% {
       background-position: 0% 50%;
    }
 
-   50%
-   {
+   50% {
       background-position: 100% 50%;
    }
 
-   100%
-   {
+   100% {
       background-position: 0% 50%;
    }
-}
-
-.modal-image
-{
-   position: fixed;
-   top: 0;
-   right: 0;
-   bottom: 0;
-   left: 0;
-   z-index: 10;
-   display: none;
-   background: rgba(0, 0, 0, 0.5);
-}
-
-.modal-image .modal-image-container
-{
-   width: 90%;
-   margin: auto;
-   display: flex;
 }
