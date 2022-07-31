@@ -156,7 +156,7 @@ function updateInfoCart(list) {
       }
       tong = tong / 1000 + ',000';
    }
-   if (tong == 0) aTag.classList.add("disabled");
+   if(tong == 0) aTag.classList.add("disabled");
    document.getElementById("amount-food").innerHTML = number;
    document.getElementById("sum-food").innerHTML = tong.toLocaleString() + '<sup>₫</sup>';
 }
