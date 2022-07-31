@@ -195,7 +195,10 @@
       height: 74%;
       margin-top: 0;
       top: 365px;
-      overflow-y: auto;  
+      overflow-y: auto;
+      position: fixed;
+      top: 50%;
+      left: 50%;
     }
     .menu-sidebar .menu-list{
       display: flex;
