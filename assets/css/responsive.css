@@ -170,14 +170,25 @@
 }
 
 /* RESPONSIVE FOR ONLINE SHOP PAGE */
-@media (max-width: 46.188rem)
-{
-   .col-12{
+@media (max-width: 46.188rem) {
+   .col-12 {
       width: 100%;
       padding-left: 15px;
       padding-right: 15px;
-    }
+   }
 }
+
+/* RESPONSIVE FOR NEWS PAGE */
+@media screen and (max-width: 63.938rem) {
+   .main-body .slider {
+      width: 100%;
+   }
+
+   .slider .slider-item img {
+      height: 100%;
+   }
+}
+
 /* RESPONSIVE FOR PROMOTION PAGE */
 /* Tablet & Moblie */
 @media screen and (max-width: 63.938rem) {
