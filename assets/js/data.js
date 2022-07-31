@@ -159,4 +159,7 @@ window.addEventListener("load", function () {
          activeDot(i);
       });
    }
+   setInterval(function () {
+      changeSlide("next");
+   }, 5000);
 });

@@ -55,13 +55,6 @@ for (const btn of btnPlus) btn.addEventListener("click", addFood);
 
 closeModal.addEventListener("click", closeModalfood);
 
-function showLogin(e) {
-   e.preventDefault();
-   modal.classList.add("open");
-}
-for (const lgBtn of lgBtns) {
-   lgBtn.addEventListener("click", showLogin);
-}
 /* Close Modal Add Food */
 window.addEventListener("click", function (e) {
    const wrapper = document.getElementById("wrapper-1");
