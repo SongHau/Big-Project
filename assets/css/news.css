@@ -9,8 +9,13 @@ img {
    width: 100%;
 }
 
+a {
+   text-decoration: none;
+   color: #333;
+}
+
 .main-body {
-   padding: 150px 0;
+   padding: 182px 0;
    background: #d5d3cf;
 }
 
@@ -18,7 +23,6 @@ img {
    position: relative;
    max-width: 90%;
    margin: auto;
-   overflow: hidden;
 }
 
 .slider:hover .slider-nxt,
@@ -96,44 +100,87 @@ img {
    flex: 1 0 100%;
 }
 
-.slider .slider-item:first-child {
-   opacity: 1;
-}
-
 .slider .slider-item img {
    width: 100%;
    height: 640px;
 }
 
-.content-container .content-row {
+.mb-content a:hover {
+   color: orange;
+}
+
+.mb-content .content-row {
+   position: relative;
    width: 90%;
    margin: 30px auto 0;
 }
 
-.content-container .content-title {
+.mb-content .mb-container:hover .slider-prv,
+.mb-content .mb-container:hover .slider-nxt {
+   opacity: 1;
+}
+
+.mb-content .content-title {
    font-size: 2rem;
    font-weight: 500;
    opacity: 0.8;
    text-align: center;
 }
 
-.content-container .swiper-wrapper {
-   list-style: none;
-   overflow: hidden;
-   margin-top: 20px;
-   
-}
-
-.content-container .swiper {
+.mb-content .slider-prv,
+.mb-content .slider-nxt {
+   position: absolute;
+   top: 50%;
+   transform: translate(-6px, 18px);
    display: flex;
-
+   width: 22px;
+   height: 22px;
+   border-radius: 50%;
+   color: #fff;
+   align-items: center;
+   justify-content: center;
+   cursor: pointer;
+   opacity: 0;
+   background: rgba(0, 0, 0, 0.6);
+   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
+.mb-content .slider-nxt {
+   right: 0;
+   transform: translate(6px, 18px);
+}
+
+.mb-content .swiper-wrapper {
+   overflow: hidden;
+   margin-top: 40px;
+}
+
+.mb-content .swiper {
+   display: flex;
+   list-style: none;
+}
 .swiper .swiper-slide {
    /* margin-right: 10px; */
    flex: 1 0 25%;
 }
 
 .swiper-slide .slide-article {
+   background: #e9e6e6;
    margin: 0 10px;
+   height: 450px;
+   overflow-y: auto;
+}
+
+.slide-article .author,
+.slide-article .date {
+   display: inline-block;
+   margin-top: 16px;
+   font-style: italic;
+   opacity: 0.8;
+}
+
+.slide-article .slide-article-desc,
+.slide-article .entry-content {
+   padding: 16px;
+   text-align: justify;
 }

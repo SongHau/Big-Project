@@ -127,10 +127,10 @@ window.addEventListener("load", function () {
    const slider = document.querySelector(".slider");
    const sliderMain = document.querySelector(".slider-main");
    const sliderItems = document.querySelectorAll(".slider-item");
-   const prvBtn = document.querySelector(".slider-prv");
-   const nxtBtn = document.querySelector(".slider-nxt");
    const dotItems = document.querySelectorAll(".dot-item");
-   const numberOfSliders = sliderItems.length;
+   let prvBtn = document.querySelector(".slider .slider-prv");
+   let nxtBtn = document.querySelector(".slider .slider-nxt");
+   let numberOfSliders = sliderItems.length;
    let slideNumber = 0;
    let repeat = 0;
    function activeDot(index) {
@@ -138,7 +138,7 @@ window.addEventListener("load", function () {
       dotItems[index].classList.add("active");
    }
    function changeSlide(dir) {
-      const sliderWidth = sliderItems[0].offsetWidth;
+      let sliderWidth = sliderItems[0].offsetWidth;
       if (dir === "next") {
          slideNumber++;
          if (slideNumber >= numberOfSliders) slideNumber = 0;
@@ -175,4 +175,28 @@ window.addEventListener("load", function () {
    slider.addEventListener("mouseout", function () {
       repeater();
    });
+});
+
+/* SWIPER */
+const mbContainer = document.querySelector(".mb-container");
+const swiper = document.querySelector(".swiper");
+const swiperSlide = document.querySelectorAll(".swiper-slide");
+const prvBtn = document.querySelector(".mb-content .slider-prv");
+const nxtBtn = document.querySelector(".mb-content .slider-nxt");
+const numberOfSwiper = swiperSlide.length;
+let swiperNumber = 0;
+function changeSwiper(dir) {
+   const swiperWidth = swiperSlide[0].offsetWidth;
+   if (dir === "next") {
+      swiperNumber++;
+   } else if (dir === "previous") {
+      swiperNumber--;
+   }
+   sliderMain.style = `transform: translateX(${-swiperWidth * swiperNumber}px)`;
+}
+nxtBtn.addEventListener("click", function () {
+   changeSwiper("next");
+});
+prvBtn.addEventListener("click", function () {
+   changeSwiper("previous");
 });
