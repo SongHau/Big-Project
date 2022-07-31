@@ -177,7 +177,7 @@
       bottom: 10%;
       right: 5%;
       z-index: 3;
-      font-size: 2rem;
+      font-size: 3rem;
       color: orangered;
       display: none;
    }
@@ -195,8 +195,11 @@
       margin-top: 0;
       top: 365px;
       overflow-y: auto;
-   }
-   .menu-sidebar .menu-list {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+    }
+    .menu-sidebar .menu-list{
       display: flex;
    }
    .menu-sidebar .menu-list li {
