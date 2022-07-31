@@ -78,6 +78,7 @@
    header.sticky {
       padding: 0px 10px;
       text-align: center;
+      z-index: 1;
    }
 
    .introduce {
@@ -172,16 +173,29 @@
 /* RESPONSIVE FOR ONLINE SHOP PAGE */
 @media (max-width: 46.188rem)
 {
+   #pay{
+      position: fixed;
+      bottom: 10%;
+      right: 5%;
+      z-index: 3;
+      font-size: 2rem;
+      color: orangered;
+      display: none;
+    }
    .col-12{
       width: 100%;
       padding-left: 15px;
       padding-right: 15px;
     }
     .container-food{
-      padding-top: 180px;
+      padding-top: 150px;
     }
     .modal-food .modal-body{
-      width: 90%;   
+      width: 95%;
+      height: 74%;
+      margin-top: 0;
+      top: 365px;
+      overflow-y: auto;  
     }
     .menu-sidebar .menu-list{
       display: flex;
@@ -191,6 +205,9 @@
     }
     .number p{
       padding: 0;
+    }
+    #btn-close{
+      display: none;
     }
 }
 /* RESPONSIVE FOR PROMOTION PAGE */
