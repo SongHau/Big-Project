@@ -49,7 +49,7 @@ body {
 }
 /* Container */
 .container-food {
-  padding-top: 200px;
+  padding-top: 210px;
   background: #e5e5e5;
   transition: all 0.2s linear;
 }
@@ -456,13 +456,4 @@ body {
 
 .modal-food.open {
   display: block;
-}
-#pay{
-  position: fixed;
-  bottom: 10%;
-  right: 5%;
-  z-index: 3;
-  font-size: 2rem;
-  color: orangered;
-  display: none;
 }

@@ -105,8 +105,9 @@ function addItemFood(e) {
 
    }
    updateInfoCart(shoppingCarts);
-   modalFood.classList.remove("open")
-   aTag.classList.remove("disabled")
+   modalFood.classList.remove("open");
+   aTag.classList.remove("disabled");
+   pay.style.display="block";
 };
 function removeItemFood(e) {
    e.parentElement.parentElement.remove();
@@ -149,6 +150,7 @@ function updateInfoCart(list) {
       tong = tong / 1000 + ',000';
    }
    if(tong == 0) aTag.classList.add("disabled");
+   if(tong==0) pay.style.display="none";
    document.getElementById("amount-food").innerHTML = number;
    document.getElementById("sum-food").innerHTML = tong.toLocaleString() + '<sup>₫</sup>';
 }
@@ -167,3 +169,6 @@ moveToAddFood.addEventListener("click", function () {
 })
 /* Pay */
 const pay = document.getElementById("pay");
+pay.addEventListener("click",function(){
+   window.scrollTo(0,6800)
+})
