@@ -134,7 +134,6 @@ function addFoodCart(e) {
       updateInfoCart(shoppingCarts);
    }
 }
-
 function updateInfoCart(list) {
    var children = shoppingCarts.children;
    var number = 0;
@@ -166,3 +165,5 @@ const moveToAddFood = document.getElementById("moveaddfood");
 moveToAddFood.addEventListener("click", function () {
    window.scrollTo(0, 4400);
 })
+/* Pay */
+const pay = document.getElementById("pay");

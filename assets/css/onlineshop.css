@@ -6,8 +6,9 @@
 }
 
 body {
-  min-height: 200vh;
+  min-height: 100vh;
   background-color: #e5e5e5;
+  overflow: hidden;
 }
 
 /*Grid*/
@@ -195,7 +196,7 @@ body {
   cursor: default;
 }
 
-.cart .cart-top a :hover {
+.cart .cart-top a:hover {
   background-color: orange;
 }
 
@@ -455,4 +456,13 @@ body {
 
 .modal-food.open {
   display: block;
+}
+#pay{
+  position: fixed;
+  bottom: 10%;
+  right: 5%;
+  z-index: 3;
+  font-size: 2rem;
+  color: orangered;
+  display: none;
 }
