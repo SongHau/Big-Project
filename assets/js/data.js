@@ -127,25 +127,29 @@ window.addEventListener("load", function () {
    const slider = document.querySelector(".slider");
    const sliderMain = document.querySelector(".slider-main");
    const sliderItems = document.querySelectorAll(".slider-item");
-   const prvBtn = document.querySelector(".slider-prv");
-   const nxtBtn = document.querySelector(".slider-nxt");
    const dotItems = document.querySelectorAll(".dot-item");
-   const sliderWidth = sliderItems[0].offsetWidth;
-   let current = 0;
+   let prvBtn = document.querySelector(".slider .slider-prv");
+   let nxtBtn = document.querySelector(".slider .slider-nxt");
+   let numberOfSliders = sliderItems.length;
+   let slideNumber = 0;
+   let repeat = 0;
    function activeDot(index) {
       for (const dot of dotItems) dot.classList.remove("active");
       dotItems[index].classList.add("active");
    }
    function changeSlide(dir) {
+      let sliderWidth = sliderItems[0].offsetWidth;
       if (dir === "next") {
-         current++;
-         if (current >= sliderItems.length) current = 0;
+         slideNumber++;
+         if (slideNumber >= numberOfSliders) slideNumber = 0;
       } else if (dir === "previous") {
-         current--;
-         if (current < 0) current = sliderItems.length - 1;
-      } else current = dir;
-      sliderMain.style = `transform: translateX(${-sliderWidth * current}px)`;
-      activeDot(current);
+         slideNumber--;
+         if (slideNumber < 0) slideNumber = numberOfSliders - 1;
+      } else slideNumber = dir;
+      sliderMain.style = `transform: translateX(${
+         -sliderWidth * slideNumber
+      }px)`;
+      activeDot(slideNumber);
    }
    nxtBtn.addEventListener("click", function () {
       changeSlide("next");
@@ -159,7 +163,40 @@ window.addEventListener("load", function () {
          activeDot(i);
       });
    }
-   setInterval(function () {
-      changeSlide("next");
-   }, 5000);
+   const repeater = function () {
+      repeat = setInterval(function () {
+         changeSlide("next");
+      }, 2000);
+   };
+   repeater();
+   slider.addEventListener("mouseover", function () {
+      clearInterval(repeat);
+   });
+   slider.addEventListener("mouseout", function () {
+      repeater();
+   });
+});
+
+/* SWIPER */
+const mbContainer = document.querySelector(".mb-container");
+const swiper = document.querySelector(".swiper");
+const swiperSlide = document.querySelectorAll(".swiper-slide");
+const prvBtn = document.querySelector(".mb-content .slider-prv");
+const nxtBtn = document.querySelector(".mb-content .slider-nxt");
+const numberOfSwiper = swiperSlide.length;
+let swiperNumber = 0;
+function changeSwiper(dir) {
+   const swiperWidth = swiperSlide[0].offsetWidth;
+   if (dir === "next") {
+      swiperNumber++;
+   } else if (dir === "previous") {
+      swiperNumber--;
+   }
+   sliderMain.style = `transform: translateX(${-swiperWidth * swiperNumber}px)`;
+}
+nxtBtn.addEventListener("click", function () {
+   changeSwiper("next");
+});
+prvBtn.addEventListener("click", function () {
+   changeSwiper("previous");
 });
