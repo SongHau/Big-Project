@@ -3,7 +3,11 @@ window.addEventListener("scroll", function () {
    var header = document.querySelector("header");
    header.classList.toggle("sticky", window.scrollY > 10);
 });
-
+/* Loading */
+window.addEventListener("load",function(){
+   const loader = document.querySelector(".loader");
+   loader.classList.add("hidden");
+})
 /* OPEN MODAL LOGIN */
 const modalContainer = document.querySelector(".wrapper");
 const lgBtn = document.querySelector(".js-login");
@@ -213,3 +217,4 @@ nxtBtn.addEventListener("click", function () {
 prvBtn.addEventListener("click", function () {
    changeSwiper("-1");
 });
+/* Loading */

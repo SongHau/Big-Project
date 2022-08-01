@@ -169,7 +169,7 @@
 }
 
 /* RESPONSIVE FOR ONLINE SHOP PAGE */
-@media (max-width: 46.188rem) {
+@media (max-width: 46.25rem) {
    #pay {
       position: fixed;
       bottom: 5%;
@@ -203,10 +203,11 @@
 
    .menu-sidebar .menu-list {
       display: flex;
+
    }
 
-   .menu-sidebar .menu-list li {
-      padding: 13px;
+   .menu-sidebar .menu-list li{
+    padding: 13px;
    }
 
    .number p {
