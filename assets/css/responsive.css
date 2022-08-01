@@ -83,12 +83,12 @@
 
    .introduce {
       flex-wrap: wrap;
-      padding: 15px;
+      padding: 10px;
    }
 
    .introduce .introduce-list {
       width: 50%;
-      padding: 18px;
+      padding: 18px 0px;
    }
 
    .introduce .introduce-list .introduce-sup,
@@ -211,6 +211,9 @@
     }
     #btn-close{
       display: none;
+    }
+    body{
+      overflow: hidden;
     }
 }
 

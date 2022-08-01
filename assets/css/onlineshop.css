@@ -8,7 +8,6 @@
 body {
   min-height: 100vh;
   background-color: #e5e5e5;
-  overflow: hidden;
 }
 
 /*Grid*/
@@ -57,7 +56,7 @@ body {
 .menu-sidebar {
   box-shadow: 3px 3px 6px 0 #e5e5e5;
   position: sticky;
-  top: 100px;
+  top:100px;
 }
 
 .menu-sidebar .menu-list li {
@@ -456,4 +455,7 @@ body {
 
 .modal-food.open {
   display: block;
+}
+#pay{
+  display: none;
 }
