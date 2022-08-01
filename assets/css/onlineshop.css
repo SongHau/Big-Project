@@ -280,7 +280,7 @@ body {
   bottom: 0;
   right: 0;
   background-color: rgba(0, 0, 0, 0.2);
-  z-index: 2;
+  z-index: 99999;
   display: none;
 }
 
@@ -293,7 +293,6 @@ body {
   padding: 15px;
   border-radius: 5px;
   max-width: 750px;
-  z-index: 10;
 }
 
 .modal-food .modal-food-img img {
@@ -425,14 +424,14 @@ body {
 .add-to-cart {
   background-color: orange;
   margin-top: 20px;
-  padding: 10px;
   text-align: center;
 }
 
 .add-to-cart a {
   text-decoration: none;
   color: #fff;
-  display: block;
+  display:block;
+  padding: 10px;
 }
 
 #btn-close {

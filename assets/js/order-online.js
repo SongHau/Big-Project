@@ -107,7 +107,17 @@ function addItemFood(e) {
    updateInfoCart(shoppingCarts);
    modalFood.classList.remove("open");
    aTag.classList.remove("disabled");
-   pay.style.display="block";
+   function WidthChange(mq) {
+      if (mq.matches) {
+         pay.style.display="block";
+      } else {
+         pay.style.display="none";
+      }
+    }
+   if (matchMedia) {
+      const mq = window.matchMedia("(max-width: 739px)");
+      WidthChange(mq);
+    }
 };
 function removeItemFood(e) {
    e.parentElement.parentElement.remove();
