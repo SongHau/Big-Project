@@ -45,6 +45,7 @@ a::selection {
    );
    background-size: 200%;
    background-clip: text;
+   user-select: none;
    -webkit-background-clip: text;
    -webkit-text-fill-color: transparent;
    animation: textColour 2s linear infinite;
@@ -54,10 +55,6 @@ a::selection {
    to {
       background-position: 200% center;
    }
-}
-
-.crossbar h1::selection {
-   background-color: transparent;
 }
 
 .main-body .row-intro {
