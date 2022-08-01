@@ -135,7 +135,14 @@ a {
    font-size: 2rem;
    font-weight: 500;
    opacity: 0.8;
+   user-select: none;
    text-align: center;
+}
+
+.see-all {
+   position: absolute;
+   right: 12px;
+   top: 60px;
 }
 
 .mb-content .slider-prv,
@@ -163,29 +170,29 @@ a {
    transform: translate(6px, 18px);
 }
 
-.mb-content .swiper-wrapper {
+.mb-content .carousel-wrapper {
    overflow: hidden;
    margin-top: 40px;
 }
 
-.mb-content .swiper {
+.mb-content .carousel {
    display: flex;
    list-style: none;
    transition: transform 0.25s linear;
 }
 
-.swiper .swiper-slide {
+.carousel .carousel-slide {
    flex: 1 0 25%;
 }
 
-.swiper-slide .slide-article {
+.carousel-slide .slide-article {
    background: #ffffffba;
    margin: 0 10px;
    height: 450px;
    overflow-y: auto;
 }
 
-.swiper-slide .slide-article::-webkit-scrollbar {
+.carousel-slide .slide-article::-webkit-scrollbar {
    display: none;
 }
 
@@ -198,7 +205,7 @@ a {
 }
 .author::after,
 .date::after {
-   content: '|';
+   content: "|";
    margin-left: 4px;
 }
 

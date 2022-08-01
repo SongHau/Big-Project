@@ -70,18 +70,37 @@ window.addEventListener("click", function (e) {
 const radios = document.getElementsByName("radio");
 function addItemFood(e) {
    e.preventDefault();
-   let itemType = '';
+   let itemType = "";
    for (let i = 0, length = radios.length; i < length; i++) {
       if (radios[i].checked) {
-         itemType = radios[i].parentElement.textContent.trim();;
+         itemType = radios[i].parentElement.textContent.trim();
          break;
       }
    }
-   let itemImg = modalFood.querySelector('.modal-food-img').innerHTML;
+   let itemImg = modalFood.querySelector(".modal-food-img").innerHTML;
    let itemTitle = modalFood.querySelector(".modal-food-name").innerHTML;
    let itemNumber = parseInt(modalFood.querySelector(".number-var").innerHTML);
    let itemPrice = modalFood.querySelector(".modal-food-price").innerHTML;
-   let itemContent = '<div class="shopping-cart"  price="' + itemPrice.replace(/[^0-9]/g, '') + '" number="' + itemNumber + '" data="' + itemTitle + '" type="' + itemType + '" > <div class="shopping-cart-img"> ' + itemImg + ' </div> <div class="shopping-cart-content"> <div class="shopping-cart-left"> <h4>' + itemTitle + '</h4> <p>' + itemType + '</p> </div> <div class="number"> <a href="javascript:void(0)" onclick="removeFoodCart(this)" class="btn-minus"> <i class="fa-solid fa-minus"></i> </a> <p class="number-var">' + itemNumber + '</p> <a href="javascript:void(0)" onclick="addFoodCart(this)" class="btn-plus"> <i class="fa-solid fa-plus plus"></i> </a> </div> </div> <div class="shopping-cart-right"> <p> ' + itemPrice + '</p> <a class="removeItem" href="javascript:void(0)" onclick="removeItemFood(this)" >Xóa</a> </div> </div>';
+   let itemContent =
+      '<div class="shopping-cart"  price="' +
+      itemPrice.replace(/[^0-9]/g, "") +
+      '" number="' +
+      itemNumber +
+      '" data="' +
+      itemTitle +
+      '" type="' +
+      itemType +
+      '" > <div class="shopping-cart-img"> ' +
+      itemImg +
+      ' </div> <div class="shopping-cart-content"> <div class="shopping-cart-left"> <h4>' +
+      itemTitle +
+      "</h4> <p>" +
+      itemType +
+      '</p> </div> <div class="number"> <a href="javascript:void(0)" onclick="removeFoodCart(this)" class="btn-minus"> <i class="fa-solid fa-minus"></i> </a> <p class="number-var">' +
+      itemNumber +
+      '</p> <a href="javascript:void(0)" onclick="addFoodCart(this)" class="btn-plus"> <i class="fa-solid fa-plus plus"></i> </a> </div> </div> <div class="shopping-cart-right"> <p> ' +
+      itemPrice +
+      '</p> <a class="removeItem" href="javascript:void(0)" onclick="removeItemFood(this)" >Xóa</a> </div> </div>';
 
    var children = shoppingCarts.children;
    if (children.length > 0) {
@@ -90,8 +109,13 @@ function addItemFood(e) {
          var titleChild = children[i].getAttribute("data");
          var typeChild = children[i].getAttribute("type").trim();
          if (titleChild == itemTitle && typeChild == itemType) {
-            children[i].querySelector(".number-var").innerHTML = parseInt(children[i].querySelector(".number-var").innerHTML) + itemNumber;
-            children[i].setAttribute("number", children[i].querySelector(".number-var").innerHTML);
+            children[i].querySelector(".number-var").innerHTML =
+               parseInt(children[i].querySelector(".number-var").innerHTML) +
+               itemNumber;
+            children[i].setAttribute(
+               "number",
+               children[i].querySelector(".number-var").innerHTML
+            );
 
             add = false;
             modalFood.classList.remove("open");
@@ -102,13 +126,12 @@ function addItemFood(e) {
       }
    } else {
       shoppingCarts.innerHTML += itemContent;
-
    }
    updateInfoCart(shoppingCarts);
    modalFood.classList.remove("open");
    aTag.classList.remove("disabled");
-   pay.style.display="block";
-};
+   pay.style.display = "block";
+}
 function removeItemFood(e) {
    e.parentElement.parentElement.remove();
    updateInfoCart(shoppingCarts);
@@ -131,7 +154,10 @@ function addFoodCart(e) {
    if (e.parentElement.querySelector(".number-var").innerHTML > 0) {
       e.parentElement.querySelector(".number-var").innerHTML =
          parseInt(e.parentElement.querySelector(".number-var").innerHTML) + 1;
-      e.parentElement.parentElement.parentElement.setAttribute("number", e.parentElement.querySelector(".number-var").innerHTML);
+      e.parentElement.parentElement.parentElement.setAttribute(
+         "number",
+         e.parentElement.querySelector(".number-var").innerHTML
+      );
       updateInfoCart(shoppingCarts);
    }
 }
@@ -145,30 +171,31 @@ function updateInfoCart(list) {
          tong =
             tong +
             parseInt(children[i].getAttribute("number")) *
-            parseInt(children[i].getAttribute("price"));
+               parseInt(children[i].getAttribute("price"));
       }
-      tong = tong / 1000 + ',000';
+      tong = tong / 1000 + ",000";
    }
-   if(tong == 0) aTag.classList.add("disabled");
-   if(tong==0) pay.style.display="none";
+   if (tong == 0) aTag.classList.add("disabled");
+   if (tong == 0) pay.style.display = "none";
    document.getElementById("amount-food").innerHTML = number;
-   document.getElementById("sum-food").innerHTML = tong.toLocaleString() + '<sup>₫</sup>';
+   document.getElementById("sum-food").innerHTML =
+      tong.toLocaleString() + "<sup>₫</sup>";
 }
 /* Scrolling Element */
 const moveToFood = document.getElementById("movefood");
 moveToFood.addEventListener("click", function () {
    window.scrollTo(0, 0);
-})
+});
 const moveToCombo = document.getElementById("movecombo");
 moveToCombo.addEventListener("click", function () {
    window.scrollTo(0, 2060);
-})
+});
 const moveToAddFood = document.getElementById("moveaddfood");
 moveToAddFood.addEventListener("click", function () {
    window.scrollTo(0, 4400);
-})
+});
 /* Pay */
 const pay = document.getElementById("pay");
-pay.addEventListener("click",function(){
-   window.scrollTo(0,6900)
-})
+pay.addEventListener("click", function () {
+   window.scrollTo(0, 6900);
+});

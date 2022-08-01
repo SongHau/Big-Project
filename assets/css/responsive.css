@@ -171,6 +171,7 @@
 }
 
 /* RESPONSIVE FOR ONLINE SHOP PAGE */
+/* Moblie */
 @media (max-width: 46.188rem) {
    #pay {
       position: fixed;
@@ -198,8 +199,8 @@
       position: fixed;
       top: 50%;
       left: 50%;
-    }
-    .menu-sidebar .menu-list{
+   }
+   .menu-sidebar .menu-list {
       display: flex;
    }
    .menu-sidebar .menu-list li {
@@ -210,14 +211,21 @@
    }
    #btn-close {
       display: none;
-    }
-    body{
+   }
+   body {
       overflow: hidden;
-    }
+   }
 }
 
 /* RESPONSIVE FOR NEWS PAGE */
-@media screen and (max-width: 63.938rem) {
+/* Tablet */
+@media (min-width: 46.25rem) and (max-width: 63.938rem) {
+   .carousel .carousel-slide {
+      flex: 1 0 33.33333%;
+   }
+}
+/* Moblie */
+@media screen and (max-width: 46.188rem) {
    .main-body .box {
       height: 84px;
    }
@@ -231,8 +239,30 @@
       height: 100%;
    }
 
-   .swiper .swiper-slide {
+   .mb-content .slider-prv,
+   .mb-content .slider-nxt {
+      display: none;
+   }
+
+   .mb-content .carousel {
+      overflow-x: scroll;
+   }
+
+   .mb-content .carousel::-webkit-scrollbar {
+      height: 8px;
+      background: orangered;
+   }
+
+   .mb-content .carousel::-webkit-scrollbar-thumb {
+      background: orange;
+   }
+
+   .carousel .carousel-slide {
       flex: 1 0 100%;
+   }
+
+   .carousel-slide img {
+      height: 220px;
    }
 }
 

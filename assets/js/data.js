@@ -177,39 +177,37 @@ window.addEventListener("load", function () {
    });
 });
 
-/* SWIPER */
+/* carousel */
 const mbContainer = document.querySelector(".mb-container");
-const swiper = document.querySelector(".swiper");
-const swiperSlide = document.querySelectorAll(".swiper-slide");
+const carousel = document.querySelector(".carousel");
+const carouselSlide = document.querySelectorAll(".carousel-slide");
 const prvBtn = document.querySelector(".mb-content .slider-prv");
 const nxtBtn = document.querySelector(".mb-content .slider-nxt");
 const last = document.getElementById("last");
-let numberOfSwiper = swiperSlide.length;
-let swiperNumber = 0;
-function changeSwiper(dir) {
-   let swiperWidth = swiperSlide[0].offsetWidth;
+let numberOfCarousel = carouselSlide.length;
+let carouselNumber = 0;
+function changecarousel(dir) {
+   let carouselWidth = carouselSlide[0].offsetWidth;
    if (dir === "1") {
-      swiperNumber++;
-      console.log(swiperNumber);
-      if (numberOfSwiper % 2 == 0 && swiperNumber > numberOfSwiper / 2) {
-         swiperNumber = numberOfSwiper / 2;
-         return;
-      }
-      if (
-         numberOfSwiper % 2 != 0 &&
-         swiperNumber >= parseInt(numberOfSwiper / 2) + 1
-      ) {
-         swiperNumber = parseInt(numberOfSwiper / 2);
+      carouselNumber++;
+      if (carouselNumber + 4 > numberOfCarousel) {
+         carouselNumber = numberOfCarousel - 4;
          return;
       }
    } else if (dir === "-1") {
-      swiperNumber--;
+      carouselNumber--;
+      if (carouselNumber < 0) {
+         carouselNumber = 0;
+         return;
+      }
    }
-   swiper.style = `transform: translateX(${-swiperWidth * swiperNumber}px)`;
+   carousel.style = `transform: translateX(${
+      -carouselWidth * carouselNumber
+   }px)`;
 }
 nxtBtn.addEventListener("click", function () {
-   changeSwiper("1");
+   changecarousel("1");
 });
 prvBtn.addEventListener("click", function () {
-   changeSwiper("-1");
+   changecarousel("-1");
 });
