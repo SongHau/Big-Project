@@ -170,5 +170,5 @@ moveToAddFood.addEventListener("click", function () {
 /* Pay */
 const pay = document.getElementById("pay");
 pay.addEventListener("click",function(){
-   window.scrollTo(0,6800)
+   window.scrollTo(0,6900)
 })
