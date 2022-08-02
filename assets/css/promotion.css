@@ -150,7 +150,7 @@ p::selection {
    box-shadow: -3px 3px 6px 0 rgba(0, 0, 0, 0.3);
 }
 
-.item-col3 .sidebar-title h2 {
+.item-col3 .sidebar-title {
    text-transform: uppercase;
    text-align: center;
    font-size: 1.125rem;
@@ -166,7 +166,6 @@ p::selection {
 }
 
 .item-col3 .list-items {
-   height: 0;
    overflow: hidden;
    transition: all 1s;
 }
@@ -234,7 +233,7 @@ p::selection {
 
 .blog-content .blog-post {
    width: 351px;
-   margin: 0 5px 20px;
+   margin: 16px 5px 20px;
    padding: 10px;
    line-height: 1.4;
    text-align: justify;
@@ -244,7 +243,7 @@ p::selection {
 
 .blog-content .blog-post:hover {
    box-shadow: 0 0 10px #000;
-   transform: translateY(-5px);
+   transform: translateY(-4px);
 }
 
 .blog-content .blog-post.blog-more {

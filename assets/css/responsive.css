@@ -60,8 +60,13 @@
 }
 
 /* RESPONSIVE FOR HOME PAGE */
+/* PC */
+@media (min-width: 64rem) {
+}
+
 /* Tablet */
-@media (min-width: 46.25rem) and (max-width: 63.938rem) {}
+@media (min-width: 46.25rem) and (max-width: 63.938rem) {
+}
 
 /* Mobile */
 @media (max-width: 46.188rem) {
@@ -199,11 +204,10 @@
    }
    .menu-sidebar .menu-list {
       display: flex;
-
    }
 
-   .menu-sidebar .menu-list li{
-    padding: 13px;
+   .menu-sidebar .menu-list li {
+      padding: 13px;
    }
 
    .number p {
@@ -218,13 +222,13 @@
       overflow: hidden;
    }
 
-   .modal-food .modal-body::-webkit-scrollbar{
+   .modal-food .modal-body::-webkit-scrollbar {
       width: 5px;
    }
-   .modal-food .modal-body::-webkit-scrollbar-track{
+   .modal-food .modal-body::-webkit-scrollbar-track {
       box-shadow: inset 0 0 6px #fff;
    }
-   .modal-food .modal-body::-webkit-scrollbar-thumb{
+   .modal-food .modal-body::-webkit-scrollbar-thumb {
       border-radius: 10px;
       box-shadow: inset 0 0 6px orange;
    }
@@ -232,9 +236,46 @@
 
 /* RESPONSIVE FOR NEWS PAGE */
 /* Tablet */
-@media (min-width: 46.25rem) and (max-width: 63.938rem) {
-   .carousel .carousel-slide {
-      flex: 1 0 33.33333%;
+@media screen and (max-width: 63.938rem) {
+   .carousel-slide {
+      flex: 1 0 50%;
+   }
+
+   .mb-content .slider-prv,
+   .mb-content .slider-nxt {
+      display: none;
+   }
+
+   .carousel-promotion,
+   .carousel-news {
+      overflow-x: scroll;
+   }
+
+   .carousel-promotion::-webkit-scrollbar,
+   .carousel-news::-webkit-scrollbar {
+      height: 5px;
+   }
+
+   .carousel-promotion::-webkit-scrollbar-thumb,
+   .carousel-news::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      box-shadow: inset 0 0 6px orange;
+   }
+
+   .carousel-promotion::-webkit-scrollbar-track,
+   .carousel-news::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 6px #fff;
+   }
+
+   .slide-article .author,
+   .slide-article .date {
+      font-size: 12px;
+   }
+
+   .slide-article .slide-article-desc,
+   .slide-article .entry-content {
+      padding: 10px;
+      font-size: 14px;
    }
 }
 /* Moblie */
@@ -252,25 +293,19 @@
       height: 100%;
    }
 
-   .mb-content .slider-prv,
-   .mb-content .slider-nxt {
-      display: none;
+   .see-all {
+      top: 28px;
    }
 
-   .mb-content .carousel {
-      overflow-x: scroll;
+   .mb-content .content-title {
+      font-size: 1rem;
    }
 
-   .mb-content .carousel::-webkit-scrollbar {
-      height: 8px;
-      background: orangered;
+   .mb-content .carousel-wrapper {
+      margin-top: 30px;
    }
 
-   .mb-content .carousel::-webkit-scrollbar-thumb {
-      background: orange;
-   }
-
-   .carousel .carousel-slide {
+   .carousel-slide {
       flex: 1 0 100%;
    }
 
