@@ -7,6 +7,7 @@
 
 body {
    overflow: hidden;
+   background: #d5d3cf;
 }
 
 header {
@@ -28,7 +29,6 @@ a {
 
 .main-body {
    padding-bottom: 180px;
-   background: #d5d3cf;
 }
 
 .main-body .box {
@@ -199,7 +199,7 @@ a {
 }
 
 .carousel-slide .slide-article {
-   background: #ffffffba;
+   background: #f4f3f2;
    margin: 0 10px;
    height: 450px;
    overflow-y: auto;
@@ -228,6 +228,52 @@ a {
 
 .slide-article .slide-article-desc,
 .slide-article .entry-content {
-   padding: 16px;
+   padding: 4px 16px;
    text-align: justify;
+}
+
+.top-footer {
+   margin-bottom: 40px;
+   padding: 20px 16px;
+   background: #f4f3f2;
+   font-size: 16px;
+}
+
+.top-footer .top-footer-row {
+   display: flex;
+}
+
+.top-footer .top-footer-col-8 {
+   display: flex;
+   width: 66.66667%;
+   align-items: center;
+   justify-content: space-between;
+}
+
+.top-footer .top-footer-col-8 h4 {
+   font-weight: 500;
+}
+
+.top-footer .top-footer-col-8 .form {
+   width: 70%;
+   display: flex;
+   height: 48px;
+}
+
+.form input[type="email"] {
+   width: 100%;
+   padding: 12px;
+   outline: none;
+   border: none;
+}
+
+.form .submit {
+   width: 16%;
+   border: 1px solid #e50000;
+   color: #fff;
+   background: #e50000;
+}
+
+.top-footer .top-footer-col-4 {
+   width: 33.33333%;
 }

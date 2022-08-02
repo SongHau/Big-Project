@@ -3,11 +3,13 @@ window.addEventListener("scroll", function () {
    var header = document.querySelector("header");
    header.classList.toggle("sticky", window.scrollY > 10);
 });
+
 /* Loading */
 window.addEventListener("load", function () {
    const loader = document.querySelector(".loader");
    loader.classList.add("hidden");
 });
+
 /* OPEN MODAL LOGIN */
 const modalContainer = document.querySelector(".wrapper");
 const lgBtn = document.querySelector(".js-login");
@@ -96,13 +98,16 @@ backToTopButton.addEventListener("click", function backToTop() {
 });
 
 /* DROPDOWN MENU */
-const btnMenus = document.querySelectorAll("h2");
+const btnMenus = document.querySelectorAll(".sidebar-title");
 const lists = document.querySelectorAll(".list-items");
-const arrows = document.querySelectorAll(".sidebar-title .arrow");
+const arrows = document.querySelectorAll(".sidebar .arrow");
 const articles = document.getElementsByClassName("item-article");
-var heightOfNewsList = 0;
+
+var heightOfSideBar = [0, 0];
 var deg = 0;
-for (const article of articles) heightOfNewsList += article.offsetHeight;
+for (const article of articles) heightOfSideBar[0] += article.offsetHeight;
+for (let i = 0; i < lists.length; i++)
+   lists[i].style.height = heightOfSideBar[i] + "px";
 for (let i = 0; i < btnMenus.length; i++)
    btnMenus[i].addEventListener("click", function dropDown() {
       lists[i].classList.toggle("active");
@@ -111,7 +116,7 @@ for (let i = 0; i < btnMenus.length; i++)
       if (!lists[i].classList.contains("active")) {
          lists[i].style.height = 0 + "px";
       } else {
-         lists[i].style.height = heightOfNewsList + "px";
+         lists[i].style.height = heightOfSideBar[i] + "px";
       }
    });
 
@@ -126,7 +131,7 @@ if (moreBtn != null) {
    });
 }
 
-/* SLIDE_SHOW */
+/* SLIDE SHOW */
 window.addEventListener("load", function () {
    const slider = document.querySelector(".slider");
    const sliderMain = document.querySelector(".slider-main");
@@ -143,7 +148,6 @@ window.addEventListener("load", function () {
    sliderMain.insertAdjacentHTML("afterbegin", lastSlide);
    sliderMain.insertAdjacentHTML("beforeend", firstSlide);
    sliderMain.style.transform = `translateX(${-sliderWidth}px)`;
-
    function changeSlide(dir) {
       sliderWidth = sliderItems[0].offsetWidth;
       if (dir === "next") {
