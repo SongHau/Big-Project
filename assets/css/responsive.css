@@ -196,7 +196,7 @@
 @media (max-width: 46.25rem) {
    #pay {
       position: fixed;
-      bottom: 5%;
+      bottom: 10%;
       right: 5%;
       z-index: 3;
       font-size: 3rem;
@@ -367,5 +367,15 @@
 
    .blog-post .blog-image img {
       height: auto;
+   }
+}
+/* Responsive for Pay page */
+@media(max-width:46.188rem){
+   .payment .payment-form{
+      width: 90%;
+   }
+   .payment .payment-form .information .name{
+      font-size: 1.6rem;
+      font-weight: bold;
    }
 }

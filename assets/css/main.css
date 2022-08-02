@@ -10,7 +10,7 @@ body {
 }
 
 /* Loading */
-.loader{
+.loader {
    position: fixed;
    z-index: 9999999;
    top: 0;
@@ -22,22 +22,26 @@ body {
    align-items: center;
    background-color: #fff;
 }
-.loader > img{
+
+.loader>img {
    width: 150px;
    animation: Loading 1s ease-in-out infinite;
 }
-.loader.hidden{
+
+.loader.hidden {
    animation: fadeOut 2s;
    animation-fill-mode: forwards;
 }
+
 @keyframes Loading {
-   0%{
+   0% {
       transform-origin: 50% 50%;
-      transform: rotate(0deg) scale(0.8,0.8);
+      transform: rotate(0deg) scale(0.8, 0.8);
    }
 }
+
 @keyframes fadeOut {
-   100%{
+   100% {
       opacity: 1;
       visibility: hidden;
    }
@@ -63,6 +67,7 @@ body {
 .introduce .introduce-list {
    width: 25%;
 }
+
 .introduce .introduce-list .introduce-img {
    text-align: center;
    max-width: 100%;
