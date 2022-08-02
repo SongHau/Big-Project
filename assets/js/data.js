@@ -209,6 +209,7 @@ window.addEventListener("load", function () {
 const carouselSlides = document.querySelectorAll(
    ".carousel-promotion .carousel-slide"
 );
+const carouselNews = document.querySelectorAll(".carousel-news .carousel-slide");
 const mbContainer = document.querySelector(".mb-container");
 const carouselPromotion = document.querySelector(".carousel-promotion");
 const prvBtn = document.querySelectorAll(".slider-prv");

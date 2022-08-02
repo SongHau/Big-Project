@@ -8,6 +8,8 @@
 body {
    min-height: 100vh;
 }
+
+/* Loading */
 .loader{
    position: fixed;
    z-index: 9999999;
@@ -40,6 +42,7 @@ body {
       visibility: hidden;
    }
 }
+
 .banner {
    position: relative;
    width: 100%;
