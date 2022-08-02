@@ -215,4 +215,3 @@ nxtBtn.addEventListener("click", function () {
 prvBtn.addEventListener("click", function () {
    changecarousel("-1");
 });
-/* Loading */

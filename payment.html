@@ -12,7 +12,7 @@
    <link rel="apple-touch-icon" sizes="180x180" href="./assets/img/apple-touch-icon.png" />
    <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon.ico" />
    <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon-16x16.png" />
-   <link rel="stylesheet" href="./assets/css/main.css">
+   <link rel="stylesheet" href="./assets/css/payment.css">
    <link rel="stylesheet" href="./assets/css/default.css">
    <link rel="stylesheet" href="./assets/css/responsive.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
@@ -24,7 +24,139 @@
 </head>
 
 <body>
-    
+   <div class="payment">
+      <div class="payment-form">
+         <div class="information">
+            <p class="name">Thông tin đơn hàng</p>
+            <div class="login">
+               <p>Bạn có đã tài khoản?</p>
+               <a href="" class="js-login">Đăng nhập</a>
+            </div>
+            <div class="information-user">
+               <div class="user">
+                  <label>Họ và tên</label>
+                  <input type="text" placeholder="Họ và tên">
+               </div>
+
+               <div class="user">
+                  <label>Email</label>
+                  <input type="email" placeholder="Email">
+               </div>
+
+               <div class="user">
+                  <label>Số điện thoại</label>
+                  <input type="tel" placeholder="Số điện thoại">
+               </div>
+
+               <div class="user">
+                  <label>Địa chỉ giao hàng</label>
+                  <input type="text" placeholder="Địa chỉ giao hàng">
+               </div>
+            </div>
+
+            <a href="./onlineshop.html" class="back-cart">Giỏ hàng</a>
+         </div>
+
+         <div class="method">
+            <p>Phương thức thanh toán</p>
+            <div class="group-radio" id="pay">
+               <label class="container-radio">
+                  <input type="radio" checked="checked" name="radio">
+                  <span>Thanh toán khi nhận hàng</span>
+                  <span class="checkmark"></span>
+               </label>
+            </div>
+
+            <div class="group-radio" id="pay-online">
+               <label class="container-radio">
+                  <input type="radio" name="radio">
+                  <span>Thanh toán online</span>
+                  <span class="checkmark"></span>
+               </label>
+            </div>
+
+            <div class="choose" id="js-choose">
+               <a href="#">
+                  <div class="app">
+                     <img src="./assets/img/zalo-pay-logo-png-1.png" alt="Zalo">
+                  </div>
+               </a>
+
+               <a href="#">
+                  <div class="app">
+                     <img src="./assets/img/logo-momo-png-1.png" alt="Momo">
+                  </div>
+               </a>
+
+               <a href="#">
+                  <div class="app">
+                     <img src="./assets/img/mobile-banking.svg" alt="Mobile Banking">
+                  </div>
+               </a>
+            </div>
+         </div> 
+      </div>
+   </div>
+
+   <div class="modal js-modal">
+      <div class="wrapper" id="wrapper">
+         <div class="title-text">
+            <div class="title login">
+               Đăng nhập
+            </div>
+            <div class="title signup">
+               Đăng ký
+            </div>
+         </div>
+         <div class="form-container">
+            <div class="slide-controls">
+               <input type="radio" name="slide" id="login" checked>
+               <input type="radio" name="slide" id="signup">
+               <label for="login" class="slide login">Đăng nhập</label>
+               <label for="signup" class="slide signup">Đăng ký</label>
+               <div class="slider-tab"></div>
+            </div>
+            <div class="form-inner">
+               <form action="#" class="login">
+                  <div class="field">
+                     <input type="text" placeholder="Tên đăng nhập" required>
+                  </div>
+                  <div class="field">
+                     <input type="password" placeholder="Mật khẩu" required>
+                  </div>
+                  <div class="pass-link">
+                     <a href="#">Quên mật khẩu</a>
+                  </div>
+                  <div class="field btn">
+                     <div class="btn-layer"></div>
+                     <input type="submit" value="Đăng nhập">
+                  </div>
+                  <div class="signup-link">
+                     Chưa có tài khoản? <a href="">Đăng ký ngay</a>
+                  </div>
+               </form>
+               <form action="#" class="signup">
+                  <div class="field">
+                     <input type="text" placeholder="Tên đăng nhập" required>
+                  </div>
+                  <div class="field">
+                     <input type="password" placeholder="Mật khẩu" required>
+                  </div>
+                  <div class="field">
+                     <input type="password" placeholder="Xác nhận mật khẩu" required>
+                  </div>
+                  <div class="field btn">
+                     <div class="btn-layer"></div>
+                     <input type="submit" value="Đăng ký">
+                  </div>
+               </form>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <script src="./assets/js/data.js"></script>
+   <script src="./assets/js/pay.js"></script>
 </body>
 
 </html>
