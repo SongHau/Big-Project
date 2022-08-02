@@ -4,10 +4,10 @@ window.addEventListener("scroll", function () {
    header.classList.toggle("sticky", window.scrollY > 10);
 });
 /* Loading */
-window.addEventListener("load",function(){
+window.addEventListener("load", function () {
    const loader = document.querySelector(".loader");
    loader.classList.add("hidden");
-})
+});
 /* OPEN MODAL LOGIN */
 const modalContainer = document.querySelector(".wrapper");
 const lgBtn = document.querySelector(".js-login");
@@ -143,7 +143,7 @@ window.addEventListener("load", function () {
    sliderMain.insertAdjacentHTML("afterbegin", lastSlide);
    sliderMain.insertAdjacentHTML("beforeend", firstSlide);
    sliderMain.style.transform = `translateX(${-sliderWidth}px)`;
-   
+
    function changeSlide(dir) {
       sliderWidth = sliderItems[0].offsetWidth;
       if (dir === "next") {
@@ -206,43 +206,90 @@ window.addEventListener("load", function () {
 });
 
 /* Carousel */
-const carouselSlides = document.querySelectorAll(
+const prvBtn = document.querySelectorAll(".mb-content .slider-prv");
+const nxtBtn = document.querySelectorAll(".mb-content .slider-nxt");
+const carouselPromotion = document.querySelector(".carousel-promotion");
+const carouselNews = document.querySelector(".carousel-news");
+const carouselSlidePromotions = document.querySelectorAll(
    ".carousel-promotion .carousel-slide"
 );
-const carouselNews = document.querySelectorAll(".carousel-news .carousel-slide");
-const mbContainer = document.querySelector(".mb-container");
-const carouselPromotion = document.querySelector(".carousel-promotion");
-const prvBtn = document.querySelectorAll(".slider-prv");
-const nxtBtn = document.querySelectorAll(".slider-nxt");
-let numberOfCarousel = carouselSlides.length;
-let carouselNumber = 0;
-let d = 0;
-function changeCarousel(dir) {
+const carouselSlideNews = document.querySelectorAll(
+   ".carousel-news .carousel-slide"
+);
+var numberOfCarouselPromotion = carouselSlidePromotions.length;
+var numberOfCarouselNews = carouselSlideNews.length;
+var promotionNumber = { number: 0 };
+var newsNumber = { number: 0 };
+function changeCarousel(
+   carousel,
+   carouselSlides,
+   carouselNumber,
+   numberOfCarousel,
+   dir
+) {
    let carouselWidth = carouselSlides[0].offsetWidth;
-   if (dir === "1") {
-      carouselNumber++;
-      d = parseInt(numberOfCarousel / 2);
+   if (dir == 1) {
+      carouselNumber.number++;
+      let d = parseInt(numberOfCarousel / 2);
       if (numberOfCarousel % 2 != 0) d++;
-      if (carouselNumber > d) {
-         carouselNumber = d;
+      if (carouselNumber.number > d) {
+         carouselNumber.number = d;
          return;
       }
-   } else if (dir === "-1") {
-      carouselNumber--;
-      if (carouselNumber < 0) {
-         carouselNumber = 0;
+   } else if (dir == -1) {
+      carouselNumber.number--;
+      if (carouselNumber.number < 0) {
+         carouselNumber.number = 0;
          return;
       }
    }
-   carouselPromotion.style = `transform: translateX(${
-      -carouselWidth * carouselNumber
+   carousel.style = `transform: translateX(${
+      -carouselWidth * carouselNumber.number
    }px)`;
 }
-for (const nxt of nxtBtn)
-   nxt.addEventListener("click", function () {
-      changeCarousel("1");
+for (let i = 0; i < nxtBtn.length; i++)
+   nxtBtn[i].addEventListener("click", function () {
+      switch (i + 1) {
+         case 1:
+            changeCarousel(
+               carouselPromotion,
+               carouselSlidePromotions,
+               promotionNumber,
+               numberOfCarouselPromotion,
+               1
+            );
+            break;
+         case 2:
+            changeCarousel(
+               carouselNews,
+               carouselSlideNews,
+               newsNumber,
+               numberOfCarouselNews,
+               1
+            );
+            break;
+      }
    });
-for (const prv of prvBtn)
-   prv.addEventListener("click", function () {
-      changeCarousel("-1");
+for (let i = 0; i < prvBtn.length; i++)
+   prvBtn[i].addEventListener("click", function () {
+      switch (i + 1) {
+         case 1:
+            changeCarousel(
+               carouselPromotion,
+               carouselSlidePromotions,
+               promotionNumber,
+               numberOfCarouselPromotion,
+               -1
+            );
+            break;
+         case 2:
+            changeCarousel(
+               carouselNews,
+               carouselSlideNews,
+               newsNumber,
+               numberOfCarouselNews,
+               -1
+            );
+            break;
+      }
    });
