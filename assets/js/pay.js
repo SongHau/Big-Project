@@ -1,7 +1,7 @@
 /* Method */
 const method = document.getElementById("pay-online");
 const choose = document.getElementById("js-choose");
-const payMethod = document.getElementById("pay");
+const payMethod = document.getElementById("payship");
 method.addEventListener("click",function(){
    choose.style.opacity="1";
 })

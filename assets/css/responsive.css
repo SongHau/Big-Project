@@ -61,7 +61,7 @@
 
    .wrapper {
       width: 90%;
-      height: 65%;
+      height: auto;
    }
 
    .footer-col {
@@ -446,5 +446,8 @@
    .payment .payment-form .information .name {
       font-size: 1.6rem;
       font-weight: bold;
+   }
+   .payment .payment-form .submit a{
+      width: 100%;
    }
 }

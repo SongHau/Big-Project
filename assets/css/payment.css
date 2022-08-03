@@ -125,7 +125,6 @@
     justify-content: center;
     opacity: 0;
     transition: all 0.4s ease-in-out;
-    margin: 20px 0 40px 0;
 }
 
 .payment .payment-form .method p {
@@ -203,3 +202,21 @@
     background: white;
 }
 /* Submit */
+.payment .payment-form .submit{
+    text-align: center;
+    margin-top: 40px;
+}
+.payment .payment-form .submit a{
+    text-decoration: none;
+    padding: 10px;
+    background-image: linear-gradient(
+      to right,
+      #fc6076,
+      #ff9a44,
+      #ef9d43,
+      #e75516
+   );
+   border-radius: 5px;
+   color: #000;
+   font-size: 1.2rem;
+}
