@@ -95,12 +95,6 @@
 /* RESPONSIVE FOR HOME PAGE */
 /* Tablet */
 @media (min-width: 46.25rem) and (max-width: 63.938rem) {
-   header {
-      padding: 0 10px;
-   }
-   header.sticky{
-      padding: 0 20px;
-   }
    .introduce {
       padding: 10px;
       margin-top: 26px;

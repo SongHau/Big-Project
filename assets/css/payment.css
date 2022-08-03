@@ -219,4 +219,10 @@
    border-radius: 5px;
    color: #000;
    font-size: 1.2rem;
+   background-size: 300% 100%;
+   transition: all 0.4s ease-in-out;
+}
+.payment .payment-form .submit a:hover{
+    cursor: pointer;
+    background-position: 100% 0;
 }
