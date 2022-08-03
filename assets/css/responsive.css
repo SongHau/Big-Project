@@ -1,5 +1,16 @@
 /* Responsive all */
 @media (max-width: 64.938rem) {
+   header {
+      padding: 0px 28px 0px 0px;
+      text-align: center;
+   }
+
+   header.sticky {
+      padding: 0px 10px;
+      text-align: center;
+      z-index: 1;
+   }
+
    header .name-shop {
       display: none;
    }
@@ -57,6 +68,28 @@
       width: 50%;
       margin-bottom: 30px;
    }
+
+   .top-footer .top-footer-row,
+   .top-footer .top-footer-col-8 {
+      display: block;
+   }
+
+   .top-footer .top-footer-col-4 {
+      margin: 20px 0 0;
+   }
+
+   .top-footer .top-footer-col-8 h4::after {
+      content: "";
+   }
+
+   .top-footer .top-footer-col-8 form {
+      width: 100%;
+      margin-top: 20px;
+   }
+
+   .top-footer-col-8 form .submit {
+      width: 30%;
+   }
 }
 
 /* RESPONSIVE FOR HOME PAGE */
@@ -97,17 +130,6 @@
 
 /* Mobile */
 @media (max-width: 46.188rem) {
-   header {
-      padding: 0px 10px 0px 0px;
-      text-align: center;
-   }
-
-   header.sticky {
-      padding: 0px 10px;
-      text-align: center;
-      z-index: 1;
-   }
-
    .introduce {
       flex-wrap: wrap;
       padding: 10px;

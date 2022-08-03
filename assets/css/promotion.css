@@ -11,6 +11,10 @@
    }
 }
 
+body {
+   background: var(--clr-bar-bg);
+}
+
 header a {
    color: #fff !important;
 }
@@ -18,7 +22,7 @@ header a {
 /* PROMOTIONAL */
 :root {
    --clr-bar-bg: #d5d3cf;
-   --color-box-content: #fff;
+   --color-box-content: #f4f3f2;
 }
 
 h3,
@@ -42,7 +46,6 @@ p::selection {
 .main-body {
    width: 100%;
    padding-bottom: 30px;
-   background: var(--clr-bar-bg);
    transition: all 0.2s linear;
 }
 

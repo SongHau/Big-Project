@@ -251,7 +251,7 @@ function changeCarousel(
       -carouselWidth * carouselNumber.number
    }px)`;
 }
-for (let i = 0; i < nxtBtn.length; i++)
+for (let i = 0; i < nxtBtn.length; i++) {
    nxtBtn[i].addEventListener("click", function () {
       switch (i + 1) {
          case 1:
@@ -274,7 +274,6 @@ for (let i = 0; i < nxtBtn.length; i++)
             break;
       }
    });
-for (let i = 0; i < prvBtn.length; i++)
    prvBtn[i].addEventListener("click", function () {
       switch (i + 1) {
          case 1:
@@ -297,3 +296,4 @@ for (let i = 0; i < prvBtn.length; i++)
             break;
       }
    });
+}
