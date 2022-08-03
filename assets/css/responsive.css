@@ -8,7 +8,7 @@
    header.sticky {
       padding: 0px 10px;
       text-align: center;
-      z-index: 1;
+      z-index: 9;
    }
 
    header .name-shop {
@@ -263,6 +263,10 @@
       flex: 1 0 50%;
    }
 
+   .mb-content .content-row:not(:first-child) {
+      margin-top: 32px;
+   }
+
    .mb-content .slider-prv,
    .mb-content .slider-nxt {
       display: none;
@@ -370,11 +374,11 @@
    }
 }
 /* Responsive for Pay page */
-@media(max-width:46.188rem){
-   .payment .payment-form{
+@media (max-width: 46.188rem) {
+   .payment .payment-form {
       width: 90%;
    }
-   .payment .payment-form .information .name{
+   .payment .payment-form .information .name {
       font-size: 1.6rem;
       font-weight: bold;
    }

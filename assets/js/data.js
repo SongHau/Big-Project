@@ -98,27 +98,26 @@ backToTopButton.addEventListener("click", function backToTop() {
 });
 
 /* DROPDOWN MENU */
-const btnMenus = document.querySelectorAll(".sidebar-title");
-const lists = document.querySelectorAll(".list-items");
-const arrows = document.querySelectorAll(".sidebar .arrow");
+const btnMenus = document.querySelector(".sidebar-title");
+const lists = document.querySelector(".list-items");
+const arrows = document.querySelector(".sidebar .arrow");
 const articles = document.getElementsByClassName("item-article");
-
-var heightOfSideBar = [0, 0];
+var heightOfSideBar = 0;
 var deg = 0;
-for (const article of articles) heightOfSideBar[0] += article.offsetHeight;
-for (let i = 0; i < lists.length; i++)
-   lists[i].style.height = heightOfSideBar[i] + "px";
-for (let i = 0; i < btnMenus.length; i++)
-   btnMenus[i].addEventListener("click", function dropDown() {
-      lists[i].classList.toggle("active");
+for (const article of articles) heightOfSideBar += article.offsetHeight;
+if (lists != null) {
+   lists.style.height = heightOfSideBar + "px";
+   btnMenus.addEventListener("click", function dropDown() {
+      lists.classList.toggle("active");
       deg += 180;
-      arrows[i].style = `transform: rotate(${deg}deg)`;
-      if (!lists[i].classList.contains("active")) {
-         lists[i].style.height = 0 + "px";
+      arrows.style = `transform: rotate(${deg}deg)`;
+      if (!lists.classList.contains("active")) {
+         lists.style.height = 0 + "px";
       } else {
-         lists[i].style.height = heightOfSideBar[i] + "px";
+         lists.style.height = heightOfSideBar + "px";
       }
    });
+}
 
 /* MORE BUTTON */
 const moreBtn = document.getElementById("js-btn-more");
@@ -175,8 +174,8 @@ window.addEventListener("load", function () {
          -sliderWidth * slideNumber
       }px)`;
       sliderMain.style.transition = "all 0.5s linear";
-      if (slideNumber > 7) activeDot(0);
-      else if (slideNumber < 0) activeDot(numberOfSliders - 1);
+      if (slideNumber > numberOfSliders) activeDot(0);
+      else if (slideNumber <= 0) activeDot(numberOfSliders - 1);
       else activeDot(slideNumber - 1);
    }
    function repeater() {
@@ -209,7 +208,7 @@ window.addEventListener("load", function () {
    }
 });
 
-/* Carousel */
+/* CAROUSEL */
 const prvBtn = document.querySelectorAll(".mb-content .slider-prv");
 const nxtBtn = document.querySelectorAll(".mb-content .slider-nxt");
 const carouselPromotion = document.querySelector(".carousel-promotion");
@@ -297,3 +296,11 @@ for (let i = 0; i < nxtBtn.length; i++) {
       }
    });
 }
+
+/* NEWS SEE ALL BUTTON */
+const newsSellAllBtn = document.querySelector(".news-see-all");
+const newsRow = document.querySelector(".news-row");
+const newsContainer = document.querySelector(".content-row.hidden");
+newsSellAllBtn.addEventListener("click", function () {
+   newsContainer.classList.remove("hidden");
+});
