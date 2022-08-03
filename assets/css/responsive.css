@@ -1,5 +1,5 @@
 /* Responsive all */
-@media screen and (max-width: 66.625rem) {
+@media screen and (max-width: 93.75rem) {
    header .name-shop {
       display: none;
    }
@@ -72,15 +72,17 @@
 
    .top-footer .top-footer-row,
    .top-footer .top-footer-col-8 {
+      width: 100%;
       display: block;
    }
 
    .top-footer .top-footer-col-4 {
+      width: 100%;
       margin: 20px 0 0;
    }
 
-   .top-footer .top-footer-col-8 h4::after {
-      content: "";
+   .top-footer h4 {
+      width: 100%;
    }
 
    .top-footer .top-footer-col-8 form {
@@ -88,8 +90,13 @@
       margin-top: 20px;
    }
 
+   .top-footer-col-8 form::before {
+      content: "";
+      margin-right: 0;
+   }
+
    .top-footer-col-8 form .submit {
-      width: 30%;
+      width: 20%;
    }
 }
 
@@ -117,7 +124,7 @@
    .food .food-list .food-item .food-item-img a img {
       margin-bottom: 10px;
    }
-   .wrapper{
+   .wrapper {
       width: 100%;
       height: auto;
    }
@@ -125,7 +132,7 @@
 
 /* Mobile */
 @media (max-width: 46.188rem) {
-   header{
+   header {
       padding: 0 10px;
    }
    .introduce {
@@ -289,34 +296,34 @@
    }
 }
 /* Tablet */
-@media (min-width: 46.25rem) and (max-width: 63.938rem){
-   header{
+@media (min-width: 46.25rem) and (max-width: 63.938rem) {
+   header {
       padding: 0 20px;
    }
-   header.sticky{
+   header.sticky {
       padding: 0 20px;
    }
-   header .menu{
+   header .menu {
       width: 60%;
    }
-   .wrapper{
+   .wrapper {
       width: 100%;
       height: auto;
    }
-   .menu-sidebar .menu-list{
+   .menu-sidebar .menu-list {
       background-color: #fff;
       justify-content: space-around;
    }
-   .col-6{
+   .col-6 {
       width: 50%;
       padding-left: 15px;
       padding-right: 15px;
    }
-   .modal-food .modal-body{
+   .modal-food .modal-body {
       width: 100%;
       height: auto;
    }
-   #pay{
+   #pay {
       position: fixed;
       bottom: 15%;
       right: 5%;
@@ -442,7 +449,7 @@
 }
 
 /* Responsive for Pay page */
-@media(max-width:46.188rem) {
+@media (max-width: 46.188rem) {
    .payment .payment-form {
       width: 90%;
    }
@@ -451,7 +458,7 @@
       font-size: 1.6rem;
       font-weight: bold;
    }
-   .payment .payment-form .submit a{
+   .payment .payment-form .submit a {
       width: 100%;
    }
 }
