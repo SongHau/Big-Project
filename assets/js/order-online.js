@@ -137,7 +137,7 @@ function addItemFood(e) {
       }
    }
    if (matchMedia) {
-      const mq = window.matchMedia("(max-width: 739px)");
+      const mq = window.matchMedia("(max-width: 1023px)");
       WidthChange(mq);
    }
 }

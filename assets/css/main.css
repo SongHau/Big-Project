@@ -80,7 +80,7 @@ body {
 
 .introduce .introduce-list .introduce-des .introduce-main {
    color: #383838;
-   font-size: 18px;
+   font-size: 1.125rem;
    font-weight: 500;
    text-transform: uppercase;
    letter-spacing: 0.3px;
