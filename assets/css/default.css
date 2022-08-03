@@ -213,12 +213,6 @@ header.sticky .btn-mobile {
    width: 32%;
 }
 
-.top-footer-col-8 h4::after {
-   content: "|";
-   margin-left: 116px;
-   color: #ccc;
-}
-
 .top-footer-col-8 h4 i {
    margin-right: 16px;
 }
@@ -227,6 +221,15 @@ header.sticky .btn-mobile {
    width: 68%;
    display: flex;
    height: 48px;
+}
+
+.top-footer-col-8 form::before {
+   content: "|";
+   position: absolute;
+   display: flex;
+   align-items: center;
+   color: #ccc;
+   margin-right: 12px;
 }
 
 .top-footer-col-8 form input[type="email"] {
@@ -239,8 +242,9 @@ header.sticky .btn-mobile {
 
 .top-footer-col-8 form .submit {
    width: 24%;
-   color: #000;
+   color: #333;
    font-size: 1rem;
+   font-weight: 500;
    border: none;
    background-size: 300% 100%;
    transition: all 0.4s ease-in-out;
