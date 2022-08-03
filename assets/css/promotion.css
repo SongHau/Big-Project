@@ -255,10 +255,10 @@ p::selection {
 
 .blog-content .blog-post.blog-more {
    display: none;
-   animation: moreBlogFadeIn 1s ease;
+   animation: moreFadeIn 1s ease;
 }
 
-@keyframes moreBlogFadeIn {
+@keyframes moreFadeIn {
    from {
       opacity: 0;
       transform: translateY(10%);

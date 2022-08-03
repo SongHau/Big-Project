@@ -122,11 +122,16 @@ if (lists != null) {
 /* MORE BUTTON */
 const moreBtn = document.getElementById("js-btn-more");
 const moreBlog = document.querySelectorAll(".blog-more");
+const moreNews = document.querySelectorAll(".news-more");
 var countMore = 0;
 if (moreBtn != null) {
    moreBtn.addEventListener("click", function showMore() {
-      for (let i = 0; i < 3; i++) moreBlog[countMore++].style.display = "block";
-      if (countMore == moreBlog.length) moreBtn.style.display = "none";
+      for (let i = 0; i < 4; i++) {
+         if (moreBlog.length != 0) moreBlog[countMore++].style.display = "block";
+         if(moreNews.length != 0) moreNews[countMore++].style.display = "block";
+      }
+      if (countMore == moreBlog.length || countMore == moreNews.length)
+         moreBtn.style.display = "none";
    });
 }
 
