@@ -8,7 +8,7 @@
    header.sticky {
       padding: 0px 10px;
       text-align: center;
-      z-index: 1;
+      z-index: 9;
    }
 
    header .name-shop {
@@ -327,6 +327,10 @@
 @media screen and (max-width: 63.938rem) {
    .carousel-slide {
       flex: 1 0 50%;
+   }
+
+   .mb-content .content-row:not(:first-child) {
+      margin-top: 32px;
    }
 
    .mb-content .slider-prv,

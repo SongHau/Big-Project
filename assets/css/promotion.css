@@ -235,13 +235,17 @@ p::selection {
 }
 
 .blog-content .blog-post {
-   width: 351px;
+   width: 260px;
    margin: 16px 5px 20px;
    padding: 10px;
    line-height: 1.4;
    text-align: justify;
    cursor: pointer;
    transition: transform 0.5s ease;
+}
+
+.blog-content .blog-post img {
+   height: 200px;
 }
 
 .blog-content .blog-post:hover {
