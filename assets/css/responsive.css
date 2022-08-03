@@ -1,4 +1,9 @@
 /* Responsive all */
+@media screen and (max-width: 66.625rem) {
+   header .name-shop {
+      display: none;
+   }
+}
 @media (max-width: 64.938rem) {
    header {
       padding: 0px 28px 0px 0px;
@@ -9,10 +14,6 @@
       padding: 0px 10px;
       text-align: center;
       z-index: 9;
-   }
-
-   header .name-shop {
-      display: none;
    }
 
    header .btn-mobile {
