@@ -96,7 +96,7 @@
 /* Tablet */
 @media (min-width: 46.25rem) and (max-width: 63.938rem) {
    header {
-      padding: 0 20px;
+      padding: 0 10px;
    }
    header.sticky{
       padding: 0 20px;
@@ -130,6 +130,9 @@
 
 /* Mobile */
 @media (max-width: 46.188rem) {
+   header{
+      padding: 0 10px;
+   }
    .introduce {
       flex-wrap: wrap;
       padding: 10px;
