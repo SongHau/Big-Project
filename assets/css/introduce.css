@@ -61,12 +61,14 @@ a::selection {
 }
 
 .main-body .row-intro {
-   align-items: center;
+   /* align-items: center; */
    display: flex;
    padding: 10px;
 }
 
 .row-intro .intro-col8 {
+   display: flex;
+   align-items: center;
    width: 66.6667%;
    background-color: wheat;
    margin: 10px;
