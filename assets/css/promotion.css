@@ -7,7 +7,10 @@
 
 @media screen and (max-width: 46.188rem) {
    header {
-      padding: 32px 10px 0px 0px !important;
+      padding: 36px 10px 0px 0px !important;
+   }
+   header.sticky {
+      padding: 0 10px !important;
    }
 }
 
@@ -176,6 +179,10 @@ p::selection {
    transition: all 1s;
 }
 
+.item-col3 .list-items::-webkit-scrollbar {
+   width: 4px;
+}
+
 .list-items .item-article {
    display: flex;
    padding: 15px 0px;
@@ -245,6 +252,10 @@ p::selection {
    text-align: justify;
    cursor: pointer;
    transition: transform 0.5s ease;
+}
+
+.blog-post .blog-image img {
+   height: 220px;
 }
 
 .blog-content .blog-post:hover {

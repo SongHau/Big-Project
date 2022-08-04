@@ -167,186 +167,168 @@ if (moreBtn != null) {
    });
 }
 
-/* SLIDE SHOW */
-window.addEventListener("load", function () {
-   const slider = document.querySelector(".slider");
-   const sliderMain = document.querySelector(".slider-main");
-   const sliderItems = document.querySelectorAll(".slider-item");
-   const dotItems = document.querySelectorAll(".dot-item");
-   const prvBtn = document.querySelector(".slider .slider-prv");
-   const nxtBtn = document.querySelector(".slider .slider-nxt");
-   const numberOfSliders = sliderItems.length;
-   let sliderWidth = sliderItems[0].offsetWidth;
-   let slideNumber = 1;
-   let repeat = 0;
-   const firstSlide = sliderItems[0].outerHTML;
-   const lastSlide = sliderItems[numberOfSliders - 1].outerHTML;
-   sliderMain.insertAdjacentHTML("afterbegin", lastSlide);
-   sliderMain.insertAdjacentHTML("beforeend", firstSlide);
-   sliderMain.style.transform = `translateX(${-sliderWidth}px)`;
-   function changeSlide(dir) {
-      sliderWidth = sliderItems[0].offsetWidth;
-      if (dir === "next") {
-         slideNumber++;
-         if (slideNumber >= numberOfSliders + 1) {
-            setTimeout(function () {
-               slideNumber = 1;
-               sliderMain.style.transition = "none";
-               sliderMain.style.transform = `translateX(${-sliderWidth}px)`;
-            }, 500);
-         }
-      } else if (dir === "previous") {
-         slideNumber--;
-         if (slideNumber <= 0) {
-            setTimeout(function () {
-               slideNumber = numberOfSliders;
-               sliderMain.style.transition = "none";
-               sliderMain.style.transform = `translateX(${
-                  -sliderWidth * slideNumber
-               }px)`;
-            }, 500);
-         }
-      } else slideNumber = dir;
-      sliderMain.style = `transform: translateX(${
-         -sliderWidth * slideNumber
-      }px)`;
-      sliderMain.style.transition = "all 0.5s linear";
-      if (slideNumber > numberOfSliders) activeDot(0);
-      else if (slideNumber <= 0) activeDot(numberOfSliders - 1);
-      else activeDot(slideNumber - 1);
-   }
-   function repeater() {
-      repeat = setInterval(function () {
-         changeSlide("next");
-      }, 3000);
-   }
-   repeater();
-   slider.addEventListener("mouseover", function () {
-      clearInterval(repeat);
+$(document).ready(function () {
+   /* SLICK SLIDER */
+   $(".image-slider").slick({
+      autoplaySpeed: 2000,
+      autoplay: true,
+      dots: true,
+      fade: true,
+      draggable: false,
+      cssEase: "linear",
+      prevArrow:
+         "<button type='button' class='slick-prev slick-arrow'><i class='fa fa-angle-left' aria-hidden='true'></i></button>",
+      nextArrow:
+         "<button type='button' class='slick-next slick-arrow'><i class='fa fa-angle-right' aria-hidden='true'></i></button>",
+      responsive: [
+         {
+            breakpoint: 993,
+            settings: {
+               arrows: false,
+               infinite: false,
+               autoplay: false,
+               draggable: true,
+               dots: true,
+            },
+         },
+      ],
    });
-   slider.addEventListener("mouseout", function () {
-      repeater();
+   $(".carousel").slick({
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      infinite: false,
+      draggable: false,
+      prevArrow:
+         "<button type='button' class='slick-prev slick-arrow'><i class='fa fa-angle-left' aria-hidden='true'></i></button>",
+      nextArrow:
+         "<button type='button' class='slick-next slick-arrow'><i class='fa fa-angle-right' aria-hidden='true'></i></button>",
+      responsive: [
+         {
+            breakpoint: 769,
+            settings: {
+               slidesToShow: 1,
+               slidesToScroll: 1,
+               arrows: false,
+               draggable: true,
+            },
+         },
+         {
+            breakpoint: 993,
+            settings: {
+               slidesToShow: 2,
+               slidesToScroll: 1,
+               arrows: false,
+               draggable: true,
+            },
+         },
+         {
+            breakpoint: 1201,
+            settings: {
+               slidesToShow: 3,
+               slidesToScroll: 1,
+               arrows: true,
+               draggable: true,
+            },
+         },
+      ],
    });
-   nxtBtn.addEventListener("click", function () {
-      changeSlide("next");
+
+   /* BUTTON SEE ALL NEWS */
+   $(".news-btn-show").click(function () {
+      $(".news-row").fadeOut(300);
+      $(".content-row.hidden").fadeIn(1200);
    });
-   prvBtn.addEventListener("click", function () {
-      changeSlide("previous");
+   $(".news-btn-hide").click(function () {
+      $(".content-row.hidden").fadeOut(1000);
+      $(".news-row").fadeIn(1400);
    });
-   for (let i = 1; i <= dotItems.length; i++) {
-      dotItems[i - 1].addEventListener("click", function () {
-         changeSlide(i);
-         activeDot(i - 1);
-      });
-   }
-   function activeDot(index) {
-      for (const dot of dotItems) dot.classList.remove("active");
-      dotItems[index].classList.add("active");
-   }
 });
 
 /* CAROUSEL */
-const prvBtn = document.querySelectorAll(".mb-content .slider-prv");
-const nxtBtn = document.querySelectorAll(".mb-content .slider-nxt");
-const carouselPromotion = document.querySelector(".carousel-promotion");
-const carouselNews = document.querySelector(".carousel-news");
-const carouselSlidePromotions = document.querySelectorAll(
-   ".carousel-promotion .carousel-slide"
-);
-const carouselSlideNews = document.querySelectorAll(
-   ".carousel-news .carousel-slide"
-);
-var numberOfCarouselPromotion = carouselSlidePromotions.length;
-var numberOfCarouselNews = carouselSlideNews.length;
-var promotionNumber = { number: 0 };
-var newsNumber = { number: 0 };
-function changeCarousel(
-   carousel,
-   carouselSlides,
-   carouselNumber,
-   numberOfCarousel,
-   dir
-) {
-   let carouselWidth = carouselSlides[0].offsetWidth;
-   if (dir == 1) {
-      carouselNumber.number++;
-      let d = parseInt(numberOfCarousel / 2);
-      if (numberOfCarousel % 2 != 0) d++;
-      if (carouselNumber.number > d) {
-         carouselNumber.number = d;
-         return;
-      }
-   } else if (dir == -1) {
-      carouselNumber.number--;
-      if (carouselNumber.number < 0) {
-         carouselNumber.number = 0;
-         return;
-      }
-   }
-   carousel.style = `transform: translateX(${
-      -carouselWidth * carouselNumber.number
-      }px)`;
-}
-for (let i = 0; i < nxtBtn.length; i++) {
-   nxtBtn[i].addEventListener("click", function () {
-      switch (i + 1) {
-         case 1:
-            changeCarousel(
-               carouselPromotion,
-               carouselSlidePromotions,
-               promotionNumber,
-               numberOfCarouselPromotion,
-               1
-            );
-            break;
-         case 2:
-            changeCarousel(
-               carouselNews,
-               carouselSlideNews,
-               newsNumber,
-               numberOfCarouselNews,
-               1
-            );
-            break;
-      }
-   });
-   prvBtn[i].addEventListener("click", function () {
-      switch (i + 1) {
-         case 1:
-            changeCarousel(
-               carouselPromotion,
-               carouselSlidePromotions,
-               promotionNumber,
-               numberOfCarouselPromotion,
-               -1
-            );
-            break;
-         case 2:
-            changeCarousel(
-               carouselNews,
-               carouselSlideNews,
-               newsNumber,
-               numberOfCarouselNews,
-               -1
-            );
-            break;
-      }
-   });
-}
-
-/* NEWS SEE ALL BUTTON */
-const newsSellAllBtn = document.querySelector(".news-see-all");
-const newsRow = document.querySelector(".news-row");
-const newsContainer = document.querySelector(".content-row.hidden");
-newsSellAllBtn.addEventListener("click", function () {
-   newsRow.classList.add("animate__animated");
-   newsRow.classList.add("animate__backOutLeft");
-   setTimeout(function () {
-      newsRow.style.display = "none";
-   }, 800);
-   setTimeout(function () {
-      newsContainer.classList.remove("hidden");
-      newsContainer.classList.add("animate__animated");
-      newsContainer.classList.add("animate__backInUp");
-   }, 700);
-});
+// const prvBtn = document.querySelectorAll(".mb-content .slider-prv");
+// const nxtBtn = document.querySelectorAll(".mb-content .slider-nxt");
+// const carouselPromotion = document.querySelector(".carousel-promotion");
+// const carouselNews = document.querySelector(".carousel-news");
+// const carouselSlidePromotions = document.querySelectorAll(
+//    ".carousel-promotion .carousel-slide"
+// );
+// const carouselSlideNews = document.querySelectorAll(
+//    ".carousel-news .carousel-slide"
+// );
+// var numberOfCarouselPromotion = carouselSlidePromotions.length;
+// var numberOfCarouselNews = carouselSlideNews.length;
+// var promotionNumber = { number: 0 };
+// var newsNumber = { number: 0 };
+// function changeCarousel(
+//    carousel,
+//    carouselSlides,
+//    carouselNumber,
+//    numberOfCarousel,
+//    dir
+// ) {
+//    let carouselWidth = carouselSlides[0].offsetWidth;
+//    if (dir == 1) {
+//       carouselNumber.number++;
+//       let d = parseInt(numberOfCarousel / 2);
+//       if (numberOfCarousel % 2 != 0) d++;
+//       if (carouselNumber.number > d) {
+//          carouselNumber.number = d;
+//          return;
+//       }
+//    } else if (dir == -1) {
+//       carouselNumber.number--;
+//       if (carouselNumber.number < 0) {
+//          carouselNumber.number = 0;
+//          return;
+//       }
+//    }
+//    carousel.style = `transform: translateX(${
+//       -carouselWidth * carouselNumber.number
+//    }px)`;
+// }
+// for (let i = 0; i < nxtBtn.length; i++) {
+//    nxtBtn[i].addEventListener("click", function () {
+//       switch (i + 1) {
+//          case 1:
+//             changeCarousel(
+//                carouselPromotion,
+//                carouselSlidePromotions,
+//                promotionNumber,
+//                numberOfCarouselPromotion,
+//                1
+//             );
+//             break;
+//          case 2:
+//             changeCarousel(
+//                carouselNews,
+//                carouselSlideNews,
+//                newsNumber,
+//                numberOfCarouselNews,
+//                1
+//             );
+//             break;
+//       }
+//    });
+//    prvBtn[i].addEventListener("click", function () {
+//       switch (i + 1) {
+//          case 1:
+//             changeCarousel(
+//                carouselPromotion,
+//                carouselSlidePromotions,
+//                promotionNumber,
+//                numberOfCarouselPromotion,
+//                -1
+//             );
+//             break;
+//          case 2:
+//             changeCarousel(
+//                carouselNews,
+//                carouselSlideNews,
+//                newsNumber,
+//                numberOfCarouselNews,
+//                -1
+//             );
+//             break;
+//       }
+//    });
+// }

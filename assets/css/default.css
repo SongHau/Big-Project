@@ -1,6 +1,6 @@
 /* SCROLLBAR */
 ::-webkit-scrollbar {
-   width: 8px;
+   width: 5px;
 }
 
 ::-webkit-scrollbar-track {
@@ -8,13 +8,50 @@
 }
 
 ::-webkit-scrollbar-thumb {
-   background: #c47135;
    border-radius: 10px;
-   box-shadow: inset 0 0 6px #c47135;
+   box-shadow: inset 0 0 6px orange;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-   background: rgb(201, 194, 194);
+   background: orangered;
+}
+
+/* Loading */
+.loader {
+   position: fixed;
+   z-index: 9999999;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-color: #fff;
+}
+
+.loader>img {
+   width: 150px;
+   animation: Loading 1s ease-in-out infinite;
+}
+
+.loader.hidden {
+   animation: fadeOut 2s;
+   animation-fill-mode: forwards;
+}
+
+@keyframes Loading {
+   0% {
+      transform-origin: 50% 50%;
+      transform: rotate(0deg) scale(0.8, 0.8);
+   }
+}
+
+@keyframes fadeOut {
+   100% {
+      opacity: 1;
+      visibility: hidden;
+   }
 }
 
 /* BUTTON BACK TO TOP */
