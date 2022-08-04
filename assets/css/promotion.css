@@ -146,6 +146,8 @@ p::selection {
 }
 
 .main-body .item-col3 {
+   position: sticky;
+   top: 100px;
    padding: 10px;
    margin-bottom: 20px;
    border: 1px solid #000;
@@ -169,7 +171,8 @@ p::selection {
 }
 
 .item-col3 .list-items {
-   overflow: hidden;
+   height: 500px;
+   overflow: auto;
    transition: all 1s;
 }
 
@@ -242,10 +245,6 @@ p::selection {
    text-align: justify;
    cursor: pointer;
    transition: transform 0.5s ease;
-}
-
-.blog-content .blog-post img {
-   height: 200px;
 }
 
 .blog-content .blog-post:hover {
