@@ -10,12 +10,6 @@ body {
 }
 
 /* Introduce */
-p::selection,
-h2::selection,
-a::selection {
-   background-color: #fcc755;
-}
-
 .main-body {
    padding-bottom: 30px;
    transition: all 0.2s linear;
@@ -61,14 +55,12 @@ a::selection {
 }
 
 .main-body .row-intro {
-   /* align-items: center; */
+   align-items: center;
    display: flex;
    padding: 10px;
 }
 
 .row-intro .intro-col8 {
-   display: flex;
-   align-items: center;
    width: 66.6667%;
    background-color: wheat;
    margin: 10px;

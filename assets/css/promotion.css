@@ -38,14 +38,6 @@ h3:hover {
    color: #e00000;
 }
 
-h1::selection,
-h2::selection,
-a::selection,
-span::selection,
-p::selection {
-   background-color: #fcc755;
-}
-
 .main-body {
    width: 100%;
    padding-bottom: 30px;
