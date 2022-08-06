@@ -44,7 +44,7 @@ a {
 
 .main-body .image-slider {
    display: flex;
-   width: 96%;
+   width: 90%;
    margin: 15px auto 0;
    align-items: center;
 }

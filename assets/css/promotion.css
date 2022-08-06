@@ -172,7 +172,11 @@ h3:hover {
 }
 
 .item-col3 .list-items::-webkit-scrollbar {
-   width: 4px;
+   display: none;
+}
+
+.item-col3 .list-items:hover::-webkit-scrollbar {
+   display: block;
 }
 
 .list-items .item-article {
@@ -247,7 +251,7 @@ h3:hover {
 }
 
 .blog-post .blog-image img {
-   height: 220px;
+   height: 200px;
 }
 
 .blog-content .blog-post:hover {
