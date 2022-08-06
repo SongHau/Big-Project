@@ -9,6 +9,10 @@ body {
    background: #d5d3cf;
 }
 
+img {
+   width: 100%;
+}
+
 /* Introduce */
 .main-body {
    padding-bottom: 30px;
@@ -24,7 +28,7 @@ body {
 
 .intro-col12 .crossbar {
    padding: 16px 0;
-   background: #ccc;
+   background: #f4f3f2;
    color: transparent;
 }
 
@@ -94,6 +98,7 @@ body {
    display: flex;
    align-items: center;
    justify-content: center;
+   /* pointer-events: none; */
 }
 
 .row-intro .intro-img::after {
@@ -117,10 +122,10 @@ body {
 }
 
 .row-intro .intro-img img {
-   width: 100%;
    padding: 8px;
    border-radius: 10px;
    z-index: 1;
+   cursor: pointer;
 }
 
 @keyframes borderRotate {
@@ -134,5 +139,38 @@ body {
 
    100% {
       background-position: 0% 50%;
+   }
+}
+
+.modal-zoom {
+   position: fixed;
+   top: 0;
+   right: 0;
+   left: 0;
+   bottom: 0;
+   z-index: 999;
+   display: none;
+   align-items: center;
+   justify-content: center;
+   background: rgba(0, 0, 0, 0.3);
+}
+
+.modal-zoom .image-zoom {
+   width: 80%;
+   animation: zoom 1s linear;
+}
+
+.modal-zoom .image-zoom img {
+   height: 600px;
+}
+
+@keyframes zoom {
+   0% {
+      opacity: 0.8;
+      transform: translateY(-10%);
+   }
+   100% {
+      opacity: 1;
+      transform: translateY(0%);
    }
 }
