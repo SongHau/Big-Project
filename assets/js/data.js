@@ -108,32 +108,12 @@ if (menuBtn != null) {
    });
 }
 
-/* IMAGE ZOOM */
-const imgs = document.querySelectorAll(".intro-img img");
-const modalZoom = document.querySelector(".modal-zoom");
-const imageZoom = document.querySelector(".image-zoom img");
-for (const img of imgs) {
-   img.addEventListener("click", function () {
-      imageZoom.src = img.src;
-      modalZoom.style.display = "flex";
-   });
-}
-if (modalZoom != null) {
-   modalZoom.addEventListener("click", function () {
-      modalZoom.style.display = "none";
-   });
-   imageZoom.addEventListener("click", function (event) {
-      event.stopPropagation();
-   });
-}
-
 /* SCROLL PROGRESS */
-const cursorMeter = document.getElementById("cursorMeter");
 const pregressBar = document.getElementById("pregressBar");
 let totalHeight = document.body.scrollHeight - window.innerHeight;
 window.onscroll = function () {
-   let progress = (window.pageYOffset / totalHeight) * 100;
-   pregressBar.style.width = progress + "%";
+   let progress = Math.round((window.pageYOffset / totalHeight) * 100);
+   pregressBar.style = `width: ${progress}%`;
 };
 
 /* BACK TO TOP BUTTON */
@@ -158,6 +138,25 @@ window.addEventListener("scroll", function scrollFunction() {
 backToTopButton.addEventListener("click", function backToTop() {
    window.scrollTo(0, 0);
 });
+
+/* IMAGE ZOOM */
+const imgs = document.querySelectorAll(".intro-img img");
+const modalZoom = document.querySelector(".modal-zoom");
+const imageZoom = document.querySelector(".image-zoom img");
+for (const img of imgs) {
+   img.addEventListener("click", function () {
+      imageZoom.src = img.src;
+      modalZoom.style.display = "flex";
+   });
+}
+if (modalZoom != null) {
+   modalZoom.addEventListener("click", function () {
+      modalZoom.style.display = "none";
+   });
+   imageZoom.addEventListener("click", function (event) {
+      event.stopPropagation();
+   });
+}
 
 /* DROPDOWN MENU */
 const btnMenus = document.querySelector(".sidebar-title");
@@ -195,6 +194,7 @@ if (moreBtn != null) {
    });
 }
 
+/* JQUERY */
 $(document).ready(function () {
    /* SLICK SLIDER */
    $(".image-slider").slick({

@@ -249,11 +249,6 @@ a {
    background-color: #c47135;
 }
 
-.btn-more:hover {
-   color: #000;
-   opacity: 0.9;
-}
-
 .btn-more::before,
 .btn-more::after {
    content: "";
