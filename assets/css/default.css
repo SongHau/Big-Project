@@ -4,11 +4,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-   background: orange;
-}
-
-::-webkit-scrollbar-thumb:hover {
-   background: orangered;
+   background: linear-gradient(to bottom, #fc6076, #ff9a44, #ef9d43, #e75516);
 }
 
 /* Loading */
@@ -49,51 +45,6 @@
    }
 }
 
-/* BUBBLES */
-.bubble-container {
-   position: fixed;
-   top: 0;
-   bottom: 0;
-   left: 0;
-   right: 0;
-   overflow: hidden;
-   z-index: -1;
-}
-
-.bubble-container .bubbles {
-   position: absolute;
-   display: flex;
-}
-
-.bubbles span {
-   width: 30px;
-   height: 30px;
-   background: #4fc3dc;
-   margin: 0 4px;
-   border-radius: 50%;
-   box-shadow: 0 0 0 10px #4fc3dc44, 0 0 50px #4fc3dc, 0 0 100px #4fc3dc;
-   animation: bubbles 15s linear infinite;
-   animation-delay: calc(125s / var(--i));
-}
-
-.bubbles span:nth-child(even) {
-   background: #ff2d75;
-   box-shadow: 0 0 0 10px #ff2d7544, 0 0 50px #ff2d75, 0 0 100px #ff2d75;
-}
-
-@keyframes bubbles {
-   0% {
-      transform: translateY(100vh) scale(0);
-   }
-   100% {
-      transform: translateY(-10vh) scale(1);
-   }
-}
-
-::selection {
-   background-color: #fcc755;
-}
-
 /* SCOLL PROGRESS */
 #cursorMeter {
    position: fixed;
@@ -104,7 +55,7 @@
    pointer-events: none;
 }
 
-#pregressBar {
+#progressBar {
    position: absolute;
    top: 0;
    left: 0;
@@ -112,7 +63,7 @@
    bottom: 0;
    width: 0;
    animation: scollProgress 5s linear infinite;
-   background: linear-gradient(to right, #fc6076, #ff9a44, #ef9d43, #e75516);
+   background: linear-gradient(to left, #008aff, #00ffe7);
 }
 
 #pregressBar::before,
@@ -123,7 +74,7 @@
    left: 0;
    right: 0;
    bottom: 0;
-   background: linear-gradient(to right, #fc6076, #ff9a44, #ef9d43, #e75516);
+   background: linear-gradient(to left, #008aff, #00ffe7);
 }
 
 #pregressBar::before {
