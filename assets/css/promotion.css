@@ -175,10 +175,6 @@ h3:hover {
    display: none;
 }
 
-.item-col3 .list-items:hover::-webkit-scrollbar {
-   display: block;
-}
-
 .list-items .item-article {
    display: flex;
    padding: 15px 0px;
@@ -241,8 +237,8 @@ h3:hover {
 }
 
 .blog-content .blog-post {
-   width: 260px;
-   margin: 16px 5px 20px;
+   width: 32%;
+   margin: 0 10px 20px 0;
    padding: 10px;
    line-height: 1.4;
    text-align: justify;

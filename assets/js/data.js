@@ -110,7 +110,7 @@ window.addEventListener("load", function () {
    /* SCROLL PROGRESS */
    const progressBar = document.getElementById("progressBar");
    window.addEventListener("scroll", function () {
-      let progress = Math.round(
+      let progress = Math.ceil(
          (window.pageYOffset /
             (document.body.scrollHeight - window.innerHeight)) *
             100
@@ -157,24 +157,6 @@ window.addEventListener("load", function () {
       });
       imageZoom.addEventListener("click", function (event) {
          event.stopPropagation();
-      });
-   }
-
-   /* DROPDOWN MENU */
-   const btnMenus = document.querySelector(".sidebar-title");
-   const lists = document.querySelector(".list-items");
-   const arrows = document.querySelector(".sidebar .arrow");
-   var deg = 0;
-   if (lists != null) {
-      btnMenus.addEventListener("click", function dropDown() {
-         lists.classList.toggle("active");
-         deg += 180;
-         arrows.style = `transform: rotate(${deg}deg)`;
-         if (!lists.classList.contains("active")) {
-            lists.style.height = 0 + "px";
-         } else {
-            lists.style.height = 500 + "px";
-         }
       });
    }
 
@@ -239,6 +221,7 @@ $(document).ready(function () {
                slidesToScroll: 1,
                arrows: false,
                draggable: true,
+               dots: true,
             },
          },
          {
@@ -248,6 +231,7 @@ $(document).ready(function () {
                slidesToScroll: 1,
                arrows: false,
                draggable: true,
+               dots: true,
             },
          },
          {
@@ -257,9 +241,22 @@ $(document).ready(function () {
                slidesToScroll: 1,
                arrows: true,
                draggable: true,
+               dots: true,
             },
          },
       ],
+   });
+
+   /* DROPDOWN MENU */
+   $(".sidebar-title").click(function () {
+      $(".list-items").toggleClass("active");
+      if ($(".list-items").hasClass("active")) {
+         $(".list-items").css("height", "500px");
+         $(".sidebar .arrow").css("transform", "rotate(0)");
+      } else {
+         $(".list-items").css("height", "0");
+         $(".sidebar .arrow").css("transform", "rotate(180deg)");
+      }
    });
 
    /* BUTTON SEE ALL NEWS */

@@ -328,7 +328,7 @@
 /* Tablet */
 @media screen and (max-width: 75rem) {
    .mb-content .content-row:not(:first-child) {
-      margin-top: 32px;
+      margin-top: 40px;
    }
 
    .author,
