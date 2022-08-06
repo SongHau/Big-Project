@@ -127,6 +127,15 @@ if (modalZoom != null) {
    });
 }
 
+/* SCROLL PROGRESS */
+const cursorMeter = document.getElementById("cursorMeter");
+const pregressBar = document.getElementById("pregressBar");
+let totalHeight = document.body.scrollHeight - window.innerHeight;
+window.onscroll = function () {
+   let progress = (window.pageYOffset / totalHeight) * 100;
+   pregressBar.style.width = progress + "%";
+};
+
 /* BACK TO TOP BUTTON */
 const backToTopButton = document.querySelector("#back-to-top");
 window.addEventListener("scroll", function scrollFunction() {
