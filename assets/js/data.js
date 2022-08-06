@@ -265,10 +265,14 @@ $(document).ready(function () {
    /* BUTTON SEE ALL NEWS */
    $(".news-btn-show").click(function (event) {
       $(".news-row").fadeOut(300);
-      $(".content-row.hidden").fadeIn(1200);
+      setTimeout(function () {
+         $(".content-row.hidden").fadeIn(600);
+      }, 300);
    });
    $(".news-btn-hide").click(function () {
-      $(".content-row.hidden").fadeOut(1000);
-      $(".news-row").fadeIn(1400);
+      $(".content-row.hidden").fadeOut(300);
+      setTimeout(function () {
+         $(".news-row").fadeIn(600);
+      }, 300);
    });
 });

@@ -4,7 +4,9 @@
 }
 
 ::-webkit-scrollbar-thumb {
-   background: linear-gradient(to bottom, #fc6076, #ff9a44, #ef9d43, #e75516);
+   background: linear-gradient(to bottom, #fc6076, #ff9a44, #ef9d43);
+   animation: scollProgress 1s linear infinite;
+
 }
 
 /* Loading */
@@ -52,22 +54,11 @@
    width: 100%;
    height: 4px;
    z-index: 999;
-   pointer-events: none;
 }
 
-#progressBar {
-   position: absolute;
-   top: 0;
-   left: 0;
-   right: 0;
-   bottom: 0;
-   width: 0;
-   animation: scollProgress 5s linear infinite;
-   background: linear-gradient(to left, #008aff, #00ffe7);
-}
-
-#pregressBar::before,
-#pregressBar::after {
+#progressBar,
+#progressBar::before,
+#progressBar::after {
    content: "";
    position: absolute;
    top: 0;
@@ -77,11 +68,16 @@
    background: linear-gradient(to left, #008aff, #00ffe7);
 }
 
-#pregressBar::before {
+#progressBar {
+   width: 0;
+   animation: scollProgress 5s linear infinite;
+}
+
+#progressBar::before {
    filter: blur(10px);
 }
 
-#pregressBar::after {
+#progressBar::after {
    filter: blur(30px);
 }
 
