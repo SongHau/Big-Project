@@ -30,7 +30,7 @@
    background-color: #fff;
 }
 
-.loader>img {
+.loader > img {
    width: 150px;
    animation: Loading 1s ease-in-out infinite;
 }
@@ -93,6 +93,10 @@
    100% {
       transform: translateY(-10vh) scale(1);
    }
+}
+
+::selection {
+   background-color: #fcc755;
 }
 
 /* BUTTON BACK TO TOP */

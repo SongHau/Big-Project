@@ -173,9 +173,7 @@ $(document).ready(function () {
       autoplaySpeed: 2000,
       autoplay: true,
       dots: true,
-      fade: true,
       draggable: false,
-      cssEase: "linear",
       prevArrow:
          "<button type='button' class='slick-prev slick-arrow'><i class='fa fa-angle-left' aria-hidden='true'></i></button>",
       nextArrow:
