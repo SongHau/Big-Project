@@ -278,10 +278,6 @@ h3:hover {
    padding-left: 4px;
 }
 
-.blog-post span:last-child:after {
-   content: "";
-}
-
 .blog-post .entry-content {
    margin-top: 10px;
 }
