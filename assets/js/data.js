@@ -118,7 +118,7 @@ window.addEventListener("load", function () {
    var countMore = 0;
    if (moreBtn != null) {
       moreBtn.addEventListener("click", function showMore() {
-         for (let i = 0; i < 4; i++) {
+         for (let i = 0; i < 3; i++) {
             if (moreBlog.length != 0)
                moreBlog[countMore++].style.display = "block";
             if (moreNews.length != 0)
@@ -138,7 +138,6 @@ $(document).ready(function () {
       autoplay: true,
       speed: 300,
       dots: true,
-      draggable: false,
       prevArrow:
          "<button type='button' class='slick-prev slick-arrow'><i class='fa fa-angle-left' aria-hidden='true'></i></button>",
       nextArrow:
@@ -150,8 +149,6 @@ $(document).ready(function () {
                arrows: false,
                infinite: false,
                autoplay: false,
-               draggable: true,
-               dots: true,
             },
          },
       ],
