@@ -5,7 +5,7 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>H&H Chicken - Đặt món online</title>
+   <title>Đặt món online - H&H Chicken</title>
    <link rel="shortcut icon" href="./assets/img/animal-100s-246px.svg" type="image/x-icon">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
    <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,6 +22,9 @@
    <button id="back-to-top"><i class="fa-solid fa-arrow-up"></i></button>
    <div id="pay">
       <i class="fa-solid fa-bag-shopping"></i>
+   </div>
+   <div id="cursorMeter">
+      <div id="progressBar"></div>
    </div>
    <!-- Begin: Header -->
    <header>
@@ -46,7 +49,6 @@
       </div>
    </header>
    <!-- End: Header -->
-
 
    <!-- Begin: Main-body -->
    <div class="container-food">
@@ -622,7 +624,7 @@
             <div class="col-4 col-12">
                <div class="cart">
                   <div class="cart-top">
-                     <a href="./payment.html" class="disabled">Thanh toán</a>
+                     <a href="./payment.html" target="_blank" class="disabled">Thanh toán</a>
                   </div>
 
                   <div id="shopping-carts" class="shopping-item">
@@ -646,7 +648,6 @@
    </div>
    <!-- End: Main-body -->
 
-
    <!-- Begin: Footer -->
    <div class="top-footer">
       <div class="top-footer-row">
@@ -668,7 +669,6 @@
          </div>
       </div>
    </div>
-
    <footer class="footer">
       <div class="container">
          <div class="row">
@@ -740,12 +740,10 @@
       </div>
       </div>
    </footer>
-
    <div class="copyright">
       <p>Copyright &copy 2022 - Bản quyền thuộc về H&H Chicken</p>
    </div>
    <!-- End: Footer -->
-
 
    <!-- Begin: Modal -->
    <div class="modal js-modal">
@@ -805,7 +803,6 @@
       </div>
    </div>
    <!-- End: Modal -->
-
 
    <!-- Begin: Modal-food -->
    <div class="modal-food">
@@ -889,12 +886,7 @@
          </div>
       </div>
    </div>
-   <!-- End: Modal -->
-   <div id="cursorMeter">
-      <div id="scrollPath">
-         <div id="pregressBar"></div>
-      </div>
-   </div>
+   <!-- End: Modal-food -->
    <script src="./assets/js/data.js"></script>
    <script src="./assets/js/order-online.js"></script>
 </body>

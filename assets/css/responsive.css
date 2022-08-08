@@ -185,7 +185,7 @@
 
 /* RESPONSIVE FOR INTRODUCE PAGE */
 /* Tablet and Moblie */
-@media screen and (max-width: 75rem) {
+@media screen and (max-width: 75em) {
    .main-body .intro-col12 {
       margin-top: 40px;
    }
@@ -332,9 +332,9 @@
 
 /* RESPONSIVE FOR NEWS PAGE */
 /* Tablet */
-@media screen and (max-width: 75rem) {
+@media screen and (max-width: 75em) {
    .mb-content .content-row:not(:first-child) {
-      margin-top: 32px;
+      margin-top: 40px;
    }
 
    .author,
@@ -357,13 +357,13 @@
    }
 }
 /* Small tablet */
-@media screen and (max-width: 62rem) {
+@media screen and (max-width: 62em) {
    .news-container .news-post {
       width: 48%;
    }
 }
 /* Moblie */
-@media screen and (max-width: 48rem) {
+@media screen and (max-width: 48em) {
    .main-body .box {
       height: 84px;
    }
@@ -396,7 +396,7 @@
 }
 /* RESPONSIVE FOR PROMOTION PAGE */
 /* Tablet */
-@media screen and (max-width: 75rem) {
+@media screen and (max-width: 75em) {
    .main-body .row-mb {
       display: block;
    }
@@ -414,7 +414,7 @@
    }
 }
 /* Moblie */
-@media screen and (max-width: 48rem) {
+@media screen and (max-width: 48em) {
    .item-col3 .list-items::-webkit-scrollbar {
       display: none;
    }

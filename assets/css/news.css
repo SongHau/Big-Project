@@ -44,7 +44,7 @@ a {
 
 .main-body .image-slider {
    display: flex;
-   width: 96%;
+   width: 90%;
    margin: 15px auto 0;
    align-items: center;
 }
@@ -108,7 +108,7 @@ a {
    transform: translate(20px, -50%);
 }
 
-.image-slider .slick-dots {
+.slick-dots {
    position: absolute;
    bottom: 8px;
    left: 50%;
@@ -119,7 +119,7 @@ a {
    list-style: none;
 }
 
-.image-slider .slick-dots button {
+.slick-dots button {
    font-size: 0;
    margin: 0 20px;
    width: 20px;
@@ -128,11 +128,22 @@ a {
    border: none;
    outline: none;
    cursor: pointer;
-   background-color: rgba(255, 255, 255, 0.5);
+   background: rgba(255, 255, 255, 0.5);
 }
 
 .slick-dots .slick-active button {
-   background-color: #ff6651;
+   background: #ff6651 !important;
+}
+
+.carousel .slick-dots {
+   bottom: -20px;
+}
+
+.carousel .slick-dots button {
+   width: 10px;
+   height: 10px;
+   border-radius: 50%;
+   background: rgba(0, 0, 0, 0.2);
 }
 /* End-Css: Slick slider */
 
@@ -247,11 +258,6 @@ a {
    padding: 12px 44px;
    text-transform: uppercase;
    background-color: #c47135;
-}
-
-.btn-more:hover {
-   color: #000;
-   opacity: 0.9;
 }
 
 .btn-more::before,
