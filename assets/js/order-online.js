@@ -129,6 +129,7 @@ function addItemFood(e) {
    updateInfoCart(shoppingCarts);
    modalFood.classList.remove("open");
    aTag.classList.remove("disabled");
+
    function WidthChange(mq) {
       if (mq.matches) {
          pay.style.display = "block";
@@ -197,14 +198,14 @@ moveToFood.addEventListener("click", function () {
 });
 const moveToCombo = document.getElementById("movecombo");
 moveToCombo.addEventListener("click", function () {
-   window.scrollTo(0, 2060);
+   window.scrollTo(0, 2109);
 });
 const moveToAddFood = document.getElementById("moveaddfood");
 moveToAddFood.addEventListener("click", function () {
-   window.scrollTo(0, 4400);
+   window.scrollTo(0, 4502);
 });
 /* Pay */
 const pay = document.getElementById("pay");
 pay.addEventListener("click", function () {
-   window.scrollTo(0, 6900);
+   window.scrollTo(0, 6918);
 });

@@ -10,6 +10,9 @@ body {
    min-height: 100vh;
 }
 
+#back-to-top{
+   display: none !important;
+}
 /*Grid*/
 .grid {
    width: 1400px;

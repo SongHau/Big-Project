@@ -226,9 +226,12 @@
 /* RESPONSIVE FOR ONLINE SHOP PAGE */
 /* Mobile */
 @media (max-width: 63.938rem) {
+   #back-to-top{
+      display: block !important;
+   }
    #pay {
       position: fixed;
-      bottom: 10%;
+      bottom: 1%;
       right: 5%;
       z-index: 3;
       font-size: 3rem;
@@ -291,6 +294,9 @@
 }
 /* Tablet */
 @media (min-width: 46.25rem) and (max-width: 63.938rem) {
+   #back-to-top{
+      display: block !important;
+   }
    header {
       padding: 0 20px;
    }
