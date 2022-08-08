@@ -185,6 +185,7 @@ $(document).ready(function () {
    $(".image-slider").slick({
       autoplaySpeed: 2000,
       autoplay: true,
+      speed: 300,
       dots: true,
       draggable: false,
       prevArrow:
@@ -207,6 +208,7 @@ $(document).ready(function () {
    $(".carousel").slick({
       slidesToShow: 4,
       slidesToScroll: 1,
+      speed: 300,
       infinite: false,
       draggable: false,
       prevArrow:
