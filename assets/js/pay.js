@@ -1,21 +1,30 @@
-window.addEventListener("scroll",reveal);
-function reveal(){
-   var reveals = document.querySelectorAll(".reveal");
-   for(var i = 0; i<reveals.length;i++)
-   {
-      var windowHeight = window.innerHeight;
-      var revealTop = reveals[i].getBoundingClientRect().top;
-      var revealPoint = 150;
-
-      if(revealTop < windowHeight - revealPoint)
-      {
-         reveals[i].classList.add("active");
-      }
-      else
-      {
-         reveals[i].classList.remove("active");
-      }
+/* Scroll Element */
+function WidthChange(mq) {
+   if (mq.matches) {
+     
    }
+   else 
+   {
+      function reveal(){
+         var reveals = document.querySelectorAll(".reveal");
+         for(var i = 0; i<reveals.length;i++)
+         {
+            var windowHeight = window.innerHeight;
+            var revealTop = reveals[i].getBoundingClientRect().top;
+            var revealPoint = 150;
+      
+            if(revealTop < windowHeight - revealPoint)
+            {
+               reveals[i].classList.add("active");
+            }
+         }
+      }
+      window.addEventListener("scroll",reveal);
+   }
+}
+if (matchMedia) {
+   const mq = window.matchMedia("(max-width: 1023px)");
+   WidthChange(mq);
 }
 /* Method */
 const method = document.getElementById("pay-online");
@@ -27,5 +36,3 @@ method.addEventListener("click",function(){
 payMethod.addEventListener("click",function(){
    choose.style.opacity="0";
 })
-
-/* Scroll Element */

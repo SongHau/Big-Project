@@ -106,8 +106,7 @@ body {
    text-transform: uppercase;
 }
  
-.food .food-list .part-1,
-.food .food-list .part-2{
+.food .food-list {
    display: flex;
    flex-wrap: wrap;
    justify-content: space-between;
