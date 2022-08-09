@@ -69,8 +69,7 @@ a {
    border-radius: 20px;
 }
 
-.carousel img,
-.news-post img {
+.carousel img {
    height: 220px;
    border-radius: 20px;
 }
@@ -215,11 +214,15 @@ a {
 }
 
 .news-content .news-post {
-   width: 328px;
+   width: 440px;
    margin: 16px 5px 20px;
    padding: 10px;
    line-height: 1.4;
    text-align: justify;
+}
+
+.news-post img {
+   height: 300px;
 }
 
 .news-content .news-post.news-more {

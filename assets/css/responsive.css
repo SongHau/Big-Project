@@ -65,11 +65,6 @@
       height: auto;
    }
 
-   .footer-col {
-      width: 50%;
-      margin-bottom: 30px;
-   }
-
    .top-footer .top-footer-row,
    .top-footer .top-footer-col-8 {
       width: 100%;
@@ -97,6 +92,17 @@
 
    .top-footer-col-8 form .submit {
       width: 40%;
+   }
+}
+@media screen and (max-width: 46.118rem) {
+   .footer-col {
+      width: 100%;
+      margin-bottom: 30px;
+      text-align: center;
+   }
+
+   .footer-col h4::after {
+      left: calc(50% - 25px);
    }
 }
 
@@ -226,7 +232,7 @@
 /* RESPONSIVE FOR ONLINE SHOP PAGE */
 /* Mobile */
 @media (max-width: 63.938rem) {
-   #back-to-top{
+   #back-to-top {
       display: block !important;
    }
    #pay {
@@ -300,7 +306,7 @@
 }
 /* Tablet */
 @media (min-width: 46.25rem) and (max-width: 63.938rem) {
-   #back-to-top{
+   #back-to-top {
       display: block !important;
    }
    header {
@@ -355,17 +361,11 @@
    }
 
    .news-container .news-post {
-      width: 32%;
+      width: 48%;
    }
 
    .mb-content .content-title {
       font-size: 2rem;
-   }
-}
-/* Small tablet */
-@media screen and (max-width: 62em) {
-   .news-container .news-post {
-      width: 48%;
    }
 }
 /* Moblie */

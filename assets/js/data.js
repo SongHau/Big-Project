@@ -1,53 +1,4 @@
 window.addEventListener("load", function () {
-   /* TURN OFF INSPECT (F12) */
-   // window.onload = function () {
-   //    document.addEventListener(
-   //       "contextmenu",
-   //       function (e) {
-   //          e.preventDefault();
-   //       },
-   //       false
-   //    );
-   //    document.addEventListener(
-   //       "keydown",
-   //       function (e) {
-   //          // "I" key
-   //          if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {
-   //             disabledEvent(e);
-   //          }
-   //          // "J" key
-   //          if (e.ctrlKey && e.shiftKey && e.keyCode == 74) {
-   //             disabledEvent(e);
-   //          }
-   //          // "S" key + macOS
-   //          if (
-   //             e.keyCode == 83 &&
-   //             (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)
-   //          ) {
-   //             disabledEvent(e);
-   //          }
-   //          // "U" key
-   //          if (e.ctrlKey && e.keyCode == 85) {
-   //             disabledEvent(e);
-   //          }
-   //          // "F12" key
-   //          if (event.keyCode == 123) {
-   //             disabledEvent(e);
-   //          }
-   //       },
-   //       false
-   //    );
-   //    function disabledEvent(e) {
-   //       if (e.stopPropagation) {
-   //          e.stopPropagation();
-   //       } else if (window.event) {
-   //          window.event.cancelBubble = true;
-   //       }
-   //       e.preventDefault();
-   //       return false;
-   //    }
-   // };
-
    /* Loading */
    const loader = document.querySelector(".loader");
    if (loader != null) loader.classList.add("hidden");
@@ -167,7 +118,7 @@ window.addEventListener("load", function () {
    var countMore = 0;
    if (moreBtn != null) {
       moreBtn.addEventListener("click", function showMore() {
-         for (let i = 0; i < 4; i++) {
+         for (let i = 0; i < 3; i++) {
             if (moreBlog.length != 0)
                moreBlog[countMore++].style.display = "block";
             if (moreNews.length != 0)
@@ -187,7 +138,6 @@ $(document).ready(function () {
       autoplay: true,
       speed: 300,
       dots: true,
-      draggable: false,
       prevArrow:
          "<button type='button' class='slick-prev slick-arrow'><i class='fa fa-angle-left' aria-hidden='true'></i></button>",
       nextArrow:
@@ -199,8 +149,6 @@ $(document).ready(function () {
                arrows: false,
                infinite: false,
                autoplay: false,
-               draggable: true,
-               dots: true,
             },
          },
       ],
