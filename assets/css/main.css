@@ -9,8 +9,6 @@ body {
    min-height: 100vh;
 }
 
-
-
 .banner {
    position: relative;
    width: 100%;
@@ -28,6 +26,17 @@ body {
    padding: 40px;
 }
 
+.reveal{
+   position: relative;
+   transform: translateY(150px);
+   opacity: 0;
+   transition: all 2s ease;
+}
+
+.reveal.active{
+   transform: translateY(0px);
+   opacity: 1;
+}
 .introduce .introduce-list {
    width: 25%;
 }
@@ -96,8 +105,9 @@ body {
    margin: 50px;
    text-transform: uppercase;
 }
-
-.food .food-list {
+ 
+.food .food-list .part-1,
+.food .food-list .part-2{
    display: flex;
    flex-wrap: wrap;
    justify-content: space-between;
