@@ -1,3 +1,6 @@
+::selection {
+   background: #fac159;
+}
 /* SCROLLBAR */
 ::-webkit-scrollbar {
    width: 4px;

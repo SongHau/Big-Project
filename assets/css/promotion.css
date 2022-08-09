@@ -246,6 +246,10 @@ h3:hover {
    transition: transform 0.5s ease;
 }
 
+.blog-content .blog-post img {
+   height: 220px;
+}
+
 .blog-content .blog-post:hover {
    box-shadow: 0 0 10px #000;
    transform: translateY(-4px);

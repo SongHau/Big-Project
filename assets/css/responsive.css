@@ -192,40 +192,16 @@
 /* RESPONSIVE FOR INTRODUCE PAGE */
 /* Tablet and Moblie */
 @media screen and (max-width: 75em) {
-   .main-body .intro-col12 {
-      margin-top: 40px;
-   }
-
-   .intro-col12 .intro-head h1 {
-      font-size: 1.5em;
-   }
-
    .main-body .row-intro {
       display: block;
-      padding: 0 10px;
    }
 
-   .row-intro .intro-col8 {
+   .intro-col5 .intro-box-full {
+      display: none;
+   }
+
+   .row-intro .intro-col5 {
       width: 100%;
-      margin: 10px 0;
-   }
-
-   .row-intro .intro-col4 {
-      width: 100%;
-      margin: 10px 0;
-   }
-
-   .main-body .row-intro:nth-child(odd) {
-      padding-bottom: 1px;
-   }
-
-   .row-intro .intro-text {
-      padding: 16px;
-   }
-
-   .row-intro .intro-text p,
-   .row-intro .intro-text h2 {
-      font-size: 1rem;
    }
 }
 
