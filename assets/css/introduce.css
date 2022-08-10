@@ -16,7 +16,6 @@ img {
 /* Introduce */
 .main-body {
    padding-bottom: 30px;
-   transition: all 0.2s linear;
 }
 
 .main-body .intro-container {
@@ -57,7 +56,6 @@ img {
       background-position: 200% center;
    }
 }
-
 
 .main-body .row-intro {
    margin: 10px 10px 5px;

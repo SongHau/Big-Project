@@ -136,7 +136,7 @@ $(document).ready(function () {
    $(".image-slider").slick({
       autoplaySpeed: 2000,
       autoplay: true,
-      speed: 300,
+      speed: 1000,
       dots: true,
       prevArrow:
          "<button type='button' class='slick-prev slick-arrow'><i class='fa fa-angle-left' aria-hidden='true'></i></button>",
@@ -156,7 +156,7 @@ $(document).ready(function () {
    $(".carousel").slick({
       slidesToShow: 4,
       slidesToScroll: 1,
-      speed: 300,
+      speed: 500,
       infinite: false,
       draggable: false,
       prevArrow:
