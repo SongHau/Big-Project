@@ -18,7 +18,7 @@
       rel="stylesheet">
 </head>
 
-<body>
+<body onload="init()">
    <div id="cursorMeter">
       <div id="progressBar"></div>
    </div>
@@ -49,137 +49,151 @@
 
    <section>
       <div id="particles-js">
-         <h1>H&H CHICKEN</h1>
-         <h3>DA GIÒN ĐẬM VỊ</h3>
+         <h1>Feedback</h1>
       </div>
+      <hr>
+      <div class="add-feedback">
+         <div class="add-feedback-box">
+            <div class="m-content">
+               <h1>Feedback</h1>
+               <ul id="notes">
+                  <li><span>KHÔNG NÊN</span> sử dụng những từ ngữ thô tục!</li>
+                  <li><span>KHÔNG NÊN</span> để lộ thông tin cá nhân (SĐT, email, Facebook, ...)</li>
+                  <li>Tham khảo thêm tại <a href="javascript:;"><i class="fa-brands fa-facebook-f"></i>Facebook</a></li>
+               </ul>
+            </div>
+
+            <div class="new-feedback-box">
+               <div class="new-feedback-box-tabs">
+                  <div class="buttons">
+                     <button type="button">
+                        Nhận xét
+                     </button>
+                  </div>
+               </div>
+               <div class="new-feedback-box-main">
+                  <textarea id="text-box" placeholder="Điền nhận xét của bạn vào đây" id=""></textarea>
+                  <input id="btnUpload" type="button" value="Đăng">
+               </div>
+            </div>
+         </div>
+      </div>
+      <hr>
       <div class="main-feedback">
          <div class="feedback-container m-row">
-            <div class="m-feedback m-col10">
-               <div class="m-content">
-                  <h1>Feedback</h1>
-                  <ul id="notes">
-                     <li><span>KHÔNG NÊN</span> sử dụng những từ ngữ thô tục!</li>
-                     <li><span>KHÔNG NÊN</span> để lộ thông tin cá nhân (SĐT, email, Facebook, ...)</li>
-                     <li>Tham gia thảo luận thêm tại <a href="#"></a></li>
-                  </ul>
-               </div>
-
-               <div class="new-feedback-box">
-                  <div class="new-feedback-box-tabs">
-                     <div class="buttons">
-                        <button type="button">
-                           Nhận xét
-                        </button>
-                        <button type="button">
-                           Xem trước
-                        </button>
-                     </div>
-                  </div>
-                  <div class="new-feedback-box-main">
-                     <textarea id="text-box" placeholder="Điền nhận xét của bạn vào đây" id=""></textarea>
-                     <input type="button" value="Đăng">
-                  </div>
-               </div>
+            <div class="m-feedback">
 
                <div class="timeline-feedback m-row">
                   <div class="avatar">
-                     <a href="javascript:;"><img src="./assets/img/avatar-1.png" alt="Avatar1"></a>
+                     <a href="javascript:;"><img src="./assets/img/avatar-1.png"></a>
                   </div>
                   <div class="comment">
                      <div class="comment-header">
                         <a href="javasciprt:;">Thanh Hiệp</a>
                      </div>
                      <div class="comment-body">
-                        ĐÂY LÀ VĂN BẢN
+                        <p>ĐÂY LÀ NHẬN XÉT</p>
                      </div>
                   </div>
                </div>
 
                <div class="timeline-feedback m-row">
                   <div class="avatar">
-                     <a href="javascript:;"><img src="./assets/img/avatar-2.png" alt="Avatar1"></a>
+                     <a href="javascript:;"><img src="./assets/img/avatar-2.png"></a>
                   </div>
                   <div class="comment">
                      <div class="comment-header">
                         <a href="javasciprt:;">Song Hậu</a>
                      </div>
                      <div class="comment-body">
-                        ĐÂY LÀ VĂN BẢN
+                        <p>ĐÂY LÀ NHẬN XÉT</p>
                      </div>
                   </div>
                </div>
 
                <div class="timeline-feedback m-row">
                   <div class="avatar">
-                     <a href="javascript:;"><img src="./assets/img/avatar-3.png" alt="Avatar1"></a>
+                     <a href="javascript:;"><img src="./assets/img/avatar-3.png"></a>
                   </div>
                   <div class="comment">
                      <div class="comment-header">
                         <a href="javasciprt:;">Trung Thắng</a>
                      </div>
                      <div class="comment-body">
-                        ĐÂY LÀ VĂN BẢN
+                        <p>ĐÂY LÀ NHẬN XÉT</p>
                      </div>
                   </div>
                </div>
 
                <div class="timeline-feedback m-row">
                   <div class="avatar">
-                     <a href="javascript:;"><img src="./assets/img/avatar-4.png" alt="Avatar1"></a>
+                     <a href="javascript:;"><img src="./assets/img/avatar-4.png"></a>
                   </div>
                   <div class="comment">
                      <div class="comment-header">
                         <a href="javasciprt:;">Ngọc Sơn</a>
                      </div>
                      <div class="comment-body">
-                        ĐÂY LÀ VĂN BẢN
+                        <p>ĐÂY LÀ NHẬN XÉT</p>
                      </div>
                   </div>
                </div>
 
                <div class="timeline-feedback m-row">
                   <div class="avatar">
-                     <a href="javascript:;"><img src="./assets/img/avatar-2.png" alt="Avatar1"></a>
+                     <a href="javascript:;"><img src="./assets/img/avatar-2.png"></a>
                   </div>
                   <div class="comment">
                      <div class="comment-header">
                         <a href="javasciprt:;">Ngọc Như</a>
                      </div>
                      <div class="comment-body">
-                        ĐÂY LÀ VĂN BẢN
+                        <p>ĐÂY LÀ NHẬN XÉT</p>
                      </div>
                   </div>
                </div>
 
                <div class="timeline-feedback m-row">
                   <div class="avatar">
-                     <a href="javascript:;"><img src="./assets/img/avatar-1.png" alt="Avatar1"></a>
+                     <a href="javascript:;"><img src="./assets/img/avatar-4.png"></a>
                   </div>
                   <div class="comment">
                      <div class="comment-header">
                         <a href="javasciprt:;">Trọng Phúc</a>
                      </div>
                      <div class="comment-body">
-                        ĐÂY LÀ VĂN BẢN
+                        <p>ĐÂY LÀ NHẬN XÉT</p>
                      </div>
                   </div>
                </div>
 
                <div class="timeline-feedback m-row">
                   <div class="avatar">
-                     <a href="javascript:;"><img src="./assets/img/avatar-3.png" alt="Avatar1"></a>
+                     <a href="javascript:;"><img src="./assets/img/avatar-3.png"></a>
                   </div>
                   <div class="comment">
                      <div class="comment-header">
                         <a href="javasciprt:;">Trí Cường</a>
                      </div>
                      <div class="comment-body">
-                        ĐÂY LÀ VĂN BẢN
+                        <p>ĐÂY LÀ NHẬN XÉT</p>
                      </div>
                   </div>
                </div>
-            </div>
-            <div class="m-col2">
+
+               <div class="timeline-feedback m-row">
+                  <div class="avatar">
+                     <a href="javascript:;"><img src="./assets/img/avatar-1.png"></a>
+                  </div>
+                  <div class="comment">
+                     <div class="comment-header">
+                        <a href="javasciprt:;">Nguyên Chương</a>
+                     </div>
+                     <div class="comment-body">
+                        <p>ĐÂY LÀ NHẬN XÉT</p>
+                     </div>
+                  </div>
+               </div>
             </div>
          </div>
       </div>
@@ -319,6 +333,10 @@
       </div>
    </div>
    <!-- End: Modal -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+   <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
    <script src="./assets/js/data.js"></script>
    <script src="./assets/js/particles.js"></script>
    <script src="./assets/js/app.js"></script>

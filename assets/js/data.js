@@ -71,26 +71,28 @@ window.addEventListener("load", function () {
 
    /* BACK TO TOP BUTTON */
    const backToTopButton = document.querySelector("#back-to-top");
-   window.addEventListener("scroll", function scrollFunction() {
-      if (window.pageYOffset > 300) {
-         if (!backToTopButton.classList.contains("fadeInRight")) {
-            backToTopButton.classList.remove("fadeOutRight");
-            backToTopButton.classList.add("fadeInRight");
-            backToTopButton.style.display = "block";
+   if (backToTopButton != null) {
+      window.addEventListener("scroll", function scrollFunction() {
+         if (window.pageYOffset > 300) {
+            if (!backToTopButton.classList.contains("fadeInRight")) {
+               backToTopButton.classList.remove("fadeOutRight");
+               backToTopButton.classList.add("fadeInRight");
+               backToTopButton.style.display = "block";
+            }
+         } else {
+            if (backToTopButton.classList.contains("fadeInRight")) {
+               backToTopButton.classList.remove("fadeInRight");
+               backToTopButton.classList.add("fadeOutRight");
+               setTimeout(function () {
+                  backToTopButton.style.display = "none";
+               }, 250);
+            }
          }
-      } else {
-         if (backToTopButton.classList.contains("fadeInRight")) {
-            backToTopButton.classList.remove("fadeInRight");
-            backToTopButton.classList.add("fadeOutRight");
-            setTimeout(function () {
-               backToTopButton.style.display = "none";
-            }, 250);
-         }
-      }
-   });
-   backToTopButton.addEventListener("click", function backToTop() {
-      window.scrollTo(0, 0);
-   });
+      });
+      backToTopButton.addEventListener("click", function backToTop() {
+         window.scrollTo(0, 0);
+      });
+   }
 
    /* MORE BUTTON */
    const moreBtn = document.getElementById("js-btn-more");
@@ -110,6 +112,35 @@ window.addEventListener("load", function () {
       });
    }
 });
+
+var names = [
+   "Thanh Hiệp",
+   "Trung Thắng",
+   "Nguyên Chương",
+   "Ngọc Như",
+   "Song Hậu",
+   "Trọng Phúc",
+   "Ngọc Sơn",
+   "Trí Cường",
+];
+var mark = [0, 0, 0, 0, 0, 0, 0, 0];
+var imgs = ["avatar-1.png", "avatar-2.png", "avatar-3.png", "avatar-4.png"];
+function init() {
+   const ava = document.querySelectorAll(".avatar img");
+   const header = document.querySelectorAll(".comment-header a");
+   for (const a of ava) {
+      let idx = parseInt(Math.random() * imgs.length);
+      a.setAttribute("src", `./assets/img/${imgs[idx]}`);
+   }
+
+   for (const h of header) {
+      let idx = parseInt(Math.random() * names.length);
+      if (mark[idx] == 0) {
+         mark[idx] = 1;
+         h.innerHTML = names[idx];
+      }
+   }
+}
 
 /* JQUERY */
 $(document).ready(function () {
@@ -205,5 +236,27 @@ $(document).ready(function () {
    });
 
    /*  */
-   
+   let user = 1;
+   $("#btnUpload").click(function () {
+      let text = $("#text-box").val();
+      if (text !== "") {
+         let h = `<div class="timeline-feedback m-row">
+                  <div class="avatar">
+                     <a href="javascript:;"><img src="./assets/img/${
+                        imgs[parseInt(Math.random() * imgs.length)]
+                     }"></a>
+                  </div>
+                  <div class="comment">
+                     <div class="comment-header">
+                        <a href="javasciprt:;">USER ${user++}</a>
+                     </div>
+                     <div class="comment-body">
+                        <p>${text}</p>
+                     </div>
+                  </div>
+               </div>`;
+         $(".m-feedback").prepend(h);
+      }
+      $("#text-box").val("");
+   });
 });
