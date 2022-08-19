@@ -19,6 +19,7 @@
    header .btn-mobile {
       display: block;
       margin-right: 5px;
+      color: #fff;
    }
 
    header .menu a {
