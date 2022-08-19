@@ -9,6 +9,7 @@ const btnRemoveItem = document.querySelectorAll(".shopping-carts .removeItem");
 const shoppingCarts = document.getElementById("shopping-carts");
 const aTag = document.querySelector(".cart .cart-top a");
 function showAddfood(e) {
+   e.preventDefault();
    let parentElement = e.currentTarget.parentNode;
    let imgFood = parentElement.querySelector(".food-img").innerHTML;
    let titleFood = parentElement.querySelector(
