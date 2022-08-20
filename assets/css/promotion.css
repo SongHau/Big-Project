@@ -15,7 +15,8 @@
 }
 
 body {
-   background: var(--clr-bar-bg);
+   /* background: linear-gradient(-45deg, #5ebbff 0%, #a174ff 100%); */
+   background: #191d1e99;
 }
 
 header a {
@@ -23,15 +24,10 @@ header a {
 }
 
 /* PROMOTIONAL */
-:root {
-   --clr-bar-bg: #d5d3cf;
-   --color-box-content: #f4f3f2;
-}
-
 h3,
 p {
    text-decoration: none;
-   color: #252a2b;
+   color: #ccc;
 }
 
 h3:hover {
@@ -146,7 +142,7 @@ h3:hover {
    padding: 10px;
    margin-bottom: 20px;
    border: 1px solid #000;
-   background: var(--color-box-content);
+   background: #272a31;
    box-shadow: -3px 3px 6px 0 rgba(0, 0, 0, 0.3);
 }
 
@@ -155,6 +151,7 @@ h3:hover {
    text-align: center;
    font-size: 1.125rem;
    font-weight: 400;
+   color: #fff;
    cursor: pointer;
    padding: 10px;
    margin-bottom: 20px;
@@ -210,6 +207,7 @@ h3:hover {
 .date {
    font-style: italic;
    font-size: 0.8rem;
+   color: #ccc;
    opacity: 0.7;
 }
 
@@ -218,12 +216,13 @@ h3:hover {
    border: 1px solid #000;
    margin-bottom: 10px;
    padding: 20px 10px;
-   background: var(--color-box-content);
+   background: #272a31;
 }
 
 .blog-container .blog-heading h1 {
    font-size: 2rem;
    font-weight: 500;
+   color: #fff;
    text-align: center;
    margin-bottom: 20px;
    user-select: none;

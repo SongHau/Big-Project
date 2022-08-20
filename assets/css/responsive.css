@@ -200,6 +200,10 @@
 /* RESPONSIVE FOR INTRODUCE PAGE */
 /* Tablet and Mobile */
 @media screen and (max-width: 75em) {
+   .main-body .intro-container {
+      margin-top: 32px;
+   }
+
    .main-body .row-intro {
       display: block;
    }
@@ -479,7 +483,7 @@
    }
 }
 
-/* Responsive for Pay page */
+/* RESPONSIVE FOR PAY PAGE */
 @media (max-width: 48rem) {
    .payment .payment-form {
       width: 90%;
@@ -491,5 +495,16 @@
    }
    .payment .payment-form .submit a {
       width: 100%;
+   }
+}
+
+/* RESPONSIVE FOR FEEDBACK PAGE */
+/* Tablet */
+@media screen and (max-width: 75em) {
+}
+/* Mobile */
+@media screen and (max-width: 48em) {
+   #particles-js h1 {
+      font-size: 12vw;
    }
 }

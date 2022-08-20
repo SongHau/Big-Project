@@ -123,22 +123,29 @@ var names = [
    "Ngọc Sơn",
    "Trí Cường",
 ];
-var mark = [0, 0, 0, 0, 0, 0, 0, 0];
 var imgs = ["avatar-1.png", "avatar-2.png", "avatar-3.png", "avatar-4.png"];
+var random = [];
+function in_array(array, el) {
+   for (var i = 0; i < array.length; i++) if (array[i] == el) return true;
+   return false;
+}
+function get_rand(array) {
+   var rand = array[Math.floor(Math.random() * array.length)];
+   if (!in_array(random, rand)) {
+      random.push(rand);
+      return rand;
+   }
+   return get_rand(array);
+}
 function init() {
-   const ava = document.querySelectorAll(".avatar img");
    const header = document.querySelectorAll(".comment-header a");
+   const ava = document.querySelectorAll(".avatar img");
    for (const a of ava) {
       let idx = parseInt(Math.random() * imgs.length);
       a.setAttribute("src", `./assets/img/${imgs[idx]}`);
    }
-
    for (const h of header) {
-      let idx = parseInt(Math.random() * names.length);
-      if (mark[idx] == 0) {
-         mark[idx] = 1;
-         h.innerHTML = names[idx];
-      }
+      h.innerHTML = get_rand(names);
    }
 }
 
@@ -161,6 +168,7 @@ $(document).ready(function () {
                arrows: false,
                infinite: false,
                autoplay: false,
+               speed: 500,
             },
          },
       ],
