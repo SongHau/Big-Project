@@ -1,6 +1,5 @@
 window.addEventListener("load", function () {
-   /* Loading */
-   const loader = document.querySelector(".loader");
+   /* Loading */ const loader = document.querySelector(".loader");
    if (loader != null) loader.classList.add("hidden");
 
    /* HEADING SCROLL */
@@ -113,6 +112,7 @@ window.addEventListener("load", function () {
    }
 });
 
+/* RANDOM NAMES & IMGS */
 var names = [
    "Thanh Hiệp",
    "Trung Thắng",
@@ -243,7 +243,7 @@ $(document).ready(function () {
       }, 300);
    });
 
-   /*  */
+   /* ADD NEW FEEDBACK */
    let user = 1;
    $("#btnUpload").click(function () {
       let text = $("#text-box").val();
@@ -257,6 +257,12 @@ $(document).ready(function () {
                   <div class="comment">
                      <div class="comment-header">
                         <a href="javasciprt:;">USER ${user++}</a>
+                        <button class="option"><i class="fa-solid fa-ellipsis"></i></button>
+                        <ul>
+                           <li>Chỉnh sửa</li>
+                           <li>Xóa</li>
+                           <li>Tố cáo</li>
+                        </ul>
                      </div>
                      <div class="comment-body">
                         <p>${text}</p>
@@ -266,5 +272,18 @@ $(document).ready(function () {
          $(".m-feedback").prepend(h);
       }
       $("#text-box").val("");
+   });
+
+   /* OPEN OPTION MENU */
+   $(".m-feedback").on("click", ".option", function () {
+      if ($(".m-feedback ul") !== $("+ ul", this))
+         $(".m-feedback ul").removeClass("toggle");
+      $("+ ul", this).toggleClass("toggle");
+   });
+   $("body").click(function () {
+      $(".m-feedback ul").removeClass("toggle");
+   });
+   $(".m-feedback").on("click", ".option, .option + ul", function (event) {
+      event.stopPropagation();
    });
 });
