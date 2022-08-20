@@ -49,12 +49,9 @@ function closeModalfood(e) {
    e.preventDefault();
    modalFood.classList.remove("open");
 }
-
 for (const btn of btnMinus) btn.addEventListener("click", removeFood);
-
 for (const btn of btnPlus) btn.addEventListener("click", addFood);
-   closeModal.addEventListener("click", closeModalfood);
-
+closeModal.addEventListener("click", closeModalfood);
 /* Close Modal Add Food */
 window.addEventListener("click", function (e) {
    const wrapper = document.getElementById("wrapper-1");

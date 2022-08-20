@@ -1,14 +1,16 @@
 ::selection {
-   background: #fac159;
+   color: #000;
+   background: #8ad3ff;
 }
 /* SCROLLBAR */
 ::-webkit-scrollbar {
    width: 4px;
+   background: #424d78;
 }
 
 ::-webkit-scrollbar-thumb {
-   background: linear-gradient(to bottom, #fc6076, #ff9a44, #ef9d43);
-   animation: scollProgress 1s linear infinite;
+   /* background: linear-gradient(to bottom, #fc6076, #ff9a44, #ef9d43); */
+   background: #ccc;
 }
 
 /* Loading */
@@ -72,8 +74,8 @@
 
 #progressBar {
    width: 0;
-   transition: .5s ease-out;
-   animation: scollProgress 5s linear infinite;
+   transition: 0.5s ease-out;
+   animation: scrollProgress 5s linear infinite;
 }
 
 #progressBar::before {
@@ -84,7 +86,7 @@
    filter: blur(30px);
 }
 
-@keyframes scollProgress {
+@keyframes scrollProgress {
    0%,
    100% {
       filter: hue-rotate(0deg);
@@ -99,6 +101,7 @@ html {
    scroll-behavior: smooth;
    overflow: scroll;
    overflow-x: hidden;
+   background: #424d78;
 }
 
 #back-to-top {
@@ -259,8 +262,9 @@ header.sticky .btn-mobile {
 .top-footer {
    margin: 40px 0;
    padding: 20px 16px;
-   background: #f4f3f2;
+   background: #272a31;
    font-size: 16px;
+   color: #e1e4e8;
 }
 
 .top-footer .top-footer-row {
@@ -314,6 +318,7 @@ header.sticky .btn-mobile {
    outline: none;
    border: none;
    font-size: 1rem;
+   background: #ccc;
 }
 
 .top-footer-col-8 form .submit {
@@ -321,21 +326,16 @@ header.sticky .btn-mobile {
    color: #333;
    font-size: 1rem;
    font-weight: 500;
+   cursor: pointer;
    border: none;
-   background-size: 300% 100%;
-   transition: all 0.4s ease-in-out;
-   background-image: linear-gradient(
+   /* background-image: linear-gradient(
       to right,
       #fc6076,
       #ff9a44,
       #ef9d43,
       #e75516
-   );
-}
-
-.top-footer-col-8 form .submit:hover {
-   cursor: pointer;
-   background-position: 100% 0;
+   ); */
+   background: linear-gradient(to bottom, #5ebbff 0%, #a174ff 100%);
 }
 
 .top-footer-col-4 h4 i {
@@ -446,7 +446,8 @@ header.sticky .btn-mobile {
 }
 
 .copyright p {
-   font-size: 1 rem;
+   color: #000;
+   font-size: 1rem;
    line-height: 30px;
 }
 

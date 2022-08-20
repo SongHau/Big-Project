@@ -71,45 +71,28 @@ window.addEventListener("load", function () {
 
    /* BACK TO TOP BUTTON */
    const backToTopButton = document.querySelector("#back-to-top");
-   window.addEventListener("scroll", function scrollFunction() {
-      if (window.pageYOffset > 300) {
-         if (!backToTopButton.classList.contains("fadeInRight")) {
-            backToTopButton.classList.remove("fadeOutRight");
-            backToTopButton.classList.add("fadeInRight");
-            backToTopButton.style.display = "block";
+   if (backToTopButton != null) {
+      window.addEventListener("scroll", function scrollFunction() {
+         if (window.pageYOffset > 300) {
+            if (!backToTopButton.classList.contains("fadeInRight")) {
+               backToTopButton.classList.remove("fadeOutRight");
+               backToTopButton.classList.add("fadeInRight");
+               backToTopButton.style.display = "block";
+            }
+         } else {
+            if (backToTopButton.classList.contains("fadeInRight")) {
+               backToTopButton.classList.remove("fadeInRight");
+               backToTopButton.classList.add("fadeOutRight");
+               setTimeout(function () {
+                  backToTopButton.style.display = "none";
+               }, 250);
+            }
          }
-      } else {
-         if (backToTopButton.classList.contains("fadeInRight")) {
-            backToTopButton.classList.remove("fadeInRight");
-            backToTopButton.classList.add("fadeOutRight");
-            setTimeout(function () {
-               backToTopButton.style.display = "none";
-            }, 250);
-         }
-      }
-   });
-   backToTopButton.addEventListener("click", function backToTop() {
-      window.scrollTo(0, 0);
-   });
-
-   /* IMAGE ZOOM */
-   // const imgs = document.querySelectorAll(".intro-img img");
-   // const modalZoom = document.querySelector(".modal-zoom");
-   // const imageZoom = document.querySelector(".image-zoom img");
-   // for (const img of imgs) {
-   //    img.addEventListener("click", function () {
-   //       imageZoom.src = img.src;
-   //       modalZoom.style.display = "flex";
-   //    });
-   // }
-   // if (modalZoom != null) {
-   //    modalZoom.addEventListener("click", function () {
-   //       modalZoom.style.display = "none";
-   //    });
-   //    imageZoom.addEventListener("click", function (event) {
-   //       event.stopPropagation();
-   //    });
-   // }
+      });
+      backToTopButton.addEventListener("click", function backToTop() {
+         window.scrollTo(0, 0);
+      });
+   }
 
    /* MORE BUTTON */
    const moreBtn = document.getElementById("js-btn-more");
@@ -130,6 +113,42 @@ window.addEventListener("load", function () {
    }
 });
 
+var names = [
+   "Thanh Hiệp",
+   "Trung Thắng",
+   "Nguyên Chương",
+   "Ngọc Như",
+   "Song Hậu",
+   "Trọng Phúc",
+   "Ngọc Sơn",
+   "Trí Cường",
+];
+var imgs = ["avatar-1.png", "avatar-2.png", "avatar-3.png", "avatar-4.png"];
+var random = [];
+function in_array(array, el) {
+   for (var i = 0; i < array.length; i++) if (array[i] == el) return true;
+   return false;
+}
+function get_rand(array) {
+   var rand = array[Math.floor(Math.random() * array.length)];
+   if (!in_array(random, rand)) {
+      random.push(rand);
+      return rand;
+   }
+   return get_rand(array);
+}
+function init() {
+   const header = document.querySelectorAll(".comment-header a");
+   const ava = document.querySelectorAll(".avatar img");
+   for (const a of ava) {
+      let idx = parseInt(Math.random() * imgs.length);
+      a.setAttribute("src", `./assets/img/${imgs[idx]}`);
+   }
+   for (const h of header) {
+      h.innerHTML = get_rand(names);
+   }
+}
+
 /* JQUERY */
 $(document).ready(function () {
    /* SLICK SLIDER */
@@ -149,6 +168,7 @@ $(document).ready(function () {
                arrows: false,
                infinite: false,
                autoplay: false,
+               speed: 500,
             },
          },
       ],
@@ -221,5 +241,30 @@ $(document).ready(function () {
       setTimeout(function () {
          $(".news-row").fadeIn(600);
       }, 300);
+   });
+
+   /*  */
+   let user = 1;
+   $("#btnUpload").click(function () {
+      let text = $("#text-box").val();
+      if (text !== "") {
+         let h = `<div class="timeline-feedback m-row">
+                  <div class="avatar">
+                     <a href="javascript:;"><img src="./assets/img/${
+                        imgs[parseInt(Math.random() * imgs.length)]
+                     }"></a>
+                  </div>
+                  <div class="comment">
+                     <div class="comment-header">
+                        <a href="javasciprt:;">USER ${user++}</a>
+                     </div>
+                     <div class="comment-body">
+                        <p>${text}</p>
+                     </div>
+                  </div>
+               </div>`;
+         $(".m-feedback").prepend(h);
+      }
+      $("#text-box").val("");
    });
 });
