@@ -341,10 +341,11 @@
       box-shadow: inset 0 0 6px orange;
    }
    .cart .cart-top a {
-      background-color: orange;
+      color: #000;
+      background-color: #8ad3ff;
    }
    .cart .cart-top a.disabled {
-      background-color: #fabc60;
+      background-color: #1d1e23;
    }
 }
 /* Tablet */
@@ -366,7 +367,7 @@
       height: auto;
    }
    .menu-sidebar .menu-list {
-      background-color: #fff;
+      background-color: #272a31;
       justify-content: space-around;
    }
    .col-6 {

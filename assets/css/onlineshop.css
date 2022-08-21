@@ -118,7 +118,7 @@ header .menu a {
    text-transform: uppercase;
    color: #ffffffe6;
    font-weight: 600px;
-   margin: 30px 0 10px 0;
+   margin: 16px 14px;
 }
 
 .food-list {
@@ -230,7 +230,7 @@ header .menu a {
 
 .cart .cart-top a:hover {
    color: #000;
-   background-color: #ccc;
+   background-color: #8ad3ff;
 }
 
 .cart .shopping-cart {
