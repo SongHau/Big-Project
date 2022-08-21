@@ -6,8 +6,15 @@
 }
 
 body {
-   background: #191d1e99;
+   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      linear-gradient(270deg, #5ebbff 0%, #a174ff 100%);
    min-height: 100vh;
+}
+
+
+header .name-shop,
+header .menu a {
+   color: #fff !important;
 }
 
 #back-to-top {
@@ -111,7 +118,7 @@ body {
    text-transform: uppercase;
    color: #ffffffe6;
    font-weight: 600px;
-   margin: 30px 0 10px 0;
+   margin: 16px 14px;
 }
 
 .food-list {
@@ -223,7 +230,7 @@ body {
 
 .cart .cart-top a:hover {
    color: #000;
-   background-color: #ccc;
+   background-color: #8ad3ff;
 }
 
 .cart .shopping-cart {

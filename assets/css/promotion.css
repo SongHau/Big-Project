@@ -15,8 +15,8 @@
 }
 
 body {
-   /* background: linear-gradient(-45deg, #5ebbff 0%, #a174ff 100%); */
-   background: #191d1e99;
+   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      linear-gradient(270deg, #5ebbff 0%, #a174ff 100%);
 }
 
 header a {

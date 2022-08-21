@@ -195,7 +195,6 @@ $(document).ready(function () {
                         <ul>
                            <li class="edit">Chỉnh sửa</li>
                            <li class="delete">Xóa</li>
-                           <li class="report">Tố cáo</li>
                         </ul>
                      </div>
                      <div class="comment-body">
@@ -244,7 +243,7 @@ $(document).ready(function () {
          .siblings(".comment-bottom-bar")
          .css("height", "auto")
          .find(".btnConfirm")
-         .css("display", "flex");
+         .css("display", "block");
       $(".m-feedback ul").removeClass("active");
    });
    $(".m-feedback").on("click", ".btnConfirm", function () {
@@ -258,15 +257,18 @@ $(document).ready(function () {
 
    // Delete feedback
    $(".m-feedback").on("click", ".delete", function () {
+      // if (confirm("Bạn chắc chắn xóa không?") == true) {
+      //    $(this).parents(".timeline-feedback").remove();
+      // }
+      // Customs alert box
       let str = this;
       $(".m-feedback ul").removeClass("active");
-      $(".confirm-container").fadeIn().css("display", "flex");
+      $(".alert-container").fadeIn().css("display", "flex");
       $(".btnAccept").click(function () {
          $(str).parents(".timeline-feedback").remove();
-         $(".confirm-container").fadeOut();
       });
-      $(".btnCancel").click(function () {
-         $(".confirm-container").fadeOut();
+      $(".btnAccept, .btnCancel").click(function () {
+         $(".alert-container").fadeOut();
       });
    });
 });
