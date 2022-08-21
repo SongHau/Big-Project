@@ -9,6 +9,11 @@
    display: none;
 }
 
+body {
+   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      linear-gradient(270deg, #5ebbff 0%, #a174ff 100%);
+}
+
 header .name-shop,
 header .menu a {
    color: #fff !important;
@@ -175,12 +180,6 @@ section .add-feedback {
    margin-top: 0;
 }
 
-section .main-feedback {
-   width: 100%;
-   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-      linear-gradient(-45deg, #5ebbff 0%, #a174ff 100%);
-}
-
 .main-feedback .feedback-container {
    position: relative;
    width: 90%;
@@ -205,8 +204,8 @@ section .main-feedback {
    flex-direction: column;
    align-items: center;
    justify-content: center;
-   width: 32%;
-   height: 50%;
+   width: 500px;
+   height: 300px;
    border-radius: 12px;
    background: #1d1e23;
    text-align: center;
@@ -282,7 +281,7 @@ section .main-feedback {
    margin-left: 16px;
    border: 2px solid;
    border-image-slice: 1;
-   border-image-source: linear-gradient(-45deg, #5ebbff 0%, #a174ff 100%);
+   border-image-source: linear-gradient(-45deg, #a174ff 0%, #5ebbff 100%);
 }
 
 .comment:hover button.option {
@@ -298,10 +297,8 @@ section .main-feedback {
    height: 12px;
    transform: rotate(45deg);
    background: #1d1e23;
-   border-left: 2px solid #a174ff;
-   border-bottom: 2px solid #a174ff;
-   /* border-image-slice: 1; */
-   /* border-image-source: linear-gradient(-45deg, #5ebbff 0%, #a174ff 100%); */
+   border-left: 2px solid #5ebbff;
+   border-bottom: 2px solid #5ebbff;
 }
 
 .comment .comment-header {
