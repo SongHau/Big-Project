@@ -293,13 +293,14 @@ h3:hover {
 
 .blog-container .btn-more {
    border: none;
-   color: #fff;
+   color: #000;
    font-size: 1rem;
+   font-weight: 500;
    cursor: pointer;
    position: relative;
    padding: 12px 44px;
    text-transform: uppercase;
-   background-color: #c47135;
+   background: linear-gradient(-45deg, #5ebbff 0%, #a174ff 100%);
 }
 
 .blog-container .btn-more:hover {
@@ -315,7 +316,7 @@ h3:hover {
    width: 24px;
    height: 24px;
    transition: all 0.25s;
-   border: 0 solid #c47135;
+   border: 0 solid #8ad3ff;
 }
 
 .blog-container .btn-more::before {

@@ -7,18 +7,19 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>H&H Chicken - Feedback</title>
    <link rel="shortcut icon" href="./assets/img/animal-100s-246px.svg" type="image/x-icon">
-   <link rel="stylesheet" href="./assets/css/feedback.css">
-   <link rel="stylesheet" href="./assets/css/default.css">
-   <link rel="stylesheet" href="./assets/css/responsive.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
    <link
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet">
+   <link rel="stylesheet" href="./assets/css/feedback.css">
+   <link rel="stylesheet" href="./assets/css/default.css">
+   <link rel="stylesheet" href="./assets/css/responsive.css">
 </head>
 
 <body onload="init()">
+   <button id="back-to-top"><i class="fa-solid fa-arrow-up"></i></button>
    <div id="cursorMeter">
       <div id="progressBar"></div>
    </div>
@@ -47,6 +48,7 @@
    </header>
    <!-- End: Header -->
 
+   <!-- Begin: Main-body -->
    <section>
       <div id="particles-js">
          <h1>Feedback</h1>
@@ -56,8 +58,8 @@
          <div class="add-feedback-box">
             <div class="m-content">
                <h1>Feedback</h1>
-               <p>Nhằm đáp ứng nhu cầu tốt nhất. Khách hàng có thể để lại những nhận xét, góp ý. Cửa hàng sẽ luôn luôn
-                  lắng nghe góp ý đó.<br><span>Lưu ý:</span></p>
+               <p>Khách hàng có thể để lại những nhận xét, góp ý. Cửa hàng sẽ luôn luôn lắng nghe góp ý đó nhằm đáp ứng
+                  nhu cầu và phục vụ tốt nhất cho khách hàng.<br><span>Lưu ý:</span></p>
                <ul id="notes">
                   <li><span>KHÔNG NÊN</span> sử dụng những từ ngữ thô tục!</li>
                   <li><span>KHÔNG NÊN</span> để lộ thông tin cá nhân (SĐT, email, Facebook, ...)</li>
@@ -83,8 +85,18 @@
       <hr>
       <div class="main-feedback">
          <div class="feedback-container m-row">
+            <div class="confirm-container">
+               <div class="confirm-box">
+                  <span><i class="fa-solid fa-exclamation"></i></span>
+                  <h2>CHẮC CHẮN XÓA?</h2>
+                  <h4>Hành động không thể hoàn tác!</h4>
+                  <div class="buttons">
+                     <input class="btnAccept" type="button" value="Đồng ý">
+                     <input class="btnCancel" type="button" value="Hủy">
+                  </div>
+               </div>
+            </div>
             <div class="m-feedback">
-
                <div class="timeline-feedback m-row">
                   <div class="avatar">
                      <a href="javascript:;"><img src="./assets/img/avatar-1.png"></a>
@@ -94,13 +106,16 @@
                         <a href="javasciprt:;">Thanh Hiệp</a>
                         <button class="option"><i class="fa-solid fa-ellipsis"></i></button>
                         <ul>
-                           <li>Chỉnh sửa</li>
-                           <li>Xóa</li>
-                           <li>Tố cáo</li>
+                           <li class="edit">Chỉnh sửa</li>
+                           <li class="delete">Xóa</li>
+                           <li class="report">Tố cáo</li>
                         </ul>
                      </div>
                      <div class="comment-body">
                         <p>ĐÂY LÀ NHẬN XÉT</p>
+                     </div>
+                     <div class="comment-bottom-bar">
+                        <input class="btnConfirm" type="button" value="Xác nhận">
                      </div>
                   </div>
                </div>
@@ -114,13 +129,16 @@
                         <a href="javascript:;">Song Hậu</a>
                         <button class="option"><i class="fa-solid fa-ellipsis"></i></button>
                         <ul>
-                           <li>Chỉnh sửa</li>
-                           <li>Xóa</li>
-                           <li>Tố cáo</li>
+                           <li class="edit">Chỉnh sửa</li>
+                           <li class="delete">Xóa</li>
+                           <li class="report">Tố cáo</li>
                         </ul>
                      </div>
                      <div class="comment-body">
                         <p>ĐÂY LÀ NHẬN XÉT</p>
+                     </div>
+                     <div class="comment-bottom-bar">
+                        <input class="btnConfirm" type="button" value="Xác nhận">
                      </div>
                   </div>
                </div>
@@ -134,13 +152,16 @@
                         <a href="javascript:;">Trung Thắng</a>
                         <button class="option"><i class="fa-solid fa-ellipsis"></i></button>
                         <ul>
-                           <li>Chỉnh sửa</li>
-                           <li>Xóa</li>
-                           <li>Tố cáo</li>
+                           <li class="edit">Chỉnh sửa</li>
+                           <li class="delete">Xóa</li>
+                           <li class="report">Tố cáo</li>
                         </ul>
                      </div>
                      <div class="comment-body">
                         <p>ĐÂY LÀ NHẬN XÉT</p>
+                     </div>
+                     <div class="comment-bottom-bar">
+                        <input class="btnConfirm" type="button" value="Xác nhận">
                      </div>
                   </div>
                </div>
@@ -154,13 +175,16 @@
                         <a href="javascript:;">Ngọc Sơn</a>
                         <button class="option"><i class="fa-solid fa-ellipsis"></i></button>
                         <ul>
-                           <li>Chỉnh sửa</li>
-                           <li>Xóa</li>
-                           <li>Tố cáo</li>
+                           <li class="edit">Chỉnh sửa</li>
+                           <li class="delete">Xóa</li>
+                           <li class="report">Tố cáo</li>
                         </ul>
                      </div>
                      <div class="comment-body">
                         <p>ĐÂY LÀ NHẬN XÉT</p>
+                     </div>
+                     <div class="comment-bottom-bar">
+                        <input class="btnConfirm" type="button" value="Xác nhận">
                      </div>
                   </div>
                </div>
@@ -174,13 +198,16 @@
                         <a href="javascript:;">Ngọc Như</a>
                         <button class="option"><i class="fa-solid fa-ellipsis"></i></button>
                         <ul>
-                           <li>Chỉnh sửa</li>
-                           <li>Xóa</li>
-                           <li>Tố cáo</li>
+                           <li class="edit">Chỉnh sửa</li>
+                           <li class="delete">Xóa</li>
+                           <li class="report">Tố cáo</li>
                         </ul>
                      </div>
                      <div class="comment-body">
                         <p>ĐÂY LÀ NHẬN XÉT</p>
+                     </div>
+                     <div class="comment-bottom-bar">
+                        <input class="btnConfirm" type="button" value="Xác nhận">
                      </div>
                   </div>
                </div>
@@ -194,13 +221,16 @@
                         <a href="javascript:;">Trọng Phúc</a>
                         <button class="option"><i class="fa-solid fa-ellipsis"></i></button>
                         <ul>
-                           <li>Chỉnh sửa</li>
-                           <li>Xóa</li>
-                           <li>Tố cáo</li>
+                           <li class="edit">Chỉnh sửa</li>
+                           <li class="delete">Xóa</li>
+                           <li class="report">Tố cáo</li>
                         </ul>
                      </div>
                      <div class="comment-body">
                         <p>ĐÂY LÀ NHẬN XÉT</p>
+                     </div>
+                     <div class="comment-bottom-bar">
+                        <input class="btnConfirm" type="button" value="Xác nhận">
                      </div>
                   </div>
                </div>
@@ -214,13 +244,16 @@
                         <a href="javascript:;">Trí Cường</a>
                         <button class="option"><i class="fa-solid fa-ellipsis"></i></button>
                         <ul>
-                           <li>Chỉnh sửa</li>
-                           <li>Xóa</li>
-                           <li>Tố cáo</li>
+                           <li class="edit">Chỉnh sửa</li>
+                           <li class="delete">Xóa</li>
+                           <li class="report">Tố cáo</li>
                         </ul>
                      </div>
                      <div class="comment-body">
                         <p>ĐÂY LÀ NHẬN XÉT</p>
+                     </div>
+                     <div class="comment-bottom-bar">
+                        <input class="btnConfirm" type="button" value="Xác nhận">
                      </div>
                   </div>
                </div>
@@ -234,13 +267,16 @@
                         <a href="javascript:;">Nguyên Chương</a>
                         <button class="option"><i class="fa-solid fa-ellipsis"></i></button>
                         <ul>
-                           <li>Chỉnh sửa</li>
-                           <li>Xóa</li>
-                           <li>Tố cáo</li>
+                           <li class="edit">Chỉnh sửa</li>
+                           <li class="delete">Xóa</li>
+                           <li class="report">Tố cáo</li>
                         </ul>
                      </div>
                      <div class="comment-body">
                         <p>ĐÂY LÀ NHẬN XÉT</p>
+                     </div>
+                     <div class="comment-bottom-bar">
+                        <input class="btnConfirm" type="button" value="Xác nhận">
                      </div>
                   </div>
                </div>
@@ -248,6 +284,7 @@
          </div>
       </div>
    </section>
+   <!-- End: Main-body -->
 
    <!-- Begin: Footer -->
    <div class="top-footer">
@@ -404,9 +441,6 @@
    </div>
    <!-- End: Modal -->
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-   <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
-   <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-   <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
    <script src="./assets/js/data.js"></script>
    <script src="./assets/js/particles.js"></script>
    <script src="./assets/js/app.js"></script>

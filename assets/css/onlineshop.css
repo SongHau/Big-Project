@@ -6,11 +6,11 @@
 }
 
 body {
-   background: #e5e5e5;
+   background: #191d1e99;
    min-height: 100vh;
 }
 
-#back-to-top{
+#back-to-top {
    display: none !important;
 }
 /*Grid*/
@@ -58,7 +58,7 @@ body {
 }
 
 .menu-sidebar {
-   box-shadow: 3px 3px 6px 0 #e5e5e5;
+   box-shadow: 0 5px 25px rgb(0 0 0 / 50%);
    position: sticky;
    top: 100px;
 }
@@ -66,31 +66,33 @@ body {
 .menu-sidebar .menu-list li {
    list-style: none;
    padding: 15px;
-   background-color: #fff;
+   color: #ffffffe6;
+   background-color: #272a31;
+}
+
+.menu-sidebar .menu-list li:hover{
+   color: #000 !important;
+   background: #ccc;
+   cursor: pointer;
 }
 
 .menu-sidebar .menu-list li h4 {
    text-decoration: none;
    display: block;
-   color: #777;
    text-transform: uppercase;
-}
-
-.menu-sidebar .menu-list li h4:hover {
-   color: orange;
-   cursor: pointer;
 }
 
 .search {
    padding: 10px;
    display: flex;
    border: 1px solid #ccc;
-   background-color: #fff;
+   background-color: #272a31;
 }
 
 .search .search-btn {
    font-size: 1.2rem;
-   color: #777;
+   color: #ffffffe6;
+   padding: 8px;
 }
 
 .search input {
@@ -99,14 +101,15 @@ body {
    border: none;
    outline: none;
    font-size: 1rem;
-   padding: 0 8px;
+   padding: 8px 10px;
    margin-left: 8px;
+   background: #ccc;
 }
 
 .food .food-text {
    font-size: 1.3rem;
    text-transform: uppercase;
-   color: #5c5c5c;
+   color: #ffffffe6;
    font-weight: 600px;
    margin: 30px 0 10px 0;
 }
@@ -128,7 +131,7 @@ body {
 
 .food-list {
    padding: 12px;
-   background-color: #fff;
+   background-color: #272a31;
    position: relative;
    border-bottom: 1px dotted #ccc;
 }
@@ -136,40 +139,45 @@ body {
 .food-list .food-text {
    margin-left: 12px;
    flex: 1;
+   color: #ffffffe6;
 }
 
 .food-list .food-text .food-name {
    font-size: 1.1rem;
-   color: #5c5c5c;
 }
 
 .food-list .food-text .food-des {
    font-size: 1rem;
-   color: #5c5c5c;
    margin: 8px 0;
 }
 
 .food-list .food-text .food-price {
-   color: orangered;
+   color: #8ad3ff;
 }
 
 .food-list .food-add {
    align-self: flex-end;
    display: block;
    padding: 4px 5px;
-   border: 2px solid orange;
    border-radius: 50%;
    margin-bottom: 5px;
    margin-right: 5px;
+   border: 2px solid #0000;
+   background: linear-gradient(#272a31 0 0) padding-box,
+      linear-gradient(-45deg, #5ebbff 0%, #a174ff 100%) border-box;
 }
 
 .food-list .food-add .add {
-   color: orange;
    font-size: 1.4rem;
+   background: linear-gradient(0, #5ebbff 0%, #a174ff 100%);
+   background-clip: text;
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: #0000;
 }
 
 .cart {
-   background-color: #fff;
+   box-shadow: 0 5px 25px rgb(0 0 0 / 50%);
+   background-color: #272a31;
    position: sticky;
    top: 100px;
 }
@@ -198,9 +206,9 @@ body {
 
 .cart .cart-top a {
    text-decoration: none;
-   background-color: #fabc60;
+   background-color: #1d1e23;
    display: block;
-   color: #fff;
+   color: #ffffffe6;
    text-transform: uppercase;
    font-size: 1.2rem;
    padding: 8px;
@@ -214,7 +222,8 @@ body {
 }
 
 .cart .cart-top a:hover {
-   background-color: orange;
+   color: #000;
+   background-color: #ccc;
 }
 
 .cart .shopping-cart {
@@ -238,24 +247,24 @@ body {
 
 .cart .shopping-cart .shopping-cart-content .shopping-cart-left h4 {
    font-size: 1.1rem;
-   color: #5c5c5c;
+   color: #ffffffe6;
 }
 
 .cart .shopping-cart .shopping-cart-content .shopping-cart-left p {
    font-size: 0.9rem;
-   color: #5c5c5c;
+   color: #ffffffe6;
    margin-top: 10px;
 }
 
 .cart .shopping-cart-right p {
-   color: orangered;
+   color: #8ad3ff;
 }
 
 .cart .shopping-cart-right a {
    display: block;
    text-align: right;
    text-decoration: none;
-   color: #5c5c5c;
+   color: #ccc;
    margin-top: 10px;
 }
 
@@ -272,11 +281,11 @@ body {
 }
 
 .cart .cart-bottom .all {
-   color: orange;
+   color: #ffffffe6;
 }
 
 .cart .cart-bottom .price-cart {
-   color: #000;
+   color: #8ad3ff;
    font-weight: bold;
    font-size: 1.25rem;
 }
@@ -298,10 +307,11 @@ body {
    top: 50%;
    left: 50%;
    transform: translate(-50%, -50%);
-   background-color: #fff;
+   background-color: #272a31;
    padding: 15px;
    border-radius: 5px;
    max-width: 750px;
+   color: #ffffffe6;
 }
 
 .modal-food .modal-food-img img {
@@ -311,11 +321,12 @@ body {
 
 .modal-food-des .modal-food-name {
    font-size: 1.25rem;
-   color: #805c5c;
+   color: #fff;
+   font-weight: bold;
 }
 
 .modal-food-des .modal-food-price {
-   color: orangered;
+   color: #8ad3ff;
    margin: 8px 0;
 }
 
@@ -356,11 +367,11 @@ body {
 }
 
 .container-radio:hover input ~ .checkmark {
-   background-color: #ccc;
+   background-color: #8ad3ff;
 }
 
 .container-radio input:checked ~ .checkmark {
-   background-color: orange;
+   background-color: #8ad3ff;
 }
 
 .container-radio input:checked ~ .checkmark:after {
@@ -379,7 +390,7 @@ body {
 /* Note */
 .note p {
    font-size: 1rem;
-   color: #5c5c5c;
+   color: #ccc;
    font-weight: bold;
    margin: 5px 0;
 }
@@ -392,8 +403,9 @@ body {
 }
 
 .note .form-note i {
-   color: #5c5c5c;
+   color: #fff;
    font-size: 1.125rem;
+   padding: 8px;
 }
 
 .note .form-note input {
@@ -403,6 +415,8 @@ body {
    outline: none;
    font-size: 1rem;
    margin-left: 8px;
+   padding: 8px;
+   background: #ccc;
 }
 
 .number {
@@ -415,15 +429,23 @@ body {
    font-size: 1.1rem;
    font-weight: bold;
    padding: 0 10px;
-   color: #5c5c5c;
+   color: #ccc;
 }
 
 .number a {
-   border: 2px solid orange;
    padding: 4px 7px;
    border-radius: 50%;
    margin: 0px 8px;
-   color: orange;
+   border: 2px solid transparent;
+   background: linear-gradient(#272a31 0 0) padding-box,
+      linear-gradient(-45deg, #5ebbff 0%, #a174ff 100%) border-box;
+}
+
+.number a i {
+   background: linear-gradient(0, #5ebbff 0%, #a174ff 100%);
+   background-clip: text;
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: #0000;
 }
 
 .number a:hover {
@@ -432,16 +454,22 @@ body {
 }
 
 .add-to-cart {
-   background-color: orange;
+   background-color: #1d1e23;
    margin-top: 20px;
    text-align: center;
 }
 
+.add-to-cart:hover,
+.add-to-cart:hover a {
+   color: #000;
+   background: #ccc;
+}
+
 .add-to-cart a {
    text-decoration: none;
-   color: #fff;
    display: block;
    padding: 10px;
+   color: #fff;
 }
 
 #btn-close {
