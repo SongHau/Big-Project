@@ -94,6 +94,25 @@
    .top-footer-col-8 form .submit {
       width: 40%;
    }
+
+   .go-to-feedback {
+      bottom: 4%;
+      width: 30px;
+      height: 30px;
+      padding: 24px;
+      font-size: 1.6rem;
+   }
+
+   .go-to-feedback:hover::after {
+      width: 60px;
+      height: 60px;
+   }
+
+   #back-to-top {
+      width: 50px;
+      height: 50px;
+      bottom: 4%;
+   }
 }
 @media screen and (max-width: 46.118rem) {
    .footer-col {
@@ -501,10 +520,56 @@
 /* RESPONSIVE FOR FEEDBACK PAGE */
 /* Tablet */
 @media screen and (max-width: 75em) {
+   .comment-header button.option {
+      display: block;
+   }
 }
 /* Mobile */
 @media screen and (max-width: 48em) {
    #particles-js h1 {
       font-size: 12vw;
+   }
+
+   section .add-feedback {
+      height: 150vh;
+   }
+
+   .add-feedback .add-feedback-box {
+      font-size: 1.2rem !important;
+   }
+
+   #btnUpload,
+   .btnConfirm {
+      display: block;
+      width: 100%;
+   }
+   .btnConfirm {
+      display: none;
+   }
+
+   .m-feedback .timeline-feedback {
+      position: relative;
+   }
+
+   .timeline-feedback .avatar {
+      position: absolute;
+      top: 14px;
+      left: 8px;
+      width: 24px;
+      z-index: 1;
+   }
+
+   .timeline-feedback .comment {
+      margin: 0;
+   }
+
+   .timeline-feedback .comment::before {
+      width: 0;
+      height: 0;
+      border: none;
+   }
+
+   .comment .comment-header {
+      padding: 8px 16px 8px 36px;
    }
 }
