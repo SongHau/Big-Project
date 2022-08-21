@@ -151,72 +151,6 @@ function init() {
 
 /* JQUERY */
 $(document).ready(function () {
-   /* SLICK SLIDER */
-   $(".image-slider").slick({
-      autoplaySpeed: 2000,
-      autoplay: true,
-      speed: 1000,
-      dots: true,
-      prevArrow:
-         "<button type='button' class='slick-prev slick-arrow'><i class='fa fa-angle-left' aria-hidden='true'></i></button>",
-      nextArrow:
-         "<button type='button' class='slick-next slick-arrow'><i class='fa fa-angle-right' aria-hidden='true'></i></button>",
-      responsive: [
-         {
-            breakpoint: 993,
-            settings: {
-               arrows: false,
-               infinite: false,
-               autoplay: false,
-               speed: 500,
-            },
-         },
-      ],
-   });
-   $(".carousel").slick({
-      slidesToShow: 4,
-      slidesToScroll: 1,
-      speed: 500,
-      infinite: false,
-      draggable: false,
-      prevArrow:
-         "<button type='button' class='slick-prev slick-arrow'><i class='fa fa-angle-left' aria-hidden='true'></i></button>",
-      nextArrow:
-         "<button type='button' class='slick-next slick-arrow'><i class='fa fa-angle-right' aria-hidden='true'></i></button>",
-      responsive: [
-         {
-            breakpoint: 769,
-            settings: {
-               slidesToShow: 1,
-               slidesToScroll: 1,
-               arrows: false,
-               draggable: true,
-               dots: true,
-            },
-         },
-         {
-            breakpoint: 993,
-            settings: {
-               slidesToShow: 2,
-               slidesToScroll: 1,
-               arrows: false,
-               draggable: true,
-               dots: true,
-            },
-         },
-         {
-            breakpoint: 1201,
-            settings: {
-               slidesToShow: 3,
-               slidesToScroll: 1,
-               arrows: true,
-               draggable: true,
-               dots: true,
-            },
-         },
-      ],
-   });
-
    /* DROPDOWN MENU */
    $(".sidebar-title").click(function () {
       $(".list-items").toggleClass("active");
@@ -230,7 +164,7 @@ $(document).ready(function () {
    });
 
    /* BUTTON SEE ALL NEWS */
-   $(".news-btn-show").click(function (event) {
+   $(".news-btn-show").click(function () {
       $(".news-row").fadeOut(300);
       setTimeout(function () {
          $(".content-row.hidden").fadeIn(600);
@@ -259,13 +193,16 @@ $(document).ready(function () {
                         <a href="javasciprt:;">USER ${user++}</a>
                         <button class="option"><i class="fa-solid fa-ellipsis"></i></button>
                         <ul>
-                           <li>Chỉnh sửa</li>
-                           <li>Xóa</li>
-                           <li>Tố cáo</li>
+                           <li class="edit">Chỉnh sửa</li>
+                           <li class="delete">Xóa</li>
+                           <li class="report">Tố cáo</li>
                         </ul>
                      </div>
                      <div class="comment-body">
                         <p>${text}</p>
+                     </div>
+                     <div class="comment-bottom-bar">
+                        <input class="btnConfirm" type="button" value="Xác nhận">
                      </div>
                   </div>
                </div>`;
@@ -276,14 +213,60 @@ $(document).ready(function () {
 
    /* OPEN OPTION MENU */
    $(".m-feedback").on("click", ".option", function () {
-      if ($(".m-feedback ul") !== $("+ ul", this))
-         $(".m-feedback ul").removeClass("toggle");
-      $("+ ul", this).toggleClass("toggle");
+      if ($("+ ul", this).hasClass("active")) {
+         $("+ ul", this).removeClass("active");
+      } else {
+         $(".m-feedback ul").removeClass("active");
+         $("+ ul", this).addClass("active");
+      }
    });
    $("body").click(function () {
-      $(".m-feedback ul").removeClass("toggle");
+      $(".m-feedback ul").removeClass("active");
    });
    $(".m-feedback").on("click", ".option, .option + ul", function (event) {
       event.stopPropagation();
+   });
+
+   /* FEEDBACK OPTIONS */
+   // Edit feedback
+   $(".m-feedback").on("click", ".edit", function () {
+      $(".comment-body p").attr("contentEditable", "false");
+      $(".comment-bottom-bar").css("height", "48px");
+      $(".btnConfirm").css("display", "none");
+      $(this)
+         .parents(".comment-header")
+         .next(".comment-body")
+         .find("p")
+         .attr("contentEditable", "true")
+         .focus();
+      $(this)
+         .parents(".comment-header")
+         .siblings(".comment-bottom-bar")
+         .css("height", "auto")
+         .find(".btnConfirm")
+         .css("display", "flex");
+      $(".m-feedback ul").removeClass("active");
+   });
+   $(".m-feedback").on("click", ".btnConfirm", function () {
+      $(this)
+         .parent()
+         .siblings(".comment-body")
+         .find("p")
+         .attr("contentEditable", "false");
+      $(this).css("display", "none").parent().css("height", "48px");
+   });
+
+   // Delete feedback
+   $(".m-feedback").on("click", ".delete", function () {
+      let str = this;
+      $(".m-feedback ul").removeClass("active");
+      $(".confirm-container").fadeIn().css("display", "flex");
+      $(".btnAccept").click(function () {
+         $(str).parents(".timeline-feedback").remove();
+         $(".confirm-container").fadeOut();
+      });
+      $(".btnCancel").click(function () {
+         $(".confirm-container").fadeOut();
+      });
    });
 });
