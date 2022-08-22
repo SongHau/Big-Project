@@ -180,13 +180,6 @@ function updateInfoCart(list) {
             parseInt(children[i].getAttribute("number")) *
                parseInt(children[i].getAttribute("price"));
       }
-      for(var i = 0;i<tong.length;i++)
-      {
-         if(tong.length==3)
-         {
-            tong = tong+ ",";
-         }
-      }
    }
    if (tong == 0) aTag.classList.add("disabled");
    if (tong == 0) pay.style.display = "none";
