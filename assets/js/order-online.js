@@ -182,7 +182,7 @@ function updateInfoCart(list) {
       }
       for(var i = 0;i<tong.length;i++)
       {
-         if(tong.length=3)
+         if(tong.length==3)
          {
             tong = tong+ ",";
          }
