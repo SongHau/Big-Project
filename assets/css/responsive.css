@@ -389,10 +389,6 @@
 /* RESPONSIVE FOR NEWS PAGE */
 /* Tablet */
 @media screen and (max-width: 75em) {
-   .slick-dots button {
-      margin: 0 5px;
-   }
-
    .mb-content .content-row:not(:first-child) {
       margin-top: 40px;
    }
@@ -422,9 +418,12 @@
       height: 84px;
    }
 
-   .main-body .image-slider {
-      margin: 5px 0 0;
-      width: 100%;
+   .slider-arrow {
+      display: none;
+   }
+
+   .slider-dots .slider-dot-item {
+      margin: 0 5px;
    }
 
    .image-slider .image,
@@ -434,10 +433,6 @@
 
    .carousel img {
       height: 300px;
-   }
-
-   .image-slider .slick-dots button {
-      margin: 0 5px;
    }
 
    .mb-content .content-title {
