@@ -198,7 +198,7 @@ moveToCombo.addEventListener("click", function () {
 });
 const moveToAddFood = document.getElementById("moveaddfood");
 moveToAddFood.addEventListener("click", function () {
-   window.scrollTo(0, 4502);
+   window.scrollTo(0, 4460);
 });
 /* Pay */
 const pay = document.getElementById("pay");
