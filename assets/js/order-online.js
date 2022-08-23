@@ -25,8 +25,8 @@ function showAddfood(e) {
    modalFood.classList.add("open");
 }
 if (modalFood && btnAdds) {
-   for (const lgBtn of btnAdds) {
-      lgBtn.addEventListener("click", showAddfood);
+   for (const btnAdd of btnAdds) {
+      btnAdd.addEventListener("click", showAddfood);
    }
 }
 function removeFood(e) {
