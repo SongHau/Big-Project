@@ -56,31 +56,44 @@
       <div class="box"></div>
       <!-- Begin: Slider -->
       <div class="image-slider">
-         <div class="image-item">
-            <div class="image">
-               <img src="./assets/img/slide-1.jpg" alt="Slider-1">
+         <button type='button' class='slider-prev slider-arrow'><i class='fa fa-angle-left' aria-hidden='true'></i></button>
+         <ul class="slider-dots">
+            <li class="slider-dot-item active" data-index="1"></li>
+            <li class="slider-dot-item" data-index="2"></li>
+            <li class="slider-dot-item" data-index="3"></li>
+            <li class="slider-dot-item" data-index="4"></li>
+            <li class="slider-dot-item" data-index="5"></li>
+         </ul>
+         <div class="slider-container">
+            <div class="slider-main">
+               <div class="slider-item">
+                  <div class="image">
+                     <img src="./assets/img/slide-1.jpg" alt="Slider-1">
+                  </div>
+               </div>
+               <div class="slider-item">
+                  <div class="image">
+                     <img src="./assets/img/slide-2.jpg" alt="Slider-2">
+                  </div>
+               </div>
+               <div class="slider-item">
+                  <div class="image">
+                     <img src="./assets/img/slide-3.jpg" alt="Slider-3">
+                  </div>
+               </div>
+               <div class="slider-item">
+                  <div class="image">
+                     <img src="./assets/img/slide-4.jpg" alt="Slider-4">
+                  </div>
+               </div>
+               <div class="slider-item">
+                  <div class="image">
+                     <img src="./assets/img/slide-5.jpg" alt="Slider-5">
+                  </div>
+               </div>
             </div>
          </div>
-         <div class="image-item">
-            <div class="image">
-               <img src="./assets/img/slide-2.jpg" alt="Slider-2">
-            </div>
-         </div>
-         <div class="image-item">
-            <div class="image">
-               <img src="./assets/img/slide-3.jpg" alt="Slider-3">
-            </div>
-         </div>
-         <div class="image-item">
-            <div class="image">
-               <img src="./assets/img/slide-4.jpg" alt="Slider-4">
-            </div>
-         </div>
-         <div class="image-item">
-            <div class="image">
-               <img src="./assets/img/slide-5.jpg" alt="Slider-5">
-            </div>
-         </div>
+         <button type='button' class='slider-next slider-arrow'><i class='fa fa-angle-right' aria-hidden='true'></i></button>
       </div>
       <!-- End: Slider -->
 
@@ -1008,7 +1021,6 @@
    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
    <script src="./assets/js/data.js"></script>
-   <script src="./assets/js/slider.js"></script>
 </body>
 
 </html>

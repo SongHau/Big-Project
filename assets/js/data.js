@@ -153,14 +153,16 @@ function init() {
 $(document).ready(function () {
    /* DROPDOWN MENU */
    $(".sidebar-title").click(function () {
-      $(".list-items").toggleClass("active");
-      if ($(".list-items").hasClass("active")) {
-         $(".list-items").css("height", "500px");
-         $(".sidebar .arrow").css("transform", "rotate(0)");
-      } else {
-         $(".list-items").css("height", "0");
-         $(".sidebar .arrow").css("transform", "rotate(180deg)");
-      }
+      // $(".list-items").toggleClass("active");
+      // if ($(".list-items").hasClass("active")) {
+      //    $(".list-items").css("height", "500px");
+      //    $(".sidebar .arrow").css("transform", "rotate(0)");
+      // } else {
+      //    $(".list-items").css("height", "0");
+      //    $(".sidebar .arrow").css("transform", "rotate(180deg)");
+      // }
+      $(".arrow").toggleClass("active");
+      $(".list-items").slideToggle("slow");
    });
 
    /* BUTTON SEE ALL NEWS */
@@ -270,5 +272,126 @@ $(document).ready(function () {
       $(".btnAccept, .btnCancel").click(function () {
          $(".alert-container").fadeOut();
       });
+   });
+
+   /* SLIDER */
+   const lastSlide = $(".slider-item")[$(".slider-item").length - 1].outerHTML;
+   const firstSlide = $(".slider-item")[0].outerHTML;
+   $(".slider-main").prepend(lastSlide);
+   $(".slider-main").append(firstSlide);
+   $(".slider-main").css(
+      "transform",
+      `translateX(-${$(".slider-main").width()}px)`
+   );
+   let current = 1;
+   function translateStyle(o, v, w, i) {
+      $(o).css({
+         transition: v,
+         transform: `translateX(${-w * i + 0.25}px)`,
+      });
+   }
+   function activeDot(obj) {
+      $(".slider-dot-item").removeClass("active");
+      $(obj).addClass("active");
+   }
+   function handleChangeSlide(direction) {
+      let widthOfSlide = $(".slider-main").width();
+      if (direction === "next") {
+         current++;
+         if (current == $(".slider-item").length - 1) {
+            setTimeout(function () {
+               current = 1;
+               activeDot($(".slider-dot-item")[current - 1]);
+               translateStyle(".slider-main", "none", widthOfSlide, current);
+            }, 1000);
+         }
+      } else if (direction === "previous") {
+         current--;
+         if (current == 0) {
+            setTimeout(function () {
+               current = $(".slider-item").length - 2;
+               activeDot($(".slider-dot-item")[current - 1]);
+               translateStyle(".slider-main", "none", widthOfSlide, current);
+            }, 1000);
+         }
+      } else {
+         current = direction;
+      }
+
+      activeDot($(".slider-dot-item")[current - 1]);
+      translateStyle(
+         ".slider-main",
+         "transform 1s linear",
+         widthOfSlide,
+         current
+      );
+   }
+   $(".slider-prev").click(function () {
+      handleChangeSlide("previous");
+   });
+   $(".slider-next").click(function () {
+      handleChangeSlide("next");
+   });
+   $(".slider-dot-item").click(function () {
+      const index = $(this).attr("data-index");
+      handleChangeSlide(index);
+   });
+   let playSlider;
+   let loopChange = function () {
+      playSlider = setInterval(function () {
+         handleChangeSlide("next");
+      }, 3000);
+   };
+   loopChange();
+   $(".image-slider").mouseover(function () {
+      clearInterval(playSlider);
+   });
+   $(".image-slider").mouseout(function () {
+      loopChange();
+   });
+
+   /* SLICK SLIDER */
+   $(".carousel").slick({
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      speed: 500,
+      infinite: false,
+      draggable: false,
+      prevArrow:
+         "<button type='button' class='slick-prev slick-arrow'><i class='fa fa-angle-left' aria-hidden='true'></i></button>",
+      nextArrow:
+         "<button type='button' class='slick-next slick-arrow'><i class='fa fa-angle-right' aria-hidden='true'></i></button>",
+      responsive: [
+         {
+            breakpoint: 769,
+            settings: {
+               slidesToShow: 1,
+               slidesToScroll: 1,
+               arrows: false,
+               draggable: true,
+               dots: true,
+            },
+         },
+         {
+            breakpoint: 993,
+            settings: {
+               slidesToShow: 2,
+               slidesToScroll: 1,
+               arrows: false,
+               draggable: true,
+               dots: true,
+            },
+         },
+         {
+            breakpoint: 1201,
+            settings: {
+               slidesToShow: 3,
+               slidesToScroll: 1,
+               arrows: true,
+               draggable: true,
+               dots: true,
+            },
+         },
+      ],
    });
 });
