@@ -95,28 +95,23 @@
       width: 40%;
    }
 
-   .go-to-feedback {
-      bottom: 4%;
+   .go-to-feedback,
+   #back-to-top {
       width: 30px;
       height: 30px;
       padding: 24px;
       font-size: 1.6rem;
    }
 
-   .go-to-feedback::after {
-      width: 50px;
-      height: 50px;
+   .go-to-feedback::after,
+   #back-to-top::after {
+      width: 40px;
+      height: 40px;
    }
-
-   .go-to-feedback:hover::after {
+   .go-to-feedback:hover::after,
+   #back-to-top:hover::after {
       width: 60px;
       height: 60px;
-   }
-
-   #back-to-top {
-      width: 50px;
-      height: 50px;
-      bottom: 4%;
    }
 }
 @media screen and (max-width: 46.118rem) {
@@ -280,9 +275,6 @@
 /* RESPONSIVE FOR ONLINE SHOP PAGE */
 /* Mobile */
 @media (max-width: 63.938rem) {
-   #back-to-top {
-      display: block !important;
-   }
    #pay {
       position: fixed;
       bottom: 1%;
@@ -355,9 +347,6 @@
 }
 /* Tablet */
 @media (min-width: 46.25rem) and (max-width: 63.938rem) {
-   #back-to-top {
-      display: block !important;
-   }
    header {
       padding: 0 20px;
    }
@@ -409,12 +398,12 @@
       font-size: 14px;
    }
 
-   .slider-dots .dot-item{
+   .slider-dots .dot-item {
       width: 32px;
    }
 
    .carousel .carousel-item {
-      flex: 1 0 50%;
+      flex: 1 0 calc(50% - 8px);
    }
 
    .news-container .news-post {
@@ -427,10 +416,6 @@
 }
 /* Mobile */
 @media screen and (max-width: 48em) {
-   .main-body .box {
-      height: 84px;
-   }
-
    .slider-arrow {
       display: none;
    }
@@ -445,7 +430,30 @@
    }
 
    .carousel .carousel-item {
-      flex: 1 0 100%;
+      flex: 1 0 calc(100% - 8px);
+   }
+
+   .carousel-arrow {
+      top: 102%;
+      border-radius: 0;
+      background: #0000;
+      color: #000;
+      font-size: 3rem;
+   }
+
+   .slider-arrow:hover,
+   .carousel-arrow:hover {
+      background: transparent;
+   }
+
+   .carousel-prev {
+      left: 8%;
+      transform: translate(-20px, -50%);
+   }
+
+   .carousel-next {
+      right: 8%;
+      transform: translate(20px, -50%);
    }
 
    .carousel img {

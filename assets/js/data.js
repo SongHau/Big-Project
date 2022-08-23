@@ -1,4 +1,51 @@
 window.addEventListener("load", function () {
+   /* DISABLED DEV TOOL */
+   // document.addEventListener(
+   //    "contextmenu",
+   //    function (e) {
+   //       e.preventDefault();
+   //    },
+   //    false
+   // );
+   // document.addEventListener(
+   //    "keydown",
+   //    function (e) {
+   //       // "I" key
+   //       if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {
+   //          disabledEvent(e);
+   //       }
+   //       // "J" key
+   //       if (e.ctrlKey && e.shiftKey && e.keyCode == 74) {
+   //          disabledEvent(e);
+   //       }
+   //       // "S" key + macOS
+   //       if (
+   //          e.keyCode == 83 &&
+   //          (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)
+   //       ) {
+   //          disabledEvent(e);
+   //       }
+   //       // "U" key
+   //       if (e.ctrlKey && e.keyCode == 85) {
+   //          disabledEvent(e);
+   //       }
+   //       // "F12" key
+   //       if (event.keyCode == 123) {
+   //          disabledEvent(e);
+   //       }
+   //    },
+   //    false
+   // );
+   // function disabledEvent(e) {
+   //    if (e.stopPropagation) {
+   //       e.stopPropagation();
+   //    } else if (window.event) {
+   //       window.event.cancelBubble = true;
+   //    }
+   //    e.preventDefault();
+   //    return false;
+   // }
+
    /* Loading */ const loader = document.querySelector(".loader");
    if (loader != null) loader.classList.add("hidden");
 
@@ -76,7 +123,7 @@ window.addEventListener("load", function () {
             if (!backToTopButton.classList.contains("fadeInRight")) {
                backToTopButton.classList.remove("fadeOutRight");
                backToTopButton.classList.add("fadeInRight");
-               backToTopButton.style.display = "block";
+               backToTopButton.style.display = "flex";
             }
          } else {
             if (backToTopButton.classList.contains("fadeInRight")) {
@@ -290,10 +337,9 @@ $(document).ready(function () {
          transform: `translateX(-${w * i + 0.25}px)`,
       });
    }
-   function activeDot(dots, idx) {
-      let dot = $(".dot-item", dots);
-      $(dot).removeClass("active");
-      $(dot[idx]).addClass("active");
+   function activeDot(obj) {
+      $(".dot-item").removeClass("active");
+      $(obj).addClass("active");
    }
    function handleChangeSlide(direction) {
       let widthOfSlide = $(".slider-main").width();
@@ -302,7 +348,7 @@ $(document).ready(function () {
          if (currentSlider == $(".slider-item").length - 1) {
             setTimeout(function () {
                currentSlider = 1;
-               activeDot(".slider-dots", currentSlider - 1);
+               // activeDot($(".dot-item")[currentSlider - 1]);
                sliderMainTranslate("none", widthOfSlide, currentSlider);
             }, 1000);
          }
@@ -311,14 +357,18 @@ $(document).ready(function () {
          if (currentSlider == 0) {
             setTimeout(function () {
                currentSlider = $(".slider-item").length - 2;
-               activeDot(".slider-dots", currentSlider - 1);
+               // activeDot($(".dot-item")[currentSlider - 1]);
                sliderMainTranslate("none", widthOfSlide, currentSlider);
             }, 1000);
          }
       } else {
          currentSlider = direction;
       }
-      activeDot(".slider-dots", currentSlider - 1);
+      if (currentSlider == $(".slider-item").length - 1)
+         activeDot($(".dot-item")[0]);
+      else if (currentSlider == 0)
+         activeDot($(".dot-item")[$(".slider-item").length - 3]);
+      else activeDot($(".dot-item")[currentSlider - 1]);
       sliderMainTranslate("transform 1s linear", widthOfSlide, currentSlider);
    }
    $(".slider-prev").click(function () {
@@ -329,10 +379,7 @@ $(document).ready(function () {
    });
    $(".dot-item").click(function () {
       const index = $(this).attr("data-index");
-      let carousel = $(this).parent().siblings(".carousel");
-      let rel = carousel.attr("rel");
       handleChangeSlide(index);
-      handleChangeCarousel(carousel, index - 1, rel - 1);
    });
    let playSlider;
    let loopChange = function () {
@@ -375,7 +422,6 @@ $(document).ready(function () {
       } else {
          currentCarousel[index] = direction;
       }
-      activeDot(".carousel-dots", currentCarousel[index]);
       $(obj).css(
          "transform",
          `translateX(-${widthOfCarouselItem * currentCarousel[index]}px)`

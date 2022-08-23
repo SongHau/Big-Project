@@ -55,8 +55,7 @@
       <div class="box"></div>
       <!-- Begin: Slider -->
       <div class="image-slider">
-         <button type='button' class='slider-prev slider-arrow'><i class='fa fa-angle-left'
-               aria-hidden='true'></i></button>
+         <button type='button' class='slider-prev slider-arrow'><i class="fa-solid fa-angles-left"></i></button>
          <ul class="slider-dots">
             <li class="dot-item active" data-index="1"></li>
             <li class="dot-item" data-index="2"></li>
@@ -65,7 +64,7 @@
             <li class="dot-item" data-index="5"></li>
          </ul>
          <div class="slider-container">
-            <div class="slider-main">
+            <div class="slider-main" draggable="true">
                <div class="slider-item">
                   <div class="image">
                      <img src="./assets/img/slide-1.jpg" alt="Slider-1">
@@ -93,8 +92,7 @@
                </div>
             </div>
          </div>
-         <button type='button' class='slider-next slider-arrow'><i class='fa fa-angle-right'
-               aria-hidden='true'></i></button>
+         <button type='button' class='slider-next slider-arrow'><i class="fa-solid fa-angles-right"></i></button>
       </div>
       <!-- End: Slider -->
 
@@ -106,18 +104,8 @@
                </h2>
                <div class="see-all"><a href="./promotion.html">Xem tất cả <i class="fa-solid fa-arrow-right"></i></a>
                </div>
-               <button type='button' class='carousel-prev carousel-arrow'><i class='fa fa-angle-left'
-                     aria-hidden='true'></i></button>
-               <ul class="carousel-dots">
-                  <li class="dot-item active" data-index="1"></li>
-                  <li class="dot-item" data-index="2"></li>
-                  <li class="dot-item" data-index="3"></li>
-                  <li class="dot-item" data-index="4"></li>
-                  <li class="dot-item" data-index="5"></li>
-                  <li class="dot-item" data-index="6"></li>
-                  <li class="dot-item" data-index="7"></li>
-                  <li class="dot-item" data-index="8"></li>
-               </ul>
+               <button type='button' class='carousel-prev carousel-arrow'><i
+                     class="fa-solid fa-angles-left"></i></i></button>
                <div class="carousel" rel="1">
                   <div class="carousel-item">
                      <div class="carousel-article">
@@ -280,8 +268,8 @@
                      </div>
                   </div>
                </div>
-               <button type='button' class='carousel-next carousel-arrow'><i class='fa fa-angle-right'
-                     aria-hidden='true'></i></button>
+               <button type='button' class='carousel-next carousel-arrow'><i
+                     class="fa-solid fa-angles-right"></i></button>
             </div>
          </div>
 
@@ -292,18 +280,8 @@
                   &#10024;Tin tức
                </h2>
                <div class="see-all news-btn-show">Xem thêm <i class="fa-solid fa-arrow-right"></i></div>
-               <button type='button' class='carousel-prev carousel-arrow'><i class='fa fa-angle-left'
-                     aria-hidden='true'></i></button>
-               <ul class="carousel-dots">
-                  <li class="dot-item active" data-index="1"></li>
-                  <li class="dot-item" data-index="2"></li>
-                  <li class="dot-item" data-index="3"></li>
-                  <li class="dot-item" data-index="4"></li>
-                  <li class="dot-item" data-index="5"></li>
-                  <li class="dot-item" data-index="6"></li>
-                  <li class="dot-item" data-index="7"></li>
-                  <li class="dot-item" data-index="8"></li>
-               </ul>
+               <button type='button' class='carousel-prev carousel-arrow'><i
+                     class="fa-solid fa-angles-left"></i></i></button>
                <div class="carousel" rel="2">
                   <div class="carousel-item">
                      <div class="carousel-article">
@@ -460,8 +438,8 @@
                      </div>
                   </div>
                </div>
-               <button type='button' class='carousel-next carousel-arrow'><i class='fa fa-angle-right'
-                     aria-hidden='true'></i></button>
+               <button type='button' class='carousel-next carousel-arrow'><i
+                     class="fa-solid fa-angles-right"></i></button>
             </div>
          </div>
          <div class="content-row hidden">
@@ -1044,6 +1022,7 @@
          </div>
       </div>
    </div>
+   <!-- End: Modal -->
 
    <!-- Messenger Plugin chat Code -->
    <div id="fb-root"></div>
@@ -1053,29 +1032,28 @@
    </div>
 
    <script>
-     var chatbox = document.getElementById('fb-customer-chat');
-     chatbox.setAttribute("page_id", "106492978853054");
-     chatbox.setAttribute("attribution", "biz_inbox");
+      var chatbox = document.getElementById('fb-customer-chat');
+      chatbox.setAttribute("page_id", "106492978853054");
+      chatbox.setAttribute("attribution", "biz_inbox");
    </script>
 
    <!-- Your SDK code -->
    <script>
-     window.fbAsyncInit = function() {
-       FB.init({
-         xfbml            : true,
-         version          : 'v14.0'
-       });
-     };
+      window.fbAsyncInit = function () {
+         FB.init({
+            xfbml: true,
+            version: 'v14.0'
+         });
+      };
 
-     (function(d, s, id) {
-       var js, fjs = d.getElementsByTagName(s)[0];
-       if (d.getElementById(id)) return;
-       js = d.createElement(s); js.id = id;
-       js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
-       fjs.parentNode.insertBefore(js, fjs);
-     }(document, 'script', 'facebook-jssdk'));
+      (function (d, s, id) {
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) return;
+         js = d.createElement(s); js.id = id;
+         js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
+         fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
    </script>
-   <!-- End: Modal -->
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
    <script src="./assets/js/data.js"></script>
 </body>

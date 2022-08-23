@@ -17,9 +17,6 @@ header .menu a {
    color: #fff !important;
 }
 
-#back-to-top {
-   display: none !important;
-}
 /*Grid*/
 .grid {
    width: 1400px;
