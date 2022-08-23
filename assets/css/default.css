@@ -114,6 +114,7 @@
    box-shadow: 0 0px 20px #5ebbff;
    background: linear-gradient(#272a31 0 0) padding-box,
       linear-gradient(-45deg, #5ebbff 0%, #a174ff 100%) border-box;
+   transition: all 0.5s ease-out;
 }
 
 .go-to-feedback::after,
@@ -139,6 +140,7 @@
 .go-to-feedback:hover {
    box-shadow: none;
    cursor: pointer;
+   background: rgba(255, 255, 255, 0.2);
 }
 
 .go-to-feedback:hover::after {
@@ -176,7 +178,7 @@ html {
    border-radius: 50%;
    border: none;
    transition: all 0.5s ease;
-   z-index: 1;
+   z-index: 10;
 }
 
 #back-to-top::after {

@@ -13,7 +13,6 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet" />
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
-   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
    <link rel="stylesheet" href="./assets/css/news.css" />
    <link rel="stylesheet" href="./assets/css/default.css" />
    <link rel="stylesheet" href="./assets/css/responsive.css" />
@@ -56,13 +55,14 @@
       <div class="box"></div>
       <!-- Begin: Slider -->
       <div class="image-slider">
-         <button type='button' class='slider-prev slider-arrow'><i class='fa fa-angle-left' aria-hidden='true'></i></button>
+         <button type='button' class='slider-prev slider-arrow'><i class='fa fa-angle-left'
+               aria-hidden='true'></i></button>
          <ul class="slider-dots">
-            <li class="slider-dot-item active" data-index="1"></li>
-            <li class="slider-dot-item" data-index="2"></li>
-            <li class="slider-dot-item" data-index="3"></li>
-            <li class="slider-dot-item" data-index="4"></li>
-            <li class="slider-dot-item" data-index="5"></li>
+            <li class="dot-item active" data-index="1"></li>
+            <li class="dot-item" data-index="2"></li>
+            <li class="dot-item" data-index="3"></li>
+            <li class="dot-item" data-index="4"></li>
+            <li class="dot-item" data-index="5"></li>
          </ul>
          <div class="slider-container">
             <div class="slider-main">
@@ -93,7 +93,8 @@
                </div>
             </div>
          </div>
-         <button type='button' class='slider-next slider-arrow'><i class='fa fa-angle-right' aria-hidden='true'></i></button>
+         <button type='button' class='slider-next slider-arrow'><i class='fa fa-angle-right'
+               aria-hidden='true'></i></button>
       </div>
       <!-- End: Slider -->
 
@@ -105,7 +106,19 @@
                </h2>
                <div class="see-all"><a href="./promotion.html">Xem tất cả <i class="fa-solid fa-arrow-right"></i></a>
                </div>
-               <div class="carousel">
+               <button type='button' class='carousel-prev carousel-arrow'><i class='fa fa-angle-left'
+                     aria-hidden='true'></i></button>
+               <ul class="carousel-dots">
+                  <li class="dot-item active" data-index="1"></li>
+                  <li class="dot-item" data-index="2"></li>
+                  <li class="dot-item" data-index="3"></li>
+                  <li class="dot-item" data-index="4"></li>
+                  <li class="dot-item" data-index="5"></li>
+                  <li class="dot-item" data-index="6"></li>
+                  <li class="dot-item" data-index="7"></li>
+                  <li class="dot-item" data-index="8"></li>
+               </ul>
+               <div class="carousel" rel="1">
                   <div class="carousel-item">
                      <div class="carousel-article">
                         <div class="carousel-article-image">
@@ -267,6 +280,8 @@
                      </div>
                   </div>
                </div>
+               <button type='button' class='carousel-next carousel-arrow'><i class='fa fa-angle-right'
+                     aria-hidden='true'></i></button>
             </div>
          </div>
 
@@ -277,7 +292,19 @@
                   &#10024;Tin tức
                </h2>
                <div class="see-all news-btn-show">Xem thêm <i class="fa-solid fa-arrow-right"></i></div>
-               <div class="carousel">
+               <button type='button' class='carousel-prev carousel-arrow'><i class='fa fa-angle-left'
+                     aria-hidden='true'></i></button>
+               <ul class="carousel-dots">
+                  <li class="dot-item active" data-index="1"></li>
+                  <li class="dot-item" data-index="2"></li>
+                  <li class="dot-item" data-index="3"></li>
+                  <li class="dot-item" data-index="4"></li>
+                  <li class="dot-item" data-index="5"></li>
+                  <li class="dot-item" data-index="6"></li>
+                  <li class="dot-item" data-index="7"></li>
+                  <li class="dot-item" data-index="8"></li>
+               </ul>
+               <div class="carousel" rel="2">
                   <div class="carousel-item">
                      <div class="carousel-article">
                         <div class="carousel-article-image">
@@ -433,6 +460,8 @@
                      </div>
                   </div>
                </div>
+               <button type='button' class='carousel-next carousel-arrow'><i class='fa fa-angle-right'
+                     aria-hidden='true'></i></button>
             </div>
          </div>
          <div class="content-row hidden">
@@ -1017,9 +1046,6 @@
    </div>
    <!-- End: Modal -->
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-   <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
-   <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
    <script src="./assets/js/data.js"></script>
 </body>
 

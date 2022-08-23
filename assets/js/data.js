@@ -192,7 +192,7 @@ $(document).ready(function () {
                   </div>
                   <div class="comment">
                      <div class="comment-header">
-                        <a href="javasciprt:;">USER ${user++}</a>
+                        <a href="javasciprt:;">${get_rand(names)}</a>
                         <button class="option"><i class="fa-solid fa-ellipsis"></i></button>
                         <ul>
                            <li class="edit">Chỉnh sửa</li>
@@ -274,7 +274,7 @@ $(document).ready(function () {
       });
    });
 
-   /* SLIDER */
+   /* IMAGES SLIDER */
    const lastSlide = $(".slider-item")[$(".slider-item").length - 1].outerHTML;
    const firstSlide = $(".slider-item")[0].outerHTML;
    $(".slider-main").prepend(lastSlide);
@@ -283,48 +283,43 @@ $(document).ready(function () {
       "transform",
       `translateX(-${$(".slider-main").width()}px)`
    );
-   let current = 1;
-   function translateStyle(o, v, w, i) {
-      $(o).css({
+   let currentSlider = 1;
+   function sliderMainTranslate(v, w, i) {
+      $(".slider-main").css({
          transition: v,
-         transform: `translateX(${-w * i + 0.25}px)`,
+         transform: `translateX(-${w * i + 0.25}px)`,
       });
    }
-   function activeDot(obj) {
-      $(".slider-dot-item").removeClass("active");
-      $(obj).addClass("active");
+   function activeDot(dots, idx) {
+      let dot = $(".dot-item", dots);
+      $(dot).removeClass("active");
+      $(dot[idx]).addClass("active");
    }
    function handleChangeSlide(direction) {
       let widthOfSlide = $(".slider-main").width();
       if (direction === "next") {
-         current++;
-         if (current == $(".slider-item").length - 1) {
+         currentSlider++;
+         if (currentSlider == $(".slider-item").length - 1) {
             setTimeout(function () {
-               current = 1;
-               activeDot($(".slider-dot-item")[current - 1]);
-               translateStyle(".slider-main", "none", widthOfSlide, current);
+               currentSlider = 1;
+               activeDot(".slider-dots", currentSlider - 1);
+               sliderMainTranslate("none", widthOfSlide, currentSlider);
             }, 1000);
          }
       } else if (direction === "previous") {
-         current--;
-         if (current == 0) {
+         currentSlider--;
+         if (currentSlider == 0) {
             setTimeout(function () {
-               current = $(".slider-item").length - 2;
-               activeDot($(".slider-dot-item")[current - 1]);
-               translateStyle(".slider-main", "none", widthOfSlide, current);
+               currentSlider = $(".slider-item").length - 2;
+               activeDot(".slider-dots", currentSlider - 1);
+               sliderMainTranslate("none", widthOfSlide, currentSlider);
             }, 1000);
          }
       } else {
-         current = direction;
+         currentSlider = direction;
       }
-
-      activeDot($(".slider-dot-item")[current - 1]);
-      translateStyle(
-         ".slider-main",
-         "transform 1s linear",
-         widthOfSlide,
-         current
-      );
+      activeDot(".slider-dots", currentSlider - 1);
+      sliderMainTranslate("transform 1s linear", widthOfSlide, currentSlider);
    }
    $(".slider-prev").click(function () {
       handleChangeSlide("previous");
@@ -332,9 +327,12 @@ $(document).ready(function () {
    $(".slider-next").click(function () {
       handleChangeSlide("next");
    });
-   $(".slider-dot-item").click(function () {
+   $(".dot-item").click(function () {
       const index = $(this).attr("data-index");
+      let carousel = $(this).parent().siblings(".carousel");
+      let rel = carousel.attr("rel");
       handleChangeSlide(index);
+      handleChangeCarousel(carousel, index - 1, rel - 1);
    });
    let playSlider;
    let loopChange = function () {
@@ -350,48 +348,47 @@ $(document).ready(function () {
       loopChange();
    });
 
-   /* SLICK SLIDER */
-   $(".carousel").slick({
-      slidesToShow: 4,
-      slidesToScroll: 1,
-      speed: 500,
-      infinite: false,
-      draggable: false,
-      prevArrow:
-         "<button type='button' class='slick-prev slick-arrow'><i class='fa fa-angle-left' aria-hidden='true'></i></button>",
-      nextArrow:
-         "<button type='button' class='slick-next slick-arrow'><i class='fa fa-angle-right' aria-hidden='true'></i></button>",
-      responsive: [
-         {
-            breakpoint: 769,
-            settings: {
-               slidesToShow: 1,
-               slidesToScroll: 1,
-               arrows: false,
-               draggable: true,
-               dots: true,
-            },
-         },
-         {
-            breakpoint: 993,
-            settings: {
-               slidesToShow: 2,
-               slidesToScroll: 1,
-               arrows: false,
-               draggable: true,
-               dots: true,
-            },
-         },
-         {
-            breakpoint: 1201,
-            settings: {
-               slidesToShow: 3,
-               slidesToScroll: 1,
-               arrows: true,
-               draggable: true,
-               dots: true,
-            },
-         },
-      ],
+   /* ARTICLES CAROUSEL */
+   let currentCarousel = [0, 0];
+   function handleChangeCarousel(obj, direction, index) {
+      let widthOfCarouse = $(".carousel").width();
+      let widthOfCarouselItem = $(".carousel-item").width() + 8;
+      let numberOfCarousel = $(".carousel-item", obj).length;
+      let CarouselItemsDisplayed = Math.round(
+         widthOfCarouse / widthOfCarouselItem
+      );
+      if (direction === "next") {
+         currentCarousel[index]++;
+         if (
+            currentCarousel[index] >
+            numberOfCarousel - CarouselItemsDisplayed
+         ) {
+            currentCarousel[index] = numberOfCarousel - CarouselItemsDisplayed;
+            return;
+         }
+      } else if (direction === "previous") {
+         currentCarousel[index]--;
+         if (currentCarousel[index] < 0) {
+            currentCarousel[index] = 0;
+            return;
+         }
+      } else {
+         currentCarousel[index] = direction;
+      }
+      activeDot(".carousel-dots", currentCarousel[index]);
+      $(obj).css(
+         "transform",
+         `translateX(-${widthOfCarouselItem * currentCarousel[index]}px)`
+      );
+   }
+   $(".carousel-prev").click(function () {
+      let carousel = $(this).siblings(".carousel");
+      let rel = carousel.attr("rel");
+      handleChangeCarousel(carousel, "previous", rel - 1);
+   });
+   $(".carousel-next").click(function () {
+      let carousel = $(this).siblings(".carousel");
+      let rel = carousel.attr("rel");
+      handleChangeCarousel(carousel, "next", rel - 1);
    });
 });
