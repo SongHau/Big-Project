@@ -1,52 +1,53 @@
 window.addEventListener("load", function () {
    /* DISABLED DEV TOOL */
-   // document.addEventListener(
-   //    "contextmenu",
-   //    function (e) {
-   //       e.preventDefault();
-   //    },
-   //    false
-   // );
-   // document.addEventListener(
-   //    "keydown",
-   //    function (e) {
-   //       // "I" key
-   //       if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {
-   //          disabledEvent(e);
-   //       }
-   //       // "J" key
-   //       if (e.ctrlKey && e.shiftKey && e.keyCode == 74) {
-   //          disabledEvent(e);
-   //       }
-   //       // "S" key + macOS
-   //       if (
-   //          e.keyCode == 83 &&
-   //          (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)
-   //       ) {
-   //          disabledEvent(e);
-   //       }
-   //       // "U" key
-   //       if (e.ctrlKey && e.keyCode == 85) {
-   //          disabledEvent(e);
-   //       }
-   //       // "F12" key
-   //       if (event.keyCode == 123) {
-   //          disabledEvent(e);
-   //       }
-   //    },
-   //    false
-   // );
-   // function disabledEvent(e) {
-   //    if (e.stopPropagation) {
-   //       e.stopPropagation();
-   //    } else if (window.event) {
-   //       window.event.cancelBubble = true;
-   //    }
-   //    e.preventDefault();
-   //    return false;
-   // }
+   document.addEventListener(
+      "contextmenu",
+      function (e) {
+         e.preventDefault();
+      },
+      false
+   );
+   document.addEventListener(
+      "keydown",
+      function (e) {
+         // "I" key
+         if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {
+            disabledEvent(e);
+         }
+         // "J" key
+         if (e.ctrlKey && e.shiftKey && e.keyCode == 74) {
+            disabledEvent(e);
+         }
+         // "S" key + macOS
+         if (
+            e.keyCode == 83 &&
+            (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)
+         ) {
+            disabledEvent(e);
+         }
+         // "U" key
+         if (e.ctrlKey && e.keyCode == 85) {
+            disabledEvent(e);
+         }
+         // "F12" key
+         if (event.keyCode == 123) {
+            disabledEvent(e);
+         }
+      },
+      false
+   );
+   function disabledEvent(e) {
+      if (e.stopPropagation) {
+         e.stopPropagation();
+      } else if (window.event) {
+         window.event.cancelBubble = true;
+      }
+      e.preventDefault();
+      return false;
+   }
 
-   /* Loading */ const loader = document.querySelector(".loader");
+   /* Loading */
+   const loader = document.querySelector(".loader");
    if (loader != null) loader.classList.add("hidden");
 
    /* HEADING SCROLL */
@@ -160,54 +161,46 @@ window.addEventListener("load", function () {
 });
 
 /* RANDOM NAMES & IMGS */
-   var names = [
-      "Thanh Hiệp",
-      "Trung Thắng",
-      "Nguyên Chương",
-      "Ngọc Như",
-      "Song Hậu",
-      "Trọng Phúc",
-      "Ngọc Sơn",
-      "Trí Cường",
-   ];
-   var imgs = ["avatar-1.png", "avatar-2.png", "avatar-3.png", "avatar-4.png"];
-   var random = [];
-   function in_array(array, el) {
-      for (var i = 0; i < array.length; i++) if (array[i] == el) return true;
-      return false;
+var names = [
+   "Thanh Hiệp",
+   "Trung Thắng",
+   "Nguyên Chương",
+   "Ngọc Như",
+   "Song Hậu",
+   "Trọng Phúc",
+   "Ngọc Sơn",
+   "Trí Cường",
+];
+var imgs = ["avatar-1.png", "avatar-2.png", "avatar-3.png", "avatar-4.png"];
+var random = [];
+function in_array(array, el) {
+   for (var i = 0; i < array.length; i++) if (array[i] == el) return true;
+   return false;
+}
+function get_rand(array) {
+   var rand = array[Math.floor(Math.random() * array.length)];
+   if (!in_array(random, rand)) {
+      random.push(rand);
+      return rand;
    }
-   function get_rand(array) {
-      var rand = array[Math.floor(Math.random() * array.length)];
-      if (!in_array(random, rand)) {
-         random.push(rand);
-         return rand;
-      }
-      return get_rand(array);
+   return get_rand(array);
+}
+function init() {
+   const header = document.querySelectorAll(".comment-header a");
+   const ava = document.querySelectorAll(".avatar img");
+   for (const a of ava) {
+      let idx = parseInt(Math.random() * imgs.length);
+      a.setAttribute("src", `./assets/img/${imgs[idx]}`);
    }
-   function init() {
-      const header = document.querySelectorAll(".comment-header a");
-      const ava = document.querySelectorAll(".avatar img");
-      for (const a of ava) {
-         let idx = parseInt(Math.random() * imgs.length);
-         a.setAttribute("src", `./assets/img/${imgs[idx]}`);
-      }
-      for (const h of header) {
-         h.innerHTML = get_rand(names);
-      }
+   for (const h of header) {
+      h.innerHTML = get_rand(names);
    }
+}
 
 /* JQUERY */
 $(document).ready(function () {
    /* DROPDOWN MENU */
    $(".sidebar-title").click(function () {
-      // $(".list-items").toggleClass("active");
-      // if ($(".list-items").hasClass("active")) {
-      //    $(".list-items").css("height", "500px");
-      //    $(".sidebar .arrow").css("transform", "rotate(0)");
-      // } else {
-      //    $(".list-items").css("height", "0");
-      //    $(".sidebar .arrow").css("transform", "rotate(180deg)");
-      // }
       $(".arrow").toggleClass("active");
       $(".list-items").slideToggle("slow");
    });
@@ -239,7 +232,7 @@ $(document).ready(function () {
                   </div>
                   <div class="comment">
                      <div class="comment-header">
-                        <a href="javasciprt:;">${user++}</a>
+                        <a href="javasciprt:;">USER ${user++}</a>
                         <button class="option"><i class="fa-solid fa-ellipsis"></i></button>
                         <ul>
                            <li class="edit">Chỉnh sửa</li>
