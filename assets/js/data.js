@@ -159,9 +159,7 @@ window.addEventListener("load", function () {
    }
 });
 
-/* JQUERY */
-$(document).ready(function () {
-   /* RANDOM NAMES & IMGS */
+/* RANDOM NAMES & IMGS */
    var names = [
       "Thanh Hiệp",
       "Trung Thắng",
@@ -198,6 +196,8 @@ $(document).ready(function () {
       }
    }
 
+/* JQUERY */
+$(document).ready(function () {
    /* DROPDOWN MENU */
    $(".sidebar-title").click(function () {
       // $(".list-items").toggleClass("active");
