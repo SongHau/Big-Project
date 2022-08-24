@@ -159,8 +159,6 @@ window.addEventListener("load", function () {
    }
 });
 
-
-
 /* JQUERY */
 $(document).ready(function () {
    /* RANDOM NAMES & IMGS */
@@ -435,5 +433,8 @@ $(document).ready(function () {
       let carousel = $(this).siblings(".carousel");
       let rel = carousel.attr("rel");
       handleChangeCarousel(carousel, "next", rel - 1);
+   });
+   $(window).resize(function () {
+      $(".carousel").css("transform", `translateX(0px)`);
    });
 });

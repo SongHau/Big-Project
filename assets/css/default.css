@@ -109,8 +109,8 @@ html {
 #back-to-top {
    position: fixed;
    display: flex;
-   bottom: 10%;
-   right: 2%;
+   bottom: 100px;
+   right: 36px;
    width: 40px;
    height: 40px;
    z-index: 10;
