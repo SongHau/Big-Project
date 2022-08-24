@@ -97,6 +97,7 @@ function addItemFood(e) {
       '</p> <a href="javascript:void(0)" onclick="addFoodCart(this)" class="btn-plus"> <i class="fa-solid fa-plus plus"></i> </a> </div> </div> <div class="shopping-cart-right"> <p> ' +
       itemPrice +
       '</p> <a class="removeItem" href="javascript:void(0)" onclick="removeItemFood(this)" >Xóa</a> </div> </div>';
+   
    var children = shoppingCarts.children;
    if (children.length > 0) {
       let add = true;
