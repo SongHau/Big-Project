@@ -13,17 +13,13 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet" />
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
-   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
    <link rel="stylesheet" href="./assets/css/news.css" />
    <link rel="stylesheet" href="./assets/css/default.css" />
    <link rel="stylesheet" href="./assets/css/responsive.css" />
 </head>
 
 <body>
-   <a href="./feedback.html">
-      <div class="go-to-feedback"><i class="fa-regular fa-comments"></i></div>
-   </a>
-   <button id="back-to-top"><i class="fa-solid fa-arrow-up"></i></button>
+   <button id="back-to-top"><i class="fa-solid fa-angle-up"></i></button>
    <div id="cursorMeter">
       <div id="progressBar"></div>
    </div>
@@ -43,6 +39,7 @@
          <a href="./introduce.html">Giới thiệu</a>
          <a href="./onlineshop.html">Đặt món online</a>
          <a href="./promotion.html">Khuyến mãi</a>
+         <a href="./feedback.html">Góp ý</a>
          <a href="" class="js-login">Đăng nhập</a>
       </div>
       <div class="btn-mobile">
@@ -56,16 +53,16 @@
       <div class="box"></div>
       <!-- Begin: Slider -->
       <div class="image-slider">
-         <button type='button' class='slider-prev slider-arrow'><i class='fa fa-angle-left' aria-hidden='true'></i></button>
+         <button type='button' class='slider-prev slider-arrow'><i class="fa-solid fa-arrow-left-long"></i></button>
          <ul class="slider-dots">
-            <li class="slider-dot-item active" data-index="1"></li>
-            <li class="slider-dot-item" data-index="2"></li>
-            <li class="slider-dot-item" data-index="3"></li>
-            <li class="slider-dot-item" data-index="4"></li>
-            <li class="slider-dot-item" data-index="5"></li>
+            <li class="dot-item active" data-index="1"></li>
+            <li class="dot-item" data-index="2"></li>
+            <li class="dot-item" data-index="3"></li>
+            <li class="dot-item" data-index="4"></li>
+            <li class="dot-item" data-index="5"></li>
          </ul>
          <div class="slider-container">
-            <div class="slider-main">
+            <div class="slider-main" draggable="true">
                <div class="slider-item">
                   <div class="image">
                      <img src="./assets/img/slide-1.jpg" alt="Slider-1">
@@ -93,7 +90,7 @@
                </div>
             </div>
          </div>
-         <button type='button' class='slider-next slider-arrow'><i class='fa fa-angle-right' aria-hidden='true'></i></button>
+         <button type='button' class='slider-next slider-arrow'><i class="fa-solid fa-arrow-right-long"></i></button>
       </div>
       <!-- End: Slider -->
 
@@ -105,7 +102,9 @@
                </h2>
                <div class="see-all"><a href="./promotion.html">Xem tất cả <i class="fa-solid fa-arrow-right"></i></a>
                </div>
-               <div class="carousel">
+               <button type='button' class='carousel-prev carousel-arrow'><i
+                     class="fa-solid fa-arrow-left-long"></i></button>
+               <div class="carousel" rel="1">
                   <div class="carousel-item">
                      <div class="carousel-article">
                         <div class="carousel-article-image">
@@ -267,6 +266,8 @@
                      </div>
                   </div>
                </div>
+               <button type='button' class='carousel-next carousel-arrow'><i
+                     class="fa-solid fa-arrow-right-long"></i></button>
             </div>
          </div>
 
@@ -277,7 +278,9 @@
                   &#10024;Tin tức
                </h2>
                <div class="see-all news-btn-show">Xem thêm <i class="fa-solid fa-arrow-right"></i></div>
-               <div class="carousel">
+               <button type='button' class='carousel-prev carousel-arrow'><i
+                     class="fa-solid fa-arrow-left-long"></i></button>
+               <div class="carousel" rel="2">
                   <div class="carousel-item">
                      <div class="carousel-article">
                         <div class="carousel-article-image">
@@ -433,6 +436,8 @@
                      </div>
                   </div>
                </div>
+               <button type='button' class='carousel-next carousel-arrow'><i
+                     class="fa-solid fa-arrow-right-long"></i></button>
             </div>
          </div>
          <div class="content-row hidden">
@@ -1015,6 +1020,7 @@
          </div>
       </div>
    </div>
+   <!-- End: Modal -->
 
    <!-- Messenger Plugin chat Code -->
    <div id="fb-root"></div>
@@ -1024,33 +1030,29 @@
    </div>
 
    <script>
-     var chatbox = document.getElementById('fb-customer-chat');
-     chatbox.setAttribute("page_id", "106492978853054");
-     chatbox.setAttribute("attribution", "biz_inbox");
+      var chatbox = document.getElementById('fb-customer-chat');
+      chatbox.setAttribute("page_id", "106492978853054");
+      chatbox.setAttribute("attribution", "biz_inbox");
    </script>
 
    <!-- Your SDK code -->
    <script>
-     window.fbAsyncInit = function() {
-       FB.init({
-         xfbml            : true,
-         version          : 'v14.0'
-       });
-     };
+      window.fbAsyncInit = function () {
+         FB.init({
+            xfbml: true,
+            version: 'v14.0'
+         });
+      };
 
-     (function(d, s, id) {
-       var js, fjs = d.getElementsByTagName(s)[0];
-       if (d.getElementById(id)) return;
-       js = d.createElement(s); js.id = id;
-       js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
-       fjs.parentNode.insertBefore(js, fjs);
-     }(document, 'script', 'facebook-jssdk'));
+      (function (d, s, id) {
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) return;
+         js = d.createElement(s); js.id = id;
+         js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
+         fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
    </script>
-   <!-- End: Modal -->
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-   <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
-   <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
    <script src="./assets/js/data.js"></script>
 </body>
 

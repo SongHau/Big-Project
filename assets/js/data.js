@@ -1,4 +1,51 @@
 window.addEventListener("load", function () {
+   /* DISABLED DEV TOOL */
+   // document.addEventListener(
+   //    "contextmenu",
+   //    function (e) {
+   //       e.preventDefault();
+   //    },
+   //    false
+   // );
+   // document.addEventListener(
+   //    "keydown",
+   //    function (e) {
+   //       // "I" key
+   //       if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {
+   //          disabledEvent(e);
+   //       }
+   //       // "J" key
+   //       if (e.ctrlKey && e.shiftKey && e.keyCode == 74) {
+   //          disabledEvent(e);
+   //       }
+   //       // "S" key + macOS
+   //       if (
+   //          e.keyCode == 83 &&
+   //          (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)
+   //       ) {
+   //          disabledEvent(e);
+   //       }
+   //       // "U" key
+   //       if (e.ctrlKey && e.keyCode == 85) {
+   //          disabledEvent(e);
+   //       }
+   //       // "F12" key
+   //       if (event.keyCode == 123) {
+   //          disabledEvent(e);
+   //       }
+   //    },
+   //    false
+   // );
+   // function disabledEvent(e) {
+   //    if (e.stopPropagation) {
+   //       e.stopPropagation();
+   //    } else if (window.event) {
+   //       window.event.cancelBubble = true;
+   //    }
+   //    e.preventDefault();
+   //    return false;
+   // }
+
    /* Loading */ const loader = document.querySelector(".loader");
    if (loader != null) loader.classList.add("hidden");
 
@@ -76,7 +123,7 @@ window.addEventListener("load", function () {
             if (!backToTopButton.classList.contains("fadeInRight")) {
                backToTopButton.classList.remove("fadeOutRight");
                backToTopButton.classList.add("fadeInRight");
-               backToTopButton.style.display = "block";
+               backToTopButton.style.display = "flex";
             }
          } else {
             if (backToTopButton.classList.contains("fadeInRight")) {
@@ -112,45 +159,45 @@ window.addEventListener("load", function () {
    }
 });
 
-/* RANDOM NAMES & IMGS */
-var names = [
-   "Thanh Hiệp",
-   "Trung Thắng",
-   "Nguyên Chương",
-   "Ngọc Như",
-   "Song Hậu",
-   "Trọng Phúc",
-   "Ngọc Sơn",
-   "Trí Cường",
-];
-var imgs = ["avatar-1.png", "avatar-2.png", "avatar-3.png", "avatar-4.png"];
-var random = [];
-function in_array(array, el) {
-   for (var i = 0; i < array.length; i++) if (array[i] == el) return true;
-   return false;
-}
-function get_rand(array) {
-   var rand = array[Math.floor(Math.random() * array.length)];
-   if (!in_array(random, rand)) {
-      random.push(rand);
-      return rand;
-   }
-   return get_rand(array);
-}
-function init() {
-   const header = document.querySelectorAll(".comment-header a");
-   const ava = document.querySelectorAll(".avatar img");
-   for (const a of ava) {
-      let idx = parseInt(Math.random() * imgs.length);
-      a.setAttribute("src", `./assets/img/${imgs[idx]}`);
-   }
-   for (const h of header) {
-      h.innerHTML = get_rand(names);
-   }
-}
-
 /* JQUERY */
 $(document).ready(function () {
+   /* RANDOM NAMES & IMGS */
+   var names = [
+      "Thanh Hiệp",
+      "Trung Thắng",
+      "Nguyên Chương",
+      "Ngọc Như",
+      "Song Hậu",
+      "Trọng Phúc",
+      "Ngọc Sơn",
+      "Trí Cường",
+   ];
+   var imgs = ["avatar-1.png", "avatar-2.png", "avatar-3.png", "avatar-4.png"];
+   var random = [];
+   function in_array(array, el) {
+      for (var i = 0; i < array.length; i++) if (array[i] == el) return true;
+      return false;
+   }
+   function get_rand(array) {
+      var rand = array[Math.floor(Math.random() * array.length)];
+      if (!in_array(random, rand)) {
+         random.push(rand);
+         return rand;
+      }
+      return get_rand(array);
+   }
+   function init() {
+      const header = document.querySelectorAll(".comment-header a");
+      const ava = document.querySelectorAll(".avatar img");
+      for (const a of ava) {
+         let idx = parseInt(Math.random() * imgs.length);
+         a.setAttribute("src", `./assets/img/${imgs[idx]}`);
+      }
+      for (const h of header) {
+         h.innerHTML = get_rand(names);
+      }
+   }
+
    /* DROPDOWN MENU */
    $(".sidebar-title").click(function () {
       // $(".list-items").toggleClass("active");
@@ -192,7 +239,7 @@ $(document).ready(function () {
                   </div>
                   <div class="comment">
                      <div class="comment-header">
-                        <a href="javasciprt:;">USER ${user++}</a>
+                        <a href="javasciprt:;">${user++}</a>
                         <button class="option"><i class="fa-solid fa-ellipsis"></i></button>
                         <ul>
                            <li class="edit">Chỉnh sửa</li>
@@ -274,7 +321,7 @@ $(document).ready(function () {
       });
    });
 
-   /* SLIDER */
+   /* IMAGES SLIDER */
    const lastSlide = $(".slider-item")[$(".slider-item").length - 1].outerHTML;
    const firstSlide = $(".slider-item")[0].outerHTML;
    $(".slider-main").prepend(lastSlide);
@@ -283,48 +330,44 @@ $(document).ready(function () {
       "transform",
       `translateX(-${$(".slider-main").width()}px)`
    );
-   let current = 1;
-   function translateStyle(o, v, w, i) {
-      $(o).css({
+   let currentSlider = 1;
+   function sliderMainTranslate(v, w, i) {
+      $(".slider-main").css({
          transition: v,
-         transform: `translateX(${-w * i + 0.25}px)`,
+         transform: `translateX(-${w * i + 0.25}px)`,
       });
    }
    function activeDot(obj) {
-      $(".slider-dot-item").removeClass("active");
+      $(".dot-item").removeClass("active");
       $(obj).addClass("active");
    }
    function handleChangeSlide(direction) {
       let widthOfSlide = $(".slider-main").width();
       if (direction === "next") {
-         current++;
-         if (current == $(".slider-item").length - 1) {
+         currentSlider++;
+         if (currentSlider == $(".slider-item").length - 1) {
             setTimeout(function () {
-               current = 1;
-               activeDot($(".slider-dot-item")[current - 1]);
-               translateStyle(".slider-main", "none", widthOfSlide, current);
+               currentSlider = 1;
+               sliderMainTranslate("none", widthOfSlide, currentSlider);
             }, 1000);
          }
       } else if (direction === "previous") {
-         current--;
-         if (current == 0) {
+         currentSlider--;
+         if (currentSlider == 0) {
             setTimeout(function () {
-               current = $(".slider-item").length - 2;
-               activeDot($(".slider-dot-item")[current - 1]);
-               translateStyle(".slider-main", "none", widthOfSlide, current);
+               currentSlider = $(".slider-item").length - 2;
+               sliderMainTranslate("none", widthOfSlide, currentSlider);
             }, 1000);
          }
       } else {
-         current = direction;
+         currentSlider = direction;
       }
-
-      activeDot($(".slider-dot-item")[current - 1]);
-      translateStyle(
-         ".slider-main",
-         "transform 1s linear",
-         widthOfSlide,
-         current
-      );
+      if (currentSlider == $(".slider-item").length - 1)
+         activeDot($(".dot-item")[0]);
+      else if (currentSlider == 0)
+         activeDot($(".dot-item")[$(".slider-item").length - 3]);
+      else activeDot($(".dot-item")[currentSlider - 1]);
+      sliderMainTranslate("transform 1s linear", widthOfSlide, currentSlider);
    }
    $(".slider-prev").click(function () {
       handleChangeSlide("previous");
@@ -332,7 +375,7 @@ $(document).ready(function () {
    $(".slider-next").click(function () {
       handleChangeSlide("next");
    });
-   $(".slider-dot-item").click(function () {
+   $(".dot-item").click(function () {
       const index = $(this).attr("data-index");
       handleChangeSlide(index);
    });
@@ -350,48 +393,49 @@ $(document).ready(function () {
       loopChange();
    });
 
-   /* SLICK SLIDER */
-   $(".carousel").slick({
-      slidesToShow: 4,
-      slidesToScroll: 1,
-      speed: 500,
-      infinite: false,
-      draggable: false,
-      prevArrow:
-         "<button type='button' class='slick-prev slick-arrow'><i class='fa fa-angle-left' aria-hidden='true'></i></button>",
-      nextArrow:
-         "<button type='button' class='slick-next slick-arrow'><i class='fa fa-angle-right' aria-hidden='true'></i></button>",
-      responsive: [
-         {
-            breakpoint: 769,
-            settings: {
-               slidesToShow: 1,
-               slidesToScroll: 1,
-               arrows: false,
-               draggable: true,
-               dots: true,
-            },
-         },
-         {
-            breakpoint: 993,
-            settings: {
-               slidesToShow: 2,
-               slidesToScroll: 1,
-               arrows: false,
-               draggable: true,
-               dots: true,
-            },
-         },
-         {
-            breakpoint: 1201,
-            settings: {
-               slidesToShow: 3,
-               slidesToScroll: 1,
-               arrows: true,
-               draggable: true,
-               dots: true,
-            },
-         },
-      ],
+   /* ARTICLES CAROUSEL */
+   let currentCarousel = [0, 0];
+   function handleChangeCarousel(obj, direction, index) {
+      let widthOfCarouse = $(".carousel").width();
+      let widthOfCarouselItem = $(".carousel-item").width() + 8;
+      let numberOfCarousel = $(".carousel-item", obj).length;
+      let CarouselItemsDisplayed = Math.round(
+         widthOfCarouse / widthOfCarouselItem
+      );
+      if (direction === "next") {
+         currentCarousel[index]++;
+         if (
+            currentCarousel[index] >
+            numberOfCarousel - CarouselItemsDisplayed
+         ) {
+            currentCarousel[index] = numberOfCarousel - CarouselItemsDisplayed;
+            return;
+         }
+      } else if (direction === "previous") {
+         currentCarousel[index]--;
+         if (currentCarousel[index] < 0) {
+            currentCarousel[index] = 0;
+            return;
+         }
+      } else {
+         currentCarousel[index] = direction;
+      }
+      $(obj).css(
+         "transform",
+         `translateX(-${widthOfCarouselItem * currentCarousel[index]}px)`
+      );
+   }
+   $(".carousel-prev").click(function () {
+      let carousel = $(this).siblings(".carousel");
+      let rel = carousel.attr("rel");
+      handleChangeCarousel(carousel, "previous", rel - 1);
+   });
+   $(".carousel-next").click(function () {
+      let carousel = $(this).siblings(".carousel");
+      let rel = carousel.attr("rel");
+      handleChangeCarousel(carousel, "next", rel - 1);
+   });
+   $(window).resize(function () {
+      $(".carousel").css("transform", `translateX(0px)`);
    });
 });

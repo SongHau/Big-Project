@@ -4,13 +4,16 @@
 }
 /* SCROLLBAR */
 ::-webkit-scrollbar {
-   width: 4px;
+   width: 8px;
    background: #424d78;
 }
 
 ::-webkit-scrollbar-thumb {
-   /* background: linear-gradient(to bottom, #fc6076, #ff9a44, #ef9d43); */
-   background: #ccc;
+   background: linear-gradient(-45deg, #5ebbff 0%, #a174ff 100%);
+}
+
+::-webkit-scrollbar-thumb:hover {
+   background: linear-gradient(-45deg, #4a99d2 0%, #8a5fe5 100%);
 }
 
 /* Loading */
@@ -74,7 +77,6 @@
 
 #progressBar {
    width: 0;
-   transition: 0.5s ease-out;
    animation: scrollProgress 5s linear infinite;
 }
 
@@ -96,110 +98,42 @@
    }
 }
 
-/* GO TO FEEDBACK */
-.go-to-feedback {
-   position: fixed;
-   display: flex;
-   bottom: 10%;
-   left: 1%;
-   width: 50px;
-   height: 50px;
-   z-index: 10;
-   border-radius: 50%;
-   justify-content: center;
-   align-items: center;
-   font-size: 2rem;
-   padding: 32px;
-   border: 2px solid #0000;
-   box-shadow: 0 0px 20px #5ebbff;
-   background: linear-gradient(#272a31 0 0) padding-box,
-      linear-gradient(-45deg, #5ebbff 0%, #a174ff 100%) border-box;
-}
-
-.go-to-feedback::after,
-#back-to-top::after {
-   content: "";
-   position: absolute;
-   opacity: 0;
-   top: 50%;
-   left: 50%;
-   transform: translate(-50%, -50%);
-   width: 60px;
-   height: 60px;
-   border-radius: 50%;
-   border: 4px solid transparent;
-   background: linear-gradient(-45deg, #5ebbff 0%, #a174ff 100%) border-box;
-   -webkit-mask: linear-gradient(#fff 0 0) padding-box,
-      linear-gradient(#fff 0 0);
-   -webkit-mask-composite: xor;
-   mask-composite: exclude;
-   transition: all 0.5s ease-out;
-}
-
-.go-to-feedback:hover {
-   box-shadow: none;
-   cursor: pointer;
-}
-
-.go-to-feedback:hover::after {
-   opacity: 1;
-   width: 80px;
-   height: 80px;
-}
-
-.go-to-feedback i {
-   background: linear-gradient(0, #5ebbff 0%, #a174ff 100%);
-   background-clip: text;
-   -webkit-background-clip: text;
-   -webkit-text-fill-color: #0000;
-}
-
 /* BUTTON BACK TO TOP */
 html {
    scroll-behavior: smooth;
    overflow: scroll;
    overflow-x: hidden;
-   background: #424d78;
+   /* background: #424d78; */
 }
 
 #back-to-top {
-   display: none;
    position: fixed;
-   bottom: 10%;
-   right: 1%;
-   font-size: 1.2rem;
-   width: 50px;
-   height: 50px;
-   background: rgba(0, 0, 0, 0.3);
-   color: #ccc;
-   cursor: pointer;
-   border-radius: 50%;
+   display: none;
+   bottom: 100px;
+   right: 36px;
+   width: 40px;
+   height: 40px;
+   z-index: 10;
+   border-radius: 12px;
+   justify-content: center;
+   align-items: center;
+   box-shadow: 0 0px 20px #5ebbff;
    border: none;
-   transition: all 0.5s ease;
-   z-index: 1;
-}
-
-#back-to-top::after {
-   width: 50px;
-   height: 50px;
-}
-
-#back-to-top:hover::after {
-   opacity: 1;
-   width: 60px;
-   height: 60px;
-}
-
-#back-to-top i {
-   background: linear-gradient(0, #5ebbff 0%, #a174ff 100%);
-   background-clip: text;
-   -webkit-background-clip: text;
-   -webkit-text-fill-color: #0000;
+   background: linear-gradient(325deg, #a174ff 0, #5ebbff 55%, #a174ff 90%);
+   background-size: 280% auto;
+   transition: 0.25s linear;
 }
 
 #back-to-top:hover {
+   cursor: pointer;
+   box-shadow: none;
+   background-position: right top;
+}
+
+#back-to-top i {
+   font-size: 1.2rem;
    color: #fff;
-   background: rgba(255, 255, 255, 0.2);
+   transform: rotate(8deg);
 }
 
 .fadeInRight {
@@ -216,7 +150,7 @@ html {
 
    to {
       opacity: 1;
-      transform: translateX(0);
+      transform: translateX(0) rotate(-15deg);
    }
 }
 
@@ -229,11 +163,12 @@ html {
 @keyframes fadeOutRight {
    from {
       opacity: 1;
+      transform: translateX(0) rotate(-15deg);
    }
 
    to {
       opacity: 0;
-      transform: translateX(100%);
+      transform: translateX(100%) rotate(-15deg);
    }
 }
 
@@ -247,7 +182,7 @@ header {
    display: flex;
    justify-content: space-between;
    align-items: center;
-   padding: 15px 100px;
+   padding: 15px 52px;
    transition: all 0.6s ease-in-out;
 }
 
@@ -261,7 +196,7 @@ header.sticky .name-shop {
 }
 
 header.sticky {
-   padding: 4px 100px;
+   padding: 4px 80px;
    background: rgba(0, 0, 0, 0.7);
 }
 
@@ -303,14 +238,10 @@ header .menu a {
    font-size: 1.2rem;
 }
 
-header .menu a:hover {
-   color: orangered;
-}
-
 header .menu a::after {
    content: "";
    display: block;
-   background: orangered;
+   background: #a174ff;
    width: 0;
    height: 2px;
    transition: width 1s;
