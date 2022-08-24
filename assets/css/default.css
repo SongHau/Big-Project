@@ -98,7 +98,7 @@
    }
 }
 
-/* BUTTON FIXED */
+/* BUTTON BACK TO TOP */
 html {
    scroll-behavior: smooth;
    overflow: scroll;
@@ -108,7 +108,7 @@ html {
 
 #back-to-top {
    position: fixed;
-   display: flex;
+   display: none;
    bottom: 100px;
    right: 36px;
    width: 40px;
