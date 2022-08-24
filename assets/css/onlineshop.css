@@ -210,9 +210,9 @@ header .menu a {
 
 .cart .cart-top a {
    text-decoration: none;
-   background-color: #1d1e23;
+   background-color: #8ad3ff;
    display: block;
-   color: #ffffffe6;
+   color: #000;
    text-transform: uppercase;
    font-size: 1.2rem;
    padding: 8px;
@@ -223,11 +223,8 @@ header .menu a {
 .cart .cart-top a.disabled {
    pointer-events: none;
    cursor: default;
-}
-
-.cart .cart-top a:hover {
-   color: #000;
-   background-color: #8ad3ff;
+   color: #ffffffe6;
+   background-color: #1d1e23;
 }
 
 .cart .shopping-cart {
