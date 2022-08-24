@@ -159,45 +159,47 @@ window.addEventListener("load", function () {
    }
 });
 
-/* RANDOM NAMES & IMGS */
-var names = [
-   "Thanh Hiệp",
-   "Trung Thắng",
-   "Nguyên Chương",
-   "Ngọc Như",
-   "Song Hậu",
-   "Trọng Phúc",
-   "Ngọc Sơn",
-   "Trí Cường",
-];
-var imgs = ["avatar-1.png", "avatar-2.png", "avatar-3.png", "avatar-4.png"];
-var random = [];
-function in_array(array, el) {
-   for (var i = 0; i < array.length; i++) if (array[i] == el) return true;
-   return false;
-}
-function get_rand(array) {
-   var rand = array[Math.floor(Math.random() * array.length)];
-   if (!in_array(random, rand)) {
-      random.push(rand);
-      return rand;
-   }
-   return get_rand(array);
-}
-function init() {
-   const header = document.querySelectorAll(".comment-header a");
-   const ava = document.querySelectorAll(".avatar img");
-   for (const a of ava) {
-      let idx = parseInt(Math.random() * imgs.length);
-      a.setAttribute("src", `./assets/img/${imgs[idx]}`);
-   }
-   for (const h of header) {
-      h.innerHTML = get_rand(names);
-   }
-}
+
 
 /* JQUERY */
 $(document).ready(function () {
+   /* RANDOM NAMES & IMGS */
+   var names = [
+      "Thanh Hiệp",
+      "Trung Thắng",
+      "Nguyên Chương",
+      "Ngọc Như",
+      "Song Hậu",
+      "Trọng Phúc",
+      "Ngọc Sơn",
+      "Trí Cường",
+   ];
+   var imgs = ["avatar-1.png", "avatar-2.png", "avatar-3.png", "avatar-4.png"];
+   var random = [];
+   function in_array(array, el) {
+      for (var i = 0; i < array.length; i++) if (array[i] == el) return true;
+      return false;
+   }
+   function get_rand(array) {
+      var rand = array[Math.floor(Math.random() * array.length)];
+      if (!in_array(random, rand)) {
+         random.push(rand);
+         return rand;
+      }
+      return get_rand(array);
+   }
+   function init() {
+      const header = document.querySelectorAll(".comment-header a");
+      const ava = document.querySelectorAll(".avatar img");
+      for (const a of ava) {
+         let idx = parseInt(Math.random() * imgs.length);
+         a.setAttribute("src", `./assets/img/${imgs[idx]}`);
+      }
+      for (const h of header) {
+         h.innerHTML = get_rand(names);
+      }
+   }
+
    /* DROPDOWN MENU */
    $(".sidebar-title").click(function () {
       // $(".list-items").toggleClass("active");
@@ -227,7 +229,6 @@ $(document).ready(function () {
    });
 
    /* ADD NEW FEEDBACK */
-   let user = 1;
    $("#btnUpload").click(function () {
       let text = $("#text-box").val();
       if (text !== "") {
@@ -348,7 +349,6 @@ $(document).ready(function () {
          if (currentSlider == $(".slider-item").length - 1) {
             setTimeout(function () {
                currentSlider = 1;
-               // activeDot($(".dot-item")[currentSlider - 1]);
                sliderMainTranslate("none", widthOfSlide, currentSlider);
             }, 1000);
          }
@@ -357,7 +357,6 @@ $(document).ready(function () {
          if (currentSlider == 0) {
             setTimeout(function () {
                currentSlider = $(".slider-item").length - 2;
-               // activeDot($(".dot-item")[currentSlider - 1]);
                sliderMainTranslate("none", widthOfSlide, currentSlider);
             }, 1000);
          }
