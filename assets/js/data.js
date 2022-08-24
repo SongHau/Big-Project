@@ -227,6 +227,7 @@ $(document).ready(function () {
    });
 
    /* ADD NEW FEEDBACK */
+   let user = 1;
    $("#btnUpload").click(function () {
       let text = $("#text-box").val();
       if (text !== "") {
@@ -238,7 +239,7 @@ $(document).ready(function () {
                   </div>
                   <div class="comment">
                      <div class="comment-header">
-                        <a href="javasciprt:;">${get_rand(names)}</a>
+                        <a href="javasciprt:;">${user++}</a>
                         <button class="option"><i class="fa-solid fa-ellipsis"></i></button>
                         <ul>
                            <li class="edit">Chỉnh sửa</li>
