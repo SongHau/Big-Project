@@ -145,10 +145,12 @@ window.addEventListener("load", function () {
    const arrow = document.querySelector(".arrow");
    const listItem = document.querySelector(".list-items");
    const sidebarTitle = document.querySelector(".sidebar-title");
-   sidebarTitle.addEventListener("click", function () {
-      listItem.classList.toggle("close");
-      arrow.classList.toggle("rotate");
-   });
+   if (sidebarTitle != null) {
+      sidebarTitle.addEventListener("click", function () {
+         listItem.classList.toggle("close");
+         arrow.classList.toggle("rotate");
+      });
+   }
 
    /* MORE BUTTON */
    const moreBtn = document.getElementById("js-btn-more");
