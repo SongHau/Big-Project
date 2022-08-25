@@ -48,13 +48,12 @@ $(document).ready(function () {
       sliderMainTranslate("transform 1s linear", widthOfSlide, currentSlider);
    }
 
-
    $(".slider-prev").click(function () {
       $(".slider-prev").addClass("end");
       handleChangeSlide("previous");
       setTimeout(function () {
          $(".slider-prev").removeClass("end");
-      }, 1000)
+      }, 1000);
    });
    $(".slider-next").click(function () {
       $(".slider-next").addClass("end");
@@ -116,12 +115,20 @@ $(document).ready(function () {
    $(".carousel-prev").click(function () {
       let carousel = $(this).siblings(".carousel");
       let rel = carousel.attr("rel");
+      $(".carousel-prev").addClass("end");
       handleChangeCarousel(carousel, "previous", rel - 1);
+      setTimeout(function () {
+         $(".carousel-prev").removeClass("end");
+      }, 500);
    });
    $(".carousel-next").click(function () {
       let carousel = $(this).siblings(".carousel");
       let rel = carousel.attr("rel");
+      $(".carousel-next").addClass("end");
       handleChangeCarousel(carousel, "next", rel - 1);
+      setTimeout(function () {
+         $(".carousel-next").removeClass("end");
+      }, 500);
    });
    $(window).resize(function () {
       $(".carousel").css("transform", `translateX(0px)`);
