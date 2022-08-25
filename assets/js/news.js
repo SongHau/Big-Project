@@ -116,4 +116,18 @@ $(document).ready(function () {
    $(window).resize(function () {
       $(".carousel").css("transform", `translateX(0px)`);
    });
+
+   /* BUTTON SEE ALL NEWS */
+   $(".news-btn-show").click(function () {
+      $(".news-row").fadeOut(300);
+      setTimeout(function () {
+         $(".content-row.hidden").fadeIn(600);
+      }, 300);
+   });
+   $(".news-btn-hide").click(function () {
+      $(".content-row.hidden").fadeOut(300);
+      setTimeout(function () {
+         $(".news-row").fadeIn(600);
+      }, 300);
+   });
 });

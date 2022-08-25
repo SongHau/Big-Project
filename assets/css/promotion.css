@@ -162,13 +162,18 @@ h3:hover {
    transition: all 0.5s;
 }
 
-.sidebar-title .arrow.active {
+.sidebar-title .arrow.rotate {
    transform: rotate(180deg);
 }
 
 .item-col3 .list-items {
    height: 500px;
    overflow: auto;
+   transition: 0.5s;
+}
+
+.item-col3 .list-items.close {
+   height: 0;
 }
 
 .item-col3 .list-items::-webkit-scrollbar {
