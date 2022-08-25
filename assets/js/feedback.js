@@ -1,4 +1,4 @@
-window.addEventListener("load", function () {
+$(document).ready(function () {
    /* RANDOM NAMES & IMGS */
    var names = [
       "Thanh Hiệp",
@@ -33,9 +33,7 @@ window.addEventListener("load", function () {
    for (const h of header) {
       h.innerHTML = get_rand(names);
    }
-});
 
-$(document).ready(function () {
    /* ADD NEW FEEDBACK */
    let user = 1;
    $("#btnUpload").click(function () {
