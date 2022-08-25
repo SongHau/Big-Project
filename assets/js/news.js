@@ -47,11 +47,21 @@ $(document).ready(function () {
       else activeDot($(".dot-item")[currentSlider - 1]);
       sliderMainTranslate("transform 1s linear", widthOfSlide, currentSlider);
    }
+
+
    $(".slider-prev").click(function () {
+      $(".slider-prev").addClass("end");
       handleChangeSlide("previous");
+      setTimeout(function () {
+         $(".slider-prev").removeClass("end");
+      }, 1000)
    });
    $(".slider-next").click(function () {
+      $(".slider-next").addClass("end");
       handleChangeSlide("next");
+      setTimeout(function () {
+         $(".slider-next").removeClass("end");
+      }, 1000);
    });
    $(".dot-item").click(function () {
       const index = $(this).attr("data-index");
