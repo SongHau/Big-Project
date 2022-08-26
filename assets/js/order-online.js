@@ -18,6 +18,7 @@ function showAddfood(e) {
    let priceFood = parentElement.querySelector(
       ".food-text .food-price"
    ).innerHTML;
+   
    modalFood.querySelector(".number-var").innerHTML = 1;
    modalFood.querySelector(".modal-food-img").innerHTML = imgFood;
    modalFood.querySelector(".modal-food-name").innerHTML = titleFood;
@@ -97,9 +98,7 @@ function addItemFood(e) {
       '</p> <a href="javascript:void(0)" onclick="addFoodCart(this)" class="btn-plus"> <i class="fa-solid fa-plus plus"></i> </a> </div> </div> <div class="shopping-cart-right"> <p> ' +
       itemPrice +
       '</p> <a class="removeItem" href="javascript:void(0)" onclick="removeItemFood(this)" >Xóa</a> </div> </div>';
-   
-   var children = shoppingCarts.children;
-   
+      var children = shoppingCarts.children;
    if (children.length > 0) {
       let add = true;
       for (var i = 0; i < children.length; i++) {
@@ -141,6 +140,7 @@ function addItemFood(e) {
 }
 function removeItemFood(e) {
    e.parentElement.parentElement.remove();
+   console.log(e.parentElement.parentElement);
    updateInfoCart(shoppingCarts);
 }
 if (btnAddItem) {
@@ -178,7 +178,7 @@ function updateInfoCart(list) {
          tong =
             tong +
             parseInt(children[i].getAttribute("number")) *
-               parseInt(children[i].getAttribute("price"));
+            parseInt(children[i].getAttribute("price"));
       }
    }
    if (tong == 0) aTag.classList.add("disabled");
