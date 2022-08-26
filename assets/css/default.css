@@ -132,9 +132,9 @@ html {
 }
 
 #back-to-top i {
-   font-size: 1.2rem;
+   font-size: 1rem;
    color: #fff;
-   transform: rotate(8deg);
+   transform: rotate(15deg);
 }
 
 .fadeInRight {

@@ -94,16 +94,6 @@
    .top-footer-col-8 form .submit {
       width: 40%;
    }
-
-   #back-to-top {
-      bottom: 80px;
-      right: 12px;
-   }
-
-   #back-to-top:hover {
-      box-shadow: 0 0px 20px #5ebbff;
-      background-position: 0;
-   }
 }
 @media screen and (max-width: 46.118rem) {
    .footer-col {
@@ -114,6 +104,11 @@
 
    .footer-col h4::after {
       left: calc(50% - 25px);
+   }
+
+   #back-to-top:hover {
+      box-shadow: 0 0px 20px #5ebbff;
+      background-position: 0;
    }
 }
 

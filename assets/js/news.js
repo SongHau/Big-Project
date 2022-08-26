@@ -47,11 +47,20 @@ $(document).ready(function () {
       else activeDot($(".dot-item")[currentSlider - 1]);
       sliderMainTranslate("transform 1s linear", widthOfSlide, currentSlider);
    }
+
    $(".slider-prev").click(function () {
+      $(".slider-prev").addClass("end");
       handleChangeSlide("previous");
+      setTimeout(function () {
+         $(".slider-prev").removeClass("end");
+      }, 1000);
    });
    $(".slider-next").click(function () {
+      $(".slider-next").addClass("end");
       handleChangeSlide("next");
+      setTimeout(function () {
+         $(".slider-next").removeClass("end");
+      }, 1000);
    });
    $(".dot-item").click(function () {
       const index = $(this).attr("data-index");
@@ -106,14 +115,36 @@ $(document).ready(function () {
    $(".carousel-prev").click(function () {
       let carousel = $(this).siblings(".carousel");
       let rel = carousel.attr("rel");
+      $(".carousel-prev").addClass("end");
       handleChangeCarousel(carousel, "previous", rel - 1);
+      setTimeout(function () {
+         $(".carousel-prev").removeClass("end");
+      }, 500);
    });
    $(".carousel-next").click(function () {
       let carousel = $(this).siblings(".carousel");
       let rel = carousel.attr("rel");
+      $(".carousel-next").addClass("end");
       handleChangeCarousel(carousel, "next", rel - 1);
+      setTimeout(function () {
+         $(".carousel-next").removeClass("end");
+      }, 500);
    });
    $(window).resize(function () {
       $(".carousel").css("transform", `translateX(0px)`);
+   });
+
+   /* BUTTON SEE ALL NEWS */
+   $(".news-btn-show").click(function () {
+      $(".news-row").fadeOut(300);
+      setTimeout(function () {
+         $(".content-row.hidden").fadeIn(600);
+      }, 300);
+   });
+   $(".news-btn-hide").click(function () {
+      $(".content-row.hidden").fadeOut(300);
+      setTimeout(function () {
+         $(".news-row").fadeIn(600);
+      }, 300);
    });
 });
